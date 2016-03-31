@@ -1,13 +1,12 @@
 Package: hms
-Title: What the Package Does (one line, title case)
+Title: Pretty Time of Day
 Version: 0.0-0
 Authors@R: person("Kirill", "Müller", role = c("aut", "cre"), email = "krlmlr+r@mailbox.org")
-Description: What the package does (one paragraph).
-Depends: R (>= 3.2.4)
+Description: Implements an S3 class for storing and formatting time-of-day
+    values.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Date: 2016-03-31
-URLNote: https://github.com/krlmlr/
-BugReports: https://github.com/krlmlr/
-URL: http://krlmlr.github.io/
+URL: https://github.com/krlmlr/hms
+BugReports: https://github.com/krlmlr/hms/issues
