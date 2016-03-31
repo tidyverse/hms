@@ -1,0 +1,13 @@
+Package: hms
+Title: What the Package Does (one line, title case)
+Version: 0.0-0
+Authors@R: person("Kirill", "Müller", role = c("aut", "cre"), email = "krlmlr+r@mailbox.org")
+Description: What the package does (one paragraph).
+Depends: R (>= 3.2.4)
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Date: 2016-03-31
+URLNote: https://github.com/krlmlr/
+BugReports: https://github.com/krlmlr/
+URL: http://krlmlr.github.io/
