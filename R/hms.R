@@ -2,7 +2,8 @@
 #'
 #' The values are stored as a numeric vector that contains the number of seconds
 #' since midnight.  Supports construction from time values, coercion to and from
-#' various data types, and formatting.  Can be used in a data frame.
+#' various data types, and formatting.  Can be used as a regular column in a
+#' data frame.
 #'
 #' @name hms
 #' @examples
@@ -16,7 +17,7 @@
 #'   data.frame(a = hms(1))
 #' }
 #' d <- data.frame(hours = 1:3)
-#' d$b <- hms(hours = d$hours)
+#' d$hours <- hms(hours = d$hours)
 #' d
 NULL
 
