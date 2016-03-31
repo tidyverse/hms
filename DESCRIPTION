@@ -12,4 +12,6 @@ LazyData: true
 URL: https://github.com/krlmlr/hms
 BugReports: https://github.com/krlmlr/hms/issues
 RoxygenNote: 5.0.1
-Suggests: testthat
+Suggests: testthat,
+    covr
+Remotes: jimhester/covr@v2
