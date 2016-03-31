@@ -11,10 +11,13 @@
 \alias{as.hms.numeric}
 \alias{format.hms}
 \alias{hms}
+\alias{is.hms}
 \alias{print.hms}
 \title{A simple class for storing time-of-day values}
 \usage{
 hms(seconds = 0, minutes = 0, hours = 0, days = 0)
+
+is.hms(x)
 
 as.hms(x, ...)
 
