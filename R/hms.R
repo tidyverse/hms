@@ -1,6 +1,7 @@
 #' A simple class for storing time-of-day values
 #'
-#' The values are stored as a \code{\link{difftime}} vector with a custom class.
+#' The values are stored as a \code{\link{difftime}} vector with a custom class,
+#' and always with "seconds" as unit for robust coercion to numeric.
 #' Supports construction from time values, coercion to and from
 #' various data types, and formatting.  Can be used as a regular column in a
 #' data frame.
@@ -59,6 +60,7 @@ as.hms.default <- function(x, ...) {
 #' @rdname hms
 #' @export
 as.hms.difftime <- function(x, ...) {
+  units(x) <- "secs"
   structure(x, class = unique(c("hms", class(x))))
 }
 
