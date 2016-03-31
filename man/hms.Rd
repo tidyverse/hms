@@ -51,8 +51,8 @@ performed.}
 \item{...}{Arguments passed on to further methods.}
 }
 \description{
-The values are stored as a numeric vector that contains the number of seconds
-since midnight.  Supports construction from time values, coercion to and from
+The values are stored as a \code{\link{difftime}} vector with a custom class.
+Supports construction from time values, coercion to and from
 various data types, and formatting.  Can be used as a regular column in a
 data frame.
 }
