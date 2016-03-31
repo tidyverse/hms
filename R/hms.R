@@ -1,3 +1,5 @@
+# Construction ------------------------------------------------------------
+
 #' @export
 hms <- function(seconds = 0, minutes = 0, hours = 0, days = 0) {
   if (missing(seconds) && missing(minutes) && missing(hours) && missing(days)) {
@@ -8,6 +10,7 @@ hms <- function(seconds = 0, minutes = 0, hours = 0, days = 0) {
     seconds + minutes * 60 + hours * 3600 + days * 86400,
     class = "hms")
 }
+# Coercion in -------------------------------------------------------------
 
 #' @export
 as.hms <- function(x, ...) UseMethod("as.hms", x)
@@ -35,6 +38,9 @@ as.hms.POSIXt <- function(x, ...) {
   hms(seconds = seconds)
 }
 
+
+# Coercion out ------------------------------------------------------------
+
 #' @export
 as.POSIXct.hms <- function(x, ...) {
   structure(as.numeric(x), tzone = "UTC", class = c("POSIXct", "POSIXt"))
@@ -48,4 +54,17 @@ as.POSIXlt.hms <- function(x, ...) {
 #' @export
 as.character.hms <- function(x, ...) {
   strftime(as.POSIXct(x, ...), format = "%H:%M:%S", tz = "UTC")
+}
+
+
+# Output ------------------------------------------------------------------
+
+#' @export
+format.hms <- function(x, ...) {
+  as.character(x)
+}
+
+#' @export
+print.hms <- function(x, ...) {
+  cat(format(x), sep = "\n")
 }
