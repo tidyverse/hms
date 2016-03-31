@@ -28,3 +28,9 @@ as.hms.character <- function(x, ...) {
   seconds <- as.numeric(lubridate::parse_date_time(x, "hms")) - DATE_TIME_ORIGIN
   hms(seconds = seconds)
 }
+
+#' @export
+as.hms.POSIXt <- function(x, ...) {
+  seconds <- as.numeric(as.POSIXct(x)) %% 86400
+  hms(seconds = seconds)
+}
