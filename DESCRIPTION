@@ -1,0 +1,15 @@
+Package: hms
+Title: Pretty Time of Day
+Date: 2016-03-31
+Version: 0.0-1
+Authors@R: person("Kirill", "Müller", role = c("aut", "cre"), email = "krlmlr+r@mailbox.org")
+Description: Implements an S3 class for storing and formatting time-of-day
+    values.
+Imports: lubridate
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/krlmlr/hms
+BugReports: https://github.com/krlmlr/hms/issues
+RoxygenNote: 5.0.1
+Suggests: testthat
