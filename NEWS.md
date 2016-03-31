@@ -1,3 +1,10 @@
+# hms 0.0-2 (2016-03-31)
+
+- New `is.hms()` (#2).
+- Use Travis-CI.
+- Test coverage on Travis.
+
+
 # hms 0.0-1 (2016-03-31)
 
 First draft.
