@@ -32,9 +32,9 @@ hms <- function(seconds = 0, minutes = 0, hours = 0, days = 0) {
     stop("Need to pass at least one entry for seconds, minutes, hours, or days.",
          call. = FALSE)
   }
-  structure(
-    seconds + minutes * 60 + hours * 3600 + days * 86400,
-    class = "hms")
+
+  as.hms(as.difftime(
+    seconds + minutes * 60 + hours * 3600 + days * 86400, units = "secs"))
 }
 
 #' @rdname hms
@@ -54,6 +54,12 @@ as.hms <- function(x, ...) UseMethod("as.hms", x)
 as.hms.default <- function(x, ...) {
   stop("Can't convert object of class ", paste(class(x), collapse = ", "),
        " to hms.", call. = FALSE)
+}
+
+#' @rdname hms
+#' @export
+as.hms.difftime <- function(x, ...) {
+  structure(x, class = unique(c("hms", class(x))))
 }
 
 #' @rdname hms
