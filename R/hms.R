@@ -36,6 +36,11 @@ hms <- function(seconds = 0, minutes = 0, hours = 0, days = 0) {
     seconds + minutes * 60 + hours * 3600 + days * 86400,
     class = "hms")
 }
+
+#' @rdname hms
+#' @export
+is.hms <- function(x) inherits(x, "hms")
+
 # Coercion in -------------------------------------------------------------
 
 #' @rdname hms
