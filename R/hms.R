@@ -1,5 +1,9 @@
 #' @export
-hms <- function(seconds, minutes = 0, hours = 0, days = 0) {
+hms <- function(seconds = 0, minutes = 0, hours = 0, days = 0) {
+  if (missing(seconds) && missing(minutes) && missing(hours) && missing(days)) {
+    stop("Need to pass at least one entry for seconds, minutes, hours, or days.",
+         call. = FALSE)
+  }
   structure(
     seconds / 86400 + minutes / 1440 + hours / 24 + days,
     class = "hms")
