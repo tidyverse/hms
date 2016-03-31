@@ -5,7 +5,7 @@ hms <- function(seconds = 0, minutes = 0, hours = 0, days = 0) {
          call. = FALSE)
   }
   structure(
-    seconds / 86400 + minutes / 1440 + hours / 24 + days,
+    seconds + minutes * 60 + hours * 3600 + days * 86400,
     class = "hms")
 }
 
@@ -37,7 +37,7 @@ as.hms.POSIXt <- function(x, ...) {
 
 #' @export
 as.POSIXct.hms <- function(x, ...) {
-  structure(as.numeric(x) * 86400, tzone = "UTC", class = c("POSIXct", "POSIXt"))
+  structure(as.numeric(x), tzone = "UTC", class = c("POSIXct", "POSIXt"))
 }
 
 #' @export
