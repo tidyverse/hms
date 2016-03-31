@@ -34,3 +34,18 @@ as.hms.POSIXt <- function(x, ...) {
   seconds <- as.numeric(as.POSIXct(x)) %% 86400
   hms(seconds = seconds)
 }
+
+#' @export
+as.POSIXct.hms <- function(x, ...) {
+  structure(as.numeric(x) * 86400, tzone = "UTC", class = c("POSIXct", "POSIXt"))
+}
+
+#' @export
+as.POSIXlt.hms <- function(x, ...) {
+  as.POSIXlt(as.POSIXct(x, ...), ...)
+}
+
+#' @export
+as.character.hms <- function(x, ...) {
+  strftime(as.POSIXct(x, ...), format = "%H:%M:%S", tz = "UTC")
+}

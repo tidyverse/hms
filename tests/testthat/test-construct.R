@@ -20,3 +20,14 @@ test_that("coercion", {
 
   expect_error(as.hms(FALSE))
 })
+
+test_that("coercion out", {
+  expect_identical(as.character(hms(56, 34, 12)), "12:34:56")
+  expect_identical(as.POSIXlt(hms(hours = 6)),
+                   strptime("1970-01-01 06:00:00",
+                            format = "%Y-%m-%d %H:%M:%S", tz = "UTC"))
+  expect_identical(as.POSIXct(hms(hours = -6)),
+                   strptime("1970-01-01 18:00:00",
+                            format = "%Y-%m-%d %H:%M:%S", tz = "UTC") - 86400)
+
+})
