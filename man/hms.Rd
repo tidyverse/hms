@@ -8,6 +8,7 @@
 \alias{as.hms.POSIXt}
 \alias{as.hms.character}
 \alias{as.hms.default}
+\alias{as.hms.difftime}
 \alias{as.hms.numeric}
 \alias{format.hms}
 \alias{hms}
@@ -22,6 +23,8 @@ is.hms(x)
 as.hms(x, ...)
 
 \method{as.hms}{default}(x, ...)
+
+\method{as.hms}{difftime}(x, ...)
 
 \method{as.hms}{numeric}(x, ...)
 
