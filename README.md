@@ -1,6 +1,6 @@
 
-hms
-===
+hms [![Travis-CI Build Status](https://travis-ci.org/krlmlr/hms.svg?branch=master)](https://travis-ci.org/krlmlr/hms)
+=====================================================================================================================
 
 A simple class for storing time-of-day values
 
@@ -17,7 +17,7 @@ as.hms(1)
 as.hms("12:34:56")
 #> 12:34:56
 as.hms(Sys.time())
-#> 10:26:39
+#> 10:35:40
 as.POSIXct(hms(1))
 #> [1] "1970-01-01 00:00:01 UTC"
 
