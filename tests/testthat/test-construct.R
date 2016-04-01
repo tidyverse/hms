@@ -13,6 +13,12 @@ test_that("constructor", {
 
   expect_identical(units(as.hms(as.difftime(1, units = "mins"))), "secs")
   expect_identical(as.hms(hms(1)), hms(1))
+})
 
+test_that("bad input", {
   expect_error(hms(), "seconds")
+  expect_error(hms(hours = 1, seconds = 3), "only")
+  expect_error(hms(minutes = 1, days = 3), "only")
+  expect_error(hms(minutes = 1, hours = 2:3), "same length or be NULL")
+  expect_error(hms(seconds = 1:5, minutes = 6:10, hours = 11:17), "same length or be NULL")
 })

@@ -17,7 +17,7 @@
 \alias{print.hms}
 \title{A simple class for storing time-of-day values}
 \usage{
-hms(seconds = 0, minutes = 0, hours = 0, days = 0)
+hms(seconds = NULL, minutes = NULL, hours = NULL, days = NULL)
 
 is.hms(x)
 
@@ -67,6 +67,11 @@ and always with "seconds" as unit for robust coercion to numeric.
 Supports construction from time values, coercion to and from
 various data types, and formatting.  Can be used as a regular column in a
 data frame.
+}
+\details{
+For \code{hms}, all arguments must have the same length or be
+  \code{NULL}.  Odd combinations (e.g., passing only \code{seconds} and
+  \code{hours} but not \code{minutes}) are rejected.
 }
 \examples{
 hms(56, 34, 12)
