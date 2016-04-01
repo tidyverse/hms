@@ -29,9 +29,7 @@ as.hms("12:34:56")
 as.hms(Sys.time())
 as.POSIXct(hms(1))
 
-d <- data.frame(hours = 1:3)
-d$hms <- hms(hours = d$hours)
-d
+data.frame(hours = 1:3, hms = hms(hours = 1:3))
 ```
 
 Install the package from GitHub:
