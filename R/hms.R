@@ -68,13 +68,10 @@ as.hms.difftime <- function(x, ...) {
 #' @export
 as.hms.numeric <- function(x, ...) hms(days = x)
 
-DATE_TIME_ORIGIN <- as.numeric(lubridate::parse_date_time("00:00:00", "hms"))
-
 #' @rdname hms
 #' @export
 as.hms.character <- function(x, ...) {
-  seconds <- as.numeric(lubridate::parse_date_time(x, "hms")) - DATE_TIME_ORIGIN
-  hms(seconds = seconds)
+  as.hms(as.difftime(x))
 }
 
 #' @rdname hms

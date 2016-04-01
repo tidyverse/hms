@@ -5,7 +5,6 @@ Version: 0.0-2
 Authors@R: person("Kirill", "Müller", role = c("aut", "cre"), email = "krlmlr+r@mailbox.org")
 Description: Implements an S3 class for storing and formatting time-of-day
     values.
-Imports: lubridate
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
