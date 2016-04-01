@@ -60,6 +60,8 @@ performed.}
 \item{optional}{logical. If \code{TRUE}, setting row names and
     converting column names (to syntactic names: see
     \code{\link{make.names}}) is optional.}
+
+\item{nm}{Name of column in new data frame}
 }
 \description{
 The values are stored as a \code{\link{difftime}} vector with a custom class,

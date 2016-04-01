@@ -1,3 +1,12 @@
+# hms 0.0-3 (2016-04-01)
+
+- Implement `as.data.frame.hms()`, forwards to `as.data.frame.difftime()` (#7).
+- Remove `lubridate` dependency (#8).
+- Return unchanged input in `print()`.
+- Inherit from `difftime` class (#6).
+- Tests for arithmetic with `Date`, `POSIXt` and `hms` classes.
+
+
 # hms 0.0-2 (2016-03-31)
 
 - New `is.hms()` (#2).
