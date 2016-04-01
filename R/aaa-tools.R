@@ -1,3 +1,4 @@
+# nocov start
 forward_to <- function(f, envir = parent.frame()) {
   f_fmls <- formals(f)
   f_called_fmls <- stats::setNames(lapply(names(f_fmls), as.symbol), names(f_fmls))
@@ -14,3 +15,4 @@ forward_to <- function(f, envir = parent.frame()) {
   environment(f_ret) <- envir
   f_ret
 }
+# nocov end
