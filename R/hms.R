@@ -104,6 +104,7 @@ as.character.hms <- function(x, ...) {
 
 #' @rdname hms
 #' @inheritParams base::as.data.frame
+#' @param nm Name of column in new data frame
 #' @export
 as.data.frame.hms <- forward_to(as.data.frame.difftime)
 
