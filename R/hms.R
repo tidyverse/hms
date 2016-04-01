@@ -118,4 +118,5 @@ format.hms <- function(x, ...) {
 #' @export
 print.hms <- function(x, ...) {
   cat(format(x), sep = "\n")
+  invisible(x)
 }
