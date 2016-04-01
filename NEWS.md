@@ -1,3 +1,9 @@
+# hms 0.0-4 (2016-04-01)
+
+- Conversion from numeric treats input as seconds.
+- Rigorous check of `hms()` arguments (#3).
+
+
 # hms 0.0-3 (2016-04-01)
 
 - Implement `as.data.frame.hms()`, forwards to `as.data.frame.difftime()` (#7).
