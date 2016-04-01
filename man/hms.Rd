@@ -4,10 +4,12 @@
 \alias{as.POSIXct.hms}
 \alias{as.POSIXlt.hms}
 \alias{as.character.hms}
+\alias{as.data.frame.hms}
 \alias{as.hms}
 \alias{as.hms.POSIXt}
 \alias{as.hms.character}
 \alias{as.hms.default}
+\alias{as.hms.difftime}
 \alias{as.hms.numeric}
 \alias{format.hms}
 \alias{hms}
@@ -23,6 +25,8 @@ as.hms(x, ...)
 
 \method{as.hms}{default}(x, ...)
 
+\method{as.hms}{difftime}(x, ...)
+
 \method{as.hms}{numeric}(x, ...)
 
 \method{as.hms}{character}(x, ...)
@@ -35,6 +39,9 @@ as.hms(x, ...)
 
 \method{as.character}{hms}(x, ...)
 
+\method{as.data.frame}{hms}(x, row.names = NULL, optional = FALSE, ...,
+  nm = paste(deparse(substitute(x), width.cutoff = 500L), collapse = " "))
+
 \method{format}{hms}(x, ...)
 
 \method{print}{hms}(x, ...)
@@ -46,10 +53,20 @@ performed.}
 \item{x}{An object.}
 
 \item{...}{Arguments passed on to further methods.}
+
+\item{row.names}{\code{NULL} or a character vector giving the row
+    names for the data frame.  Missing values are not allowed.}
+
+\item{optional}{logical. If \code{TRUE}, setting row names and
+    converting column names (to syntactic names: see
+    \code{\link{make.names}}) is optional.}
+
+\item{nm}{Name of column in new data frame}
 }
 \description{
-The values are stored as a numeric vector that contains the number of seconds
-since midnight.  Supports construction from time values, coercion to and from
+The values are stored as a \code{\link{difftime}} vector with a custom class,
+and always with "seconds" as unit for robust coercion to numeric.
+Supports construction from time values, coercion to and from
 various data types, and formatting.  Can be used as a regular column in a
 data frame.
 }

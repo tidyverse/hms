@@ -1,7 +1,8 @@
 #' A simple class for storing time-of-day values
 #'
-#' The values are stored as a numeric vector that contains the number of seconds
-#' since midnight.  Supports construction from time values, coercion to and from
+#' The values are stored as a \code{\link{difftime}} vector with a custom class,
+#' and always with "seconds" as unit for robust coercion to numeric.
+#' Supports construction from time values, coercion to and from
 #' various data types, and formatting.  Can be used as a regular column in a
 #' data frame.
 #'
@@ -32,9 +33,9 @@ hms <- function(seconds = 0, minutes = 0, hours = 0, days = 0) {
     stop("Need to pass at least one entry for seconds, minutes, hours, or days.",
          call. = FALSE)
   }
-  structure(
-    seconds + minutes * 60 + hours * 3600 + days * 86400,
-    class = "hms")
+
+  as.hms(as.difftime(
+    seconds + minutes * 60 + hours * 3600 + days * 86400, units = "secs"))
 }
 
 #' @rdname hms
@@ -58,15 +59,19 @@ as.hms.default <- function(x, ...) {
 
 #' @rdname hms
 #' @export
-as.hms.numeric <- function(x, ...) hms(days = x)
+as.hms.difftime <- function(x, ...) {
+  units(x) <- "secs"
+  structure(x, class = unique(c("hms", class(x))))
+}
 
-DATE_TIME_ORIGIN <- as.numeric(lubridate::parse_date_time("00:00:00", "hms"))
+#' @rdname hms
+#' @export
+as.hms.numeric <- function(x, ...) hms(days = x)
 
 #' @rdname hms
 #' @export
 as.hms.character <- function(x, ...) {
-  seconds <- as.numeric(lubridate::parse_date_time(x, "hms")) - DATE_TIME_ORIGIN
-  hms(seconds = seconds)
+  as.hms(as.difftime(x))
 }
 
 #' @rdname hms
@@ -97,6 +102,11 @@ as.character.hms <- function(x, ...) {
   strftime(as.POSIXct(x, ...), format = "%H:%M:%S", tz = "UTC")
 }
 
+#' @rdname hms
+#' @inheritParams base::as.data.frame
+#' @param nm Name of column in new data frame
+#' @export
+as.data.frame.hms <- forward_to(as.data.frame.difftime)
 
 # Output ------------------------------------------------------------------
 
@@ -110,4 +120,5 @@ format.hms <- function(x, ...) {
 #' @export
 print.hms <- function(x, ...) {
   cat(format(x), sep = "\n")
+  invisible(x)
 }

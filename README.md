@@ -1,6 +1,6 @@
 
-hms [![Travis-CI Build Status](https://travis-ci.org/krlmlr/hms.svg?branch=master)](https://travis-ci.org/krlmlr/hms) [![Coverage Status](https://img.shields.io/codecov/c/github/krlmlr/hms/master.svg)](https://codecov.io/github/krlmlr/hms?branch=master) [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
-=====================================================================================================================
+hms [![Travis-CI Build Status](https://travis-ci.org/krlmlr/hms.svg?branch=master)](https://travis-ci.org/krlmlr/hms) [![Coverage Status](https://img.shields.io/codecov/c/github/krlmlr/hms/master.svg)](https://codecov.io/github/krlmlr/hms?branch=master) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
+=======================================================================================================================================================================================================================================================================================================================================================================
 
 A simple class for storing time-of-day values
 
@@ -17,13 +17,11 @@ as.hms(1)
 as.hms("12:34:56")
 #> 12:34:56
 as.hms(Sys.time())
-#> 10:35:40
+#> 15:16:00
 as.POSIXct(hms(1))
 #> [1] "1970-01-01 00:00:01 UTC"
 
-d <- data.frame(hours = 1:3)
-d$hms <- hms(hours = d$hours)
-d
+data.frame(hours = 1:3, hms = hms(hours = 1:3))
 #>   hours      hms
 #> 1     1 01:00:00
 #> 2     2 02:00:00

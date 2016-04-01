@@ -7,8 +7,12 @@ test_that("constructor", {
   expect_identical(hms(3600), hms(hours = 1))
 
   expect_true(is.hms(hms(1)))
-  expect_true(is.numeric(hms(1)))
+  expect_is(hms(1), "difftime")
   expect_identical(as.numeric(hms(1)), 1)
+  expect_identical(as.difftime(hms(1)), hms(1))
+
+  expect_identical(units(as.hms(as.difftime(1, units = "mins"))), "secs")
+  expect_identical(as.hms(hms(1)), hms(1))
 
   expect_error(hms(), "seconds")
 })
