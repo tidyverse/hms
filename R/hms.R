@@ -105,6 +105,10 @@ as.character.hms <- function(x, ...) {
   strftime(as.POSIXct(x, ...), format = "%H:%M:%S", tz = "UTC")
 }
 
+#' @rdname hms
+#' @inheritParams base::as.data.frame
+#' @export
+as.data.frame.hms <- as.data.frame.difftime
 
 # Output ------------------------------------------------------------------
 
