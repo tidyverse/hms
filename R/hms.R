@@ -1,7 +1,8 @@
 #' A simple class for storing time-of-day values
 #'
-#' The values are stored as a numeric vector that contains the number of seconds
-#' since midnight.  Supports construction from time values, coercion to and from
+#' The values are stored as a \code{\link{difftime}} vector with a custom class,
+#' and always with "seconds" as unit for robust coercion to numeric.
+#' Supports construction from time values, coercion to and from
 #' various data types, and formatting.  Can be used as a regular column in a
 #' data frame.
 #'
@@ -32,9 +33,9 @@ hms <- function(seconds = 0, minutes = 0, hours = 0, days = 0) {
     stop("Need to pass at least one entry for seconds, minutes, hours, or days.",
          call. = FALSE)
   }
-  structure(
-    seconds + minutes * 60 + hours * 3600 + days * 86400,
-    class = "hms")
+
+  as.hms(as.difftime(
+    seconds + minutes * 60 + hours * 3600 + days * 86400, units = "secs"))
 }
 
 #' @rdname hms
@@ -54,6 +55,13 @@ as.hms <- function(x, ...) UseMethod("as.hms", x)
 as.hms.default <- function(x, ...) {
   stop("Can't convert object of class ", paste(class(x), collapse = ", "),
        " to hms.", call. = FALSE)
+}
+
+#' @rdname hms
+#' @export
+as.hms.difftime <- function(x, ...) {
+  units(x) <- "secs"
+  structure(x, class = unique(c("hms", class(x))))
 }
 
 #' @rdname hms

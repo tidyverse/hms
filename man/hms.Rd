@@ -8,6 +8,7 @@
 \alias{as.hms.POSIXt}
 \alias{as.hms.character}
 \alias{as.hms.default}
+\alias{as.hms.difftime}
 \alias{as.hms.numeric}
 \alias{format.hms}
 \alias{hms}
@@ -22,6 +23,8 @@ is.hms(x)
 as.hms(x, ...)
 
 \method{as.hms}{default}(x, ...)
+
+\method{as.hms}{difftime}(x, ...)
 
 \method{as.hms}{numeric}(x, ...)
 
@@ -48,8 +51,9 @@ performed.}
 \item{...}{Arguments passed on to further methods.}
 }
 \description{
-The values are stored as a numeric vector that contains the number of seconds
-since midnight.  Supports construction from time values, coercion to and from
+The values are stored as a \code{\link{difftime}} vector with a custom class,
+and always with "seconds" as unit for robust coercion to numeric.
+Supports construction from time values, coercion to and from
 various data types, and formatting.  Can be used as a regular column in a
 data frame.
 }
