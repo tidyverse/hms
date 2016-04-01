@@ -23,4 +23,7 @@ test_that("coercion out", {
                    strptime("1970-01-01 18:00:00",
                             format = "%Y-%m-%d %H:%M:%S", tz = "UTC") - 86400)
 
+  df <- data.frame(a = 1:3)
+  df$b <- hms(hours = df$a)
+  expect_identical(df, data.frame(a = 1:3, b = hms(hours = 1:3)))
 })
