@@ -108,7 +108,7 @@ as.character.hms <- function(x, ...) {
 #' @rdname hms
 #' @inheritParams base::as.data.frame
 #' @export
-as.data.frame.hms <- as.data.frame.difftime
+as.data.frame.hms <- forward_to(as.data.frame.difftime)
 
 # Output ------------------------------------------------------------------
 
