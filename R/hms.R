@@ -25,17 +25,39 @@ NULL
 # Construction ------------------------------------------------------------
 
 #' @rdname hms
+#' @details For \code{hms}, all arguments must have the same length or be
+#'   \code{NULL}.  Odd combinations (e.g., passing only \code{seconds} and
+#'   \code{hours} but not \code{minutes}) are rejected.
 #' @param seconds,minutes,hours,days Time since midnight. No bounds checking is
 #'   performed.
 #' @export
-hms <- function(seconds = 0, minutes = 0, hours = 0, days = 0) {
-  if (missing(seconds) && missing(minutes) && missing(hours) && missing(days)) {
-    stop("Need to pass at least one entry for seconds, minutes, hours, or days.",
+hms <- function(seconds = NULL, minutes = NULL, hours = NULL, days = NULL) {
+  args <- list(seconds = seconds, minutes = minutes, hours = hours, days = days)
+  check_args(args)
+  arg_secs <- mapply(`*`, args, c(1, 60, 3600, 86400))
+  secs <- Reduce(`+`, arg_secs[vapply(arg_secs, length, integer(1L)) > 0L])
+
+  as.hms(as.difftime(secs, units = "secs"))
+}
+
+check_args <- function(args) {
+  lengths <- vapply(args, length, integer(1L))
+  if (all(lengths == 0L)) {
+    stop("Need to pass at least one entry for seconds, minutes, hours, or days to hms().",
          call. = FALSE)
   }
 
-  as.hms(as.difftime(
-    seconds + minutes * 60 + hours * 3600 + days * 86400, units = "secs"))
+  if (!all(diff(which(lengths != 0L)) == 1L)) {
+    stop("Can't pass only ", paste(names(lengths)[lengths != 0L], collapse = ", "),
+         " to hms().", call. = FALSE)
+  }
+
+  lengths <- lengths[lengths != 0]
+  if (length(unique(lengths)) > 1L) {
+    stop("All arguments to hms() must have the same length or be NULL. Found ",
+         paste0("length(", names(lengths), ") = ", lengths, collapse = ", "), ".",
+         call. = FALSE)
+  }
 }
 
 #' @rdname hms
@@ -66,7 +88,7 @@ as.hms.difftime <- function(x, ...) {
 
 #' @rdname hms
 #' @export
-as.hms.numeric <- function(x, ...) hms(days = x)
+as.hms.numeric <- function(x, ...) hms(seconds = x)
 
 #' @rdname hms
 #' @export

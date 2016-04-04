@@ -1,8 +1,8 @@
 context("coercion")
 
 test_that("coercion in", {
-  expect_identical(as.hms(0.5), hms(hours = 12))
-  expect_identical(as.hms(-0.25), hms(hours = -6))
+  expect_identical(as.hms(0.5 * 86400), hms(hours = 12))
+  expect_identical(as.hms(-0.25 * 86400), hms(hours = -6))
   expect_hms_equal(as.hms("12:34:56"), hms(56, 34, 12))
   expect_hms_equal(as.hms(strptime("12:34:56", format = "%H:%M:%S", tz = "UTC")),
                    hms(56, 34, 12))
