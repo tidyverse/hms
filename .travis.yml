@@ -5,4 +5,4 @@ sudo: false
 cache: packages
 
 after_success:
-  - Rscript -e 'covr::codecov()'
+  - Rscript -e 'devtools::install_github("jimhester/covr@v2"); covr::codecov()'
