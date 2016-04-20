@@ -1,3 +1,11 @@
+# hms 0.0-5 (2016-04-20)
+
+- Updating units is a no-op, anything different from `"secs"` issues a warning (#10).
+- Negative times are formatted with a leading `-` (#1).
+- Install `covr` package from CRAN.
+- Remove `covr` from dependencies to simplify installation (#11).
+
+
 # hms 0.0-4 (2016-04-01)
 
 - Conversion from numeric treats input as seconds.
