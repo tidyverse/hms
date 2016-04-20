@@ -1,3 +1,8 @@
+# hms 0.0-6 (2016-04-20)
+
+- Test basic compatibility with `lubridate` package (#5).
+
+
 # hms 0.0-5 (2016-04-20)
 
 - Updating units is a no-op, anything different from `"secs"` issues a warning (#10).
