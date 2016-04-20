@@ -8,8 +8,8 @@ Description: Implements an S3 class for storing and formatting time-of-day
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-URL: https://github.com/krlmlr/hms
-BugReports: https://github.com/krlmlr/hms/issues
+URL: https://github.com/rstats-db/hms
+BugReports: https://github.com/rstats-db/hms/issues
 RoxygenNote: 5.0.1
 Suggests: testthat,
     lubridate
