@@ -131,6 +131,18 @@ as.character.hms <- function(x, ...) {
 #' @export
 as.data.frame.hms <- forward_to(as.data.frame.difftime)
 
+
+# Updating ----------------------------------------------------------------
+
+#' @export
+`units<-.hms` <- function(x, value) {
+  if (!identical(value, "secs")) {
+    warning("hms always uses seconds as unit.", call. = FALSE)
+  }
+  x
+}
+
+
 # Output ------------------------------------------------------------------
 
 #' @rdname hms
