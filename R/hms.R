@@ -121,7 +121,8 @@ as.POSIXlt.hms <- function(x, ...) {
 #' @rdname hms
 #' @export
 as.character.hms <- function(x, ...) {
-  strftime(as.POSIXct(x, ...), format = "%H:%M:%S", tz = "UTC")
+  paste0(ifelse(x < 0, "-", ""),
+         strftime(as.POSIXct.hms(abs(x), ...), format = "%H:%M:%S", tz = "UTC"))
 }
 
 #' @rdname hms
@@ -129,6 +130,18 @@ as.character.hms <- function(x, ...) {
 #' @param nm Name of column in new data frame
 #' @export
 as.data.frame.hms <- forward_to(as.data.frame.difftime)
+
+
+# Updating ----------------------------------------------------------------
+
+#' @export
+`units<-.hms` <- function(x, value) {
+  if (!identical(value, "secs")) {
+    warning("hms always uses seconds as unit.", call. = FALSE)
+  }
+  x
+}
+
 
 # Output ------------------------------------------------------------------
 
