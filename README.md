@@ -1,5 +1,4 @@
-
-hms [![Travis-CI Build Status](https://travis-ci.org/krlmlr/hms.svg?branch=master)](https://travis-ci.org/krlmlr/hms) [![Coverage Status](https://img.shields.io/codecov/c/github/krlmlr/hms/master.svg)](https://codecov.io/github/krlmlr/hms?branch=master) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
+hms [![Travis-CI Build Status](https://travis-ci.org/rstats-db/hms.svg?branch=master)](https://travis-ci.org/rstats-db/hms) [![Coverage Status](https://img.shields.io/codecov/c/github/rstats-db/hms/master.svg)](https://codecov.io/github/rstats-db/hms?branch=master) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
 =======================================================================================================================================================================================================================================================================================================================================================================
 
 A simple class for storing time-of-day values
@@ -32,5 +31,5 @@ Install the package from GitHub:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("krlmlr/hms")
+devtools::install_github("rstats-db/hms")
 ```
