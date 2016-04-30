@@ -5,11 +5,12 @@ Version: 0.0-6
 Authors@R: person("Kirill", "Müller", role = c("aut", "cre"), email = "krlmlr+r@mailbox.org")
 Description: Implements an S3 class for storing and formatting time-of-day
     values.
+Imports: methods
+Suggests: testthat,
+    lubridate
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/rstats-db/hms
 BugReports: https://github.com/rstats-db/hms/issues
 RoxygenNote: 5.0.1
-Suggests: testthat,
-    lubridate
