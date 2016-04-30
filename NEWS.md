@@ -1,6 +1,5 @@
 # hms 0.1 (2016-04-30)
 
-
 First CRAN release.
 
 - Values are stored as a numeric vector that contains the number of seconds
