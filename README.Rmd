@@ -8,7 +8,8 @@ A simple class for storing time-of-day values
 
 The values are stored as a numeric vector that contains the number of seconds
 since midnight.  Supports construction from time values, coercion to and from
-various data types, and formatting.  Can be used in a data frame.
+various data types, and formatting, based on the `difftime` class.  Can be
+used in a data frame.
 
 Compared to `POSIXct`, no date is stored, although the values can exceed
 the 24-hour boundary.

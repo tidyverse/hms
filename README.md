@@ -3,7 +3,7 @@ hms [![Travis-CI Build Status](https://travis-ci.org/rstats-db/hms.svg?branch=ma
 
 A simple class for storing time-of-day values
 
-The values are stored as a numeric vector that contains the number of seconds since midnight. Supports construction from time values, coercion to and from various data types, and formatting. Can be used in a data frame.
+The values are stored as a numeric vector that contains the number of seconds since midnight, based on the `difftime` class. Supports construction from time values, coercion to and from various data types, and formatting. Can be used in a data frame.
 
 Compared to `POSIXct`, no date is stored, although the values can exceed the 24-hour boundary.
 
