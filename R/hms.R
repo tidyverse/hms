@@ -1,4 +1,5 @@
-methods::setOldClass(c("hms", "difftime"))
+#' @importFrom methods setOldClass
+setOldClass(c("hms", "difftime"))
 
 #' A simple class for storing time-of-day values
 #'
