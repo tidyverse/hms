@@ -1,10 +1,9 @@
-
-hms [![Travis-CI Build Status](https://travis-ci.org/krlmlr/hms.svg?branch=master)](https://travis-ci.org/krlmlr/hms) [![Coverage Status](https://img.shields.io/codecov/c/github/krlmlr/hms/master.svg)](https://codecov.io/github/krlmlr/hms?branch=master) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
+hms [![Travis-CI Build Status](https://travis-ci.org/rstats-db/hms.svg?branch=master)](https://travis-ci.org/rstats-db/hms) [![Coverage Status](https://img.shields.io/codecov/c/github/rstats-db/hms/master.svg)](https://codecov.io/github/rstats-db/hms?branch=master) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
 =======================================================================================================================================================================================================================================================================================================================================================================
 
 A simple class for storing time-of-day values
 
-The values are stored as a numeric vector that contains the number of seconds since midnight. Supports construction from time values, coercion to and from various data types, and formatting. Can be used in a data frame.
+The values are stored as a numeric vector that contains the number of seconds since midnight, based on the `difftime` class. Supports construction from time values, coercion to and from various data types, and formatting. Can be used in a data frame.
 
 Compared to `POSIXct`, no date is stored, although the values can exceed the 24-hour boundary.
 
@@ -32,5 +31,5 @@ Install the package from GitHub:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("krlmlr/hms")
+devtools::install_github("rstats-db/hms")
 ```

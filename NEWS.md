@@ -1,3 +1,8 @@
+# hms 0.0-7 (2016-04-30)
+
+- Explicitly declare dependency on `methods` package.
+
+
 # hms 0.0-6 (2016-04-20)
 
 - Test basic compatibility with `lubridate` package (#5).
