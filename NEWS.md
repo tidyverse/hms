@@ -19,7 +19,7 @@ First CRAN release.
     - `as.hms()` for `character`, `numeric`, `POSIXct` and `POSIXlt`
     - `as.xxx.hms()` for `character`, `numeric` (implicitly), `POSIXct` and
       `POSIXlt`
-     - `is.hms()`
+    - `is.hms()`
     - `as.data.frame.hms()` (forwards to `as.data.frame.difftime()`)
     - `format.hms()`
     - `print.hms()` (returns unchanged input invisibly)
