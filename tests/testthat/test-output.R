@@ -11,7 +11,7 @@ test_that("output", {
     "03:01:00\n04:02:00", fixed = TRUE)
 })
 
-test_that("beyond 24 hours", {
+test_that("beyond 24 hours (#12)", {
   expect_identical(format(hms(hours = 23:25)),
                    c("23:00:00", "24:00:00", "25:00:00"))
   expect_identical(format(hms(hours = 99:101)),
