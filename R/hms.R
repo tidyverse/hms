@@ -125,7 +125,10 @@ as.POSIXlt.hms <- function(x, ...) {
 #' @export
 as.character.hms <- function(x, ...) {
   paste0(ifelse(x < 0, "-", ""),
-         strftime(as.POSIXct.hms(abs(x), ...), format = "%H:%M:%S", tz = "UTC"))
+         format_two_digits(abs(hours(x))), ":",
+         format_two_digits(minute_of_hour(x)), ":",
+         format_two_digits(second_of_minute(x)),
+         format_split_seconds(x))
 }
 
 #' @rdname hms
@@ -133,6 +136,14 @@ as.character.hms <- function(x, ...) {
 #' @param nm Name of column in new data frame
 #' @export
 as.data.frame.hms <- forward_to(as.data.frame.difftime)
+
+
+# Subsetting --------------------------------------------------------------
+
+#' @export
+`[[.hms` <- function(x, ...) {
+  hms(NextMethod())
+}
 
 
 # Updating ----------------------------------------------------------------
@@ -151,7 +162,7 @@ as.data.frame.hms <- forward_to(as.data.frame.difftime)
 #' @rdname hms
 #' @export
 format.hms <- function(x, ...) {
-  as.character(x)
+  format(as.character(x), justify = "right")
 }
 
 #' @rdname hms

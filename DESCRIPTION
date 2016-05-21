@@ -1,7 +1,7 @@
 Package: hms
 Title: Pretty Time of Day
-Date: 2016-04-30
-Version: 0.1
+Date: 2016-05-21
+Version: 0.1-1
 Authors@R: person("Kirill", "Müller", role = c("aut", "cre"), email = "krlmlr+r@mailbox.org")
 Description: Implements an S3 class for storing and formatting time-of-day
     values, based on the 'difftime' class.

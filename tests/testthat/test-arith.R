@@ -13,3 +13,21 @@ test_that("arithmetics work", {
   expect_difftime_equal(2 * hms(1), hms(2))
   expect_difftime_equal(hms(hours = 1) / 2, hms(minutes = 30))
 })
+
+test_that("component extraction work", {
+  x <- hms(12.3, 45, 23, 1)
+  expect_equal(split_second_of_second(x), 0.3)
+  expect_equal(second_of_minute(x), 12)
+  expect_equal(minute_of_hour(x), 45)
+  expect_equal(hour_of_day(x), 23)
+  expect_equal(days(x), 1)
+})
+
+test_that("component extraction work for negative times", {
+  x <- -hms(12.3, 45, 23, 1)
+  expect_equal(split_second_of_second(x), 0.3)
+  expect_equal(second_of_minute(x), 12)
+  expect_equal(minute_of_hour(x), 45)
+  expect_equal(hour_of_day(x), 23)
+  expect_equal(days(x), -1)
+})
