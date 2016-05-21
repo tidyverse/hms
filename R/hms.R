@@ -151,7 +151,7 @@ as.data.frame.hms <- forward_to(as.data.frame.difftime)
 #' @rdname hms
 #' @export
 format.hms <- function(x, ...) {
-  as.character(x)
+  format(as.character(x), justify = "right")
 }
 
 #' @rdname hms
