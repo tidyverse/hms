@@ -1,0 +1,34 @@
+SECONDS_PER_MINUTE <- 60
+MINUTES_PER_HOUR <- 60
+HOURS_PER_DAY <- 24
+
+SECONDS_PER_HOUR <- MINUTES_PER_HOUR * SECONDS_PER_MINUTE
+SECONDS_PER_DAY <- HOURS_PER_DAY * SECONDS_PER_HOUR
+
+days <- function(x) {
+  trunc(as.numeric(x) / SECONDS_PER_DAY)
+}
+
+hours <- function(x) {
+  trunc(as.numeric(x) / SECONDS_PER_HOUR)
+}
+
+hour_of_day <- function(x) {
+  hours(x) - days(x) * HOURS_PER_DAY
+}
+
+minutes <- function(x) {
+  trunc(as.numeric(x) / SECONDS_PER_MINUTE)
+}
+
+minute_of_hour <- function(x) {
+  minutes(x) - hours(x) * MINUTES_PER_HOUR
+}
+
+seconds <- function(x) {
+  as.numeric(x)
+}
+
+second_of_minute <- function(x) {
+  seconds(x) - minutes(x) * SECONDS_PER_MINUTE
+}
