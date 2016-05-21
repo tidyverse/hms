@@ -1,3 +1,10 @@
+# hms 0.1-1 (2016-05-21)
+
+- Subsetting keeps `hms` class (#16).
+- Times larger than 24 hours or with split seconds are now formatted correctly (#12, #13).
+- `format.hms()` right-justifies the output by padding with spaces from the left, `as.character.hms()` remains unchanged.
+
+
 # hms 0.1 (2016-04-30)
 
 First CRAN release.
