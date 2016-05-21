@@ -21,3 +21,16 @@ test_that("beyond 24 hours (#12)", {
   expect_identical(format(hms(hours = c(-100, 99))),
                    c("-100:00:00", "  99:00:00"))
 })
+
+test_that("fractional seconds (#13)", {
+  expect_identical(format(hms(0.1)),
+                   c("00:00:00.1"))
+  expect_identical(format(hms(c(12, 0.3))),
+                   c("00:00:12.0", "00:00:00.3"))
+  expect_identical(format(hms(c(0.1, 0.01))),
+                   c("00:00:00.10", "00:00:00.01"))
+  expect_identical(format(hms(c(12, 0.3), minutes = c(0, 0), hours = c(345, 6))),
+                   c("345:00:12.0", " 06:00:00.3"))
+  expect_identical(format(hms(c(-0.1, 0.1))),
+                   c("-00:00:00.1", " 00:00:00.1"))
+})
