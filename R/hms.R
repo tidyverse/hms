@@ -138,6 +138,14 @@ as.character.hms <- function(x, ...) {
 as.data.frame.hms <- forward_to(as.data.frame.difftime)
 
 
+# Subsetting --------------------------------------------------------------
+
+#' @export
+`[[.hms` <- function(x, i) {
+  hms(NextMethod())
+}
+
+
 # Updating ----------------------------------------------------------------
 
 #' @export
