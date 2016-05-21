@@ -26,9 +26,17 @@ minute_of_hour <- function(x) {
 }
 
 seconds <- function(x) {
-  as.numeric(x)
+  trunc(as.numeric(x))
 }
 
 second_of_minute <- function(x) {
   seconds(x) - minutes(x) * SECONDS_PER_MINUTE
+}
+
+split_seconds <- function(x) {
+  as.numeric(x)
+}
+
+split_second_of_second <- function(x) {
+  split_seconds(x) - seconds(x)
 }
