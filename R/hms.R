@@ -125,7 +125,9 @@ as.POSIXlt.hms <- function(x, ...) {
 #' @export
 as.character.hms <- function(x, ...) {
   paste0(ifelse(x < 0, "-", ""),
-         strftime(as.POSIXct.hms(abs(x), ...), format = "%H:%M:%S", tz = "UTC"))
+         format_two_digits(abs(hours(x))), ":",
+         format_two_digits(minute_of_hour(x)), ":",
+         format_two_digits(second_of_minute(x)))
 }
 
 #' @rdname hms
