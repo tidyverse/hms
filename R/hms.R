@@ -141,7 +141,7 @@ as.data.frame.hms <- forward_to(as.data.frame.difftime)
 # Subsetting --------------------------------------------------------------
 
 #' @export
-`[[.hms` <- function(x, i) {
+`[[.hms` <- function(x, ...) {
   hms(NextMethod())
 }
 
