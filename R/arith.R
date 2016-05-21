@@ -14,7 +14,7 @@ hours <- function(x) {
 }
 
 hour_of_day <- function(x) {
-  hours(x) - days(x) * HOURS_PER_DAY
+  abs(hours(x) - days(x) * HOURS_PER_DAY)
 }
 
 minutes <- function(x) {
@@ -22,7 +22,7 @@ minutes <- function(x) {
 }
 
 minute_of_hour <- function(x) {
-  minutes(x) - hours(x) * MINUTES_PER_HOUR
+  abs(minutes(x) - hours(x) * MINUTES_PER_HOUR)
 }
 
 seconds <- function(x) {
@@ -30,7 +30,7 @@ seconds <- function(x) {
 }
 
 second_of_minute <- function(x) {
-  seconds(x) - minutes(x) * SECONDS_PER_MINUTE
+  abs(seconds(x) - minutes(x) * SECONDS_PER_MINUTE)
 }
 
 split_seconds <- function(x) {
@@ -38,5 +38,5 @@ split_seconds <- function(x) {
 }
 
 split_second_of_second <- function(x) {
-  split_seconds(x) - seconds(x)
+  abs(split_seconds(x) - seconds(x))
 }
