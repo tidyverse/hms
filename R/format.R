@@ -4,5 +4,5 @@ format_two_digits <- function(x) {
 
 format_split_seconds <- function(x) {
   split_second <- split_second_of_second(x)
-  gsub("^0", "", format(split_second))
+  gsub("^0", "", format(split_second, scientific = FALSE))
 }
