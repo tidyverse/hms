@@ -1,3 +1,8 @@
+# hms 0.1-2 (2016-06-14)
+
+- Sub-second part is printed with up to six digits, for even smaller values trailing zeros are shown (#17).
+
+
 # hms 0.1-1 (2016-05-21)
 
 - Subsetting keeps `hms` class (#16).
