@@ -34,3 +34,18 @@ test_that("fractional seconds (#13)", {
   expect_identical(format(hms(c(-0.1, 0.1))),
                    c("-00:00:00.1", " 00:00:00.1"))
 })
+
+test_that("picoseconds (#17)", {
+  expect_identical(format(hms(1e-6)),
+                   c("00:00:00.000001"))
+  expect_identical(format(hms(9e-7)),
+                   c("00:00:00.000001"))
+  expect_identical(format(hms(4e-7)),
+                   c("00:00:00.000000"))
+  expect_identical(format(hms(1e-10)),
+                   c("00:00:00.000000"))
+  expect_identical(format(hms(1e-20)),
+                   c("00:00:00.000000"))
+  expect_identical(format(hms(c(1, 1e-20))),
+                   c("00:00:01.000000", "00:00:00.000000"))
+})
