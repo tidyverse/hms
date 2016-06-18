@@ -1,13 +1,11 @@
-# hms 0.1-2 (2016-06-14)
+# hms 0.2 (2016-06-17)
 
-- Sub-second part is printed with up to six digits, for even smaller values trailing zeros are shown (#17).
-
-
-# hms 0.1-1 (2016-05-21)
+Minor fixes and improvements.
 
 - Subsetting keeps `hms` class (#16).
-- Times larger than 24 hours or with split seconds are now formatted correctly (#12, #13).
 - `format.hms()` right-justifies the output by padding with spaces from the left, `as.character.hms()` remains unchanged.
+- Times larger than 24 hours or with split seconds are now formatted correctly (#12, #13).
+- Sub-second part is printed with up to six digits, for even smaller values trailing zeros are shown (#17).
 
 
 # hms 0.1 (2016-04-30)

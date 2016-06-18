@@ -2,7 +2,7 @@
 output: github_document
 ---
 
-# hms [![Travis-CI Build Status](https://travis-ci.org/rstats-db/hms.svg?branch=master)](https://travis-ci.org/rstats-db/hms) [![Coverage Status](https://img.shields.io/codecov/c/github/rstats-db/hms/master.svg)](https://codecov.io/github/rstats-db/hms?branch=master) [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
+# hms [![Travis-CI Build Status](https://travis-ci.org/rstats-db/hms.svg?branch=master)](https://travis-ci.org/rstats-db/hms) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/rstats-db/hms?branch=master&svg=true)](https://ci.appveyor.com/project/rstats-db/hms) [![Coverage Status](https://img.shields.io/codecov/c/github/rstats-db/hms/master.svg)](https://codecov.io/github/rstats-db/hms?branch=master) [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
 
 A simple class for storing time-of-day values
 
