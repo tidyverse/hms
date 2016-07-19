@@ -124,11 +124,12 @@ as.POSIXlt.hms <- function(x, ...) {
 #' @rdname hms
 #' @export
 as.character.hms <- function(x, ...) {
-  paste0(ifelse(x < 0, "-", ""),
-         format_two_digits(abs(hours(x))), ":",
-         format_two_digits(minute_of_hour(x)), ":",
-         format_two_digits(second_of_minute(x)),
-         format_split_seconds(x))
+  ifelse(is.na(x), "NA", paste0(
+    ifelse(x < 0, "-", ""),
+    format_two_digits(abs(hours(x))), ":",
+    format_two_digits(minute_of_hour(x)), ":",
+    format_two_digits(second_of_minute(x)),
+    format_split_seconds(x)))
 }
 
 #' @rdname hms
