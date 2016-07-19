@@ -49,3 +49,8 @@ test_that("picoseconds (#17)", {
   expect_identical(format(hms(c(1, 1e-20))),
                    c("00:00:01.000000", "00:00:00.000000"))
 })
+
+test_that("NA", {
+  expect_identical(format(hms(NA)),
+                   c("NA"))
+})
