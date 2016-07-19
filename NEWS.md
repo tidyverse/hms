@@ -1,3 +1,8 @@
+# hms 0.2-1 (2016-07-19)
+
+- NA values are formatted as `NA` (#22).
+
+
 # hms 0.2 (2016-06-17)
 
 Minor fixes and improvements.
