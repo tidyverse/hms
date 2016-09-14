@@ -1,3 +1,4 @@
+# nocov start
 known_packages <- c(
   "units"
 )
@@ -40,3 +41,4 @@ find_implemented_methods <- function(env) {
     ifnotfound = rep(list(NULL), length(implemented_method_names)))
   implemented_methods[!vapply(implemented_methods, is.null, logical(1L))]
 }
+# nocov end
