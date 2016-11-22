@@ -6,3 +6,4 @@
 ^Makefile$
 ^cran-comments\.md$
 ^appveyor\.yml$
+^revdep$
