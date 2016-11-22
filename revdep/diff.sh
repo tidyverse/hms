@@ -2,7 +2,7 @@
 
 set -e
 
-old_tag=v1.0.0
+old_tag=v0.2
 branch=$(git symbolic-ref --short HEAD)
 
 cd $(dirname $0)/..
