@@ -3,7 +3,7 @@ context("lubridate")
 test_that("duration", {
   skip_if_not_installed("lubridate")
   expect_identical(lubridate::as.duration(hms(minutes = 1:3)),
-                   lubridate::duration(1:3, "minutes"))
+                   lubridate::duration(minutes = 1:3))
 })
 
 test_that("interval", {
@@ -14,9 +14,7 @@ test_that("interval", {
 })
 
 test_that("period", {
-  skip_if_not_installed("lubridate")
-  expect_message(
+    skip_if_not_installed("lubridate")
     expect_identical(lubridate::as.period(hms(hours = -1)),
-                     lubridate::period(-1, "hours")),
-    "estimate only")
+                     lubridate::period(hours = -1))
 })
