@@ -10,4 +10,5 @@
 
 ## Reverse dependencies
 
-No reverse dependencies.
+Checked all 5 reverse dependencies on Ubuntu 16.04, no regressions detected.
+See https://github.com/rstats-db/hms/blob/r-0.3/revdep/README.md for check results.
