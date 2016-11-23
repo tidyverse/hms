@@ -1,10 +1,6 @@
-## hms 0.2-2 (2016-11-21)
+# hms 0.3 (2016-11-22)
 
 - Fix `lubridate` test for compatibility with 1.6.0 (#23, @vspinu).
-
-
-# hms 0.2-1 (2016-07-19)
-
 - NA values are formatted as `NA` (#22).
 
 
