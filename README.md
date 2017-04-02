@@ -1,5 +1,5 @@
 
-hms [![Travis-CI Build Status](https://travis-ci.org/rstats-db/hms.svg?branch=master)](https://travis-ci.org/rstats-db/hms) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/rstats-db/hms?branch=master&svg=true)](https://ci.appveyor.com/project/rstats-db/hms) [![Coverage Status](https://img.shields.io/codecov/c/github/rstats-db/hms/master.svg)](https://codecov.io/github/rstats-db/hms?branch=master) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
+hms [![Travis-CI Build Status](https://travis-ci.org/tidyverse/hms.svg?branch=master)](https://travis-ci.org/tidyverse/hms) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/tidyverse/hms?branch=master&svg=true)](https://ci.appveyor.com/project/tidyverse/hms) [![Coverage Status](https://img.shields.io/codecov/c/github/tidyverse/hms/master.svg)](https://codecov.io/github/tidyverse/hms?branch=master) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
 ======================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
 
 A simple class for storing durations or time-of-day values and displaying them in the hh:mm:ss format. Intended to simplify data exchange with databases, spreadsheets, and other data sources.
@@ -32,5 +32,5 @@ Install the package from GitHub:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("rstats-db/hms")
+devtools::install_github("tidyverse/hms")
 ```
