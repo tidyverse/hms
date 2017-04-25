@@ -21,4 +21,5 @@ test_that("bad input", {
   expect_error(hms(minutes = 1, days = 3), "only")
   expect_error(hms(minutes = 1, hours = 2:3), "same length or be NULL")
   expect_error(hms(seconds = 1:5, minutes = 6:10, hours = 11:17), "same length or be NULL")
+  expect_error(hms("05:00"), "must be numeric")
 })

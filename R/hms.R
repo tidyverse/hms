@@ -3,7 +3,7 @@ setOldClass(c("hms", "difftime"))
 
 #' A simple class for storing time-of-day values
 #'
-#' The values are stored as a \code{\link{difftime}} vector with a custom class,
+#' The values are stored as a [difftime()] vector with a custom class,
 #' and always with "seconds" as unit for robust coercion to numeric.
 #' Supports construction from time values, coercion to and from
 #' various data types, and formatting.  Can be used as a regular column in a
@@ -28,9 +28,9 @@ NULL
 # Construction ------------------------------------------------------------
 
 #' @rdname hms
-#' @details For \code{hms}, all arguments must have the same length or be
-#'   \code{NULL}.  Odd combinations (e.g., passing only \code{seconds} and
-#'   \code{hours} but not \code{minutes}) are rejected.
+#' @details For `hms`, all arguments must have the same length or be
+#'   `NULL`.  Odd combinations (e.g., passing only `seconds` and
+#'   `hours` but not `minutes`) are rejected.
 #' @param seconds,minutes,hours,days Time since midnight. No bounds checking is
 #'   performed.
 #' @export
@@ -41,26 +41,6 @@ hms <- function(seconds = NULL, minutes = NULL, hours = NULL, days = NULL) {
   secs <- Reduce(`+`, arg_secs[vapply(arg_secs, length, integer(1L)) > 0L])
 
   as.hms(as.difftime(secs, units = "secs"))
-}
-
-check_args <- function(args) {
-  lengths <- vapply(args, length, integer(1L))
-  if (all(lengths == 0L)) {
-    stop("Need to pass at least one entry for seconds, minutes, hours, or days to hms().",
-         call. = FALSE)
-  }
-
-  if (!all(diff(which(lengths != 0L)) == 1L)) {
-    stop("Can't pass only ", paste(names(lengths)[lengths != 0L], collapse = ", "),
-         " to hms().", call. = FALSE)
-  }
-
-  lengths <- lengths[lengths != 0]
-  if (length(unique(lengths)) > 1L) {
-    stop("All arguments to hms() must have the same length or be NULL. Found ",
-         paste0("length(", names(lengths), ") = ", lengths, collapse = ", "), ".",
-         call. = FALSE)
-  }
 }
 
 #' @rdname hms
@@ -96,7 +76,7 @@ as.hms.numeric <- function(x, ...) hms(seconds = x)
 #' @rdname hms
 #' @export
 as.hms.character <- function(x, ...) {
-  as.hms(as.difftime(x))
+  parse_hms(x)
 }
 
 #' @rdname hms
