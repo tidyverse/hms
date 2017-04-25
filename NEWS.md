@@ -1,3 +1,11 @@
+### hms 0.3.0.9001 (2017-04-25)
+
+- New `round_hms()` and `trunc_hms()` for rounding or truncating to a given multiple of seconds (#31).
+- New `parse_hms()` and `parse_hm()` to parse strings in "HH:MM:SS" and "HH:MM" formats (#30).
+- Documentation is in Markdown format now.
+- Improved error message if calling `hms()` with a character argument (#29).
+
+
 # hms 0.3 (2016-11-22)
 
 - Fix `lubridate` test for compatibility with 1.6.0 (#23, @vspinu).
