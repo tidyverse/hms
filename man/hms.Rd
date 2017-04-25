@@ -68,7 +68,7 @@ performed.}
 \item{nm}{Name of column in new data frame}
 }
 \description{
-The values are stored as a \code{\link{difftime}} vector with a custom class,
+The values are stored as a \code{\link[=difftime]{difftime()}} vector with a custom class,
 and always with "seconds" as unit for robust coercion to numeric.
 Supports construction from time values, coercion to and from
 various data types, and formatting.  Can be used as a regular column in a
@@ -76,8 +76,8 @@ data frame.
 }
 \details{
 For \code{hms}, all arguments must have the same length or be
-  \code{NULL}.  Odd combinations (e.g., passing only \code{seconds} and
-  \code{hours} but not \code{minutes}) are rejected.
+\code{NULL}.  Odd combinations (e.g., passing only \code{seconds} and
+\code{hours} but not \code{minutes}) are rejected.
 }
 \examples{
 hms(56, 34, 12)
@@ -93,4 +93,3 @@ d <- data.frame(hours = 1:3)
 d$hours <- hms(hours = d$hours)
 d
 }
-

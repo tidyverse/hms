@@ -3,7 +3,7 @@ setOldClass(c("hms", "difftime"))
 
 #' A simple class for storing time-of-day values
 #'
-#' The values are stored as a \code{\link{difftime}} vector with a custom class,
+#' The values are stored as a [difftime()] vector with a custom class,
 #' and always with "seconds" as unit for robust coercion to numeric.
 #' Supports construction from time values, coercion to and from
 #' various data types, and formatting.  Can be used as a regular column in a
@@ -28,9 +28,9 @@ NULL
 # Construction ------------------------------------------------------------
 
 #' @rdname hms
-#' @details For \code{hms}, all arguments must have the same length or be
-#'   \code{NULL}.  Odd combinations (e.g., passing only \code{seconds} and
-#'   \code{hours} but not \code{minutes}) are rejected.
+#' @details For `hms`, all arguments must have the same length or be
+#'   `NULL`.  Odd combinations (e.g., passing only `seconds` and
+#'   `hours` but not `minutes`) are rejected.
 #' @param seconds,minutes,hours,days Time since midnight. No bounds checking is
 #'   performed.
 #' @export
