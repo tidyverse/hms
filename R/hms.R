@@ -76,7 +76,7 @@ as.hms.numeric <- function(x, ...) hms(seconds = x)
 #' @rdname hms
 #' @export
 as.hms.character <- function(x, ...) {
-  as.hms(as.difftime(x))
+  parse_hms(x)
 }
 
 #' @rdname hms
