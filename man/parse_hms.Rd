@@ -17,11 +17,13 @@ These functions convert character vectors to objects of the \link{hms} class.
 \code{NA} values are supported.
 }
 \details{
-\code{parse_hms()} accepts values of the form \code{"HH:MM:SS"}.
+\code{parse_hms()} accepts values of the form \code{"HH:MM:SS"}, with optional
+fractional seconds.
 
 \code{parse_hm()} accepts values of the form \code{"HH:MM"}.
 }
 \examples{
 parse_hms("12:34:56")
+parse_hms("12:34:56.789")
 parse_hm("12:34")
 }
