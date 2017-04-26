@@ -1,3 +1,8 @@
+### hms 0.3.0.9002 (2017-04-26)
+
+- `as.hms.character()` and `parse_hms()` accept fractional seconds (#33).
+
+
 ### hms 0.3.0.9001 (2017-04-25)
 
 - New `round_hms()` and `trunc_hms()` for rounding or truncating to a given multiple of seconds (#31).
