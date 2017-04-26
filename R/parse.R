@@ -3,13 +3,15 @@
 #' These functions convert character vectors to objects of the [hms] class.
 #' `NA` values are supported.
 #'
-#' `parse_hms()` accepts values of the form `"HH:MM:SS"`.
+#' `parse_hms()` accepts values of the form `"HH:MM:SS"`, with optional
+#' fractional seconds.
 #' @param x A character vector
 #' @export
 #' @examples
 #' parse_hms("12:34:56")
+#' parse_hms("12:34:56.789")
 parse_hms <- function(x) {
-  as.hms(as.difftime(as.character(x), units = "secs"))
+  as.hms(as.difftime(as.character(x), format = "%H:%M:%OS", units = "secs"))
 }
 
 #' @rdname parse_hms
