@@ -81,9 +81,16 @@ as.hms.character <- function(x, ...) {
 
 #' @rdname hms
 #' @export
-as.hms.POSIXt <- function(x, ...) {
-  seconds <- as.numeric(as.POSIXct(x)) %% 86400
-  hms(seconds = seconds)
+as.hms.POSIXt <- function(x, tz = "UTC", ...) {
+  time <- as.POSIXlt(x, tz = tz)
+  hms(time$sec, time$min, time$hour)
+}
+
+#' @rdname hms
+#' @export
+as.hms.POSIXlt <- function(x, tz = "UTC", ...) {
+  # We need to roundtrip via as.POSIXct() to respect the time zone
+  as.hms(as.POSIXct(x), tz = tz, ...)
 }
 
 
