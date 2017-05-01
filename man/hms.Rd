@@ -10,6 +10,7 @@
 \alias{as.hms.numeric}
 \alias{as.hms.character}
 \alias{as.hms.POSIXt}
+\alias{as.hms.POSIXlt}
 \alias{as.POSIXct.hms}
 \alias{as.POSIXlt.hms}
 \alias{as.character.hms}
@@ -32,7 +33,9 @@ as.hms(x, ...)
 
 \method{as.hms}{character}(x, ...)
 
-\method{as.hms}{POSIXt}(x, ...)
+\method{as.hms}{POSIXt}(x, tz = "UTC", ...)
+
+\method{as.hms}{POSIXlt}(x, tz = "UTC", ...)
 
 \method{as.POSIXct}{hms}(x, ...)
 
