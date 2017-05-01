@@ -11,6 +11,11 @@ test_that("coercion in", {
   expect_hms_equal(as.hms(strptime("12:34:56", format = "%H:%M:%S", tz = "PST")),
                    hms(56, 34, 12))
 
+  now <- Sys.time()
+  now_lt <- as.POSIXlt(now, tz = "UTC")
+  expect_hms_equal(as.hms(now), hms(now_lt$sec, now_lt$min, now_lt$hour))
+  expect_hms_equal(as.hms(now_lt), as.hms(now_lt))
+
   expect_error(as.hms(FALSE))
 })
 
