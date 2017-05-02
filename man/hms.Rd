@@ -33,11 +33,11 @@ as.hms(x, ...)
 
 \method{as.hms}{character}(x, ...)
 
-\method{as.hms}{POSIXt}(x, tz = pkgconfig::get_config("hms::default_tz",
-  "UTC"), ...)
+\method{as.hms}{POSIXt}(x, tz = pkgconfig::get_config("hms::default_tz", ""),
+  ...)
 
-\method{as.hms}{POSIXlt}(x, tz = pkgconfig::get_config("hms::default_tz",
-  "UTC"), ...)
+\method{as.hms}{POSIXlt}(x, tz = pkgconfig::get_config("hms::default_tz", ""),
+  ...)
 
 \method{as.POSIXct}{hms}(x, ...)
 
@@ -61,7 +61,10 @@ performed.}
 \item{...}{Arguments passed on to further methods.}
 
 \item{tz}{The time zone in which to interpret a POSIXt time for extracting
-the time of day.  The default value is \code{"UTC"}.}
+the time of day.  The default is now the current time zone but was \code{"UTC"}
+for v0.3 and earlier.  The previous behavior can be restored by calling
+\code{pkgconfig::set_config("hms::default_tz", "UTC")}, see
+\code{\link[pkgconfig:set_config]{pkgconfig::set_config()}}.}
 
 \item{row.names}{\code{NULL} or a character vector giving the row
     names for the data frame.  Missing values are not allowed.}

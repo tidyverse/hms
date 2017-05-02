@@ -81,16 +81,19 @@ as.hms.character <- function(x, ...) {
 
 #' @rdname hms
 #' @param tz The time zone in which to interpret a POSIXt time for extracting
-#'   the time of day.  The default value is `"UTC"`.
+#'   the time of day.  The default is now the current time zone but was `"UTC"`
+#'   for v0.3 and earlier.  The previous behavior can be restored by calling
+#'   `pkgconfig::set_config("hms::default_tz", "UTC")`, see
+#'   [pkgconfig::set_config()].
 #' @export
-as.hms.POSIXt <- function(x, tz = pkgconfig::get_config("hms::default_tz", "UTC"), ...) {
+as.hms.POSIXt <- function(x, tz = pkgconfig::get_config("hms::default_tz", ""), ...) {
   time <- as.POSIXlt(x, tz = tz)
   hms(time$sec, time$min, time$hour)
 }
 
 #' @rdname hms
 #' @export
-as.hms.POSIXlt <- function(x, tz = pkgconfig::get_config("hms::default_tz", "UTC"), ...) {
+as.hms.POSIXlt <- function(x, tz = pkgconfig::get_config("hms::default_tz", ""), ...) {
   # We need to roundtrip via as.POSIXct() to respect the time zone
   as.hms(as.POSIXct(x), tz = tz, ...)
 }
