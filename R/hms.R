@@ -81,7 +81,7 @@ as.hms.character <- function(x, ...) {
 
 #' @rdname hms
 #' @param tz The time zone in which to interpret a POSIXt time for extracting
-#'   the time of day.  The default is now the current time zone but was `"UTC"`
+#'   the time of day.  The default is now the zone of `x` but was `"UTC"`
 #'   for v0.3 and earlier.  The previous behavior can be restored by calling
 #'   `pkgconfig::set_config("hms::default_tz", "UTC")`, see
 #'   [pkgconfig::set_config()].

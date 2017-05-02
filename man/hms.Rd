@@ -61,7 +61,7 @@ performed.}
 \item{...}{Arguments passed on to further methods.}
 
 \item{tz}{The time zone in which to interpret a POSIXt time for extracting
-the time of day.  The default is now the current time zone but was \code{"UTC"}
+the time of day.  The default is now the zone of \code{x} but was \code{"UTC"}
 for v0.3 and earlier.  The previous behavior can be restored by calling
 \code{pkgconfig::set_config("hms::default_tz", "UTC")}, see
 \code{\link[pkgconfig:set_config]{pkgconfig::set_config()}}.}
