@@ -33,9 +33,11 @@ as.hms(x, ...)
 
 \method{as.hms}{character}(x, ...)
 
-\method{as.hms}{POSIXt}(x, tz = "UTC", ...)
+\method{as.hms}{POSIXt}(x, tz = pkgconfig::get_config("hms::default_tz", ""),
+  ...)
 
-\method{as.hms}{POSIXlt}(x, tz = "UTC", ...)
+\method{as.hms}{POSIXlt}(x, tz = pkgconfig::get_config("hms::default_tz", ""),
+  ...)
 
 \method{as.POSIXct}{hms}(x, ...)
 
@@ -58,6 +60,12 @@ performed.}
 
 \item{...}{Arguments passed on to further methods.}
 
+\item{tz}{The time zone in which to interpret a POSIXt time for extracting
+the time of day.  The default is now the current time zone but was \code{"UTC"}
+for v0.3 and earlier.  The previous behavior can be restored by calling
+\code{pkgconfig::set_config("hms::default_tz", "UTC")}, see
+\code{\link[pkgconfig:set_config]{pkgconfig::set_config()}}.}
+
 \item{row.names}{\code{NULL} or a character vector giving the row
     names for the data frame.  Missing values are not allowed.}
 
@@ -71,7 +79,7 @@ performed.}
 \item{nm}{Name of column in new data frame}
 }
 \description{
-The values are stored as a \code{\link[=difftime]{difftime()}} vector with a custom class,
+The values are stored as a \link{difftime} vector with a custom class,
 and always with "seconds" as unit for robust coercion to numeric.
 Supports construction from time values, coercion to and from
 various data types, and formatting.  Can be used as a regular column in a

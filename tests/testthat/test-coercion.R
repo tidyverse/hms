@@ -4,17 +4,17 @@ test_that("coercion in", {
   expect_identical(as.hms(0.5 * 86400), hms(hours = 12))
   expect_identical(as.hms(-0.25 * 86400), hms(hours = -6))
   expect_hms_equal(as.hms("12:34:56"), hms(56, 34, 12))
-  expect_hms_equal(as.hms(strptime("12:34:56", format = "%H:%M:%S", tz = "UTC")),
+  expect_hms_equal(as.hms(strptime("12:34:56", format = "%H:%M:%S", tz = "UTC"), tz = "UTC"),
                    hms(56, 34, 12))
-  expect_hms_equal(as.hms(strptime("12:34:56", format = "%H:%M:%S", tz = "CEST")),
+  expect_hms_equal(as.hms(strptime("12:34:56", format = "%H:%M:%S", tz = "CEST"), tz = "CEST"),
                    hms(56, 34, 12))
-  expect_hms_equal(as.hms(strptime("12:34:56", format = "%H:%M:%S", tz = "PST")),
+  expect_hms_equal(as.hms(strptime("12:34:56", format = "%H:%M:%S", tz = "PST8PDT"), tz = "PST8PDT"),
                    hms(56, 34, 12))
 
   now <- Sys.time()
-  now_lt <- as.POSIXlt(now, tz = "UTC")
+  now_lt <- as.POSIXlt(now)
   expect_hms_equal(as.hms(now), hms(now_lt$sec, now_lt$min, now_lt$hour))
-  expect_hms_equal(as.hms(now_lt), as.hms(now_lt))
+  expect_hms_equal(as.hms(now_lt), as.hms(now))
 
   expect_error(as.hms(FALSE))
 })
