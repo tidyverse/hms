@@ -33,9 +33,11 @@ as.hms(x, ...)
 
 \method{as.hms}{character}(x, ...)
 
-\method{as.hms}{POSIXt}(x, tz = "UTC", ...)
+\method{as.hms}{POSIXt}(x, tz = pkgconfig::get_config("hms::default_tz",
+  "UTC"), ...)
 
-\method{as.hms}{POSIXlt}(x, tz = "UTC", ...)
+\method{as.hms}{POSIXlt}(x, tz = pkgconfig::get_config("hms::default_tz",
+  "UTC"), ...)
 
 \method{as.POSIXct}{hms}(x, ...)
 
@@ -57,6 +59,9 @@ performed.}
 \item{x}{An object.}
 
 \item{...}{Arguments passed on to further methods.}
+
+\item{tz}{The time zone in which to interpret a POSIXt time for extracting
+the time of day.  The default value is \code{"UTC"}.}
 
 \item{row.names}{\code{NULL} or a character vector giving the row
     names for the data frame.  Missing values are not allowed.}
