@@ -71,7 +71,7 @@ performed.}
 \item{nm}{Name of column in new data frame}
 }
 \description{
-The values are stored as a \code{\link[=difftime]{difftime()}} vector with a custom class,
+The values are stored as a \link{difftime} vector with a custom class,
 and always with "seconds" as unit for robust coercion to numeric.
 Supports construction from time values, coercion to and from
 various data types, and formatting.  Can be used as a regular column in a
