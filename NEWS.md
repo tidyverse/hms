@@ -2,6 +2,7 @@
 
 - `as.hms.character()` and `parse_hms()` accept fractional seconds (#33).
 
+- `as.hms.numeric()` properly handles zero-length inputs
 
 ### hms 0.3.0.9001 (2017-04-25)
 
