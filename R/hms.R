@@ -71,7 +71,10 @@ as.hms.difftime <- function(x, ...) {
 
 #' @rdname hms
 #' @export
-as.hms.numeric <- function(x, ...) hms(seconds = x)
+as.hms.numeric <- function(x, ...) {
+  if (length(x) == 0) return(as.hms(character(0)))
+  hms(seconds = x)
+}
 
 #' @rdname hms
 #' @export
