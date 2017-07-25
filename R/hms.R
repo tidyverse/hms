@@ -38,7 +38,8 @@ hms <- function(seconds = NULL, minutes = NULL, hours = NULL, days = NULL) {
   args <- list(seconds = seconds, minutes = minutes, hours = hours, days = days)
   check_args(args)
   arg_secs <- mapply(`*`, args, c(1, 60, 3600, 86400))
-  secs <- Reduce(`+`, arg_secs[vapply(arg_secs, length, integer(1L)) > 0L])
+  secs <- Reduce(`+`, arg_secs[!vapply(args, is.null, logical(1L))])
+  if (is.null(secs)) secs <- numeric()
 
   as.hms(as.difftime(secs, units = "secs"))
 }
@@ -155,7 +156,11 @@ as.data.frame.hms <- forward_to(as.data.frame.difftime)
 #' @rdname hms
 #' @export
 format.hms <- function(x, ...) {
-  format(as.character(x), justify = "right")
+  if (length(x) == 0L) {
+    "hms()"
+  } else {
+    format(as.character(x), justify = "right")
+  }
 }
 
 #' @rdname hms
