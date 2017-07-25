@@ -12,14 +12,12 @@ setOldClass(c("hms", "difftime"))
 #' @name hms
 #' @examples
 #' hms(56, 34, 12)
+#' hms()
 #' as.hms(1)
 #' as.hms("12:34:56")
 #' as.hms(Sys.time())
 #' as.POSIXct(hms(1))
-#' \dontrun{
-#'   # Will raise an error
-#'   data.frame(a = hms(1))
-#' }
+#' data.frame(a = hms(1))
 #' d <- data.frame(hours = 1:3)
 #' d$hours <- hms(hours = d$hours)
 #' d
@@ -38,7 +36,8 @@ hms <- function(seconds = NULL, minutes = NULL, hours = NULL, days = NULL) {
   args <- list(seconds = seconds, minutes = minutes, hours = hours, days = days)
   check_args(args)
   arg_secs <- mapply(`*`, args, c(1, 60, 3600, 86400))
-  secs <- Reduce(`+`, arg_secs[vapply(arg_secs, length, integer(1L)) > 0L])
+  secs <- Reduce(`+`, arg_secs[!vapply(args, is.null, logical(1L))])
+  if (is.null(secs)) secs <- numeric()
 
   as.hms(as.difftime(secs, units = "secs"))
 }
@@ -160,7 +159,11 @@ c.hms <- function(x, ...) {
 #' @rdname hms
 #' @export
 format.hms <- function(x, ...) {
-  format(as.character(x), justify = "right")
+  if (length(x) == 0L) {
+    "hms()"
+  } else {
+    format(as.character(x), justify = "right")
+  }
 }
 
 #' @rdname hms
