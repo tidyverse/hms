@@ -1,3 +1,12 @@
+### hms 0.3.0.9003 (2017-07-25)
+
+- Fix and enhance examples in `?hms`.
+- `hms()` creates a zero-length object of class `hms` that prints as `"hms()"`.
+- `hms(integer())` and `as.hms(integer())` both work and are identical to `hms()`.
+- `as.hms.POSIXt()` now defaults to the current time zone, the previous default was `"UTC"` and can be restored by calling `pkgconfig::set_config("hms::default_tz", "UTC")`.
+- `as.hms.POSIXt()` gains `tz` argument, default `"UTC"` (#28).
+
+
 ### hms 0.3.0.9002 (2017-04-26)
 
 - `as.hms.character()` and `parse_hms()` accept fractional seconds (#33).

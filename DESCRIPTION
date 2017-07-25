@@ -1,14 +1,16 @@
 Package: hms
 Title: Pretty Time of Day
-Date: 2017-04-26
-Version: 0.3.0.9002
+Date: 2017-07-25
+Version: 0.3.0.9003
 Authors@R: c(
     person("Kirill", "Müller", role = c("aut", "cre"), email = "krlmlr+r@mailbox.org"),
     person("The R Consortium", role = "cph")
     )
 Description: Implements an S3 class for storing and formatting time-of-day
     values, based on the 'difftime' class.
-Imports: methods
+Imports:
+    methods,
+    pkgconfig
 Suggests: testthat,
     lubridate
 License: GPL-3

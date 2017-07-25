@@ -3,7 +3,7 @@ setOldClass(c("hms", "difftime"))
 
 #' A simple class for storing time-of-day values
 #'
-#' The values are stored as a [difftime()] vector with a custom class,
+#' The values are stored as a [difftime] vector with a custom class,
 #' and always with "seconds" as unit for robust coercion to numeric.
 #' Supports construction from time values, coercion to and from
 #' various data types, and formatting.  Can be used as a regular column in a
@@ -12,14 +12,12 @@ setOldClass(c("hms", "difftime"))
 #' @name hms
 #' @examples
 #' hms(56, 34, 12)
+#' hms()
 #' as.hms(1)
 #' as.hms("12:34:56")
 #' as.hms(Sys.time())
 #' as.POSIXct(hms(1))
-#' \dontrun{
-#'   # Will raise an error
-#'   data.frame(a = hms(1))
-#' }
+#' data.frame(a = hms(1))
 #' d <- data.frame(hours = 1:3)
 #' d$hours <- hms(hours = d$hours)
 #' d
@@ -38,7 +36,8 @@ hms <- function(seconds = NULL, minutes = NULL, hours = NULL, days = NULL) {
   args <- list(seconds = seconds, minutes = minutes, hours = hours, days = days)
   check_args(args)
   arg_secs <- mapply(`*`, args, c(1, 60, 3600, 86400))
-  secs <- Reduce(`+`, arg_secs[vapply(arg_secs, length, integer(1L)) > 0L])
+  secs <- Reduce(`+`, arg_secs[!vapply(args, is.null, logical(1L))])
+  if (is.null(secs)) secs <- numeric()
 
   as.hms(as.difftime(secs, units = "secs"))
 }
@@ -80,10 +79,22 @@ as.hms.character <- function(x, ...) {
 }
 
 #' @rdname hms
+#' @param tz The time zone in which to interpret a POSIXt time for extracting
+#'   the time of day.  The default is now the zone of `x` but was `"UTC"`
+#'   for v0.3 and earlier.  The previous behavior can be restored by calling
+#'   `pkgconfig::set_config("hms::default_tz", "UTC")`, see
+#'   [pkgconfig::set_config()].
 #' @export
-as.hms.POSIXt <- function(x, ...) {
-  seconds <- as.numeric(as.POSIXct(x)) %% 86400
-  hms(seconds = seconds)
+as.hms.POSIXt <- function(x, tz = pkgconfig::get_config("hms::default_tz", ""), ...) {
+  time <- as.POSIXlt(x, tz = tz)
+  hms(time$sec, time$min, time$hour)
+}
+
+#' @rdname hms
+#' @export
+as.hms.POSIXlt <- function(x, tz = pkgconfig::get_config("hms::default_tz", ""), ...) {
+  # We need to roundtrip via as.POSIXct() to respect the time zone
+  as.hms(as.POSIXct(x), tz = tz, ...)
 }
 
 
@@ -143,7 +154,11 @@ as.data.frame.hms <- forward_to(as.data.frame.difftime)
 #' @rdname hms
 #' @export
 format.hms <- function(x, ...) {
-  format(as.character(x), justify = "right")
+  if (length(x) == 0L) {
+    "hms()"
+  } else {
+    format(as.character(x), justify = "right")
+  }
 }
 
 #' @rdname hms
