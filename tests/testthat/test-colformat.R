@@ -9,4 +9,8 @@ test_that("colformat", {
     xp = hms(c(-3600, -60, -1, 0, 1, 60, 3600, NA)),
     filename = "hms.txt"
   )
+  colformat:::expect_colformat_output(
+    xp = hms(c(-3600, -60, 0, 60, 3600, NA)),
+    filename = "hm.txt"
+  )
 })
