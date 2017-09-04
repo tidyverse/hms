@@ -3,9 +3,8 @@ format_two_digits <- function(x) {
 }
 
 format_split_seconds <- function(x) {
-  split_second <- split_second_of_second(x)
-  out <- format(split_second, scientific = FALSE)
+  out <- format(x, scientific = FALSE)
   digits <- max(min(max(nchar(out) - 2), 6), 0)
-  out <- formatC(split_second, format = "f", digits = digits)
+  out <- formatC(x, format = "f", digits = digits)
   gsub("^0", "", out)
 }
