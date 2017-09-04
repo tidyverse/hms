@@ -14,8 +14,7 @@ cf_data.hms <- function(x, ...) {
 
   need_split_seconds <- any(highlight_split_seconds, na.rm = TRUE)
   need_seconds <- need_split_seconds || any(highlight_seconds, na.rm = TRUE)
-  # need_hours <- any(highlight_hours, na.rm = TRUE)
-  need_hours <- TRUE
+  need_hours <- any(highlight_hours, na.rm = TRUE)
   need_sign <- any(xx$sign)
 
   if (need_hours) {
@@ -31,6 +30,14 @@ cf_data.hms <- function(x, ...) {
       )
     )
   } else {
+    data <- paste0(
+      if(need_sign) ifelse(xx$sign, "-", " ") else "",
+      style_num(format_two_digits(xx$minute_of_hour), xx$sign, highlight_minutes),
+      style_subtle("'"),
+      style_num(format_two_digits(xx$second_of_minute), xx$sign, highlight_seconds),
+      style_subtle('"'),
+      style_num(format_split_seconds(xx$split_seconds), xx$sign, highlight_split_seconds)
+    )
   }
 
   data[is.na(x)] <- NA
