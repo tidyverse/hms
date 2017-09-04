@@ -20,3 +20,5 @@ URL: https://github.com/tidyverse/hms
 BugReports: https://github.com/tidyverse/hms/issues
 RoxygenNote: 6.0.1
 Roxygen: list(markdown = TRUE)
+Remotes: 
+    hadley/colformat#39
