@@ -1,5 +1,3 @@
-#' @import colformat
-#' @export
 cf_data.hms <- function(x, ...) {
   data <- rep(NA_character_, length(x))
 
@@ -20,27 +18,27 @@ cf_data.hms <- function(x, ...) {
   if (need_hours) {
     data <- paste0(
       if(need_sign) ifelse(xx$sign, "-", " ") else "",
-      style_num(format_two_digits(xx$hours), xx$sign, highlight_hours),
-      style_subtle(":"),
-      style_num(format_two_digits(xx$minute_of_hour), xx$sign, highlight_minutes),
+      colformat::style_num(format_two_digits(xx$hours), xx$sign, highlight_hours),
+      colformat::style_subtle(":"),
+      colformat::style_num(format_two_digits(xx$minute_of_hour), xx$sign, highlight_minutes),
       if (need_seconds) paste0(
-        style_subtle(":"),
-        style_num(format_two_digits(xx$second_of_minute), xx$sign, highlight_seconds),
-        style_num(format_split_seconds(xx$split_seconds), xx$sign, highlight_split_seconds)
+        colformat::style_subtle(":"),
+        colformat::style_num(format_two_digits(xx$second_of_minute), xx$sign, highlight_seconds),
+        colformat::style_num(format_split_seconds(xx$split_seconds), xx$sign, highlight_split_seconds)
       )
     )
   } else {
     data <- paste0(
       if(need_sign) ifelse(xx$sign, "-", " ") else "",
-      style_num(format_two_digits(xx$minute_of_hour), xx$sign, highlight_minutes),
-      style_subtle("'"),
-      style_num(format_two_digits(xx$second_of_minute), xx$sign, highlight_seconds),
-      style_subtle('"'),
-      style_num(format_split_seconds(xx$split_seconds), xx$sign, highlight_split_seconds)
+      colformat::style_num(format_two_digits(xx$minute_of_hour), xx$sign, highlight_minutes),
+      colformat::style_subtle("'"),
+      colformat::style_num(format_two_digits(xx$second_of_minute), xx$sign, highlight_seconds),
+      colformat::style_subtle('"'),
+      colformat::style_num(format_split_seconds(xx$split_seconds), xx$sign, highlight_split_seconds)
     )
   }
 
   data[is.na(x)] <- NA
 
-  new_cf_data(data)
+  colformat::new_cf_data(data)
 }

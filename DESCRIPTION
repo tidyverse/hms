@@ -11,8 +11,10 @@ Description: Implements an S3 class for storing and formatting time-of-day
 Imports:
     methods,
     pkgconfig
-Suggests: testthat,
-    lubridate
+Suggests:
+    colformat,
+    lubridate,
+    testthat
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
