@@ -3,10 +3,14 @@
 language: R
 sudo: false
 cache: packages
+latex: false
 r:
   - oldrel
   - release
   - devel
+
+before_script:
+- head -n 100 tests/testthat/out/*
 
 r_packages: covr
 
