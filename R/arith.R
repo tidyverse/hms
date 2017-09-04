@@ -43,7 +43,7 @@ split_second_of_second <- function(x) {
 
 decompose <- function(x) {
   list(
-    sign = x < 0,
+    sign = x < 0 & !is.na(x),
     hours = abs(hours(x)),
     minute_of_hour = minute_of_hour(x),
     second_of_minute = second_of_minute(x),
