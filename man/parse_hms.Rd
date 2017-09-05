@@ -2,28 +2,32 @@
 % Please edit documentation in R/parse.R
 \name{parse_hms}
 \alias{parse_hms}
-\alias{parse_hm}
 \title{Parsing hms values}
 \usage{
 parse_hms(x)
-
-parse_hm(x)
 }
 \arguments{
 \item{x}{A character vector}
 }
 \description{
-These functions convert character vectors to objects of the \link{hms} class.
+This function convertd character vectors to objects of the \link{hms} class.
 \code{NA} values are supported.
 }
 \details{
-\code{parse_hms()} accepts values of the form \code{"HH:MM:SS"}, with optional
-fractional seconds.
-
-\code{parse_hm()} accepts values of the form \code{"HH:MM"}.
+\code{parse_hms()} accepts values of the form \code{"DdHH:MM:SS"}, with optional
+days, and fractional seconds. It also supports minus signs.
 }
 \examples{
-parse_hms("12:34:56")
-parse_hms("12:34:56.789")
-parse_hm("12:34")
+time_str <- c("12:34:56",         # regular format
+              "12:34:56.789",     # decimal points
+              "20:12",            # HH:MM (no seconds)
+              "-12:34:56.001",    # negative values without days
+              "1d 12:34:56",      # number of days (integer)
+              "1d 12:34:56.001",  # decimal points and days
+              "-1d 12:34:56.001", # negative values
+              "-1d 12:34:56.001", # negative values and space
+              "0.5d"              # day only
+)
+
+parse_hms(time_str)
 }
