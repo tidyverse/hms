@@ -21,6 +21,10 @@ setOldClass(c("hms", "difftime"))
 #' d <- data.frame(hours = 1:3)
 #' d$hours <- hms(hours = d$hours)
 #' d
+#' # Use dhms to show long durations
+#' dhms(56, 34, hours = 79)
+#' as.dhms(hms(23, 32, 12, 3))
+
 NULL
 
 # Construction ------------------------------------------------------------

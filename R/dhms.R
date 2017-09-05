@@ -9,6 +9,11 @@ dhms <- function(seconds = NULL, minutes = NULL, hours = NULL, days = NULL) {
   structure(x, class = unique(c("dhms", class(x))))
 }
 
+#' @rdname hms
+#' @export
+is.dhms <- function(x) inherits(x, "dhms")
+
+
 # Coercion in -------------------------------------------------------------
 #' @rdname hms
 #' @inheritParams hms
@@ -22,6 +27,11 @@ as.dhms.default <- function(x, ...) {
   dhms(seconds=s)
 }
 
+#' @export
+as.dhms.POSIXt <- function(x, tz = pkgconfig::get_config("hms::default_tz", ""), ...) {
+  time <- as.POSIXlt(x, tz = tz)
+  dhms(time$sec, time$min, time$hour)
+}
 # Coercion out ------------------------------------------------------------
 
 #' @rdname hms

@@ -4,6 +4,12 @@ expect_hms_equal <- function(x, y) {
   expect_equal(as.numeric(x), as.numeric(y))
 }
 
+expect_dhms_equal <- function(x, y) {
+  expect_is(x, "dhms")
+  expect_is(y, "dhms")
+  expect_equal(as.numeric(x), as.numeric(y))
+}
+
 expect_difftime_equal <- function(x, y) {
   expect_is(x, "difftime")
   expect_is(y, "difftime")
