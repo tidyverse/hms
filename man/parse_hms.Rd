@@ -10,7 +10,7 @@ parse_hms(x)
 \item{x}{A character vector}
 }
 \description{
-This function convertd character vectors to objects of the \link{hms} class.
+This function converts character vectors to objects of the \link{hms} class.
 \code{NA} values are supported.
 }
 \details{
@@ -26,7 +26,8 @@ time_str <- c("12:34:56",         # regular format
               "1d 12:34:56.001",  # decimal points and days
               "-1d 12:34:56.001", # negative values
               "-1d 12:34:56.001", # negative values and space
-              "0.5d"              # day only
+              "0.5d",             # day only
+              NA                  # NA
 )
 
 parse_hms(time_str)

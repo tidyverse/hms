@@ -1,6 +1,6 @@
 #' Parsing hms values
 #'
-#' This function convertd character vectors to objects of the [hms] class.
+#' This function converts character vectors to objects of the [hms] class.
 #' `NA` values are supported.
 #'
 #' `parse_hms()` accepts values of the form `"DdHH:MM:SS"`, with optional
@@ -16,7 +16,8 @@
 #'               "1d 12:34:56.001",  # decimal points and days
 #'               "-1d 12:34:56.001", # negative values
 #'               "-1d 12:34:56.001", # negative values and space
-#'               "0.5d"              # day only
+#'               "0.5d",             # day only
+#'               NA                  # NA
 #' )
 #'
 #' parse_hms(time_str)
