@@ -27,18 +27,25 @@ cf_data.hms <- function(x, ...) {
         colformat::style_num(format_split_seconds(xx$split_seconds), xx$sign, highlight_split_seconds)
       )
     )
+    if (need_seconds) na_indent <- 6L
+    else na_indent <- 3L
   } else {
     data <- paste0(
       if(need_sign) ifelse(xx$sign, "-", " ") else "",
       colformat::style_num(format_two_digits(xx$minute_of_hour), xx$sign, highlight_minutes),
       colformat::style_subtle("'"),
       colformat::style_num(format_two_digits(xx$second_of_minute), xx$sign, highlight_seconds),
-      colformat::style_subtle('"'),
-      colformat::style_num(format_split_seconds(xx$split_seconds), xx$sign, highlight_split_seconds)
+      colformat::style_num(format_split_seconds(xx$split_seconds), xx$sign, highlight_split_seconds),
+      colformat::style_subtle('"')
     )
+    na_indent <- 3L
+  }
+
+  if (need_sign) {
+    na_indent <- na_indent + 1L
   }
 
   data[is.na(x)] <- NA
 
-  colformat::new_cf_data(data)
+  colformat::new_cf_data(data, na_indent = na_indent)
 }
