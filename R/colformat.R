@@ -1,3 +1,4 @@
+# Dynamically exported, see zzz.R
 cf_data.hms <- function(x, ...) {
   data <- rep(NA_character_, length(x))
 
