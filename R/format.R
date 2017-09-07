@@ -1,3 +1,7 @@
+format_hours <- function(x) {
+  format(format_two_digits(x), justify = "right")
+}
+
 format_two_digits <- function(x) {
   formatC(x, width = 2, flag = "0")
 }

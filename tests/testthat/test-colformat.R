@@ -6,7 +6,7 @@ test_that("colformat", {
     filename = "hmss.txt"
   )
   colformat:::expect_colformat_output(
-    xp = hms(c(-3600, -60, -1, 0, 1, 60, 3600, NA)),
+    xp = hms(c(-3600000, -3600, -60, -1, 0, 1, 60, 3600, 3600000, NA)),
     filename = "hms.txt"
   )
   colformat:::expect_colformat_output(
