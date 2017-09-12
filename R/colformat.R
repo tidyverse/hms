@@ -1,5 +1,5 @@
 # Dynamically exported, see zzz.R
-cf_data.hms <- function(x, ...) {
+pillar_shaft.hms <- function(x, ...) {
   data <- rep(NA_character_, length(x))
 
   xx <- decompose(x)
@@ -45,5 +45,5 @@ cf_data.hms <- function(x, ...) {
   na_indent <- crayon::col_nchar(data_seconds[1], type = "width") - 2L
   data[is.na(x)] <- NA
 
-  colformat::new_cf_data(data, na_indent = na_indent)
+  colformat::new_pillar_shaft(data, na_indent = na_indent)
 }

@@ -1,5 +1,5 @@
 .onLoad <- function(...) {
-  register_s3_method("colformat", "cf_data", "hms")
+  register_s3_method("colformat", "pillar_shaft", "hms")
 
   invisible()
 }
