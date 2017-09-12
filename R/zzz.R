@@ -1,3 +1,4 @@
+# nocov start
 .onLoad <- function(...) {
   register_s3_method("pillar", "pillar_shaft", "hms")
 
@@ -27,3 +28,4 @@ register_s3_method <- function(pkg, generic, class, fun = NULL) {
     }
   )
 }
+# nocov end
