@@ -12,7 +12,7 @@ Imports:
     methods,
     pkgconfig
 Suggests:
-    colformat,
+    pillar,
     lubridate,
     testthat
 License: GPL-3
@@ -23,4 +23,4 @@ BugReports: https://github.com/tidyverse/hms/issues
 RoxygenNote: 6.0.1
 Roxygen: list(markdown = TRUE)
 Remotes: 
-    hadley/colformat#38
+    hadley/pillar#38
