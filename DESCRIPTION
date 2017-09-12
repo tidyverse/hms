@@ -12,6 +12,7 @@ Imports:
     methods,
     pkgconfig
 Suggests:
+    crayon,
     pillar,
     lubridate,
     testthat
@@ -23,4 +24,5 @@ BugReports: https://github.com/tidyverse/hms/issues
 RoxygenNote: 6.0.1
 Roxygen: list(markdown = TRUE)
 Remotes: 
+    r-lib/crayon,
     hadley/pillar#38
