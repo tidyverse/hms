@@ -17,7 +17,7 @@ test_that("beyond 24 hours (#12)", {
   expect_identical(format(hms(hours = 99:101)),
                    c(" 99:00:00", "100:00:00", "101:00:00"))
   expect_identical(format(hms(hours = c(-99, 100))),
-                   c("-99:00:00", "100:00:00"))
+                   c("- 99:00:00", " 100:00:00"))
   expect_identical(format(hms(hours = c(-100, 99))),
                    c("-100:00:00", "  99:00:00"))
 })
