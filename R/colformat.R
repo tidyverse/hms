@@ -36,10 +36,13 @@ pillar_shaft.hms <- function(x, ...) {
       if (need_sign) ifelse(xx$sign, "-", " ") else "",
       pillar::style_num(format_two_digits(xx$minute_of_hour), xx$sign, highlight_minutes),
       pillar::style_subtle("'"),
-      pillar::style_num(format_two_digits(xx$second_of_minute), xx$sign, highlight_seconds),
-      pillar::style_num(format_split_seconds(xx$split_seconds), xx$sign, highlight_split_seconds),
+      pillar::style_num(format_two_digits(xx$second_of_minute), xx$sign, highlight_seconds)
     )
-    data <- paste0(data_seconds, pillar::style_subtle('"'))
+    data <- paste0(
+      data_seconds,
+      pillar::style_num(format_split_seconds(xx$split_seconds), xx$sign, highlight_split_seconds),
+      pillar::style_subtle('"')
+    )
   }
 
   na_indent <- crayon::col_nchar(data_seconds[1], type = "width") - 2L
