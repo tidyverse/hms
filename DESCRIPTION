@@ -25,4 +25,4 @@ RoxygenNote: 6.0.1
 Roxygen: list(markdown = TRUE)
 Remotes: 
     r-lib/crayon,
-    hadley/pillar#38
+    hadley/pillar@3c43a5f
