@@ -139,6 +139,11 @@ as.data.frame.hms <- forward_to(as.data.frame.difftime)
   hms(NextMethod())
 }
 
+# Combination -------------------------------------------------------------
+#' @export
+c.hms <- function(x, ...) {
+  as.hms(NextMethod())
+}
 
 # Updating ----------------------------------------------------------------
 
