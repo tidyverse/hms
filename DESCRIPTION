@@ -11,8 +11,11 @@ Description: Implements an S3 class for storing and formatting time-of-day
 Imports:
     methods,
     pkgconfig
-Suggests: testthat,
-    lubridate
+Suggests:
+    crayon,
+    pillar,
+    lubridate,
+    testthat
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
@@ -20,3 +23,6 @@ URL: https://github.com/tidyverse/hms
 BugReports: https://github.com/tidyverse/hms/issues
 RoxygenNote: 6.0.1
 Roxygen: list(markdown = TRUE)
+Remotes: 
+    r-lib/crayon,
+    hadley/pillar@3c43a5f

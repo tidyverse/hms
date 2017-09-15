@@ -115,12 +115,14 @@ as.POSIXlt.hms <- function(x, ...) {
 #' @rdname hms
 #' @export
 as.character.hms <- function(x, ...) {
+  xx <- decompose(x)
+
   ifelse(is.na(x), "NA", paste0(
-    ifelse(x < 0, "-", ""),
-    format_two_digits(abs(hours(x))), ":",
-    format_two_digits(minute_of_hour(x)), ":",
-    format_two_digits(second_of_minute(x)),
-    format_split_seconds(x)))
+    ifelse(xx$sign, "-", ""),
+    format_hours(xx$hours), ":",
+    format_two_digits(xx$minute_of_hour), ":",
+    format_two_digits(xx$second_of_minute),
+    format_split_seconds(xx$split_seconds)))
 }
 
 #' @rdname hms
