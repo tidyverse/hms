@@ -13,8 +13,9 @@ Imports:
     pkgconfig
 Suggests:
     crayon,
-    pillar,
     lubridate,
+    pillar,
+    rlang,
     testthat
 License: GPL-3
 Encoding: UTF-8
@@ -25,4 +26,4 @@ RoxygenNote: 6.0.1
 Roxygen: list(markdown = TRUE)
 Remotes: 
     r-lib/crayon,
-    hadley/pillar@3c43a5f
+    hadley/pillar@e19118f

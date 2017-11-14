@@ -48,5 +48,5 @@ pillar_shaft.hms <- function(x, ...) {
   na_indent <- crayon::col_nchar(data_seconds[1], type = "width") - 2L
   data[is.na(x)] <- NA
 
-  pillar::new_pillar_shaft(data, na_indent = na_indent)
+  pillar::new_pillar_shaft_simple(data, na_indent = na_indent)
 }
