@@ -10,12 +10,12 @@ Description: Implements an S3 class for storing and formatting time-of-day
     values, based on the 'difftime' class.
 Imports:
     methods,
-    pkgconfig
+    pkgconfig,
+    rlang
 Suggests:
     crayon,
     lubridate,
     pillar,
-    rlang,
     testthat
 License: GPL-3
 Encoding: UTF-8

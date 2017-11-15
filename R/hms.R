@@ -1,3 +1,4 @@
+#' @import rlang
 #' @importFrom methods setOldClass
 setOldClass(c("hms", "difftime"))
 
