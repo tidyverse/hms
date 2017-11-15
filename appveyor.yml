@@ -13,6 +13,8 @@ install:
   - cmd: echo options(repos = 'https://cloud.r-project.org') > %HOMEDRIVE%%HOMEPATH%\.Rprofile
   - cmd: echo print('Hi!') >> %HOMEDRIVE%%HOMEPATH%\.Rprofile
   - cmd: type %HOMEDRIVE%%HOMEPATH%\.Rprofile
+  - cmd: R -q -e "getwd()"
+  - cmd: R -q -e "setwd('~'); getwd()"
   - cmd: R -e "getOption('repos')"
   - cmd: R -q -e "install.packages('remotes'); remotes::install_github('ropenscilabs/tic'); tic::prepare_all_stages()"
 
