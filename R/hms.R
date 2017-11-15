@@ -35,8 +35,8 @@ NULL
 hms <- function(seconds = NULL, minutes = NULL, hours = NULL, days = NULL) {
   args <- list(seconds = seconds, minutes = minutes, hours = hours, days = days)
   check_args(args)
-  arg_secs <- mapply(`*`, args, c(1, 60, 3600, 86400))
-  secs <- Reduce(`+`, arg_secs[!vapply(args, is.null, logical(1L))])
+  arg_secs <- map2(args, c(1, 60, 3600, 86400), `*`)
+  secs <- reduce(arg_secs[!map_lgl(args, is.null)], `+`)
   if (is.null(secs)) secs <- numeric()
 
   as.hms(as.difftime(secs, units = "secs"))
