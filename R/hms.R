@@ -1,3 +1,4 @@
+#' @import rlang
 #' @importFrom methods setOldClass
 setOldClass(c("hms", "difftime"))
 
@@ -35,8 +36,8 @@ NULL
 hms <- function(seconds = NULL, minutes = NULL, hours = NULL, days = NULL) {
   args <- list(seconds = seconds, minutes = minutes, hours = hours, days = days)
   check_args(args)
-  arg_secs <- mapply(`*`, args, c(1, 60, 3600, 86400))
-  secs <- Reduce(`+`, arg_secs[!vapply(args, is.null, logical(1L))])
+  arg_secs <- map2(args, c(1, 60, 3600, 86400), `*`)
+  secs <- reduce(arg_secs[!map_lgl(args, is.null)], `+`)
   if (is.null(secs)) secs <- numeric()
 
   as.hms(as.difftime(secs, units = "secs"))
@@ -115,12 +116,14 @@ as.POSIXlt.hms <- function(x, ...) {
 #' @rdname hms
 #' @export
 as.character.hms <- function(x, ...) {
+  xx <- decompose(x)
+
   ifelse(is.na(x), "NA", paste0(
-    ifelse(x < 0, "-", ""),
-    format_two_digits(abs(hours(x))), ":",
-    format_two_digits(minute_of_hour(x)), ":",
-    format_two_digits(second_of_minute(x)),
-    format_split_seconds(x)))
+    ifelse(xx$sign, "-", ""),
+    format_hours(xx$hours), ":",
+    format_two_digits(xx$minute_of_hour), ":",
+    format_two_digits(xx$second_of_minute),
+    format_split_seconds(xx$split_seconds)))
 }
 
 #' @rdname hms
@@ -137,6 +140,11 @@ as.data.frame.hms <- forward_to(as.data.frame.difftime)
   hms(NextMethod())
 }
 
+# Combination -------------------------------------------------------------
+#' @export
+c.hms <- function(x, ...) {
+  as.hms(NextMethod())
+}
 
 # Updating ----------------------------------------------------------------
 

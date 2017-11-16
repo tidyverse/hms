@@ -1,8 +1,8 @@
 check_args <- function(args) {
-  is_null <- vapply(args, is.null, logical(1L))
+  is_null <- map_lgl(args, is.null)
   if (all(is_null)) return()
 
-  valid <- vapply(args[!is_null], is_numeric_or_na, logical(1L))
+  valid <- map_lgl(args[!is_null], is_numeric_or_na)
   if (!all(valid)) {
     stop("All arguments must be numeric or NA", call. = FALSE)
   }
@@ -12,7 +12,7 @@ check_args <- function(args) {
          " to hms().", call. = FALSE)
   }
 
-  lengths <- vapply(args[!is_null], length, integer(1L))
+  lengths <- map_int(args[!is_null], length)
   if (length(unique(lengths)) > 1L) {
     stop("All arguments to hms() must have the same length or be NULL. Found ",
          paste0("length(", names(lengths), ") = ", lengths, collapse = ", "), ".",
