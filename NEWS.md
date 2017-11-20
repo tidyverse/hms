@@ -1,3 +1,11 @@
+### hms 0.3.0.9004 (2017-11-16)
+
+- `hms()` now works correctly if all four components (days, hours, minutes, seconds) are passed (#49).
+- Values with durations of over 10000 hours are now printed correctly (#48).
+- `c()` now returns a hms (#41, @qgeissmann).
+- Pillar support (#43).
+
+
 ### hms 0.3.0.9003 (2017-07-25)
 
 - Fix and enhance examples in `?hms`.

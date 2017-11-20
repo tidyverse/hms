@@ -3,7 +3,7 @@ format_hours <- function(x) {
 }
 
 format_two_digits <- function(x) {
-  formatC(x, width = 2, flag = "0")
+  formatC(x, format = "f", digits = 0, width = 2, flag = "0")
 }
 
 format_split_seconds <- function(x) {
