@@ -118,7 +118,7 @@ as.POSIXlt.hms <- function(x, ...) {
 as.character.hms <- function(x, ...) {
   xx <- decompose(x)
 
-  ifelse(is.na(x), "NA", paste0(
+  ifelse(is.na(x), NA_character_, paste0(
     ifelse(xx$sign, "-", ""),
     format_hours(xx$hours), ":",
     format_two_digits(xx$minute_of_hour), ":",
