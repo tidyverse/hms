@@ -41,6 +41,8 @@ environment:
   GITHUB_PAT:
     secure: ydE+Zo04e/ffDUNpRKEqjTJFbiL/aozpxl886+6s8YSPtUDOcUbhNmwmhYlY10sc
 
+  TAR: internal
+
   matrix:
   - R_VERSION: release
     R_ARCH: x64
