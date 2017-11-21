@@ -86,6 +86,7 @@ as.hms.character <- function(x, ...) {
 #'   `pkgconfig::set_config("hms::default_tz", "UTC")`, see
 #'   [pkgconfig::set_config()].
 #' @export
+#' @importFrom pkgconfig get_config
 as.hms.POSIXt <- function(x, tz = pkgconfig::get_config("hms::default_tz", ""), ...) {
   time <- as.POSIXlt(x, tz = tz)
   hms(time$sec, time$min, time$hour)
