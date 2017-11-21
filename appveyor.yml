@@ -24,7 +24,7 @@ after_build: R -q -e "tic::after_install()"
 before_test: R -q -e "tic::before_script()"
 test_script: R -q -e "tic::script()"
 on_success:
-- cmd: R -q -e "try(tic::after_success(), silent = TRUE)"
+- cmd: Rscript -e "library(methods); try(tic::after_success(), silent = TRUE)"
 on_failure: R -q -e "tic::after_failure()"
 before_deploy: R -q -e "tic::before_deploy()"
 deploy_script: R -q -e "tic::deploy()"
