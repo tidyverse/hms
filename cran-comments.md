@@ -1,3 +1,5 @@
+Resubmission on CRAN's request after acceptance of pillar.
+
 ## Test environments
 * ubuntu 17.04 (local install), R 3.4.2
 * ubuntu 12.04 (on travis-ci), R devel, release, and oldrel
