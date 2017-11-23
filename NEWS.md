@@ -1,29 +1,29 @@
-### hms 0.3.0.9004 (2017-11-16)
+## hms 0.4.0 (2017-11-16)
 
-- `hms()` now works correctly if all four components (days, hours, minutes, seconds) are passed (#49).
-- Values with durations of over 10000 hours are now printed correctly (#48).
-- `c()` now returns a hms (#41, @qgeissmann).
-- Pillar support (#43).
+### Breaking changes
 
-
-### hms 0.3.0.9003 (2017-07-25)
-
-- Fix and enhance examples in `?hms`.
-- `hms()` creates a zero-length object of class `hms` that prints as `"hms()"`.
-- `hms(integer())` and `as.hms(integer())` both work and are identical to `hms()`.
 - `as.hms.POSIXt()` now defaults to the current time zone, the previous default was `"UTC"` and can be restored by calling `pkgconfig::set_config("hms::default_tz", "UTC")`.
-- `as.hms.POSIXt()` gains `tz` argument, default `"UTC"` (#28).
 
+### New features
 
-### hms 0.3.0.9002 (2017-04-26)
-
-- `as.hms.character()` and `parse_hms()` accept fractional seconds (#33).
-
-
-### hms 0.3.0.9001 (2017-04-25)
-
+- Pillar support, will display `hms` columns in tibbles in color on terminals
+  that support it (#43).
 - New `round_hms()` and `trunc_hms()` for rounding or truncating to a given multiple of seconds (#31).
 - New `parse_hms()` and `parse_hm()` to parse strings in "HH:MM:SS" and "HH:MM" formats (#30).
+- `as.hms.POSIXt()` gains `tz` argument, default `"UTC"` (#28).
+- `as.hms.character()` and `parse_hms()` accept fractional seconds (#33).
+
+### Bug fixes
+
+- `hms()` now works correctly if all four components (days, hours, minutes, seconds) are passed (#49).
+- `hms()` creates a zero-length object of class `hms` that prints as `"hms()"`.
+- `hms(integer())` and `as.hms(integer())` both work and are identical to `hms()`.
+- Values with durations of over 10000 hours are now printed correctly (#48).
+- `c()` now returns a hms (#41, @qgeissmann).
+
+### Documentation and error messages
+
+- Fix and enhance examples in `?hms`.
 - Documentation is in Markdown format now.
 - Improved error message if calling `hms()` with a character argument (#29).
 

@@ -1,7 +1,7 @@
 Package: hms
 Title: Pretty Time of Day
 Date: 2017-11-16
-Version: 0.3.0.9004
+Version: 0.4.0
 Authors@R: c(
     person("Kirill", "Müller", role = c("aut", "cre"), email = "krlmlr+r@mailbox.org"),
     person("The R Consortium", role = "cph")
@@ -24,6 +24,3 @@ URL: https://github.com/tidyverse/hms
 BugReports: https://github.com/tidyverse/hms/issues
 RoxygenNote: 6.0.1
 Roxygen: list(markdown = TRUE)
-Remotes: 
-    r-lib/crayon,
-    hadley/pillar@47c5724
