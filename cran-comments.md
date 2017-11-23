@@ -1,5 +1,7 @@
+Resubmission on CRAN's request after acceptance of pillar.
+
 ## Test environments
-* ubuntu 16.10 (local install), R 3.3.2
+* ubuntu 17.04 (local install), R 3.4.2
 * ubuntu 12.04 (on travis-ci), R devel, release, and oldrel
 * win-builder (devel and release)
 
@@ -10,5 +12,4 @@
 
 ## Reverse dependencies
 
-Checked all 5 reverse dependencies on Ubuntu 16.04, no regressions detected.
-See https://github.com/rstats-db/hms/blob/r-0.3/revdep/README.md for check results.
+Checked all 12 reverse dependencies on Ubuntu 16.04, no regressions detected.
