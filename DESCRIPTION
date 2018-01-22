@@ -15,7 +15,7 @@ Imports:
 Suggests:
     crayon,
     lubridate,
-    pillar,
+    pillar (>= 1.1.0),
     testthat
 License: GPL-3
 Encoding: UTF-8
