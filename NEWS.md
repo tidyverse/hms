@@ -1,3 +1,8 @@
+## hms 0.4.1 (2018-01-22)
+
+- Adapted tests to pillar 1.1.0.
+
+
 ## hms 0.4.0 (2017-11-16)
 
 ### Breaking changes
