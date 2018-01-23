@@ -1,6 +1,6 @@
 Package: hms
 Title: Pretty Time of Day
-Date: 2018-01-22
+Date: 2018-01-23
 Version: 0.4.1
 Authors@R: c(
     person("Kirill", "Müller", role = c("aut", "cre"), email = "krlmlr+r@mailbox.org"),
