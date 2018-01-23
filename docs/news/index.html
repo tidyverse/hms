@@ -79,27 +79,28 @@
     </div>
 
     <div class="contents">
-    <div id="hms-0-4-1-2018-01-22" class="section level2">
-<h2 class="hasAnchor">
-<a href="#hms-0-4-1-2018-01-22" class="anchor"></a>hms 0.4.1 (2018-01-22)</h2>
+    <div id="hms-0-4-1-2018-01-23" class="section level1">
+<h1 class="hasAnchor">
+<a href="#hms-0-4-1-2018-01-23" class="anchor"></a>hms 0.4.1 (2018-01-23)</h1>
 <ul>
+<li>Preserve <code>NA</code> when converting to <code>character</code> (#51, @jeroen).</li>
 <li>Adapted tests to pillar 1.1.0.</li>
 </ul>
 </div>
-    <div id="hms-0-4-0-2017-11-16" class="section level2">
+    <div id="hms-0-4-0-2017-11-16" class="section level1">
+<h1 class="hasAnchor">
+<a href="#hms-0-4-0-2017-11-16" class="anchor"></a>hms 0.4.0 (2017-11-16)</h1>
+<div id="breaking-changes" class="section level2">
 <h2 class="hasAnchor">
-<a href="#hms-0-4-0-2017-11-16" class="anchor"></a>hms 0.4.0 (2017-11-16)</h2>
-<div id="breaking-changes" class="section level3">
-<h3 class="hasAnchor">
-<a href="#breaking-changes" class="anchor"></a>Breaking changes</h3>
+<a href="#breaking-changes" class="anchor"></a>Breaking changes</h2>
 <ul>
 <li>
 <code><a href="../reference/hms.html">as.hms.POSIXt()</a></code> now defaults to the current time zone, the previous default was <code>"UTC"</code> and can be restored by calling <code><a href="http://www.rdocumentation.org/packages/pkgconfig/topics/set_config">pkgconfig::set_config("hms::default_tz", "UTC")</a></code>.</li>
 </ul>
 </div>
-<div id="new-features" class="section level3">
-<h3 class="hasAnchor">
-<a href="#new-features" class="anchor"></a>New features</h3>
+<div id="new-features" class="section level2">
+<h2 class="hasAnchor">
+<a href="#new-features" class="anchor"></a>New features</h2>
 <ul>
 <li>Pillar support, will display <code>hms</code> columns in tibbles in color on terminals that support it (#43).</li>
 <li>New <code><a href="../reference/round_hms.html">round_hms()</a></code> and <code><a href="../reference/round_hms.html">trunc_hms()</a></code> for rounding or truncating to a given multiple of seconds (#31).</li>
@@ -110,9 +111,9 @@
 <code><a href="../reference/hms.html">as.hms.character()</a></code> and <code><a href="../reference/parse_hms.html">parse_hms()</a></code> accept fractional seconds (#33).</li>
 </ul>
 </div>
-<div id="bug-fixes" class="section level3">
-<h3 class="hasAnchor">
-<a href="#bug-fixes" class="anchor"></a>Bug fixes</h3>
+<div id="bug-fixes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#bug-fixes" class="anchor"></a>Bug fixes</h2>
 <ul>
 <li>
 <code>hms()</code> now works correctly if all four components (days, hours, minutes, seconds) are passed (#49).</li>
@@ -125,9 +126,9 @@
 <code>c()</code> now returns a hms (#41, @qgeissmann).</li>
 </ul>
 </div>
-<div id="documentation-and-error-messages" class="section level3">
-<h3 class="hasAnchor">
-<a href="#documentation-and-error-messages" class="anchor"></a>Documentation and error messages</h3>
+<div id="documentation-and-error-messages" class="section level2">
+<h2 class="hasAnchor">
+<a href="#documentation-and-error-messages" class="anchor"></a>Documentation and error messages</h2>
 <ul>
 <li>Fix and enhance examples in <code>?hms</code>.</li>
 <li>Documentation is in Markdown format now.</li>
@@ -206,7 +207,7 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-        <li><a href="#hms-0-4-1-2018-01-22">0.4.1</a></li>
+        <li><a href="#hms-0-4-1-2018-01-23">0.4.1</a></li>
         <li><a href="#hms-0-4-0-2017-11-16">0.4.0</a></li>
         <li><a href="#hms-0-3-2016-11-22">0.3</a></li>
         <li><a href="#hms-0-2-2016-06-17">0.2</a></li>
