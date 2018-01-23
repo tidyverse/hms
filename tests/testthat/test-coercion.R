@@ -21,6 +21,7 @@ test_that("coercion in", {
 
 test_that("coercion out", {
   expect_identical(as.character(hms(56, 34, 12)), "12:34:56")
+  expect_identical(as.character(hms(NA)), NA_character_)
   expect_identical(as.POSIXlt(hms(hours = 6)),
                    strptime("1970-01-01 06:00:00",
                             format = "%Y-%m-%d %H:%M:%S", tz = "UTC"))
