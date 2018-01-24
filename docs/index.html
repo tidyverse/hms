@@ -74,7 +74,6 @@
 </li>
 <li>Can be used as column in a data frame</li>
 <li>Based on the <code>difftime</code> class</li>
-<li>No date is stored</li>
 <li>Values can exceed the 24-hour boundary or be negative</li>
 <li>By default, fractional seconds up to a microsecond are displayed, regardless of the value of the <code>"digits.secs"</code> option</li>
 </ul>
@@ -104,7 +103,7 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <span class="kw"><a href="reference/hms.html">as.hms</a></span>(<span class="st">"12:34:56"</span>)
 <span class="co">#&gt; 12:34:56</span>
 <span class="kw"><a href="reference/hms.html">as.hms</a></span>(<span class="kw">Sys.time</span>())
-<span class="co">#&gt; 13:49:21.232907</span>
+<span class="co">#&gt; 16:45:15.236577</span>
 <span class="kw">as.POSIXct</span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/hms/topics/hms">hms</a></span>(<span class="dv">1</span>))
 <span class="co">#&gt; [1] "1970-01-01 00:00:01 UTC"</span>
 
