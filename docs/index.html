@@ -63,9 +63,16 @@
 <div id="hms" class="section level1">
 
 
-<p>A simple class for storing durations or time-of-day values and displaying them in the hh:mm:ss format. Intended to simplify data exchange with databases, spreadsheets, and other data sources.</p>
-<p>The values are stored as a numeric vector that contains the number of seconds since midnight. Supports construction from time values, coercion to and from various data types, and formatting, based on the <code>difftime</code> class. Can be used in a data frame.</p>
-<p>Compared to <code>POSIXct</code>, no date is stored, although the values can exceed the 24-hour boundary or be negative. By default, fractional seconds up to a microsecond are displayed.</p>
+<p>The hms package provides a simple class for storing durations or time-of-day values and displaying them in the hh:mm:ss format. This class is intended to simplify data exchange with databases, spreadsheets, and other data sources:</p>
+<ul>
+<li>Stores values as a numeric vector that contains the number of seconds since midnight</li>
+<li>Supports construction from explicit hour, minute, or second values</li>
+<li>Supports coercion to and from various data types, including <code>POSIXt</code>
+</li>
+<li>Can be used as column in a data frame</li>
+<li>Based on the <code>difftime</code> class</li>
+</ul>
+<p>Compared to <code>POSIXct</code>, no date is stored, although the values can exceed the 24-hour boundary or be negative. By default, fractional seconds up to a microsecond are displayed, regardless of the value of the <code>"digits.secs"</code> option.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(hms)
 <span class="kw">hms</span>(<span class="dv">56</span>, <span class="dv">34</span>, <span class="dv">12</span>)
 <span class="co">#&gt; 12:34:56</span>
@@ -74,7 +81,7 @@
 <span class="kw"><a href="reference/hms.html">as.hms</a></span>(<span class="st">"12:34:56"</span>)
 <span class="co">#&gt; 12:34:56</span>
 <span class="kw"><a href="reference/hms.html">as.hms</a></span>(<span class="kw">Sys.time</span>())
-<span class="co">#&gt; 02:08:39.088606</span>
+<span class="co">#&gt; 17:00:37.973678</span>
 <span class="kw">as.POSIXct</span>(<span class="kw">hms</span>(<span class="dv">1</span>))
 <span class="co">#&gt; [1] "1970-01-01 00:00:01 UTC"</span>
 
@@ -108,7 +115,7 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <h2>Developers</h2>
 <ul class="list-unstyled">
 <li>Kirill Müller <br><small class="roles"> Author, maintainer </small> </li>
-<li><a href="authors.html">All authors...</a></li>
+<li>The R Consortium <br><small class="roles"> Funder </small> </li>
 </ul>
 <h2>Dev status</h2>
 <ul class="list-unstyled">
@@ -127,8 +134,8 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 </div>
 
 <div class="author">
-  <p>Developed by Kirill Müller.</p>
-  <p>Site built by <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Developed by Kirill Müller, The R Consortium.</p>
+  <p>Site built by <a href="http://pkgdown.r-lib.org">pkgdown</a>.</p>
 </div>
 
 <script>
