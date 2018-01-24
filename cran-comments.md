@@ -1,7 +1,7 @@
-Resubmission on CRAN's request after acceptance of pillar.
+Fix tests after release of pillar 1.1.0.
 
 ## Test environments
-* ubuntu 17.04 (local install), R 3.4.2
+* ubuntu 17.04 (local install), R 3.4.3
 * ubuntu 12.04 (on travis-ci), R devel, release, and oldrel
 * win-builder (devel and release)
 
@@ -12,4 +12,4 @@ Resubmission on CRAN's request after acceptance of pillar.
 
 ## Reverse dependencies
 
-Checked all 12 reverse dependencies on Ubuntu 16.04, no regressions detected.
+We checked 17 reverse dependencies, comparing R CMD check results across CRAN and dev versions of this package. No regressions detected.
