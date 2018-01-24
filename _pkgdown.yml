@@ -1,0 +1,23 @@
+template:
+  package: tidytemplate
+  default_assets: false
+
+home:
+  strip_header: true
+  links:
+  - text: Learn more
+    href: http://r4ds.had.co.nz/tibbles.html
+
+navbar:
+  title: ~
+  type: default
+  left:
+  - text: Reference
+    href: reference/index.html
+  - text: News
+    href: news/index.html
+  right:
+  - icon: fa-github fa-lg
+    href: https://github.com/tidyverse/hms
+
+

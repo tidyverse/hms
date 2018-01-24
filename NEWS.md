@@ -1,10 +1,16 @@
-## hms 0.4.0 (2017-11-16)
+# hms 0.4.1 (2018-01-23)
 
-### Breaking changes
+- Preserve `NA` when converting to `character` (#51, @jeroen).
+- Adapted tests to pillar 1.1.0.
+
+
+# hms 0.4.0 (2017-11-16)
+
+## Breaking changes
 
 - `as.hms.POSIXt()` now defaults to the current time zone, the previous default was `"UTC"` and can be restored by calling `pkgconfig::set_config("hms::default_tz", "UTC")`.
 
-### New features
+## New features
 
 - Pillar support, will display `hms` columns in tibbles in color on terminals
   that support it (#43).
@@ -13,7 +19,7 @@
 - `as.hms.POSIXt()` gains `tz` argument, default `"UTC"` (#28).
 - `as.hms.character()` and `parse_hms()` accept fractional seconds (#33).
 
-### Bug fixes
+## Bug fixes
 
 - `hms()` now works correctly if all four components (days, hours, minutes, seconds) are passed (#49).
 - `hms()` creates a zero-length object of class `hms` that prints as `"hms()"`.
@@ -21,7 +27,7 @@
 - Values with durations of over 10000 hours are now printed correctly (#48).
 - `c()` now returns a hms (#41, @qgeissmann).
 
-### Documentation and error messages
+## Documentation and error messages
 
 - Fix and enhance examples in `?hms`.
 - Documentation is in Markdown format now.
