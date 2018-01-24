@@ -14,7 +14,6 @@ The hms package provides a simple class for storing durations or time-of-day val
 -   Supports coercion to and from various data types, including `POSIXt`
 -   Can be used as column in a data frame
 -   Based on the `difftime` class
--   No date is stored
 -   Values can exceed the 24-hour boundary or be negative
 -   By default, fractional seconds up to a microsecond are displayed, regardless of the value of the `"digits.secs"` option
 
@@ -47,7 +46,7 @@ as.hms(1)
 as.hms("12:34:56")
 #> 12:34:56
 as.hms(Sys.time())
-#> 13:49:19.264359
+#> 16:45:12.828186
 as.POSIXct(hms(1))
 #> [1] "1970-01-01 00:00:01 UTC"
 
