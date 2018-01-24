@@ -11,17 +11,18 @@ output:
 [![codecov](https://codecov.io/gh/tidyverse/hms/branch/master/graph/badge.svg)](https://codecov.io/gh/tidyverse/hms)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
 
-A simple class for storing durations or time-of-day values and displaying them in the hh:mm:ss format.
-Intended to simplify data exchange with databases, spreadsheets, and other data sources.
+The hms package provides a simple class for storing durations or time-of-day values and displaying them in the hh:mm:ss format.  This class is intended to simplify data exchange with databases, spreadsheets, and other data sources:
 
-The values are stored as a numeric vector that contains the number of seconds
-since midnight.  Supports construction from time values, coercion to and from
-various data types, and formatting, based on the `difftime` class.  Can be
-used in a data frame.
+- Stores values as a numeric vector that contains the number of seconds
+since midnight
+- Supports construction from explicit hour, minute, or second values
+- Supports coercion to and from various data types, including `POSIXt`
+- Can be used as column in a data frame
+- Based on the `difftime` class
 
 Compared to `POSIXct`, no date is stored, although the values can exceed
 the 24-hour boundary or be negative.
-By default, fractional seconds up to a microsecond are displayed.
+By default, fractional seconds up to a microsecond are displayed, regardless of the value of the `"digits.secs"` option.
 
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(

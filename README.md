@@ -4,11 +4,15 @@ hms
 
 [![Travis-CI Build Status](https://travis-ci.org/tidyverse/hms.svg?branch=master)](https://travis-ci.org/tidyverse/hms) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/tidyverse/hms?branch=master&svg=true)](https://ci.appveyor.com/project/tidyverse/hms) [![codecov](https://codecov.io/gh/tidyverse/hms/branch/master/graph/badge.svg)](https://codecov.io/gh/tidyverse/hms) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
 
-A simple class for storing durations or time-of-day values and displaying them in the hh:mm:ss format. Intended to simplify data exchange with databases, spreadsheets, and other data sources.
+The hms package provides a simple class for storing durations or time-of-day values and displaying them in the hh:mm:ss format. This class is intended to simplify data exchange with databases, spreadsheets, and other data sources:
 
-The values are stored as a numeric vector that contains the number of seconds since midnight. Supports construction from time values, coercion to and from various data types, and formatting, based on the `difftime` class. Can be used in a data frame.
+-   Stores values as a numeric vector that contains the number of seconds since midnight
+-   Supports construction from explicit hour, minute, or second values
+-   Supports coercion to and from various data types, including `POSIXt`
+-   Can be used as column in a data frame
+-   Based on the `difftime` class
 
-Compared to `POSIXct`, no date is stored, although the values can exceed the 24-hour boundary or be negative. By default, fractional seconds up to a microsecond are displayed.
+Compared to `POSIXct`, no date is stored, although the values can exceed the 24-hour boundary or be negative. By default, fractional seconds up to a microsecond are displayed, regardless of the value of the `"digits.secs"` option.
 
 ``` r
 library(hms)
@@ -19,7 +23,7 @@ as.hms(1)
 as.hms("12:34:56")
 #> 12:34:56
 as.hms(Sys.time())
-#> 02:08:33.909250
+#> 17:00:35.514385
 as.POSIXct(hms(1))
 #> [1] "1970-01-01 00:00:01 UTC"
 
