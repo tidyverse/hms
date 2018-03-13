@@ -1,3 +1,8 @@
+## hms 0.4.2 (2018-03-10)
+
+- Adapted tests to pillar 1.2.1.
+
+
 # hms 0.4.1 (2018-01-23)
 
 - Preserve `NA` when converting to `character` (#51, @jeroen).

@@ -1,4 +1,4 @@
-Fix tests after release of pillar 1.1.0.
+Fix tests after release of pillar 1.2.1.
 
 ## Test environments
 * ubuntu 17.04 (local install), R 3.4.3
@@ -12,4 +12,4 @@ Fix tests after release of pillar 1.1.0.
 
 ## Reverse dependencies
 
-We checked 17 reverse dependencies, comparing R CMD check results across CRAN and dev versions of this package. No regressions detected.
+No checks run, because this versions only updates the tests for this package, and not exported code.

@@ -2,7 +2,6 @@
 % Please edit documentation in R/hms.R
 \name{hms}
 \alias{hms}
-\alias{hms}
 \alias{is.hms}
 \alias{as.hms}
 \alias{as.hms.default}
