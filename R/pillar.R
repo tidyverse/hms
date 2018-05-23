@@ -29,7 +29,9 @@ pillar_shaft.hms <- function(x, ...) {
     )
     data <- paste0(
       data_seconds,
-      pillar::style_num(format_split_seconds(xx$split_seconds), xx$sign, highlight_split_seconds)
+      if (need_seconds) {
+        pillar::style_num(format_split_seconds(xx$split_seconds), xx$sign, highlight_split_seconds)
+      }
     )
   } else {
     data_seconds <- paste0(
