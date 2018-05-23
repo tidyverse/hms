@@ -1,4 +1,10 @@
-## hms 0.4.2 (2018-03-10)
+# hms 0.4.2.9000 (2018-05-23)
+
+- Values with nonzero hours, seconds and split-seconds are now displayed correctly in tibbles (#56).
+- Adapted tests to pillar 1.2.1.
+
+
+# hms 0.4.2 (2018-03-10)
 
 - Adapted tests to pillar 1.2.1.
 
