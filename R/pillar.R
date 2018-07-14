@@ -23,10 +23,6 @@ pillar_shaft.hms <- function(x, ...) {
   need_hours <- any(has_hours, na.rm = TRUE)
   need_sign <- any(xx$sign)
 
-  print(highlight_hours)
-  print(highlight_minutes)
-  print(highlight_seconds)
-
   if (need_hours) {
     data_seconds <- paste0(
       if (need_sign) ifelse(xx$sign, "-", " ") else "",
