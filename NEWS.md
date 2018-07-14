@@ -1,21 +1,26 @@
-# hms 0.4.2.9000 (2018-05-23)
+# hms 0.4.2.9001
+
+- Always show seconds in a pillar if they are different from zero (#54).
+
+
+# hms 0.4.2.9000
 
 - Values with nonzero hours, seconds and split-seconds are now displayed correctly in tibbles (#56).
 - Adapted tests to pillar 1.2.1.
 
 
-# hms 0.4.2 (2018-03-10)
+# hms 0.4.2
 
 - Adapted tests to pillar 1.2.1.
 
 
-# hms 0.4.1 (2018-01-23)
+# hms 0.4.1
 
 - Preserve `NA` when converting to `character` (#51, @jeroen).
 - Adapted tests to pillar 1.1.0.
 
 
-# hms 0.4.0 (2017-11-16)
+# hms 0.4.0
 
 ## Breaking changes
 
@@ -45,13 +50,13 @@
 - Improved error message if calling `hms()` with a character argument (#29).
 
 
-# hms 0.3 (2016-11-22)
+# hms 0.3
 
 - Fix `lubridate` test for compatibility with 1.6.0 (#23, @vspinu).
 - NA values are formatted as `NA` (#22).
 
 
-# hms 0.2 (2016-06-17)
+# hms 0.2
 
 Minor fixes and improvements.
 
@@ -61,7 +66,7 @@ Minor fixes and improvements.
 - Sub-second part is printed with up to six digits, for even smaller values trailing zeros are shown (#17).
 
 
-# hms 0.1 (2016-04-30)
+# hms 0.1
 
 First CRAN release.
 
