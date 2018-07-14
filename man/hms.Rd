@@ -73,7 +73,8 @@ for v0.3 and earlier.  The previous behavior can be restored by calling
     \code{\link{make.names}}) is optional.  Note that all of \R's
     \pkg{base} package \code{as.data.frame()} methods use
     \code{optional} only for column names treatment, basically with the
-    meaning of \code{\link{data.frame}(*, check.names = !optional)}.}
+    meaning of \code{\link{data.frame}(*, check.names = !optional)}.
+    See also the \code{make.names} argument of the \code{matrix} method.}
 
 \item{nm}{Name of column in new data frame}
 }
