@@ -1,6 +1,10 @@
+#' @import vctrs
 #' @import rlang
+NULL
+
 #' @importFrom methods setOldClass
 setOldClass(c("hms", "difftime"))
+#setOldClass(c("hms", "vctrs_vctr", "difftime"))
 
 #' A simple class for storing time-of-day values
 #'
@@ -14,6 +18,8 @@ setOldClass(c("hms", "difftime"))
 #' @examples
 #' hms(56, 34, 12)
 #' hms()
+#' new_hms(1:3)
+#'
 #' as.hms(1)
 #' as.hms("12:34:56")
 #' as.hms(Sys.time())
@@ -40,7 +46,21 @@ hms <- function(seconds = NULL, minutes = NULL, hours = NULL, days = NULL) {
   secs <- reduce(arg_secs[!map_lgl(args, is.null)], `+`)
   if (is.null(secs)) secs <- numeric()
 
-  as.hms(as.difftime(secs, units = "secs"))
+  new_hms(secs)
+}
+
+#' @rdname hms
+#' @export
+new_hms <- function(x = numeric()) {
+  vec_assert(x, numeric())
+
+  out <- new_vctr(x, units = "secs", class = c("hms", "difftime"))
+
+  # Move difftime class to the beginning, so that vctrs methods override
+  # base methods
+  class(out) <- c("hms", "difftime")
+  #class(out) <- c(setdiff(class(out), "difftime"), "difftime")
+  out
 }
 
 #' @rdname hms

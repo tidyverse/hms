@@ -2,6 +2,7 @@
 % Please edit documentation in R/hms.R
 \name{hms}
 \alias{hms}
+\alias{new_hms}
 \alias{is_hms}
 \alias{as.hms}
 \alias{as.hms.default}
@@ -19,6 +20,8 @@
 \title{A simple class for storing time-of-day values}
 \usage{
 hms(seconds = NULL, minutes = NULL, hours = NULL, days = NULL)
+
+new_hms(x = numeric())
 
 is_hms(x)
 
@@ -94,6 +97,8 @@ For \code{hms}, all arguments must have the same length or be
 \examples{
 hms(56, 34, 12)
 hms()
+new_hms(1:3)
+
 as.hms(1)
 as.hms("12:34:56")
 as.hms(Sys.time())

@@ -11,7 +11,8 @@ Description: Implements an S3 class for storing and formatting time-of-day
 Imports:
     methods,
     pkgconfig,
-    rlang
+    rlang,
+    vctrs
 Suggests:
     crayon,
     lubridate,
