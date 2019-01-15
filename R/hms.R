@@ -46,7 +46,7 @@ hms <- function(seconds = NULL, minutes = NULL, hours = NULL, days = NULL) {
   secs <- reduce(arg_secs[!map_lgl(args, is.null)], `+`)
   if (is.null(secs)) secs <- numeric()
 
-  new_hms(secs)
+  new_hms(as.numeric(secs))
 }
 
 #' @rdname hms
@@ -54,12 +54,10 @@ hms <- function(seconds = NULL, minutes = NULL, hours = NULL, days = NULL) {
 new_hms <- function(x = numeric()) {
   vec_assert(x, numeric())
 
-  out <- new_vctr(x, units = "secs", class = c("hms", "difftime"))
+  out <- new_duration(x, units = "secs")
 
-  # Move difftime class to the beginning, so that vctrs methods override
-  # base methods
-  class(out) <- c("hms", "difftime")
-  #class(out) <- c(setdiff(class(out), "difftime"), "difftime")
+  # no class argument?
+  class(out) <- c("hms", class(out))
   out
 }
 
@@ -97,8 +95,7 @@ as.hms.default <- function(x, ...) {
 #' @rdname hms
 #' @export
 as.hms.difftime <- function(x, ...) {
-  units(x) <- "secs"
-  structure(x, class = unique(c("hms", class(x))))
+  new_hms(vec_data(x))
 }
 
 #' @rdname hms
@@ -170,7 +167,7 @@ as.data.frame.hms <- forward_to(as.data.frame.difftime)
 
 #' @export
 `[[.hms` <- function(x, ...) {
-  hms(NextMethod())
+  as.hms(NextMethod())
 }
 
 # Combination -------------------------------------------------------------

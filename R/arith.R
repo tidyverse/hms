@@ -42,6 +42,8 @@ split_second_of_second <- function(x) {
 }
 
 decompose <- function(x) {
+  x <- vec_data(x)
+
   list(
     sign = x < 0 & !is.na(x),
     hours = abs(hours(x)),
