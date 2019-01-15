@@ -5,7 +5,7 @@ home:
   strip_header: true
   links:
   - text: Learn more
-    href: http://r4ds.had.co.nz/tibbles.html
+    href: http://r4ds.had.co.nz/dates-and-times.html
 
 navbar:
   title: ~
