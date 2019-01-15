@@ -2,7 +2,7 @@
 % Please edit documentation in R/hms.R
 \name{hms}
 \alias{hms}
-\alias{is.hms}
+\alias{is_hms}
 \alias{as.hms}
 \alias{as.hms.default}
 \alias{as.hms.difftime}
@@ -20,7 +20,7 @@
 \usage{
 hms(seconds = NULL, minutes = NULL, hours = NULL, days = NULL)
 
-is.hms(x)
+is_hms(x)
 
 as.hms(x, ...)
 

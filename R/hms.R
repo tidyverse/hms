@@ -45,7 +45,17 @@ hms <- function(seconds = NULL, minutes = NULL, hours = NULL, days = NULL) {
 
 #' @rdname hms
 #' @export
-is.hms <- function(x) inherits(x, "hms")
+is_hms <- function(x) inherits(x, "hms")
+
+#' Deprecated functions
+#'
+#' `is.hms()` has been replaced by [is_hms()].
+#'
+#' @export
+is.hms <- function(x) {
+  signal_soft_deprecated("is.hms() is deprecated, please use is_hms().")
+  is_hms(x)
+}
 
 # Coercion in -------------------------------------------------------------
 
