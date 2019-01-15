@@ -32,11 +32,11 @@ as.hms(x, ...)
 
 \method{as.hms}{character}(x, ...)
 
-\method{as.hms}{POSIXt}(x, tz = pkgconfig::get_config("hms::default_tz", ""),
-  ...)
+\method{as.hms}{POSIXt}(x, tz = pkgconfig::get_config("hms::default_tz",
+  ""), ...)
 
-\method{as.hms}{POSIXlt}(x, tz = pkgconfig::get_config("hms::default_tz", ""),
-  ...)
+\method{as.hms}{POSIXlt}(x, tz = pkgconfig::get_config("hms::default_tz",
+  ""), ...)
 
 \method{as.POSIXct}{hms}(x, ...)
 
@@ -45,7 +45,8 @@ as.hms(x, ...)
 \method{as.character}{hms}(x, ...)
 
 \method{as.data.frame}{hms}(x, row.names = NULL, optional = FALSE, ...,
-  nm = paste(deparse(substitute(x), width.cutoff = 500L), collapse = " "))
+  nm = paste(deparse(substitute(x), width.cutoff = 500L), collapse =
+  " "))
 
 \method{format}{hms}(x, ...)
 
