@@ -77,6 +77,16 @@ is.hms <- function(x) {
   is_hms(x)
 }
 
+#' @export
+vec_ptype_abbr.hms <- function(x) {
+  "time"
+}
+
+#' @export
+vec_ptype_full.hms <- function(x) {
+  "time"
+}
+
 # Coercion in -------------------------------------------------------------
 
 #' @rdname hms
