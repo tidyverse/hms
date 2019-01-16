@@ -98,24 +98,7 @@ as.hms <- function(x, ...) UseMethod("as.hms", x)
 #' @rdname hms
 #' @export
 as.hms.default <- function(x, ...) {
-  stop("Can't convert object of class ", paste(class(x), collapse = ", "),
-       " to hms.", call. = FALSE)
-}
-
-#' @rdname hms
-#' @export
-as.hms.difftime <- function(x, ...) {
-  new_hms(vec_data(x))
-}
-
-#' @rdname hms
-#' @export
-as.hms.numeric <- function(x, ...) hms(seconds = x)
-
-#' @rdname hms
-#' @export
-as.hms.character <- function(x, ...) {
-  parse_hms(x)
+  vec_cast(x, new_hms())
 }
 
 #' @rdname hms
@@ -156,6 +139,10 @@ as.POSIXlt.hms <- function(x, ...) {
 #' @rdname hms
 #' @export
 as.character.hms <- function(x, ...) {
+  format_hms(x)
+}
+
+format_hms <- function(x) {
   xx <- decompose(x)
 
   ifelse(is.na(x), NA_character_, paste0(
@@ -183,7 +170,8 @@ as.data.frame.hms <- forward_to(as.data.frame.difftime)
 # Combination -------------------------------------------------------------
 #' @export
 c.hms <- function(x, ...) {
-  as.hms(NextMethod())
+  # Needed to override c.difftime()
+  vec_c(x, ...)
 }
 
 # Updating ----------------------------------------------------------------

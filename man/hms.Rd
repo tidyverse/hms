@@ -6,9 +6,6 @@
 \alias{is_hms}
 \alias{as.hms}
 \alias{as.hms.default}
-\alias{as.hms.difftime}
-\alias{as.hms.numeric}
-\alias{as.hms.character}
 \alias{as.hms.POSIXt}
 \alias{as.hms.POSIXlt}
 \alias{as.POSIXct.hms}
@@ -28,12 +25,6 @@ is_hms(x)
 as.hms(x, ...)
 
 \method{as.hms}{default}(x, ...)
-
-\method{as.hms}{difftime}(x, ...)
-
-\method{as.hms}{numeric}(x, ...)
-
-\method{as.hms}{character}(x, ...)
 
 \method{as.hms}{POSIXt}(x, tz = pkgconfig::get_config("hms::default_tz",
   ""), ...)
