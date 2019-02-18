@@ -23,11 +23,11 @@ vec_type2.hms.hms <- function(x, y) hms::hms()
 
 #' @method vec_type2.difftime hms
 #' @export
-vec_type2.difftime.hms <- function(x, y) new_difftime(units = units(x))
+vec_type2.difftime.hms <- function(x, y) new_duration(units = units(x))
 
 #' @method vec_type2.hms difftime
 #' @export
-vec_type2.hms.difftime <- function(x, y) new_difftime(units = units(y))
+vec_type2.hms.difftime <- function(x, y) new_duration(units = units(y))
 
 #' @method vec_type2.double hms
 #' @export
