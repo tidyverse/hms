@@ -18,7 +18,10 @@ setOldClass(c("hms", "difftime"))
 #' @examples
 #' hms(56, 34, 12)
 #' hms()
-#' new_hms(1:3)
+#'
+#' new_hms(as.numeric(1:3))
+#' # Supports numeric only!
+#' try(new_hms(1:3))
 #'
 #' as.hms(1)
 #' as.hms("12:34:56")
