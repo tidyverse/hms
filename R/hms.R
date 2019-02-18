@@ -51,7 +51,8 @@ is_hms <- function(x) inherits(x, "hms")
 #'
 #' `is.hms()` has been replaced by [is_hms()].
 #'
-#' @param x An object.
+#' @inheritParams is_hms
+#'
 #' @export
 is.hms <- function(x) {
   signal_soft_deprecated("is.hms() is deprecated, please use is_hms().")
