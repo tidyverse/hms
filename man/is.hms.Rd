@@ -6,6 +6,9 @@
 \usage{
 is.hms(x)
 }
+\arguments{
+\item{x}{An object.}
+}
 \description{
 \code{is.hms()} has been replaced by \code{\link[=is_hms]{is_hms()}}.
 }
