@@ -7,7 +7,7 @@ test_that("constructor", {
   expect_identical(hms(3600), hms(hours = 1))
 
   expect_equal(length(hms(1)), 1L)
-  expect_true(is.hms(hms(1)))
+  expect_true(is_hms(hms(1)))
   expect_is(hms(1), "difftime")
   expect_identical(as.numeric(hms(1)), 1)
   expect_identical(as.difftime(hms(1)), hms(1))
@@ -18,7 +18,7 @@ test_that("constructor", {
 
 test_that("zero length (#35)", {
   expect_equal(length(hms()), 0L)
-  expect_true(is.hms(hms()))
+  expect_true(is_hms(hms()))
   expect_is(hms(), "difftime")
   expect_identical(as.numeric(hms()), numeric())
   expect_identical(as.difftime(hms()), hms())
@@ -36,4 +36,10 @@ test_that("bad input", {
   expect_error(hms(minutes = 1, hours = 2:3), "same length or be NULL")
   expect_error(hms(seconds = 1:5, minutes = 6:10, hours = 11:17), "same length or be NULL")
   expect_error(hms("05:00"), "must be numeric")
+})
+
+test_that("is.hms()", {
+  scoped_lifecycle_silence()
+  expect_identical(is.hms(hms), is_hms(hms))
+  expect_identical(is.hms(3), is_hms(3))
 })
