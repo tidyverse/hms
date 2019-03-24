@@ -23,9 +23,9 @@ setOldClass(c("hms", "difftime"))
 #' # Supports numeric only!
 #' try(new_hms(1:3))
 #'
-#' as.hms(1)
-#' as.hms("12:34:56")
-#' as.hms(Sys.time())
+#' as_hms(1)
+#' as_hms("12:34:56")
+#' as_hms(Sys.time())
 #' as.POSIXct(hms(1))
 #' data.frame(a = hms(1))
 #' d <- data.frame(hours = 1:3)
@@ -74,6 +74,7 @@ is_hms <- function(x) inherits(x, "hms")
 #'
 #' @inheritParams is_hms
 #'
+#' @name Deprecated
 #' @export
 is.hms <- function(x) {
   signal_soft_deprecated("is.hms() is deprecated, please use is_hms().")
@@ -94,17 +95,32 @@ vec_ptype_full.hms <- function(x) {
 
 #' @rdname hms
 #' @param x An object.
-#' @param ... Arguments passed on to further methods.
 #' @export
-as.hms <- function(x, ...) UseMethod("as.hms", x)
-
-#' @rdname hms
-#' @export
-as.hms.default <- function(x, ...) {
+as_hms <- function(x) {
   vec_cast(x, new_hms())
 }
 
-#' @rdname hms
+#' @description
+#' `as.hms()` has been replaced by [as_hms()], which is no longer generic and also
+#' does not have a `tz` argument.
+#' Change the timezone before converting if necessary, e.g. using [lubridate::with_tz()].
+#'
+#' @inheritParams as_hms
+#' @param ... Arguments passed on to further methods.
+#' @rdname Deprecated
+#' @export
+as.hms <- function(x, ...) {
+  signal_soft_deprecated("as.hms() is deprecated, please use as_hms().")
+  UseMethod("as.hms", x)
+}
+
+#' @rdname Deprecated
+#' @export
+as.hms.default <- function(x, ...) {
+  as_hms(x)
+}
+
+#' @rdname Deprecated
 #' @param tz The time zone in which to interpret a POSIXt time for extracting
 #'   the time of day.  The default is now the zone of `x` but was `"UTC"`
 #'   for v0.3 and earlier.  The previous behavior can be restored by calling
@@ -117,7 +133,7 @@ as.hms.POSIXt <- function(x, tz = pkgconfig::get_config("hms::default_tz", ""), 
   hms(time$sec, time$min, time$hour)
 }
 
-#' @rdname hms
+#' @rdname Deprecated
 #' @export
 as.hms.POSIXlt <- function(x, tz = pkgconfig::get_config("hms::default_tz", ""), ...) {
   # We need to roundtrip via as.POSIXct() to respect the time zone
@@ -167,7 +183,7 @@ as.data.frame.hms <- forward_to(as.data.frame.difftime)
 
 #' @export
 `[[.hms` <- function(x, ...) {
-  as.hms(NextMethod())
+  as_hms(NextMethod())
 }
 
 # Combination -------------------------------------------------------------

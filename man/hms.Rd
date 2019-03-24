@@ -4,10 +4,7 @@
 \alias{hms}
 \alias{new_hms}
 \alias{is_hms}
-\alias{as.hms}
-\alias{as.hms.default}
-\alias{as.hms.POSIXt}
-\alias{as.hms.POSIXlt}
+\alias{as_hms}
 \alias{as.POSIXct.hms}
 \alias{as.POSIXlt.hms}
 \alias{as.character.hms}
@@ -22,15 +19,7 @@ new_hms(x = numeric())
 
 is_hms(x)
 
-as.hms(x, ...)
-
-\method{as.hms}{default}(x, ...)
-
-\method{as.hms}{POSIXt}(x, tz = pkgconfig::get_config("hms::default_tz",
-  ""), ...)
-
-\method{as.hms}{POSIXlt}(x, tz = pkgconfig::get_config("hms::default_tz",
-  ""), ...)
+as_hms(x)
 
 \method{as.POSIXct}{hms}(x, ...)
 
@@ -52,13 +41,7 @@ performed.}
 
 \item{x}{An object.}
 
-\item{...}{Arguments passed on to further methods.}
-
-\item{tz}{The time zone in which to interpret a POSIXt time for extracting
-the time of day.  The default is now the zone of \code{x} but was \code{"UTC"}
-for v0.3 and earlier.  The previous behavior can be restored by calling
-\code{pkgconfig::set_config("hms::default_tz", "UTC")}, see
-\code{\link[pkgconfig:set_config]{pkgconfig::set_config()}}.}
+\item{...}{additional arguments to be passed to or from methods.}
 
 \item{row.names}{\code{NULL} or a character vector giving the row
     names for the data frame.  Missing values are not allowed.}
@@ -93,9 +76,9 @@ new_hms(as.numeric(1:3))
 # Supports numeric only!
 try(new_hms(1:3))
 
-as.hms(1)
-as.hms("12:34:56")
-as.hms(Sys.time())
+as_hms(1)
+as_hms("12:34:56")
+as_hms(Sys.time())
 as.POSIXct(hms(1))
 data.frame(a = hms(1))
 d <- data.frame(hours = 1:3)

@@ -12,8 +12,8 @@ test_that("constructor", {
   expect_identical(as.numeric(hms(1)), 1)
   expect_identical(as.difftime(hms(1)), hms(1))
 
-  expect_identical(units(as.hms(as.difftime(1, units = "mins"))), "secs")
-  expect_identical(as.hms(hms(1)), hms(1))
+  expect_identical(units(as_hms(as.difftime(1, units = "mins"))), "secs")
+  expect_identical(as_hms(hms(1)), hms(1))
 })
 
 test_that("zero length (#35)", {
@@ -27,7 +27,7 @@ test_that("zero length (#35)", {
   expect_identical(hms(), hms(minutes = numeric()))
   expect_identical(hms(), hms(hours = numeric()))
   expect_identical(hms(), hms(days = numeric()))
-  expect_identical(hms(), as.hms(numeric()))
+  expect_identical(hms(), as_hms(numeric()))
 })
 
 test_that("bad input", {
