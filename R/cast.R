@@ -36,6 +36,30 @@ vec_cast.difftime.hms <- function(x, to) {
   vec_cast(x, to)
 }
 
+#' @method vec_cast.hms POSIXct
+#' @export
+vec_cast.hms.POSIXct <- function(x, to) {
+  vec_cast(as.POSIXlt(x), to)
+}
+
+#' @method vec_cast.POSIXct hms
+#' @export
+vec_cast.POSIXct.hms <- function(x, to) {
+  structure(as.numeric(x), tzone = "UTC", class = c("POSIXct", "POSIXt"))
+}
+
+#' @method vec_cast.hms POSIXlt
+#' @export
+vec_cast.hms.POSIXlt <- function(x, to) {
+  hms(x$sec, x$min, x$hour)
+}
+
+#' @method vec_cast.POSIXlt hms
+#' @export
+vec_cast.POSIXlt.hms <- function(x, to) {
+  as.POSIXlt(vec_cast(x, new_datetime()))
+}
+
 #' @method vec_cast.hms double
 #' @export
 vec_cast.hms.double <- function(x, to) new_hms(x)

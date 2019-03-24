@@ -62,6 +62,11 @@ and always with "seconds" as unit for robust coercion to numeric.
 Supports construction from time values, coercion to and from
 various data types, and formatting.  Can be used as a regular column in a
 data frame.
+
+\code{as_hms()} forwards to \code{\link[=vec_cast]{vec_cast()}}.
+For arguments of type \link{POSIXct} and \link{POSIXlt}, no timezone
+conversion is performed.
+Use \code{\link[lubridate:with_tz]{lubridate::with_tz()}} and \code{\link[lubridate:force_tz]{lubridate::force_tz()}} as necessary.
 }
 \details{
 For \code{hms}, all arguments must have the same length or be

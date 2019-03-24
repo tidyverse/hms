@@ -93,6 +93,12 @@ vec_ptype_full.hms <- function(x) {
 
 # Coercion in -------------------------------------------------------------
 
+#' @description
+#' `as_hms()` forwards to [vec_cast()].
+#' For arguments of type [POSIXct] and [POSIXlt], no timezone
+#' conversion is performed.
+#' Use [lubridate::with_tz()] and [lubridate::force_tz()] as necessary.
+#'
 #' @rdname hms
 #' @param x An object.
 #' @export
@@ -103,6 +109,8 @@ as_hms <- function(x) {
 #' @description
 #' `as.hms()` has been replaced by [as_hms()], which is no longer generic and also
 #' does not have a `tz` argument.
+#' It also uses the time zone of the argument for conversion,
+#' not the current system's timezone.
 #' Change the timezone before converting if necessary, e.g. using [lubridate::with_tz()].
 #'
 #' @inheritParams as_hms
@@ -130,14 +138,15 @@ as.hms.default <- function(x, ...) {
 #' @importFrom pkgconfig get_config
 as.hms.POSIXt <- function(x, tz = pkgconfig::get_config("hms::default_tz", ""), ...) {
   time <- as.POSIXlt(x, tz = tz)
-  hms(time$sec, time$min, time$hour)
+  vec_cast(time, new_hms())
 }
 
 #' @rdname Deprecated
 #' @export
 as.hms.POSIXlt <- function(x, tz = pkgconfig::get_config("hms::default_tz", ""), ...) {
   # We need to roundtrip via as.POSIXct() to respect the time zone
-  as.hms(as.POSIXct(x), tz = tz, ...)
+  time <- as.POSIXlt(as.POSIXct(x), tz = tz)
+  vec_cast(time, new_hms())
 }
 
 
@@ -146,19 +155,19 @@ as.hms.POSIXlt <- function(x, tz = pkgconfig::get_config("hms::default_tz", ""),
 #' @rdname hms
 #' @export
 as.POSIXct.hms <- function(x, ...) {
-  structure(as.numeric(x), tzone = "UTC", class = c("POSIXct", "POSIXt"))
+  vec_cast(x, new_datetime())
 }
 
 #' @rdname hms
 #' @export
 as.POSIXlt.hms <- function(x, ...) {
-  as.POSIXlt(as.POSIXct(x, ...), ...)
+  vec_cast(x, as.POSIXlt(new_datetime()))
 }
 
 #' @rdname hms
 #' @export
 as.character.hms <- function(x, ...) {
-  format_hms(x)
+  vec_cast(x, character())
 }
 
 format_hms <- function(x) {
