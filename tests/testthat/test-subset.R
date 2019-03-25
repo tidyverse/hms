@@ -14,6 +14,13 @@ test_that("range updating keeps class", {
   expect_identical(x, hms(c(1,5,6,4)))
 })
 
+test_that("range updating warns if lossy cast", {
+  x <- hms(1:3)
+
+  # r-lib/testthat#783
+  expect_warning(x[2] <- "a")
+})
+
 test_that("index subsetting keeps class", {
   expect_identical(hms(1:3)[[2]], hms(2))
 })

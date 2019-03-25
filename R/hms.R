@@ -195,6 +195,17 @@ as.data.frame.hms <- forward_to(as.data.frame.difftime)
   vec_restore(NextMethod(), x)
 }
 
+#' @export
+`[<-.hms` <- function(x, i, value) {
+  if (missing(i)) {
+    i <- seq_along(x)
+  }
+  x <- vec_data(x)
+  value <- vec_cast(value, new_hms())
+  vec_slice(x, i) <- value
+  new_hms(x)
+}
+
 # Combination -------------------------------------------------------------
 #' @export
 c.hms <- function(x, ...) {

@@ -78,7 +78,14 @@ vec_cast.integer.hms <- function(x, to) as.integer(vec_data(x))
 
 #' @method vec_cast.hms character
 #' @export
-vec_cast.hms.character <- function(x, to) parse_hms(x)
+vec_cast.hms.character <- function(x, to) {
+  ret <- parse_hms(x)
+  problems <- which(is.na(ret) && !is.na(x))
+  if (has_length(problems)) {
+    warn_lossy_cast(x, to, problems)
+  }
+  ret
+}
 
 #' @method vec_cast.character hms
 #' @export
