@@ -18,6 +18,8 @@ Suggests:
     lubridate,
     pillar (>= 1.1.0),
     testthat
+Remotes: 
+    r-lib/vctrs
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
