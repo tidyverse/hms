@@ -1,16 +1,20 @@
+SPLIT_SECOND_DIGITS <- 6L
+
+TICS_PER_SECOND <- 10^SPLIT_SECOND_DIGITS
 SECONDS_PER_MINUTE <- 60
 MINUTES_PER_HOUR <- 60
 HOURS_PER_DAY <- 24
 
-SECONDS_PER_HOUR <- MINUTES_PER_HOUR * SECONDS_PER_MINUTE
-SECONDS_PER_DAY <- HOURS_PER_DAY * SECONDS_PER_HOUR
+TICS_PER_MINUTE <- SECONDS_PER_MINUTE * TICS_PER_SECOND
+TICS_PER_HOUR <- MINUTES_PER_HOUR * TICS_PER_MINUTE
+TICS_PER_DAY <- HOURS_PER_DAY * TICS_PER_HOUR
 
 days <- function(x) {
-  trunc(as.numeric(x) / SECONDS_PER_DAY)
+  trunc(x / TICS_PER_DAY)
 }
 
 hours <- function(x) {
-  trunc(as.numeric(x) / SECONDS_PER_HOUR)
+  trunc(x / TICS_PER_HOUR)
 }
 
 hour_of_day <- function(x) {
@@ -18,7 +22,7 @@ hour_of_day <- function(x) {
 }
 
 minutes <- function(x) {
-  trunc(as.numeric(x) / SECONDS_PER_MINUTE)
+  trunc(x / TICS_PER_MINUTE)
 }
 
 minute_of_hour <- function(x) {
@@ -26,29 +30,40 @@ minute_of_hour <- function(x) {
 }
 
 seconds <- function(x) {
-  trunc(as.numeric(x))
+  trunc(x / TICS_PER_SECOND)
 }
 
 second_of_minute <- function(x) {
   abs(seconds(x) - minutes(x) * SECONDS_PER_MINUTE)
 }
 
-split_seconds <- function(x) {
-  as.numeric(x)
+tics <- function(x) {
+  x
 }
 
-split_second_of_second <- function(x) {
-  abs(split_seconds(x) - seconds(x))
+tic_of_second <- function(x) {
+  abs(tics(x) - seconds(x) * TICS_PER_SECOND)
 }
 
 decompose <- function(x) {
   x <- vec_data(x)
 
-  list(
-    sign = x < 0 & !is.na(x),
-    hours = abs(hours(x)),
-    minute_of_hour = minute_of_hour(x),
-    second_of_minute = second_of_minute(x),
-    split_seconds = split_second_of_second(x)
+  x <- as.numeric(x) * TICS_PER_SECOND
+
+  # #140
+  xr <- round(x)
+
+  out <- list(
+    sign = xr < 0 & !is.na(xr),
+    hours = abs(hours(xr)),
+    minute_of_hour = minute_of_hour(xr),
+    second_of_minute = second_of_minute(xr),
+    tics = tic_of_second(xr)
   )
+
+  # #140: Make sure zeros are printed
+  fake_zero <- (out$tics == 0) & (xr != x)
+  out$tics[fake_zero] <- 0.25
+
+  out
 }

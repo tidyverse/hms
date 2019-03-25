@@ -1,3 +1,10 @@
+# hms 0.4.2.9002
+
+- Fix formatting for times with a very small distance to the full second (#64).
+- The new `is_hms()` deprecates the existing `is.hms()`.
+- Correct reference link on r4ds (#58, @evanhaldane).
+
+
 # hms 0.4.2.9001
 
 - Always show seconds in a pillar if they are different from zero (#54).
