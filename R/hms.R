@@ -192,7 +192,7 @@ as.data.frame.hms <- forward_to(as.data.frame.difftime)
 
 #' @export
 `[[.hms` <- function(x, ...) {
-  as_hms(NextMethod())
+  vec_restore(NextMethod(), x)
 }
 
 # Combination -------------------------------------------------------------
