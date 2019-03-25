@@ -50,6 +50,21 @@ test_that("picoseconds (#17)", {
                    c("00:00:01.000000", "00:00:00.000000"))
 })
 
+test_that("picoseconds to the next second (#140)", {
+  expect_identical(format(hms(1 - 1e-6)),
+                   c("00:00:00.999999"))
+  expect_identical(format(hms(1 - 9e-7)),
+                   c("00:00:00.999999"))
+  expect_identical(format(hms(1 - 4e-7)),
+                   c("00:00:01.000000"))
+  expect_identical(format(hms(1 - 1e-10)),
+                   c("00:00:01.000000"))
+  expect_identical(format(hms(1 - 1e-10)),
+                   c("00:00:01.000000"))
+  expect_identical(format(hms(1 - c(1, 1e-10))),
+                   c("00:00:00.000000", "00:00:01.000000"))
+})
+
 test_that("NA", {
   expect_identical(format(hms(NA)),
                    c("NA"))
