@@ -136,7 +136,7 @@ as.character.hms <- function(x, ...) {
     format_hours(xx$hours), ":",
     format_two_digits(xx$minute_of_hour), ":",
     format_two_digits(xx$second_of_minute),
-    format_split_seconds(xx$split_seconds)))
+    format_tics(xx$tics)))
 }
 
 #' @rdname hms

@@ -33,12 +33,12 @@ second_of_minute <- function(x) {
   abs(seconds(x) - minutes(x) * SECONDS_PER_MINUTE)
 }
 
-split_seconds <- function(x) {
+tics <- function(x) {
   as.numeric(x)
 }
 
-split_second_of_second <- function(x) {
-  abs(split_seconds(x) - seconds(x))
+tic_of_second <- function(x) {
+  abs(tics(x) - seconds(x))
 }
 
 decompose <- function(x) {
@@ -47,6 +47,6 @@ decompose <- function(x) {
     hours = abs(hours(x)),
     minute_of_hour = minute_of_hour(x),
     second_of_minute = second_of_minute(x),
-    split_seconds = split_second_of_second(x)
+    tics = tic_of_second(x)
   )
 }

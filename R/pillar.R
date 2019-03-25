@@ -15,11 +15,11 @@ pillar_shaft.hms <- function(x, ...) {
   highlight_seconds <- !highlighted & has_seconds
   highlighted <- highlighted | highlight_seconds
 
-  has_split_seconds <- xx$split_seconds > 0
-  highlight_split_seconds <- !highlighted & has_split_seconds
+  has_tics <- xx$tics > 0
+  highlight_tics <- !highlighted & has_tics
 
-  need_split_seconds <- any(has_split_seconds, na.rm = TRUE)
-  need_seconds <- need_split_seconds || any(has_seconds, na.rm = TRUE)
+  need_tics <- any(has_tics, na.rm = TRUE)
+  need_seconds <- need_tics || any(has_seconds, na.rm = TRUE)
   need_hours <- any(has_hours, na.rm = TRUE)
   need_sign <- any(xx$sign)
 
@@ -37,7 +37,7 @@ pillar_shaft.hms <- function(x, ...) {
     data <- paste0(
       data_seconds,
       if (need_seconds) {
-        pillar::style_num(format_split_seconds(xx$split_seconds), xx$sign, highlight_split_seconds)
+        pillar::style_num(format_tics(xx$tics), xx$sign, highlight_tics)
       }
     )
   } else {
@@ -49,7 +49,7 @@ pillar_shaft.hms <- function(x, ...) {
     )
     data <- paste0(
       data_seconds,
-      pillar::style_num(format_split_seconds(xx$split_seconds), xx$sign, highlight_split_seconds),
+      pillar::style_num(format_tics(xx$tics), xx$sign, highlight_tics),
       pillar::style_subtle('"')
     )
   }

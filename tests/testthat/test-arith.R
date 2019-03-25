@@ -16,7 +16,7 @@ test_that("arithmetics work", {
 
 test_that("component extraction work", {
   x <- hms(12.3, 45, 23, 1)
-  expect_equal(split_second_of_second(x), 0.3)
+  expect_equal(tic_of_second(x), 0.3)
   expect_equal(second_of_minute(x), 12)
   expect_equal(minute_of_hour(x), 45)
   expect_equal(hour_of_day(x), 23)
@@ -25,7 +25,7 @@ test_that("component extraction work", {
 
 test_that("component extraction work for negative times", {
   x <- -hms(12.3, 45, 23, 1)
-  expect_equal(split_second_of_second(x), 0.3)
+  expect_equal(tic_of_second(x), 0.3)
   expect_equal(second_of_minute(x), 12)
   expect_equal(minute_of_hour(x), 45)
   expect_equal(hour_of_day(x), 23)
