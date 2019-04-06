@@ -4,7 +4,6 @@ NULL
 
 #' @importFrom methods setOldClass
 setOldClass(c("hms", "difftime"))
-#setOldClass(c("hms", "vctrs_vctr", "difftime"))
 
 #' A simple class for storing time-of-day values
 #'
