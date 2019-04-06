@@ -1,3 +1,4 @@
+#' @details
 #' \Sexpr[results=rd, stage=render]{hms:::lifecycle("stable")}
 #' @import rlang
 #' @aliases hms-package NULL

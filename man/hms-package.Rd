@@ -3,12 +3,15 @@
 \docType{package}
 \name{hms-package}
 \alias{hms-package}
-\title{\Sexpr[results=rd, stage=render]{hms:::lifecycle("stable")}}
+\title{hms: Pretty Time of Day}
 \description{
 \if{html}{\figure{logo.png}{options: align='right'}}
 
 Implements an S3 class for storing and formatting time-of-day
     values, based on the 'difftime' class.
+}
+\details{
+\Sexpr[results=rd, stage=render]{hms:::lifecycle("stable")}
 }
 \seealso{
 Useful links:
@@ -24,6 +27,7 @@ Useful links:
 Other contributors:
 \itemize{
   \item The R Consortium [funder]
+  \item RStudio [funder]
 }
 
 }
