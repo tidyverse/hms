@@ -198,9 +198,16 @@ as.data.frame.hms <- forward_to(as.data.frame.difftime)
 #' @export
 `[<-.hms` <- function(x, i, value) {
   if (missing(i)) {
-    i <- seq_along(x)
+    i <- TRUE
   }
+
   x <- vec_data(x)
+
+  # Workaround for Ops.difftime() implementation for unary minus
+  if (identical(class(value), "numeric")) {
+    attr(value, "units") <- NULL
+  }
+
   value <- vec_cast(value, new_hms())
   vec_slice(x, i) <- value
   new_hms(x)
