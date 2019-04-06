@@ -34,6 +34,11 @@ NULL
 
 # Construction ------------------------------------------------------------
 
+#' hms()
+#'
+#' `hms()` is a high-level constructor that accepts second, minute, hour and day components
+#' as numeric vectors.
+#'
 #' @rdname hms
 #' @details For `hms`, all arguments must have the same length or be
 #'   `NULL`.  Odd combinations (e.g., passing only `seconds` and
@@ -51,6 +56,10 @@ hms <- function(seconds = NULL, minutes = NULL, hours = NULL, days = NULL) {
   new_hms(as.numeric(secs))
 }
 
+#' new_hms()
+#'
+#' `new_hms()` is a low-level constructor that only checks that its input has the correct base type, [numeric].
+#'
 #' @rdname hms
 #' @export
 new_hms <- function(x = numeric()) {
@@ -63,6 +72,10 @@ new_hms <- function(x = numeric()) {
   out
 }
 
+#' is_hms()
+#'
+#' `is_hms()` checks if an object is of class `hms`.
+#'
 #' @rdname hms
 #' @export
 is_hms <- function(x) inherits(x, "hms")
@@ -96,10 +109,12 @@ vec_ptype_full.hms <- function(x) {
 
 # Coercion in -------------------------------------------------------------
 
-#' @description
+#' as_hms()
+#'
 #' `as_hms()` forwards to [vec_cast()].
-#' For arguments of type [POSIXct] and [POSIXlt], no timezone
-#' conversion is performed.
+#'
+#' For arguments of type [POSIXct] and [POSIXlt], `as_hms()` does not perform timezone
+#' conversion.
 #' Use [lubridate::with_tz()] and [lubridate::force_tz()] as necessary.
 #'
 #' @rdname hms

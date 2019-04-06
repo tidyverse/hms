@@ -63,15 +63,23 @@ Supports construction from time values, coercion to and from
 various data types, and formatting.  Can be used as a regular column in a
 data frame.
 
+\code{hms()} is a high-level constructor that accepts second, minute, hour and day components
+as numeric vectors.
+
+\code{new_hms()} is a low-level constructor that only checks that its input has the correct base type, \link{numeric}.
+
+\code{is_hms()} checks if an object is of class \code{hms}.
+
 \code{as_hms()} forwards to \code{\link[=vec_cast]{vec_cast()}}.
-For arguments of type \link{POSIXct} and \link{POSIXlt}, no timezone
-conversion is performed.
-Use \code{\link[lubridate:with_tz]{lubridate::with_tz()}} and \code{\link[lubridate:force_tz]{lubridate::force_tz()}} as necessary.
 }
 \details{
 For \code{hms}, all arguments must have the same length or be
 \code{NULL}.  Odd combinations (e.g., passing only \code{seconds} and
 \code{hours} but not \code{minutes}) are rejected.
+
+For arguments of type \link{POSIXct} and \link{POSIXlt}, \code{as_hms()} does not perform timezone
+conversion.
+Use \code{\link[lubridate:with_tz]{lubridate::with_tz()}} and \code{\link[lubridate:force_tz]{lubridate::force_tz()}} as necessary.
 }
 \examples{
 hms(56, 34, 12)
