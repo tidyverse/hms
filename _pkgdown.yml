@@ -1,3 +1,5 @@
+url: https://hms.tidyverse.org
+
 template:
   package: tidytemplate
 
@@ -19,4 +21,9 @@ navbar:
   - icon: fa-github fa-lg
     href: https://github.com/tidyverse/hms
 
+development:
+  mode: auto
 
+authors:
+  Kirill Müller:
+    href: http://krlmlr.info
