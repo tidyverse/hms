@@ -1,24 +1,31 @@
 
-hms
-===
+# hms <a href='https:/hms.tidyverse.org'><img src='man/figures/logo.png' align="right" height="139" /></a>
 
-[![Travis-CI Build Status](https://travis-ci.org/tidyverse/hms.svg?branch=master)](https://travis-ci.org/tidyverse/hms) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/tidyverse/hms?branch=master&svg=true)](https://ci.appveyor.com/project/tidyverse/hms) [![codecov](https://codecov.io/gh/tidyverse/hms/branch/master/graph/badge.svg)](https://codecov.io/gh/tidyverse/hms) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
+[![Travis-CI Build
+Status](https://travis-ci.org/tidyverse/hms.svg?branch=master)](https://travis-ci.org/tidyverse/hms)
+[![AppVeyor Build
+Status](https://ci.appveyor.com/api/projects/status/github/tidyverse/hms?branch=master&svg=true)](https://ci.appveyor.com/project/tidyverse/hms)
+[![codecov](https://codecov.io/gh/tidyverse/hms/branch/master/graph/badge.svg)](https://codecov.io/gh/tidyverse/hms)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
 
-Overview
---------
+## Overview
 
-The hms package provides a simple class for storing durations or time-of-day values and displaying them in the hh:mm:ss format. This class is intended to simplify data exchange with databases, spreadsheets, and other data sources:
+The hms package provides a simple class for storing durations or
+time-of-day values and displaying them in the hh:mm:ss format. This
+class is intended to simplify data exchange with databases,
+spreadsheets, and other data sources:
 
--   Stores values as a numeric vector that contains the number of seconds since midnight
--   Supports construction from explicit hour, minute, or second values
--   Supports coercion to and from various data types, including `POSIXt`
--   Can be used as column in a data frame
--   Based on the `difftime` class
--   Values can exceed the 24-hour boundary or be negative
--   By default, fractional seconds up to a microsecond are displayed, regardless of the value of the `"digits.secs"` option
+  - Stores values as a numeric vector that contains the number of
+    seconds since midnight
+  - Supports construction from explicit hour, minute, or second values
+  - Supports coercion to and from various data types, including `POSIXt`
+  - Can be used as column in a data frame
+  - Based on the `difftime` class
+  - Values can exceed the 24-hour boundary or be negative
+  - By default, fractional seconds up to a microsecond are displayed,
+    regardless of the value of the `"digits.secs"` option
 
-Installation
-------------
+## Installation
 
 ``` r
 # The easiest way to get hms is to install the whole tidyverse:
@@ -32,10 +39,10 @@ install.packages("hms")
 devtools::install_github("tidyverse/hms")
 ```
 
-Usage
------
+## Usage
 
-The following example showcases ways of using the `hms` class standalone or as a data frame column.
+The following example showcases ways of using the `hms` class standalone
+or as a data frame column.
 
 ``` r
 library(hms)
@@ -46,7 +53,7 @@ as.hms(1)
 as.hms("12:34:56")
 #> 12:34:56
 as.hms(Sys.time())
-#> 16:45:12.828186
+#> 00:37:31.371696
 as.POSIXct(hms(1))
 #> [1] "1970-01-01 00:00:01 UTC"
 

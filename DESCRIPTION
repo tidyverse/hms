@@ -4,7 +4,8 @@ Date: 2019-03-25
 Version: 0.4.2.9002
 Authors@R: c(
     person("Kirill", "Müller", role = c("aut", "cre"), email = "krlmlr+r@mailbox.org"),
-    person("The R Consortium", role = "fnd")
+    person("The R Consortium", role = "fnd"),
+    person("RStudio", role = "fnd")
     )
 Description: Implements an S3 class for storing and formatting time-of-day
     values, based on the 'difftime' class.

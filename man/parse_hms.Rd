@@ -12,11 +12,13 @@ parse_hm(x)
 \arguments{
 \item{x}{A character vector}
 }
+\value{
+An object of class \link{hms}.
+}
 \description{
 These functions convert character vectors to objects of the \link{hms} class.
 \code{NA} values are supported.
-}
-\details{
+
 \code{parse_hms()} accepts values of the form \code{"HH:MM:SS"}, with optional
 fractional seconds.
 

@@ -1,6 +1,9 @@
+#' @details
+#' \Sexpr[results=rd, stage=render]{hms:::lifecycle("stable")}
 #' @import vctrs
 #' @import rlang
-NULL
+#' @aliases hms-package NULL
+"_PACKAGE"
 
 #' @importFrom methods setOldClass
 setOldClass(c("hms", "difftime"))
