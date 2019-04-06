@@ -80,13 +80,38 @@ vec_cast.integer.hms <- function(x, to) as.integer(vec_data(x))
 #' @export
 vec_cast.hms.character <- function(x, to) {
   ret <- parse_hms(x)
-  problems <- which(is.na(ret) && !is.na(x))
-  if (has_length(problems)) {
-    warn_lossy_cast(x, to, problems)
-  }
+  lossy <- is.na(ret) && !is.na(x)
+  warn_lossy_cast(x, to, lossy)
   ret
 }
 
 #' @method vec_cast.character hms
 #' @export
 vec_cast.character.hms <- function(x, to) format_hms(x)
+
+warn_lossy_cast <- function(x, to, lossy) {
+  problems <- which(lossy)
+  if (is_empty(problems)) return()
+
+  warn(paste0("Lossy cast from <character> to <hms> at position(s) ", commas(problems)))
+}
+
+commas <- function(problems) {
+  MAX_BULLETS <- 6L
+  if (length(problems) >= MAX_BULLETS) {
+    n_more <- length(problems) - MAX_BULLETS + 1L
+    problems[[MAX_BULLETS]] <-
+      paste0(pre_dots("(and "), n_more, " more)")
+    length(problems) <- MAX_BULLETS
+  }
+
+  paste0(problems, collapse = ", ")
+}
+
+pre_dots <- function(x) {
+  if (length(x) > 0) {
+    paste0("... ", x)
+  } else {
+    character()
+  }
+}
