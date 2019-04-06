@@ -46,9 +46,7 @@ tic_of_second <- function(x) {
 }
 
 decompose <- function(x) {
-  x <- vec_data(x)
-
-  x <- as.numeric(x) * TICS_PER_SECOND
+  x <- vec_data(x) * TICS_PER_SECOND
 
   # #140
   xr <- round(x)
