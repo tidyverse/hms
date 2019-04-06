@@ -2,6 +2,7 @@
 % Please edit documentation in R/hms.R
 \docType{package}
 \name{hms-package}
+\alias{hms-package}
 \title{\Sexpr[results=rd, stage=render]{hms:::lifecycle("stable")}}
 \description{
 \if{html}{\figure{logo.png}{options: align='right'}}
