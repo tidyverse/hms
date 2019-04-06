@@ -69,11 +69,15 @@ is_hms <- function(x) inherits(x, "hms")
 
 #' Deprecated functions
 #'
+#' @name Deprecated
+NULL
+
+#' Deprecated is.hms()
+#'
 #' `is.hms()` has been replaced by [is_hms()].
 #'
 #' @inheritParams is_hms
-#'
-#' @name Deprecated
+#' @rdname Deprecated
 #' @export
 is.hms <- function(x) {
   signal_soft_deprecated("is.hms() is deprecated, please use is_hms().")
@@ -105,7 +109,8 @@ as_hms <- function(x) {
   vec_cast(x, new_hms())
 }
 
-#' @description
+#' Deprecated as.hms()
+#'
 #' `as.hms()` has been replaced by [as_hms()], which is no longer generic and also
 #' does not have a `tz` argument.
 #' It also uses the time zone of the argument for conversion,
