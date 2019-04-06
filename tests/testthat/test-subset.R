@@ -6,6 +6,8 @@ test_that("range subsetting keeps class", {
 })
 
 test_that("range updating keeps class", {
+  testthat::skip_if(packageVersion("vctrs") <= "0.1.0")
+
   x <- hms(1:3)
   x[2] <- 4
   expect_identical(x, hms(c(1,4,3)))
@@ -15,6 +17,8 @@ test_that("range updating keeps class", {
 })
 
 test_that("range updating warns if lossy cast", {
+  testthat::skip_if(packageVersion("vctrs") <= "0.1.0")
+
   x <- hms(1:3)
 
   # r-lib/testthat#783
