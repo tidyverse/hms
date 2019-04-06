@@ -1,3 +1,4 @@
+^favicon$
 ^codecov\.yml$
 ^.*\.Rproj$
 ^\.Rproj\.user$
