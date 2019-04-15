@@ -1,3 +1,8 @@
+# hms 0.4.2.9003
+
+- Based on {vctrs} package, compatible with both the development and the CRAN version (#61).
+
+
 # hms 0.4.2.9002
 
 - Fix formatting for times with a very small distance to the full second (#64).
