@@ -10,7 +10,7 @@
 #' round_hms(as.hms("12:34:56"), 5)
 #' round_hms(as.hms("12:34:56"), 60)
 round_hms <- function(x, secs) {
-  as.hms(round(as.numeric(x) / secs) * secs)
+  vec_restore(round(as.numeric(x) / secs) * secs, x)
 }
 
 #' @rdname round_hms
@@ -18,5 +18,5 @@ round_hms <- function(x, secs) {
 #' @examples
 #' trunc_hms(as.hms("12:34:56"), 60)
 trunc_hms <- function(x, secs) {
-  as.hms(trunc(as.numeric(x) / secs) * secs)
+  vec_restore(trunc(as.numeric(x) / secs) * secs, x)
 }

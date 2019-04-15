@@ -1,5 +1,6 @@
 #' @details
 #' \Sexpr[results=rd, stage=render]{hms:::lifecycle("stable")}
+#' @import vctrs
 #' @import rlang
 #' @aliases hms-package NULL
 "_PACKAGE"
@@ -19,9 +20,14 @@ setOldClass(c("hms", "difftime"))
 #' @examples
 #' hms(56, 34, 12)
 #' hms()
-#' as.hms(1)
-#' as.hms("12:34:56")
-#' as.hms(Sys.time())
+#'
+#' new_hms(as.numeric(1:3))
+#' # Supports numeric only!
+#' try(new_hms(1:3))
+#'
+#' as_hms(1)
+#' as_hms("12:34:56")
+#' as_hms(Sys.time())
 #' as.POSIXct(hms(1))
 #' data.frame(a = hms(1))
 #' d <- data.frame(hours = 1:3)
@@ -31,6 +37,11 @@ NULL
 
 # Construction ------------------------------------------------------------
 
+#' hms()
+#'
+#' `hms()` is a high-level constructor that accepts second, minute, hour and day components
+#' as numeric vectors.
+#'
 #' @rdname hms
 #' @details For `hms`, all arguments must have the same length or be
 #'   `NULL`.  Odd combinations (e.g., passing only `seconds` and
@@ -45,58 +56,101 @@ hms <- function(seconds = NULL, minutes = NULL, hours = NULL, days = NULL) {
   secs <- reduce(arg_secs[!map_lgl(args, is.null)], `+`)
   if (is.null(secs)) secs <- numeric()
 
-  as.hms(as.difftime(secs, units = "secs"))
+  new_hms(as.numeric(secs))
 }
 
+#' new_hms()
+#'
+#' `new_hms()` is a low-level constructor that only checks that its input has the correct base type, [numeric].
+#'
+#' @rdname hms
+#' @export
+new_hms <- function(x = numeric()) {
+  vec_assert(x, numeric())
+
+  out <- new_duration(x, units = "secs")
+
+  # no class argument?
+  class(out) <- c("hms", class(out))
+  out
+}
+
+#' is_hms()
+#'
+#' `is_hms()` checks if an object is of class `hms`.
+#'
 #' @rdname hms
 #' @export
 is_hms <- function(x) inherits(x, "hms")
 
 #' Deprecated functions
 #'
+#' @name Deprecated
+NULL
+
+#' Deprecated is.hms()
+#'
 #' `is.hms()` has been replaced by [is_hms()].
 #'
 #' @inheritParams is_hms
-#'
+#' @rdname Deprecated
 #' @export
 is.hms <- function(x) {
   signal_soft_deprecated("is.hms() is deprecated, please use is_hms().")
   is_hms(x)
 }
 
+#' @export
+vec_ptype_abbr.hms <- function(x) {
+  "time"
+}
+
+#' @export
+vec_ptype_full.hms <- function(x) {
+  "time"
+}
+
 # Coercion in -------------------------------------------------------------
 
+#' as_hms()
+#'
+#' `as_hms()` forwards to [vec_cast()].
+#'
+#' For arguments of type [POSIXct] and [POSIXlt], `as_hms()` does not perform timezone
+#' conversion.
+#' Use [lubridate::with_tz()] and [lubridate::force_tz()] as necessary.
+#'
 #' @rdname hms
 #' @param x An object.
-#' @param ... Arguments passed on to further methods.
 #' @export
-as.hms <- function(x, ...) UseMethod("as.hms", x)
+as_hms <- function(x) {
+  vec_cast(x, new_hms())
+}
 
-#' @rdname hms
+#' Deprecated as.hms()
+#'
+#' `as.hms()` has been replaced by [as_hms()], which is no longer generic and also
+#' does not have a `tz` argument.
+#' It also uses the time zone of the argument for conversion,
+#' not the current system's timezone.
+#' Change the timezone before converting if necessary, e.g. using [lubridate::with_tz()].
+#'
+#' @inheritParams as_hms
+#' @param ... Arguments passed on to further methods.
+#' @rdname Deprecated
+#' @export
+as.hms <- function(x, ...) {
+  signal_soft_deprecated("as.hms() is deprecated, please use as_hms().")
+  UseMethod("as.hms", x)
+}
+
+#' @rdname Deprecated
 #' @export
 as.hms.default <- function(x, ...) {
-  stop("Can't convert object of class ", paste(class(x), collapse = ", "),
-       " to hms.", call. = FALSE)
+  as_hms(x)
 }
 
-#' @rdname hms
-#' @export
-as.hms.difftime <- function(x, ...) {
-  units(x) <- "secs"
-  structure(x, class = unique(c("hms", class(x))))
-}
-
-#' @rdname hms
-#' @export
-as.hms.numeric <- function(x, ...) hms(seconds = x)
-
-#' @rdname hms
-#' @export
-as.hms.character <- function(x, ...) {
-  parse_hms(x)
-}
-
-#' @rdname hms
+#' @rdname Deprecated
 #' @param tz The time zone in which to interpret a POSIXt time for extracting
 #'   the time of day.  The default is now the zone of `x` but was `"UTC"`
 #'   for v0.3 and earlier.  The previous behavior can be restored by calling
@@ -106,14 +160,15 @@ as.hms.character <- function(x, ...) {
 #' @importFrom pkgconfig get_config
 as.hms.POSIXt <- function(x, tz = pkgconfig::get_config("hms::default_tz", ""), ...) {
   time <- as.POSIXlt(x, tz = tz)
-  hms(time$sec, time$min, time$hour)
+  vec_cast(time, new_hms())
 }
 
-#' @rdname hms
+#' @rdname Deprecated
 #' @export
 as.hms.POSIXlt <- function(x, tz = pkgconfig::get_config("hms::default_tz", ""), ...) {
   # We need to roundtrip via as.POSIXct() to respect the time zone
-  as.hms(as.POSIXct(x), tz = tz, ...)
+  time <- as.POSIXlt(as.POSIXct(x), tz = tz)
+  vec_cast(time, new_hms())
 }
 
 
@@ -122,18 +177,22 @@ as.hms.POSIXlt <- function(x, tz = pkgconfig::get_config("hms::default_tz", ""),
 #' @rdname hms
 #' @export
 as.POSIXct.hms <- function(x, ...) {
-  structure(as.numeric(x), tzone = "UTC", class = c("POSIXct", "POSIXt"))
+  vec_cast(x, new_datetime())
 }
 
 #' @rdname hms
 #' @export
 as.POSIXlt.hms <- function(x, ...) {
-  as.POSIXlt(as.POSIXct(x, ...), ...)
+  vec_cast(x, as.POSIXlt(new_datetime()))
 }
 
 #' @rdname hms
 #' @export
 as.character.hms <- function(x, ...) {
+  vec_cast(x, character())
+}
+
+format_hms <- function(x) {
   xx <- decompose(x)
 
   ifelse(is.na(x), NA_character_, paste0(
@@ -155,13 +214,32 @@ as.data.frame.hms <- forward_to(as.data.frame.difftime)
 
 #' @export
 `[[.hms` <- function(x, ...) {
-  hms(NextMethod())
+  vec_restore(NextMethod(), x)
+}
+
+#' @export
+`[<-.hms` <- function(x, i, value) {
+  if (missing(i)) {
+    i <- TRUE
+  }
+
+  x <- vec_data(x)
+
+  # Workaround for Ops.difftime() implementation for unary minus
+  if (identical(class(value), "numeric")) {
+    attr(value, "units") <- NULL
+  }
+
+  value <- vec_cast(value, new_hms())
+  vec_slice(x, i) <- value
+  new_hms(x)
 }
 
 # Combination -------------------------------------------------------------
 #' @export
 c.hms <- function(x, ...) {
-  as.hms(NextMethod())
+  # Needed to override c.difftime()
+  vec_c(x, ...)
 }
 
 # Updating ----------------------------------------------------------------

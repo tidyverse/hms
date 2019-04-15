@@ -7,5 +7,5 @@ expect_hms_equal <- function(x, y) {
 expect_difftime_equal <- function(x, y) {
   expect_is(x, "difftime")
   expect_is(y, "difftime")
-  expect_equal(as.numeric(as.hms(x)), as.numeric(as.hms(y)))
+  expect_equal(as.numeric(as_hms(x)), as.numeric(as_hms(y)))
 }

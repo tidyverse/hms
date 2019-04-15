@@ -2,14 +2,9 @@
 % Please edit documentation in R/hms.R
 \name{hms}
 \alias{hms}
+\alias{new_hms}
 \alias{is_hms}
-\alias{as.hms}
-\alias{as.hms.default}
-\alias{as.hms.difftime}
-\alias{as.hms.numeric}
-\alias{as.hms.character}
-\alias{as.hms.POSIXt}
-\alias{as.hms.POSIXlt}
+\alias{as_hms}
 \alias{as.POSIXct.hms}
 \alias{as.POSIXlt.hms}
 \alias{as.character.hms}
@@ -20,23 +15,11 @@
 \usage{
 hms(seconds = NULL, minutes = NULL, hours = NULL, days = NULL)
 
+new_hms(x = numeric())
+
 is_hms(x)
 
-as.hms(x, ...)
-
-\method{as.hms}{default}(x, ...)
-
-\method{as.hms}{difftime}(x, ...)
-
-\method{as.hms}{numeric}(x, ...)
-
-\method{as.hms}{character}(x, ...)
-
-\method{as.hms}{POSIXt}(x, tz = pkgconfig::get_config("hms::default_tz",
-  ""), ...)
-
-\method{as.hms}{POSIXlt}(x, tz = pkgconfig::get_config("hms::default_tz",
-  ""), ...)
+as_hms(x)
 
 \method{as.POSIXct}{hms}(x, ...)
 
@@ -58,13 +41,7 @@ performed.}
 
 \item{x}{An object.}
 
-\item{...}{Arguments passed on to further methods.}
-
-\item{tz}{The time zone in which to interpret a POSIXt time for extracting
-the time of day.  The default is now the zone of \code{x} but was \code{"UTC"}
-for v0.3 and earlier.  The previous behavior can be restored by calling
-\code{pkgconfig::set_config("hms::default_tz", "UTC")}, see
-\code{\link[pkgconfig:set_config]{pkgconfig::set_config()}}.}
+\item{...}{additional arguments to be passed to or from methods.}
 
 \item{row.names}{\code{NULL} or a character vector giving the row
     names for the data frame.  Missing values are not allowed.}
@@ -85,18 +62,36 @@ and always with "seconds" as unit for robust coercion to numeric.
 Supports construction from time values, coercion to and from
 various data types, and formatting.  Can be used as a regular column in a
 data frame.
+
+\code{hms()} is a high-level constructor that accepts second, minute, hour and day components
+as numeric vectors.
+
+\code{new_hms()} is a low-level constructor that only checks that its input has the correct base type, \link{numeric}.
+
+\code{is_hms()} checks if an object is of class \code{hms}.
+
+\code{as_hms()} forwards to \code{\link[=vec_cast]{vec_cast()}}.
 }
 \details{
 For \code{hms}, all arguments must have the same length or be
 \code{NULL}.  Odd combinations (e.g., passing only \code{seconds} and
 \code{hours} but not \code{minutes}) are rejected.
+
+For arguments of type \link{POSIXct} and \link{POSIXlt}, \code{as_hms()} does not perform timezone
+conversion.
+Use \code{\link[lubridate:with_tz]{lubridate::with_tz()}} and \code{\link[lubridate:force_tz]{lubridate::force_tz()}} as necessary.
 }
 \examples{
 hms(56, 34, 12)
 hms()
-as.hms(1)
-as.hms("12:34:56")
-as.hms(Sys.time())
+
+new_hms(as.numeric(1:3))
+# Supports numeric only!
+try(new_hms(1:3))
+
+as_hms(1)
+as_hms("12:34:56")
+as_hms(Sys.time())
 as.POSIXct(hms(1))
 data.frame(a = hms(1))
 d <- data.frame(hours = 1:3)

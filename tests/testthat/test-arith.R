@@ -12,6 +12,7 @@ test_that("arithmetics work", {
   expect_difftime_equal(hms(1) - hms(2), hms(-1))
   expect_difftime_equal(2 * hms(1), hms(2))
   expect_difftime_equal(hms(hours = 1) / 2, hms(minutes = 30))
+  expect_difftime_equal(-hms(1), hms(-1))
 })
 
 test_that("component extraction work", {
