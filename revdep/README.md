@@ -10,34 +10,15 @@
 |collate  |en_US.UTF-8                  |
 |ctype    |en_US.UTF-8                  |
 |tz       |Etc/UTC                      |
-|date     |2019-04-15                   |
+|date     |2019-04-16                   |
 
 # Dependencies
 
 |package |old   |new        |Δ  |
 |:-------|:-----|:----------|:--|
-|hms     |0.4.2 |0.4.2.9002 |*  |
+|hms     |0.4.2 |0.4.2.9003 |*  |
 |vctrs   |NA    |0.1.0      |*  |
 |zeallot |NA    |0.1.0      |*  |
 
 # Revdeps
-
-## Failed to check (14)
-
-|package     |version |error |warning |note |
-|:-----------|:-------|:-----|:-------|:----|
-|AMR         |?       |      |        |     |
-|bigrquery   |?       |      |        |     |
-|dbx         |?       |      |        |     |
-|dplyr       |?       |      |        |     |
-|edeaR       |?       |      |        |     |
-|gtfsrouter  |?       |      |        |     |
-|haven       |?       |      |        |     |
-|mudata2     |?       |      |        |     |
-|processmapR |?       |      |        |     |
-|tibbletime  |?       |      |        |     |
-|tidytransit |?       |      |        |     |
-|tidyverse   |?       |      |        |     |
-|trread      |?       |      |        |     |
-|tsibble     |?       |      |        |     |
 
