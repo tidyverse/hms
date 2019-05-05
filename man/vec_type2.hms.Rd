@@ -4,7 +4,7 @@
 \alias{vec_type2.hms}
 \title{Coercion}
 \usage{
-\method{vec_type2}{hms}(x, y)
+\method{vec_type2}{hms}(x, y, ..., x_arg = "", y_arg = "")
 }
 \arguments{
 \item{x}{Either vector types; i.e.}

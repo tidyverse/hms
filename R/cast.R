@@ -11,11 +11,7 @@ vec_cast.hms <- function(x, to) UseMethod("vec_cast.hms")
 
 #' @method vec_cast.hms default
 #' @export
-vec_cast.hms.default <- function(x, to) stop_incompatible_cast(x, to)
-
-#' @method vec_cast.hms logical
-#' @export
-vec_cast.hms.logical <- function(x, to) vec_unspecified_cast(x, to)
+vec_cast.hms.default <- function(x, to) vec_default_cast(x, to)
 
 #' @method vec_cast.hms hms
 #' @export
@@ -88,6 +84,16 @@ vec_cast.hms.character <- function(x, to) {
 #' @method vec_cast.character hms
 #' @export
 vec_cast.character.hms <- function(x, to) format_hms(x)
+
+vec_default_cast <- NULL
+
+vec_default_cast_old <- function(x, to) {
+  if (is.logical(to)) {
+    vec_unspecified_cast(x, to)
+  } else {
+    stop_incompatible_cast(x, to)
+  }
+}
 
 warn_lossy_cast <- function(x, to, lossy) {
   problems <- which(lossy)
