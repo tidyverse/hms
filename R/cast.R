@@ -85,8 +85,10 @@ vec_cast.hms.character <- function(x, to) {
 #' @export
 vec_cast.character.hms <- function(x, to) format_hms(x)
 
+# Requires vctrs > 0.1.0
 vec_default_cast <- NULL
 
+utils::globalVariables("vec_unspecified_cast")
 vec_default_cast_old <- function(x, to) {
   if (is.logical(to)) {
     vec_unspecified_cast(x, to)
