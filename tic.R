@@ -6,5 +6,8 @@ if (ci_has_env("DEV_VERSIONS")) {
 }
 
 if (ci_has_env("BUILD_PKGDOWN")) {
+  get_stage("install") %>%
+    add_step(step_install_github("tidyverse/tidytemplate"))
+
   do_pkgdown()
 }
