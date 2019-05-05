@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 [![Travis-CI Build Status](https://travis-ci.org/tidyverse/hms.svg?branch=master)](https://travis-ci.org/tidyverse/hms)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/tidyverse/hms?branch=master&svg=true)](https://ci.appveyor.com/project/tidyverse/hms)
 [![codecov](https://codecov.io/gh/tidyverse/hms/branch/master/graph/badge.svg)](https://codecov.io/gh/tidyverse/hms)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
 
 ## Overview
 
@@ -53,9 +53,9 @@ The following example showcases ways of using the `hms` class standalone or as a
 ```{r}
 library(hms)
 hms(56, 34, 12)
-as.hms(1)
-as.hms("12:34:56")
-as.hms(Sys.time())
+as_hms(1)
+as_hms("12:34:56")
+as_hms(Sys.time())
 as.POSIXct(hms(1))
 
 data.frame(hours = 1:3, hms = hms(hours = 1:3))
