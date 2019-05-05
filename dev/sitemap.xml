@@ -4,18 +4,24 @@
     <loc>https://hms.tidyverse.org/index.html</loc>
   </url>
   <url>
+    <loc>https://hms.tidyverse.org/reference/Deprecated.html</loc>
+  </url>
+  <url>
     <loc>https://hms.tidyverse.org/reference/hms-package.html</loc>
   </url>
   <url>
     <loc>https://hms.tidyverse.org/reference/hms.html</loc>
   </url>
   <url>
-    <loc>https://hms.tidyverse.org/reference/is.hms.html</loc>
-  </url>
-  <url>
     <loc>https://hms.tidyverse.org/reference/parse_hms.html</loc>
   </url>
   <url>
     <loc>https://hms.tidyverse.org/reference/round_hms.html</loc>
+  </url>
+  <url>
+    <loc>https://hms.tidyverse.org/reference/vec_cast.hms.html</loc>
+  </url>
+  <url>
+    <loc>https://hms.tidyverse.org/reference/vec_type2.hms.html</loc>
   </url>
 </urlset>

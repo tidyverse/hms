@@ -74,7 +74,7 @@
         <a class="navbar-brand" href="../index.html">hms</a>
         <div class="info">
           <span class="partof">part of the <a href="https://tidyverse.org">tidyverse</a></span>
-          <span class="version version-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.4.2.9002</span>
+          <span class="version version-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.4.2.9003</span>
         </div>
       </div>
     </div>
@@ -108,13 +108,21 @@
       <small>Source: <a href='https://github.com/tidyverse/hms/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="hms-0-4-2-9003" class="section level1">
+<h1 class="page-header">
+<a href="#hms-0-4-2-9003" class="anchor"></a>hms 0.4.2.9003<small> Unreleased </small>
+</h1>
+<ul>
+<li>Based on {vctrs} package, compatible with both the development and the CRAN version (<a href='https://github.com/tidyverse/hms/issues/61'>#61</a>).</li>
+</ul>
+</div>
     <div id="hms-0-4-2-9002" class="section level1">
 <h1 class="page-header">
 <a href="#hms-0-4-2-9002" class="anchor"></a>hms 0.4.2.9002<small> Unreleased </small>
 </h1>
 <ul>
 <li>Fix formatting for times with a very small distance to the full second (<a href='https://github.com/tidyverse/hms/issues/64'>#64</a>).</li>
-<li>The new <code><a href="../reference/hms.html">is_hms()</a></code> deprecates the existing <code><a href="../reference/is.hms.html">is.hms()</a></code>.</li>
+<li>The new <code><a href="../reference/hms.html">is_hms()</a></code> deprecates the existing <code><a href="../reference/Deprecated.html">is.hms()</a></code>.</li>
 <li>Correct reference link on r4ds (<a href='https://github.com/tidyverse/hms/issues/58'>#58</a>, <a href='https://github.com/evanhaldane'>@evanhaldane</a>).</li>
 </ul>
 </div>
@@ -161,7 +169,7 @@
 <a href="#breaking-changes" class="anchor"></a>Breaking changes</h2>
 <ul>
 <li>
-<code><a href="../reference/hms.html">as.hms.POSIXt()</a></code> now defaults to the current time zone, the previous default was <code>"UTC"</code> and can be restored by calling <code><a href="https://www.rdocumentation.org/packages/pkgconfig/topics/set_config">pkgconfig::set_config("hms::default_tz", "UTC")</a></code>.</li>
+<code><a href="../reference/Deprecated.html">as.hms.POSIXt()</a></code> now defaults to the current time zone, the previous default was <code>"UTC"</code> and can be restored by calling <code><a href="https://www.rdocumentation.org/packages/pkgconfig/topics/set_config">pkgconfig::set_config("hms::default_tz", "UTC")</a></code>.</li>
 </ul>
 </div>
 <div id="new-features" class="section level2">
@@ -172,9 +180,9 @@
 <li>New <code><a href="../reference/round_hms.html">round_hms()</a></code> and <code><a href="../reference/round_hms.html">trunc_hms()</a></code> for rounding or truncating to a given multiple of seconds (<a href='https://github.com/tidyverse/hms/issues/31'>#31</a>).</li>
 <li>New <code><a href="../reference/parse_hms.html">parse_hms()</a></code> and <code><a href="../reference/parse_hms.html">parse_hm()</a></code> to parse strings in “HH:MM:SS” and “HH:MM” formats (<a href='https://github.com/tidyverse/hms/issues/30'>#30</a>).</li>
 <li>
-<code><a href="../reference/hms.html">as.hms.POSIXt()</a></code> gains <code>tz</code> argument, default <code>"UTC"</code> (<a href='https://github.com/tidyverse/hms/issues/28'>#28</a>).</li>
+<code><a href="../reference/Deprecated.html">as.hms.POSIXt()</a></code> gains <code>tz</code> argument, default <code>"UTC"</code> (<a href='https://github.com/tidyverse/hms/issues/28'>#28</a>).</li>
 <li>
-<code><a href="../reference/hms.html">as.hms.character()</a></code> and <code><a href="../reference/parse_hms.html">parse_hms()</a></code> accept fractional seconds (<a href='https://github.com/tidyverse/hms/issues/33'>#33</a>).</li>
+<code>as.hms.character()</code> and <code><a href="../reference/parse_hms.html">parse_hms()</a></code> accept fractional seconds (<a href='https://github.com/tidyverse/hms/issues/33'>#33</a>).</li>
 </ul>
 </div>
 <div id="bug-fixes" class="section level2">
@@ -186,7 +194,7 @@
 <li>
 <code><a href="../reference/hms.html">hms()</a></code> creates a zero-length object of class <code>hms</code> that prints as <code>"hms()"</code>.</li>
 <li>
-<code><a href="../reference/hms.html">hms(integer())</a></code> and <code><a href="../reference/hms.html">as.hms(integer())</a></code> both work and are identical to <code><a href="../reference/hms.html">hms()</a></code>.</li>
+<code><a href="../reference/hms.html">hms(integer())</a></code> and <code><a href="../reference/Deprecated.html">as.hms(integer())</a></code> both work and are identical to <code><a href="../reference/hms.html">hms()</a></code>.</li>
 <li>Values with durations of over 10000 hours are now printed correctly (<a href='https://github.com/tidyverse/hms/issues/48'>#48</a>).</li>
 <li>
 <code><a href="https://www.rdocumentation.org/packages/base/topics/c">c()</a></code> now returns a hms (<a href='https://github.com/tidyverse/hms/issues/41'>#41</a>, <a href='https://github.com/qgeissmann'>@qgeissmann</a>).</li>
@@ -254,12 +262,12 @@
 <li>
 <code><a href="../reference/hms.html">hms()</a></code> (with rigorous argument checks)</li>
 <li>
-<code><a href="../reference/hms.html">as.hms()</a></code> for <code>character</code>, <code>numeric</code>, <code>POSIXct</code> and <code>POSIXlt</code>
+<code><a href="../reference/Deprecated.html">as.hms()</a></code> for <code>character</code>, <code>numeric</code>, <code>POSIXct</code> and <code>POSIXlt</code>
 </li>
 <li>
 <code>as.xxx.hms()</code> for <code>character</code>, <code>numeric</code> (implicitly), <code>POSIXct</code> and <code>POSIXlt</code>
 </li>
-<li><code><a href="../reference/is.hms.html">is.hms()</a></code></li>
+<li><code><a href="../reference/Deprecated.html">is.hms()</a></code></li>
 <li>
 <code><a href="../reference/hms.html">as.data.frame.hms()</a></code> (forwards to <code><a href="https://www.rdocumentation.org/packages/base/topics/as.data.frame">as.data.frame.difftime()</a></code>)</li>
 <li><code><a href="../reference/hms.html">format.hms()</a></code></li>
@@ -275,6 +283,7 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+        <li><a href="#hms-0-4-2-9003">0.4.2.9003</a></li>
         <li><a href="#hms-0-4-2-9002">0.4.2.9002</a></li>
         <li><a href="#hms-0-4-2-9001">0.4.2.9001</a></li>
         <li><a href="#hms-0-4-2-9000">0.4.2.9000</a></li>
