@@ -90,7 +90,7 @@ vec_default_cast <- NULL
 
 utils::globalVariables("vec_unspecified_cast")
 vec_default_cast_old <- function(x, to) {
-  if (is.logical(to)) {
+  if (is.logical(x)) {
     vec_unspecified_cast(x, to)
   } else {
     stop_incompatible_cast(x, to)
