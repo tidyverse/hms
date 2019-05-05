@@ -1,3 +1,8 @@
+# hms 0.4.2.9004
+
+- Adapt to dev version of {vctrs}.
+
+
 # hms 0.4.2.9003
 
 - Based on {vctrs} package, compatible with both the development and the CRAN version (#61).
