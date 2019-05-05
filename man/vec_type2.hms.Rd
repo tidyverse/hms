@@ -4,12 +4,22 @@
 \alias{vec_type2.hms}
 \title{Coercion}
 \usage{
-\method{vec_type2}{hms}(x, y)
+\method{vec_type2}{hms}(x, y, ..., x_arg = "", y_arg = "")
 }
 \arguments{
-\item{x}{Either vector types; i.e.}
+\item{x}{Vector types}
 
-\item{y}{Either vector types; i.e.}
+\item{y}{Vector types}
+
+\item{...}{Unused}
+
+\item{x_arg}{Argument names for \code{x} and \code{y}. These are used
+in error messages to inform the user about the locations of
+incompatible types (see \code{\link[=stop_incompatible_type]{stop_incompatible_type()}}).}
+
+\item{y_arg}{Argument names for \code{x} and \code{y}. These are used
+in error messages to inform the user about the locations of
+incompatible types (see \code{\link[=stop_incompatible_type]{stop_incompatible_type()}}).}
 }
 \description{
 Double dispatch methods to support \code{\link[vctrs:vec_type2]{vctrs::vec_type2()}}.
