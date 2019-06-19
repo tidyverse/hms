@@ -7,11 +7,11 @@
 \method{vec_type2}{hms}(x, y, ..., x_arg = "", y_arg = "")
 }
 \arguments{
-\item{x}{Vector types}
+\item{x}{Vector types.}
 
-\item{y}{Vector types}
+\item{y}{Vector types.}
 
-\item{...}{Unused}
+\item{...}{These dots are for future extensions and must be empty.}
 
 \item{x_arg}{Argument names for \code{x} and \code{y}. These are used
 in error messages to inform the user about the locations of
