@@ -13,7 +13,7 @@ Imports:
     methods,
     pkgconfig,
     rlang,
-    vctrs
+    vctrs (>= 0.1.0.9004)
 Suggests:
     crayon,
     lubridate,
