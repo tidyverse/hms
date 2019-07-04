@@ -9,10 +9,10 @@ test_that("range updating keeps class", {
   skip_if(packageVersion("vctrs") <= "0.1.0")
 
   x <- hms(1:3)
-  x[2] <- 4
+  x[2] <- hms(4)
   expect_identical(x, hms(c(1,4,3)))
   x <- hms(1:4)
-  x[2:3] <- 5:6
+  x[2:3] <- hms(5:6)
   expect_identical(x, hms(c(1,5,6,4)))
 })
 

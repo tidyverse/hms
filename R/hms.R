@@ -231,7 +231,7 @@ as.data.frame.hms <- forward_to(as.data.frame.difftime)
   }
 
   value <- vec_cast(value, new_hms())
-  vec_slice(x, i) <- value
+  x[i] <- vec_data(value)
   new_hms(x)
 }
 
