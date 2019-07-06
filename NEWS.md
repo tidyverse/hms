@@ -1,3 +1,9 @@
+# hms 0.4.2.9005
+
+- Now based on vctrs >= 0.2.0.
+- Don't test colored output on CRAN.
+
+
 # hms 0.4.2.9004
 
 - Adapt to dev version of {vctrs}.
