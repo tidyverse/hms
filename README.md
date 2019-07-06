@@ -51,6 +51,7 @@ or as a data frame column.
 
 ``` r
 library(hms)
+
 hms(56, 34, 12)
 #> 12:34:56
 as_hms(1)
@@ -58,7 +59,7 @@ as_hms(1)
 as_hms("12:34:56")
 #> 12:34:56
 as_hms(Sys.time())
-#> 00:15:59.133541
+#> 11:22:34.074579
 as.POSIXct(hms(1))
 #> [1] "1970-01-01 00:00:01 UTC"
 
