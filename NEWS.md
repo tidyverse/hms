@@ -1,35 +1,21 @@
-# hms 0.4.2.9005
+# hms 0.5.0
 
-- Now based on vctrs >= 0.2.0.
-- Don't test colored output on CRAN.
+## Breaking changes
 
+- Now based on vctrs >= 0.2.0 (#61). This adds support for `vec_cast()` and `vec_ptype2()`. Some operations (such as subset assignment) are now stricter. The `new_hms()` constructor permits safe construction of `hms` objects from a numeric vector.
 
-# hms 0.4.2.9004
+- The new `is_hms()` deprecates the existing `is.hms()`. `as.hms()` is deprecated in favor of `vec_cast()` or the new `as_hms()` (which is just a thin wrapper around `vec_cast()`).
 
-- Adapt to dev version of {vctrs}.
-
-
-# hms 0.4.2.9003
-
-- Based on {vctrs} package, compatible with both the development and the CRAN version (#61).
-
-
-# hms 0.4.2.9002
-
-- Fix formatting for times with a very small distance to the full second (#64).
-- The new `is_hms()` deprecates the existing `is.hms()`.
-- Correct reference link on r4ds (#58, @evanhaldane).
-
-
-# hms 0.4.2.9001
+## Printing
 
 - Always show seconds in a pillar if they are different from zero (#54).
 
+- Values with nonzero hours, seconds and split-seconds are now displayed correctly in tibbles (#56), even with a very small distance to the full second (#64).
 
-# hms 0.4.2.9000
+## Internal
 
-- Values with nonzero hours, seconds and split-seconds are now displayed correctly in tibbles (#56).
-- Adapted tests to pillar 1.2.1.
+- Don't test colored output on CRAN.
+- Correct reference link on r4ds (#58, @evanhaldane).
 
 
 # hms 0.4.2
