@@ -41,3 +41,4 @@ It also uses the time zone of the argument for conversion,
 not the current system's timezone.
 Change the timezone before converting if necessary, e.g. using \code{\link[lubridate:with_tz]{lubridate::with_tz()}}.
 }
+\keyword{internal}

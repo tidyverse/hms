@@ -95,6 +95,7 @@ NULL
 #' @inheritParams is_hms
 #' @rdname Deprecated
 #' @export
+#' @keywords internal
 is.hms <- function(x) {
   signal_soft_deprecated("is.hms() is deprecated, please use is_hms().")
   is_hms(x)
@@ -139,6 +140,7 @@ as_hms <- function(x) {
 #' @param ... Arguments passed on to further methods.
 #' @rdname Deprecated
 #' @export
+#' @keywords internal
 as.hms <- function(x, ...) {
   signal_soft_deprecated("as.hms() is deprecated, please use as_hms().")
   UseMethod("as.hms", x)
