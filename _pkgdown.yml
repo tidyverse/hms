@@ -9,6 +9,19 @@ home:
   - text: Learn more
     href: http://r4ds.had.co.nz/dates-and-times.html
 
+reference:
+- title: Construction
+  contents:
+  - hms
+- title: Conversion
+  contents:
+  - vec_cast
+  - vec_ptype2
+  - parse_hm
+- title: Utilities
+  contents:
+  - round_hms
+
 navbar:
   title: ~
   type: default
