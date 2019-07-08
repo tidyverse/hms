@@ -1,8 +1,8 @@
-Fix tests after release of pillar 1.2.1.
+Add vctrs support, fix tests on specific configurations.
 
 ## Test environments
-* ubuntu 17.04 (local install), R 3.4.3
-* ubuntu 12.04 (on travis-ci), R devel, release, and oldrel
+* ubuntu 18.04 (local install), R 3.6.0
+* ubuntu 14.04 (on travis-ci), R devel, release, and oldrel
 * win-builder (devel and release)
 
 ## R CMD check results
@@ -12,4 +12,4 @@ Fix tests after release of pillar 1.2.1.
 
 ## Reverse dependencies
 
-No checks run, because this versions only updates the tests for this package, and not exported code.
+Checked all reverse dependencies, no regressions found.
