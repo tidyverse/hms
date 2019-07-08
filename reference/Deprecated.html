@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • hms</title>
+<title>Deprecated functions — Deprecated • hms</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -31,7 +31,14 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Deprecated functions — Deprecated" />
+
+<meta property="og:description" content="is.hms() has been replaced by is_hms().
+as.hms() has been replaced by as_hms(), which is no longer generic and also
+does not have a tz argument.
+It also uses the time zone of the argument for conversion,
+not the current system's timezone.
+Change the timezone before converting if necessary, e.g. using lubridate::with_tz()." />
 
 <meta property="og:image" content="https://hms.tidyverse.org/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -58,7 +65,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -102,102 +109,68 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Deprecated functions</h1>
+    <small class="dont-index">Source: <a href='https://github.com/tidyverse/hms/blob/master/R/hms.R'><code>R/hms.R</code></a></small>
+    <div class="hidden name"><code>Deprecated.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    
+    <p><code>is.hms()</code> has been replaced by <code><a href='hms.html'>is_hms()</a></code>.</p>
+<p><code>as.hms()</code> has been replaced by <code><a href='hms.html'>as_hms()</a></code>, which is no longer generic and also
+does not have a <code>tz</code> argument.
+It also uses the time zone of the argument for conversion,
+not the current system's timezone.
+Change the timezone before converting if necessary, e.g. using <code><a href='http://lubridate.tidyverse.org/reference/with_tz.html'>lubridate::with_tz()</a></code>.</p>
+    
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>is.hms</span>(<span class='no'>x</span>)
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-construction" class="hasAnchor"><a href="#section-construction" class="anchor"></a>Construction</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="hms.html">hms()</a></code> <code><a href="hms.html">new_hms()</a></code> <code><a href="hms.html">is_hms()</a></code> <code><a href="hms.html">as_hms()</a></code> <code><a href="hms.html">as.POSIXct(<i>&lt;hms&gt;</i>)</a></code> <code><a href="hms.html">as.POSIXlt(<i>&lt;hms&gt;</i>)</a></code> <code><a href="hms.html">as.character(<i>&lt;hms&gt;</i>)</a></code> <code><a href="hms.html">as.data.frame(<i>&lt;hms&gt;</i>)</a></code> <code><a href="hms.html">format(<i>&lt;hms&gt;</i>)</a></code> <code><a href="hms.html">print(<i>&lt;hms&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>A simple class for storing time-of-day values</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-conversion" class="hasAnchor"><a href="#section-conversion" class="anchor"></a>Conversion</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="hms-package.html">hms-package</a></code> </p>
-        </td>
-        <td><p>hms: Pretty Time of Day</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="hms.html">hms()</a></code> <code><a href="hms.html">new_hms()</a></code> <code><a href="hms.html">is_hms()</a></code> <code><a href="hms.html">as_hms()</a></code> <code><a href="hms.html">as.POSIXct(<i>&lt;hms&gt;</i>)</a></code> <code><a href="hms.html">as.POSIXlt(<i>&lt;hms&gt;</i>)</a></code> <code><a href="hms.html">as.character(<i>&lt;hms&gt;</i>)</a></code> <code><a href="hms.html">as.data.frame(<i>&lt;hms&gt;</i>)</a></code> <code><a href="hms.html">format(<i>&lt;hms&gt;</i>)</a></code> <code><a href="hms.html">print(<i>&lt;hms&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>A simple class for storing time-of-day values</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="parse_hms.html">parse_hms()</a></code> <code><a href="parse_hms.html">parse_hm()</a></code> </p>
-        </td>
-        <td><p>Parsing hms values</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="round_hms.html">round_hms()</a></code> <code><a href="round_hms.html">trunc_hms()</a></code> </p>
-        </td>
-        <td><p>Round or truncate to a multiple of seconds</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="vec_cast.hms.html">vec_cast(<i>&lt;hms&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Casting</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="vec_ptype2.hms.html">vec_ptype2(<i>&lt;hms&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Coercion</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-utilities" class="hasAnchor"><a href="#section-utilities" class="anchor"></a>Utilities</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="round_hms.html">round_hms()</a></code> <code><a href="round_hms.html">trunc_hms()</a></code> </p>
-        </td>
-        <td><p>Round or truncate to a multiple of seconds</p></td>
-      </tr>
-    </tbody>
+<span class='fu'>as.hms</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for default</span>
+<span class='fu'>as.hms</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for POSIXt</span>
+<span class='fu'>as.hms</span>(<span class='no'>x</span>, <span class='kw'>tz</span> <span class='kw'>=</span> <span class='kw pkg'>pkgconfig</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/pkgconfig/topics/get_config'>get_config</a></span>(<span class='st'>"hms::default_tz"</span>,
+  <span class='st'>""</span>), <span class='no'>...</span>)
+
+<span class='co'># S3 method for POSIXlt</span>
+<span class='fu'>as.hms</span>(<span class='no'>x</span>, <span class='kw'>tz</span> <span class='kw'>=</span> <span class='kw pkg'>pkgconfig</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/pkgconfig/topics/get_config'>get_config</a></span>(<span class='st'>"hms::default_tz"</span>,
+  <span class='st'>""</span>), <span class='no'>...</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>An object.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Arguments passed on to further methods.</p></td>
+    </tr>
+    <tr>
+      <th>tz</th>
+      <td><p>The time zone in which to interpret a POSIXt time for extracting
+the time of day.  The default is now the zone of <code>x</code> but was <code>"UTC"</code>
+for v0.3 and earlier.  The previous behavior can be restored by calling
+<code><a href='https://www.rdocumentation.org/packages/pkgconfig/topics/set_config'>pkgconfig::set_config("hms::default_tz", "UTC")</a></code>, see
+<code><a href='https://www.rdocumentation.org/packages/pkgconfig/topics/set_config'>pkgconfig::set_config()</a></code>.</p></td>
+    </tr>
     </table>
-  </div>
+    
 
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-construction">Construction</a></li>
-      <li><a href="#section-conversion">Conversion</a></li>
-      <li><a href="#section-utilities">Utilities</a></li>
-    </ul>
+      <li><a href="#arguments">Arguments</a></li>
+                </ul>
+
   </div>
 </div>
 
