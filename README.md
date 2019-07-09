@@ -59,7 +59,7 @@ as_hms(1)
 as_hms("12:34:56")
 #> 12:34:56
 as_hms(Sys.time())
-#> 10:54:41.426407
+#> 11:18:52.496955
 as.POSIXct(hms(1))
 #> [1] "1970-01-01 00:00:01 UTC"
 
@@ -73,5 +73,6 @@ data.frame(hours = 1:3, hms = hms(hours = 1:3))
 -----
 
 Please note that the ‘hms’ project is released with a [Contributor Code
-of Conduct](https://github.com/tidyverse/hms/CODE_OF_CONDUCT.md). By
-contributing to this project, you agree to abide by its terms.
+of
+Conduct](https://github.com/tidyverse/hms/blob/master/CODE_OF_CONDUCT.md).
+By contributing to this project, you agree to abide by its terms.
