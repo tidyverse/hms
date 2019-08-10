@@ -74,7 +74,7 @@
         <a class="navbar-brand" href="../index.html">hms</a>
         <div class="info">
           <span class="partof">part of the <a href="https://tidyverse.org">tidyverse</a></span>
-          <span class="version version-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.4.2.9005</span>
+          <span class="version version-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.5.0.9000</span>
         </div>
       </div>
     </div>
@@ -118,17 +118,25 @@
     <tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
+          <h2 id="section-construction" class="hasAnchor"><a href="#section-construction" class="anchor"></a>Construction</h2>
           <p class="section-desc"></p>
         </th>
       </tr>
       <tr>
         
         <td>
-          <p><code><a href="Deprecated.html">is.hms()</a></code> <code><a href="Deprecated.html">as.hms()</a></code> </p>
+          <p><code><a href="hms.html">hms()</a></code> <code><a href="hms.html">new_hms()</a></code> <code><a href="hms.html">is_hms()</a></code> <code><a href="hms.html">as_hms()</a></code> <code><a href="hms.html">as.POSIXct(<i>&lt;hms&gt;</i>)</a></code> <code><a href="hms.html">as.POSIXlt(<i>&lt;hms&gt;</i>)</a></code> <code><a href="hms.html">as.character(<i>&lt;hms&gt;</i>)</a></code> <code><a href="hms.html">as.data.frame(<i>&lt;hms&gt;</i>)</a></code> <code><a href="hms.html">format(<i>&lt;hms&gt;</i>)</a></code> <code><a href="hms.html">print(<i>&lt;hms&gt;</i>)</a></code> </p>
         </td>
-        <td><p>Deprecated functions</p></td>
-      </tr><tr>
+        <td><p>A simple class for storing time-of-day values</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-conversion" class="hasAnchor"><a href="#section-conversion" class="anchor"></a>Conversion</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      <tr>
         
         <td>
           <p><code><a href="hms-package.html">hms-package</a></code> </p>
@@ -165,6 +173,20 @@
         </td>
         <td><p>Coercion</p></td>
       </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-utilities" class="hasAnchor"><a href="#section-utilities" class="anchor"></a>Utilities</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="round_hms.html">round_hms()</a></code> <code><a href="round_hms.html">trunc_hms()</a></code> </p>
+        </td>
+        <td><p>Round or truncate to a multiple of seconds</p></td>
+      </tr>
     </tbody>
     </table>
   </div>
@@ -172,7 +194,9 @@
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#section-construction">Construction</a></li>
+      <li><a href="#section-conversion">Conversion</a></li>
+      <li><a href="#section-utilities">Utilities</a></li>
     </ul>
   </div>
 </div>
