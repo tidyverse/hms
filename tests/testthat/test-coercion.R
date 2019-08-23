@@ -23,6 +23,9 @@ test_that("coercion in", {
   expect_hms_equal(as_hms(now_lt), as_hms(now))
 
   expect_error(as_hms(FALSE))
+
+  x <- c("12:34:56", "ab:cd:ef")
+  expect_condition(hms::as_hms(x), class = "hms_lossy_cast")
 })
 
 test_that("coercion out", {

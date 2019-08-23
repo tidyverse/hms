@@ -76,7 +76,7 @@ vec_cast.integer.hms <- function(x, to, ...) as.integer(vec_data(x))
 #' @export
 vec_cast.hms.character <- function(x, to, ...) {
   ret <- parse_hms(x)
-  lossy <- is.na(ret) && !is.na(x)
+  lossy <- is.na(ret) & !is.na(x)
   warn_lossy_cast(x, to, ..., lossy = lossy)
   ret
 }
@@ -101,7 +101,10 @@ warn_lossy_cast <- function(x, to, ..., lossy) {
   problems <- which(lossy)
   if (is_empty(problems)) return()
 
-  warn(paste0("Lossy cast from <character> to <hms> at position(s) ", commas(problems)))
+  warn(
+    paste0("Lossy cast from <character> to <hms> at position(s) ", commas(problems)),
+    .subclass = "hms_lossy_cast"
+  )
 }
 
 commas <- function(problems) {
