@@ -1,8 +1,8 @@
-Add vctrs support, fix tests on specific configurations.
+Fix misuse of &&.
 
 ## Test environments
-* ubuntu 18.04 (local install), R 3.6.0
-* ubuntu 14.04 (on travis-ci), R devel, release, and oldrel
+* ubuntu 18.04 (local install), R 3.6.1
+* ubuntu 16.04 (on travis-ci), R devel, release, and oldrel
 * win-builder (devel and release)
 
 ## R CMD check results
@@ -12,4 +12,4 @@ Add vctrs support, fix tests on specific configurations.
 
 ## Reverse dependencies
 
-Checked all reverse dependencies, no regressions found.
+Not checked.
