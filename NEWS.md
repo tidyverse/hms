@@ -1,6 +1,6 @@
-# hms 0.5.0.9000
+# hms 0.5.1
 
-- Same as previous version.
+- Lossy casts from `character` vectors to `hms` now also trigger a warning if the cast succeeds in the first element of the vector but fails for other elements.
 
 
 # hms 0.5.0
