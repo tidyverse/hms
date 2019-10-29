@@ -1,4 +1,4 @@
-Fix misuse of &&.
+Fix parsing error on DST changeover.
 
 ## Test environments
 * ubuntu 18.04 (local install), R 3.6.1
