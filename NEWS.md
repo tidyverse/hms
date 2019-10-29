@@ -1,3 +1,8 @@
+# hms 0.5.2
+
+- Work around parsing error that occurs on DST changeover dates (https://bugs.r-project.org/bugzilla/show_bug.cgi?id=16764).
+
+
 # hms 0.5.1.9000
 
 Same as previous version.
