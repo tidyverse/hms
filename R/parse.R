@@ -14,7 +14,7 @@
 #' parse_hms("12:34:56")
 #' parse_hms("12:34:56.789")
 parse_hms <- function(x) {
-  as_hms(as.difftime(as.character(x), format = "%H:%M:%OS", units = "secs"))
+  as_hms(parse_time(x, format = "%H:%M:%OS"))
 }
 
 #' @rdname parse_hms
@@ -24,5 +24,14 @@ parse_hms <- function(x) {
 #' @examples
 #' parse_hm("12:34")
 parse_hm <- function(x) {
-  as_hms(as.difftime(as.character(x), format = "%H:%M", units = "secs"))
+  as_hms(parse_time(x, format = "%H:%M"))
+}
+
+parse_time <- function(x, format) {
+  difftime(
+    strptime(as.character(x), format = format),
+    strptime("0:0:0", format = "%X"),
+    units = "secs",
+    tz = "UTC"
+  )
 }
