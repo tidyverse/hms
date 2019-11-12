@@ -22,7 +22,7 @@ Suggests:
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-URL: https://github.com/tidyverse/hms
+URL: https://hms.tidyverse.org/, https://github.com/tidyverse/hms
 BugReports: https://github.com/tidyverse/hms/issues
 RoxygenNote: 6.1.1
 Roxygen: list(markdown = TRUE)
