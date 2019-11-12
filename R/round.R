@@ -7,8 +7,8 @@
 #' @return The input, rounded or truncated to the nearest multiple of `secs`
 #' @export
 #' @examples
-#' round_hms(as.hms("12:34:56"), 5)
-#' round_hms(as.hms("12:34:56"), 60)
+#' round_hms(as_hms("12:34:56"), 5)
+#' round_hms(as_hms("12:34:56"), 60)
 round_hms <- function(x, secs) {
   vec_restore(round(as.numeric(x) / secs) * secs, x)
 }
@@ -16,7 +16,7 @@ round_hms <- function(x, secs) {
 #' @rdname round_hms
 #' @export
 #' @examples
-#' trunc_hms(as.hms("12:34:56"), 60)
+#' trunc_hms(as_hms("12:34:56"), 60)
 trunc_hms <- function(x, secs) {
   vec_restore(trunc(as.numeric(x) / secs) * secs, x)
 }

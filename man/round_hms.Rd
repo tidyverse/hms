@@ -22,7 +22,7 @@ The input, rounded or truncated to the nearest multiple of \code{secs}
 Convenience functions to round or truncate to a multiple of seconds.
 }
 \examples{
-round_hms(as.hms("12:34:56"), 5)
-round_hms(as.hms("12:34:56"), 60)
-trunc_hms(as.hms("12:34:56"), 60)
+round_hms(as_hms("12:34:56"), 5)
+round_hms(as_hms("12:34:56"), 60)
+trunc_hms(as_hms("12:34:56"), 60)
 }
