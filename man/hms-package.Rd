@@ -16,6 +16,7 @@ Implements an S3 class for storing and formatting time-of-day
 \seealso{
 Useful links:
 \itemize{
+  \item \url{https://hms.tidyverse.org/}
   \item \url{https://github.com/tidyverse/hms}
   \item Report bugs at \url{https://github.com/tidyverse/hms/issues}
 }
