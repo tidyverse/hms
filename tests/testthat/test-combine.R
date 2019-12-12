@@ -30,4 +30,13 @@ test_that("composition with NA works", {
     c(hms(1), NA),
     hms(c(1, NA))
   )
+
+  expect_identical(
+    vec_c(hms(1), NA),
+    hms(vec_c(1, NA))
+  )
+
+  h <- hms(1)
+  expect_equal(vec_ptype2(h, NA), vec_ptype(h))
+  expect_equal(vec_ptype2(NA, h), vec_ptype(h))
 })

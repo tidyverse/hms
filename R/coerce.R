@@ -11,11 +11,9 @@ vec_ptype2.hms <- function(x, y, ..., x_arg = "", y_arg = "") UseMethod("vec_pty
 
 #' @method vec_ptype2.hms default
 #' @export
-vec_ptype2.hms.default <- function(x, y, ..., x_arg = "", y_arg = "") stop_incompatible_type(x, y, x_arg, y_arg)
-
-#' @method vec_ptype2.hms vctrs_unspecified
-#' @export
-vec_ptype2.hms.vctrs_unspecified <- function(x, y, ...) x
+vec_ptype2.hms.default <- function(x, y, ..., x_arg = "", y_arg = "") {
+  vec_default_ptype2(x, y, x_arg = x_arg, y_arg = y_arg)
+}
 
 #' @method vec_ptype2.hms hms
 #' @export
