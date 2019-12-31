@@ -177,6 +177,7 @@ as.hms.POSIXlt <- function(x, tz = pkgconfig::get_config("hms::default_tz", ""),
 # Coercion out ------------------------------------------------------------
 
 #' @rdname hms
+#' @inheritParams base::as.data.frame
 #' @export
 as.POSIXct.hms <- function(x, ...) {
   vec_cast(x, new_datetime())

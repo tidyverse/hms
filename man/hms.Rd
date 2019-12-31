@@ -35,6 +35,8 @@ as_hms(x)
 performed.}
 
 \item{x}{An object.}
+
+\item{...}{additional arguments to be passed to or from methods.}
 }
 \description{
 The values are stored as a \link{difftime} vector with a custom class,
