@@ -177,6 +177,7 @@ as.hms.POSIXlt <- function(x, tz = pkgconfig::get_config("hms::default_tz", ""),
 # Coercion out ------------------------------------------------------------
 
 #' @rdname hms
+#' @inheritParams base::as.data.frame
 #' @export
 as.POSIXct.hms <- function(x, ...) {
   vec_cast(x, new_datetime())
@@ -204,12 +205,6 @@ format_hms <- function(x) {
     format_two_digits(xx$second_of_minute),
     format_tics(xx$tics)))
 }
-
-#' @rdname hms
-#' @inheritParams base::as.data.frame
-#' @param nm Name of column in new data frame
-#' @export
-as.data.frame.hms <- forward_to(as.data.frame.difftime)
 
 
 # Subsetting --------------------------------------------------------------

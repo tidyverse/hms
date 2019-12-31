@@ -15,11 +15,9 @@ as.hms(x, ...)
 
 \method{as.hms}{default}(x, ...)
 
-\method{as.hms}{POSIXt}(x, tz = pkgconfig::get_config("hms::default_tz",
-  ""), ...)
+\method{as.hms}{POSIXt}(x, tz = pkgconfig::get_config("hms::default_tz", ""), ...)
 
-\method{as.hms}{POSIXlt}(x, tz = pkgconfig::get_config("hms::default_tz",
-  ""), ...)
+\method{as.hms}{POSIXlt}(x, tz = pkgconfig::get_config("hms::default_tz", ""), ...)
 }
 \arguments{
 \item{x}{An object.}
