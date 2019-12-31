@@ -27,9 +27,13 @@ as_hms(x)
 
 \method{as.character}{hms}(x, ...)
 
-\method{as.data.frame}{hms}(x, row.names = NULL, optional = FALSE, ...,
-  nm = paste(deparse(substitute(x), width.cutoff = 500L), collapse =
-  " "))
+\method{as.data.frame}{hms}(
+  x,
+  row.names = NULL,
+  optional = FALSE,
+  ...,
+  nm = paste(deparse(substitute(x), width.cutoff = 500L), collapse = " ")
+)
 
 \method{format}{hms}(x, ...)
 
@@ -48,10 +52,10 @@ performed.}
 
 \item{optional}{logical. If \code{TRUE}, setting row names and
     converting column names (to syntactic names: see
-    \code{\link{make.names}}) is optional.  Note that all of \R's
+    \code{\link[base]{make.names}}) is optional.  Note that all of \R's
     \pkg{base} package \code{as.data.frame()} methods use
     \code{optional} only for column names treatment, basically with the
-    meaning of \code{\link{data.frame}(*, check.names = !optional)}.
+    meaning of \code{\link[base]{data.frame}(*, check.names = !optional)}.
     See also the \code{make.names} argument of the \code{matrix} method.}
 
 \item{nm}{Name of column in new data frame}
