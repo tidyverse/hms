@@ -15,10 +15,6 @@ vec_ptype2.hms.default <- function(x, y, ..., x_arg = "", y_arg = "") {
   vec_default_ptype2(x, y, x_arg = x_arg, y_arg = y_arg)
 }
 
-#' @method vec_ptype2.hms vctrs_unspecified
-#' @export
-vec_ptype2.hms.vctrs_unspecified <- function(x, y, ...) x
-
 #' @method vec_ptype2.hms hms
 #' @export
 vec_ptype2.hms.hms <- function(x, y, ...) hms::hms()
