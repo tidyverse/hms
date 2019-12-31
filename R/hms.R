@@ -205,12 +205,6 @@ format_hms <- function(x) {
     format_tics(xx$tics)))
 }
 
-#' @rdname hms
-#' @inheritParams base::as.data.frame
-#' @param nm Name of column in new data frame
-#' @export
-as.data.frame.hms <- forward_to(as.data.frame.difftime)
-
 
 # Subsetting --------------------------------------------------------------
 
