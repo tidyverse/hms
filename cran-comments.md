@@ -1,4 +1,4 @@
-Fix parsing error on DST changeover.
+Fix vctrs compatibility and CRAN notes.
 
 ## Test environments
 * ubuntu 18.04 (local install), R 3.6.1
