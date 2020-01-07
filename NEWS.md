@@ -1,3 +1,8 @@
+# hms 0.5.2.9002
+
+- Use `vec_default_ptype2()`, remove `vec_ptype2.hms.unspecified()` (#80, @romainfrancois).
+
+
 # hms 0.5.2.9001
 
 - `vec_ptype2.hms.default()` forwards to `vec_default_ptype2()` for compatibility with vctrs 0.2.1.
