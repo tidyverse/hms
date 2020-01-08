@@ -87,7 +87,7 @@
         <a class="navbar-brand" href="../index.html">hms</a>
         <div class="info">
           <span class="partof">part of the <a href="https://tidyverse.org">tidyverse</a></span>
-          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.2</span>
+          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.3</span>
         </div>
       </div>
     </div>
@@ -150,8 +150,7 @@ are supported</p></td>
     <p>The input, rounded or truncated to the nearest multiple of <code>secs</code></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>round_hms</span>(<span class='fu'><a href='Deprecated.html'>as.hms</a></span>(<span class='st'>"12:34:56"</span>), <span class='fl'>5</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: as.hms() is deprecated, please use as_hms().</span>
-#&gt; <span class='warning'>This warning is displayed once per session.</span></div><div class='output co'>#&gt; 12:34:55</div><div class='input'><span class='fu'>round_hms</span>(<span class='fu'><a href='Deprecated.html'>as.hms</a></span>(<span class='st'>"12:34:56"</span>), <span class='fl'>60</span>)</div><div class='output co'>#&gt; 12:35:00</div><div class='input'><span class='fu'>trunc_hms</span>(<span class='fu'><a href='Deprecated.html'>as.hms</a></span>(<span class='st'>"12:34:56"</span>), <span class='fl'>60</span>)</div><div class='output co'>#&gt; 12:34:00</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>round_hms</span>(<span class='fu'><a href='hms.html'>as_hms</a></span>(<span class='st'>"12:34:56"</span>), <span class='fl'>5</span>)</div><div class='output co'>#&gt; 12:34:55</div><div class='input'><span class='fu'>round_hms</span>(<span class='fu'><a href='hms.html'>as_hms</a></span>(<span class='st'>"12:34:56"</span>), <span class='fl'>60</span>)</div><div class='output co'>#&gt; 12:35:00</div><div class='input'><span class='fu'>trunc_hms</span>(<span class='fu'><a href='hms.html'>as_hms</a></span>(<span class='st'>"12:34:56"</span>), <span class='fl'>60</span>)</div><div class='output co'>#&gt; 12:34:00</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

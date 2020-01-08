@@ -96,7 +96,7 @@ as_hms() forwards to vec_cast()." />
         <a class="navbar-brand" href="../index.html">hms</a>
         <div class="info">
           <span class="partof">part of the <a href="https://tidyverse.org">tidyverse</a></span>
-          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.2</span>
+          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.3</span>
         </div>
       </div>
     </div>
@@ -163,11 +163,6 @@ as numeric vectors.</p>
 <span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span>(<span class='no'>x</span>, <span class='no'>...</span>)
 
 <span class='co'># S3 method for hms</span>
-<span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span>(<span class='no'>x</span>, <span class='kw'>row.names</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>optional</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>,
-  <span class='kw'>nm</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/deparse.html'>deparse</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span>(<span class='no'>x</span>), <span class='kw'>width.cutoff</span> <span class='kw'>=</span> <span class='fl'>500L</span>), <span class='kw'>collapse</span> <span class='kw'>=</span>
-  <span class='st'>" "</span>))
-
-<span class='co'># S3 method for hms</span>
 <span class='fu'><a href='https://rdrr.io/r/base/format.html'>format</a></span>(<span class='no'>x</span>, <span class='no'>...</span>)
 
 <span class='co'># S3 method for hms</span>
@@ -189,25 +184,6 @@ performed.</p></td>
       <th>...</th>
       <td><p>additional arguments to be passed to or from methods.</p></td>
     </tr>
-    <tr>
-      <th>row.names</th>
-      <td><p><code>NULL</code> or a character vector giving the row
-    names for the data frame.  Missing values are not allowed.</p></td>
-    </tr>
-    <tr>
-      <th>optional</th>
-      <td><p>logical. If <code>TRUE</code>, setting row names and
-    converting column names (to syntactic names: see
-    <code><a href='https://rdrr.io/r/base/make.names.html'>make.names</a></code>) is optional.  Note that all of <span style="R">R</span>'s
-    <span class="pkg">base</span> package <code><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame()</a></code> methods use
-    <code>optional</code> only for column names treatment, basically with the
-    meaning of <code><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a>(*, check.names = !optional)</code>.
-    See also the <code>make.names</code> argument of the <code>matrix</code> method.</p></td>
-    </tr>
-    <tr>
-      <th>nm</th>
-      <td><p>Name of column in new data frame</p></td>
-    </tr>
     </table>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -226,7 +202,7 @@ Use <code><a href='http://lubridate.tidyverse.org/reference/with_tz.html'>lubrid
 #&gt; 00:00:03</div><div class='input'><span class='co'># Supports numeric only!</span>
 <span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>new_hms</span>(<span class='fl'>1</span>:<span class='fl'>3</span>))</div><div class='output co'>#&gt; Error : `x` must be a vector with type &lt;double&gt;.
 #&gt; Instead, it has type &lt;integer&gt;.</div><div class='input'>
-<span class='fu'>as_hms</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; 00:00:01</div><div class='input'><span class='fu'>as_hms</span>(<span class='st'>"12:34:56"</span>)</div><div class='output co'>#&gt; 12:34:56</div><div class='input'><span class='fu'>as_hms</span>(<span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span>())</div><div class='output co'>#&gt; 21:29:51.947341</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></span>(<span class='fu'>hms</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; [1] "1970-01-01 00:00:01 UTC"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fu'>hms</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt;          a
+<span class='fu'>as_hms</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; 00:00:01</div><div class='input'><span class='fu'>as_hms</span>(<span class='st'>"12:34:56"</span>)</div><div class='output co'>#&gt; 12:34:56</div><div class='input'><span class='fu'>as_hms</span>(<span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span>())</div><div class='output co'>#&gt; 21:29:39.189863</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></span>(<span class='fu'>hms</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; [1] "1970-01-01 00:00:01 UTC"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fu'>hms</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt;          a
 #&gt; 1 00:00:01</div><div class='input'><span class='no'>d</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>hours</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>3</span>)
 <span class='no'>d</span>$<span class='no'>hours</span> <span class='kw'>&lt;-</span> <span class='fu'>hms</span>(<span class='kw'>hours</span> <span class='kw'>=</span> <span class='no'>d</span>$<span class='no'>hours</span>)
 <span class='no'>d</span></div><div class='output co'>#&gt;      hours

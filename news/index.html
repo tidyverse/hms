@@ -86,7 +86,7 @@
         <a class="navbar-brand" href="../index.html">hms</a>
         <div class="info">
           <span class="partof">part of the <a href="https://tidyverse.org">tidyverse</a></span>
-          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.2</span>
+          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.3</span>
         </div>
       </div>
     </div>
@@ -121,6 +121,25 @@
       <small>Source: <a href='https://github.com/tidyverse/hms/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="hms-0-5-3" class="section level1">
+<h1 class="page-header">
+<a href="#hms-0-5-3" class="anchor"></a>hms 0.5.3<small> Unreleased </small>
+</h1>
+<ul>
+<li>Use <code>vec_default_ptype2()</code>, remove <code>vec_ptype2.hms.unspecified()</code> (<a href='https://github.com/tidyverse/hms/issues/80'>#80</a>, <a href='https://github.com/romainfrancois'>@romainfrancois</a>).</li>
+<li>
+<code>vec_ptype2.hms.default()</code> forwards to <code>vec_default_ptype2()</code> for compatibility with vctrs 0.2.1.</li>
+<li>Remove <code>as.data.frame.hms()</code>, handeld by vctrs.</li>
+</ul>
+</div>
+    <div id="hms-0-5-2-9000" class="section level1">
+<h1 class="page-header">
+<a href="#hms-0-5-2-9000" class="anchor"></a>hms 0.5.2.9000<small> Unreleased </small>
+</h1>
+<ul>
+<li>Internal changes only.</li>
+</ul>
+</div>
     <div id="hms-0-5-2" class="section level1">
 <h1 class="page-header">
 <a href="#hms-0-5-2" class="anchor"></a>hms 0.5.2<small> 2019-10-30 </small>
@@ -128,12 +147,6 @@
 <ul>
 <li>Work around parsing error that occurs on DST changeover dates (<a href="https://bugs.r-project.org/bugzilla/show_bug.cgi?id=16764" class="uri">https://bugs.r-project.org/bugzilla/show_bug.cgi?id=16764</a>).</li>
 </ul>
-</div>
-    <div id="hms-0-5-1-9000" class="section level1">
-<h1 class="page-header">
-<a href="#hms-0-5-1-9000" class="anchor"></a>hms 0.5.1.9000<small> Unreleased </small>
-</h1>
-<p>Same as previous version.</p>
 </div>
     <div id="hms-0-5-1" class="section level1">
 <h1 class="page-header">
@@ -298,7 +311,7 @@
 </li>
 <li><code><a href="../reference/Deprecated.html">is.hms()</a></code></li>
 <li>
-<code><a href="../reference/hms.html">as.data.frame.hms()</a></code> (forwards to <code><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame.difftime()</a></code>)</li>
+<code>as.data.frame.hms()</code> (forwards to <code><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame.difftime()</a></code>)</li>
 <li><code><a href="../reference/hms.html">format.hms()</a></code></li>
 <li>
 <code><a href="../reference/hms.html">print.hms()</a></code> (returns unchanged input invisibly)</li>
@@ -312,8 +325,9 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+        <li><a href="#hms-0-5-3">0.5.3</a></li>
+        <li><a href="#hms-0-5-2-9000">0.5.2.9000</a></li>
         <li><a href="#hms-0-5-2">0.5.2</a></li>
-        <li><a href="#hms-0-5-1-9000">0.5.1.9000</a></li>
         <li><a href="#hms-0-5-1">0.5.1</a></li>
         <li><a href="#hms-0-5-0">0.5.0</a></li>
         <li><a href="#hms-0-4-2">0.4.2</a></li>
