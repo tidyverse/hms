@@ -5,9 +5,9 @@
 \alias{trunc_hms}
 \title{Round or truncate to a multiple of seconds}
 \usage{
-round_hms(x, secs)
+round_hms(x, secs, digits = NULL)
 
-trunc_hms(x, secs)
+trunc_hms(x, secs, digits = NULL)
 }
 \arguments{
 \item{x}{A vector of class \link{hms}}
@@ -24,5 +24,7 @@ Convenience functions to round or truncate to a multiple of seconds.
 \examples{
 round_hms(as_hms("12:34:56"), 5)
 round_hms(as_hms("12:34:56"), 60)
+round_hms(as_hms("12:34:56"), digits = 1)
+round_hms(as_hms("12:34:56"), digits = -2)
 trunc_hms(as_hms("12:34:56"), 60)
 }
