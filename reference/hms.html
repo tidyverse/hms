@@ -79,7 +79,7 @@ as_hms() forwards to vec_cast()." />
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -202,7 +202,7 @@ Use <code><a href='http://lubridate.tidyverse.org/reference/with_tz.html'>lubrid
 #&gt; 00:00:03</div><div class='input'><span class='co'># Supports numeric only!</span>
 <span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>new_hms</span>(<span class='fl'>1</span>:<span class='fl'>3</span>))</div><div class='output co'>#&gt; Error : `x` must be a vector with type &lt;double&gt;.
 #&gt; Instead, it has type &lt;integer&gt;.</div><div class='input'>
-<span class='fu'>as_hms</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; 00:00:01</div><div class='input'><span class='fu'>as_hms</span>(<span class='st'>"12:34:56"</span>)</div><div class='output co'>#&gt; 12:34:56</div><div class='input'><span class='fu'>as_hms</span>(<span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span>())</div><div class='output co'>#&gt; 22:17:58.927275</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></span>(<span class='fu'>hms</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; [1] "1970-01-01 00:00:01 UTC"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fu'>hms</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt;          a
+<span class='fu'>as_hms</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; 00:00:01</div><div class='input'><span class='fu'>as_hms</span>(<span class='st'>"12:34:56"</span>)</div><div class='output co'>#&gt; 12:34:56</div><div class='input'><span class='fu'>as_hms</span>(<span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span>())</div><div class='output co'>#&gt; 22:18:15.198378</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></span>(<span class='fu'>hms</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; [1] "1970-01-01 00:00:01 UTC"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fu'>hms</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt;          a
 #&gt; 1 00:00:01</div><div class='input'><span class='no'>d</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>hours</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>3</span>)
 <span class='no'>d</span>$<span class='no'>hours</span> <span class='kw'>&lt;-</span> <span class='fu'>hms</span>(<span class='kw'>hours</span> <span class='kw'>=</span> <span class='no'>d</span>$<span class='no'>hours</span>)
 <span class='no'>d</span></div><div class='output co'>#&gt;      hours
@@ -210,14 +210,10 @@ Use <code><a href='http://lubridate.tidyverse.org/reference/with_tz.html'>lubrid
 #&gt; 2 02:00:00
 #&gt; 3 03:00:00</div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#details">Details</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
