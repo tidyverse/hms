@@ -2,7 +2,7 @@ pandoc: '2.2'
 pkgdown: 1.5.1
 pkgdown_sha: ~
 articles: []
-last_built: 2020-08-13T23:32Z
+last_built: 2020-08-14T23:33Z
 urls:
   reference: https://hms.tidyverse.org/reference
   article: https://hms.tidyverse.org/articles
