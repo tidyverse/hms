@@ -153,28 +153,28 @@ as numeric vectors.</p>
 <p><code>as_hms()</code> forwards to <code>vec_cast()</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>hms</span>(<span class='kw'>seconds</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>minutes</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>hours</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>days</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+    <pre class="usage"><span class='fu'>hms</span>(seconds = <span class='kw'>NULL</span>, minutes = <span class='kw'>NULL</span>, hours = <span class='kw'>NULL</span>, days = <span class='kw'>NULL</span>)
 
-<span class='fu'>new_hms</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>())
+<span class='fu'>new_hms</span>(x = <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>())
 
-<span class='fu'>is_hms</span>(<span class='no'>x</span>)
+<span class='fu'>is_hms</span>(<span class='kw'>x</span>)
 
-<span class='fu'>as_hms</span>(<span class='no'>x</span>)
-
-<span class='co'># S3 method for hms</span>
-<span class='fu'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></span>(<span class='no'>x</span>, <span class='no'>...</span>)
+<span class='fu'>as_hms</span>(<span class='kw'>x</span>)
 
 <span class='co'># S3 method for hms</span>
-<span class='fu'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXlt</a></span>(<span class='no'>x</span>, <span class='no'>...</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></span>(<span class='kw'>x</span>, <span class='kw'>...</span>)
 
 <span class='co'># S3 method for hms</span>
-<span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span>(<span class='no'>x</span>, <span class='no'>...</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXlt</a></span>(<span class='kw'>x</span>, <span class='kw'>...</span>)
 
 <span class='co'># S3 method for hms</span>
-<span class='fu'><a href='https://rdrr.io/r/base/format.html'>format</a></span>(<span class='no'>x</span>, <span class='no'>...</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span>(<span class='kw'>x</span>, <span class='kw'>...</span>)
 
 <span class='co'># S3 method for hms</span>
-<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
+<span class='fu'><a href='https://rdrr.io/r/base/format.html'>format</a></span>(<span class='kw'>x</span>, <span class='kw'>...</span>)
+
+<span class='co'># S3 method for hms</span>
+<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='kw'>x</span>, <span class='kw'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -204,16 +204,26 @@ conversion.
 Use <code><a href='http://lubridate.tidyverse.org/reference/with_tz.html'>lubridate::with_tz()</a></code> and <code><a href='http://lubridate.tidyverse.org/reference/force_tz.html'>lubridate::force_tz()</a></code> as necessary.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>hms</span>(<span class='fl'>56</span>, <span class='fl'>34</span>, <span class='fl'>12</span>)</div><div class='output co'>#&gt; 12:34:56</div><div class='input'><span class='fu'>hms</span>()</div><div class='output co'>#&gt; hms()</div><div class='input'>
-<span class='fu'>new_hms</span>(<span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span>(<span class='fl'>1</span>:<span class='fl'>3</span>))</div><div class='output co'>#&gt; 00:00:01
+    <pre class="examples"><div class='input'><span class='fu'>hms</span>(<span class='fl'>56</span>, <span class='fl'>34</span>, <span class='fl'>12</span>)
+</div><div class='output co'>#&gt; 12:34:56</div><div class='input'><span class='fu'>hms</span>()
+</div><div class='output co'>#&gt; hms()</div><div class='input'>
+<span class='fu'>new_hms</span>(<span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span>(<span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span>))
+</div><div class='output co'>#&gt; 00:00:01
 #&gt; 00:00:02
 #&gt; 00:00:03</div><div class='input'><span class='co'># Supports numeric only!</span>
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>new_hms</span>(<span class='fl'>1</span>:<span class='fl'>3</span>))</div><div class='output co'>#&gt; Error : `x` must be a vector with type &lt;double&gt;.
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>new_hms</span>(<span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span>))
+</div><div class='output co'>#&gt; Error : `x` must be a vector with type &lt;double&gt;.
 #&gt; Instead, it has type &lt;integer&gt;.</div><div class='input'>
-<span class='fu'>as_hms</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; 00:00:01</div><div class='input'><span class='fu'>as_hms</span>(<span class='st'>"12:34:56"</span>)</div><div class='output co'>#&gt; 12:34:56</div><div class='input'><span class='fu'>as_hms</span>(<span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span>())</div><div class='output co'>#&gt; 23:47:20.593133</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></span>(<span class='fu'>hms</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; [1] "1970-01-01 00:00:01 UTC"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fu'>hms</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt;          a
-#&gt; 1 00:00:01</div><div class='input'><span class='no'>d</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>hours</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>3</span>)
-<span class='no'>d</span>$<span class='no'>hours</span> <span class='kw'>&lt;-</span> <span class='fu'>hms</span>(<span class='kw'>hours</span> <span class='kw'>=</span> <span class='no'>d</span>$<span class='no'>hours</span>)
-<span class='no'>d</span></div><div class='output co'>#&gt;      hours
+<span class='fu'>as_hms</span>(<span class='fl'>1</span>)
+</div><div class='output co'>#&gt; 00:00:01</div><div class='input'><span class='fu'>as_hms</span>(<span class='st'>"12:34:56"</span>)
+</div><div class='output co'>#&gt; 12:34:56</div><div class='input'><span class='fu'>as_hms</span>(<span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span>())
+</div><div class='output co'>#&gt; 23:49:29.435274</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></span>(<span class='fu'>hms</span>(<span class='fl'>1</span>))
+</div><div class='output co'>#&gt; [1] "1970-01-01 00:00:01 UTC"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(a = <span class='fu'>hms</span>(<span class='fl'>1</span>))
+</div><div class='output co'>#&gt;          a
+#&gt; 1 00:00:01</div><div class='input'><span class='kw'>d</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(hours = <span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span>)
+<span class='kw'>d</span><span class='op'>$</span><span class='kw'>hours</span> <span class='op'>&lt;-</span> <span class='fu'>hms</span>(hours = <span class='kw'>d</span><span class='op'>$</span><span class='kw'>hours</span>)
+<span class='kw'>d</span>
+</div><div class='output co'>#&gt;      hours
 #&gt; 1 01:00:00
 #&gt; 2 02:00:00
 #&gt; 3 03:00:00</div></pre>

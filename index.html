@@ -103,7 +103,8 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="co"># The easiest way to get hms is to install the whole tidyverse:</span>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="co"># The easiest way to get hms is to install the whole tidyverse:</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"tidyverse"</span>)
 
 <span class="co"># Alternatively, install just hms:</span>
@@ -111,13 +112,15 @@
 
 <span class="co"># Or the the development version from GitHub:</span>
 <span class="co"># install.packages("devtools")</span>
-<span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu">install_github</span>(<span class="st">"tidyverse/hms"</span>)</pre></div>
+<span class="kw">devtools</span>::<span class="fu">install_github</span>(<span class="st">"tidyverse/hms"</span>)
+</pre></div>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
 <p>The following example showcases ways of using the <code>hms</code> class standalone or as a data frame column.</p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">hms</span>)
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://hms.tidyverse.org">hms</a></span>)
 
 <span class="fu"><a href="reference/hms.html">hms</a></span>(<span class="fl">56</span>, <span class="fl">34</span>, <span class="fl">12</span>)
 <span class="co">#&gt; 12:34:56</span>
@@ -130,11 +133,12 @@
 <span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html">as.POSIXct</a></span>(<span class="fu"><a href="reference/hms.html">hms</a></span>(<span class="fl">1</span>))
 <span class="co">#&gt; [1] "1970-01-01 00:00:01 UTC"</span>
 
-<span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(<span class="kw">hours</span> <span class="kw">=</span> <span class="fl">1</span>:<span class="fl">3</span>, <span class="kw">hms</span> <span class="kw">=</span> <span class="fu"><a href="reference/hms.html">hms</a></span>(<span class="kw">hours</span> <span class="kw">=</span> <span class="fl">1</span>:<span class="fl">3</span>))
+<span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(hours = <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, hms = <span class="fu"><a href="reference/hms.html">hms</a></span>(hours = <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>))
 <span class="co">#&gt;   hours      hms</span>
 <span class="co">#&gt; 1     1 01:00:00</span>
 <span class="co">#&gt; 2     2 02:00:00</span>
-<span class="co">#&gt; 3     3 03:00:00</span></pre></div>
+<span class="co">#&gt; 3     3 03:00:00</span>
+</pre></div>
 <hr>
 <p>Please note that the ‘hms’ project is released with a <a href="https://github.com/tidyverse/hms/blob/master/CODE_OF_CONDUCT.md">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
