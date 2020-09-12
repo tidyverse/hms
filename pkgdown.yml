@@ -1,8 +1,8 @@
 pandoc: '2.2'
-pkgdown: 1.6.0
+pkgdown: 1.6.1
 pkgdown_sha: ~
-articles: []
-last_built: 2020-09-11T23:49Z
+articles: {}
+last_built: 2020-09-12T08:13Z
 urls:
   reference: https://hms.tidyverse.org/reference
   article: https://hms.tidyverse.org/articles
