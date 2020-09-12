@@ -72,7 +72,7 @@ Objects of the `hms` and its underlying `difftime` classes are stored as number 
 Use `as.numeric()` and `as_hms()` to convert to and from numbers.
 
 ```{r}
-times <- parse_hms(c("00:00:00.25", "00:00:01", "00:01:30"))
+times <- parse_hms(c("00:00:00.25", "00:00:01", "00:01:30", "01:00:00"))
 times
 times_num <- as.numeric(times)
 times_num

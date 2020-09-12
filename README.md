@@ -42,7 +42,7 @@ The following example showcases ways of using the `hms` class standalone or as a
 <span class='nf'><a href='https://hms.tidyverse.org/reference/hms.html'>hms</a></span>(<span class='m'>56</span>, <span class='m'>34</span>, <span class='m'>12</span>)
 <span class='c'>#&gt; 12:34:56</span>
 <span class='nf'><a href='https://hms.tidyverse.org/reference/hms.html'>as_hms</a></span>(<span class='nf'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span>())
-<span class='c'>#&gt; 10:11:13.045856</span>
+<span class='c'>#&gt; 10:11:41.440938</span>
 <span class='nf'><a href='https://hms.tidyverse.org/reference/parse_hms.html'>parse_hms</a></span>(<span class='s'>"12:34:56"</span>)
 <span class='c'>#&gt; 12:34:56</span>
 <span class='nf'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></span>(<span class='nf'><a href='https://hms.tidyverse.org/reference/hms.html'>hms</a></span>(<span class='m'>1</span>))
@@ -60,18 +60,20 @@ The following example showcases ways of using the `hms` class standalone or as a
 Objects of the `hms` and its underlying `difftime` classes are stored as number of seconds since `00:00:00`. Use [`as.numeric()`](https://rdrr.io/r/base/numeric.html) and [`as_hms()`](https://hms.tidyverse.org/reference/hms.html) to convert to and from numbers.
 
 <pre class='chroma'>
-<span class='k'>times</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://hms.tidyverse.org/reference/parse_hms.html'>parse_hms</a></span>(<span class='nf'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='s'>"00:00:00.25"</span>, <span class='s'>"00:00:01"</span>, <span class='s'>"00:01:30"</span>))
+<span class='k'>times</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://hms.tidyverse.org/reference/parse_hms.html'>parse_hms</a></span>(<span class='nf'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='s'>"00:00:00.25"</span>, <span class='s'>"00:00:01"</span>, <span class='s'>"00:01:30"</span>, <span class='s'>"01:00:00"</span>))
 <span class='k'>times</span>
 <span class='c'>#&gt; 00:00:00.25</span>
 <span class='c'>#&gt; 00:00:01.00</span>
 <span class='c'>#&gt; 00:01:30.00</span>
+<span class='c'>#&gt; 01:00:00.00</span>
 <span class='k'>times_num</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span>(<span class='k'>times</span>)
 <span class='k'>times_num</span>
-<span class='c'>#&gt; [1]  0.25  1.00 90.00</span>
+<span class='c'>#&gt; [1]    0.25    1.00   90.00 3600.00</span>
 <span class='nf'><a href='https://hms.tidyverse.org/reference/hms.html'>as_hms</a></span>(<span class='k'>times_num</span>)
 <span class='c'>#&gt; 00:00:00.25</span>
 <span class='c'>#&gt; 00:00:01.00</span>
 <span class='c'>#&gt; 00:01:30.00</span>
+<span class='c'>#&gt; 01:00:00.00</span>
 </pre>
 
 -----
