@@ -17,27 +17,35 @@
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
 <!-- Bootstrap -->
 <link href="../tidyverse.css" rel="stylesheet">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script>
 <link href="../tidyverse-2.css" rel="stylesheet">
+
+<!--optional theme-->
+<link href="../.css" rel="stylesheet">
+
 
 
 
@@ -79,7 +87,7 @@ as_hms() forwards to vec_cast()." />
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -94,9 +102,9 @@ as_hms() forwards to vec_cast()." />
 
       <div class="navbar-brand-container">
         <a class="navbar-brand" href="../index.html">hms</a>
-        <div class="info">
+        <div class="info hidden-xs hidden-sm">
           <span class="partof">part of the <a href="https://tidyverse.org">tidyverse</a></span>
-          <span class="version version-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.5.2.9002</span>
+          <span class="version version-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.5.3.9000</span>
         </div>
       </div>
     </div>
@@ -145,28 +153,28 @@ as numeric vectors.</p>
 <p><code>as_hms()</code> forwards to <code>vec_cast()</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>hms</span>(<span class='kw'>seconds</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>minutes</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>hours</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>days</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+    <pre class="usage"><span class='fu'>hms</span>(seconds = <span class='kw'>NULL</span>, minutes = <span class='kw'>NULL</span>, hours = <span class='kw'>NULL</span>, days = <span class='kw'>NULL</span>)
 
-<span class='fu'>new_hms</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>())
+<span class='fu'>new_hms</span>(x = <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>())
 
-<span class='fu'>is_hms</span>(<span class='no'>x</span>)
+<span class='fu'>is_hms</span>(<span class='kw'>x</span>)
 
-<span class='fu'>as_hms</span>(<span class='no'>x</span>)
-
-<span class='co'># S3 method for hms</span>
-<span class='fu'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></span>(<span class='no'>x</span>, <span class='no'>...</span>)
+<span class='fu'>as_hms</span>(<span class='kw'>x</span>)
 
 <span class='co'># S3 method for hms</span>
-<span class='fu'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXlt</a></span>(<span class='no'>x</span>, <span class='no'>...</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></span>(<span class='kw'>x</span>, <span class='kw'>...</span>)
 
 <span class='co'># S3 method for hms</span>
-<span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span>(<span class='no'>x</span>, <span class='no'>...</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXlt</a></span>(<span class='kw'>x</span>, <span class='kw'>...</span>)
 
 <span class='co'># S3 method for hms</span>
-<span class='fu'><a href='https://rdrr.io/r/base/format.html'>format</a></span>(<span class='no'>x</span>, <span class='no'>...</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span>(<span class='kw'>x</span>, <span class='kw'>...</span>)
 
 <span class='co'># S3 method for hms</span>
-<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
+<span class='fu'><a href='https://rdrr.io/r/base/format.html'>format</a></span>(<span class='kw'>x</span>, <span class='kw'>...</span>)
+
+<span class='co'># S3 method for hms</span>
+<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='kw'>x</span>, <span class='kw'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -196,28 +204,34 @@ conversion.
 Use <code><a href='http://lubridate.tidyverse.org/reference/with_tz.html'>lubridate::with_tz()</a></code> and <code><a href='http://lubridate.tidyverse.org/reference/force_tz.html'>lubridate::force_tz()</a></code> as necessary.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>hms</span>(<span class='fl'>56</span>, <span class='fl'>34</span>, <span class='fl'>12</span>)</div><div class='output co'>#&gt; 12:34:56</div><div class='input'><span class='fu'>hms</span>()</div><div class='output co'>#&gt; hms()</div><div class='input'>
-<span class='fu'>new_hms</span>(<span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span>(<span class='fl'>1</span>:<span class='fl'>3</span>))</div><div class='output co'>#&gt; 00:00:01
+    <pre class="examples"><div class='input'><span class='fu'>hms</span>(<span class='fl'>56</span>, <span class='fl'>34</span>, <span class='fl'>12</span>)
+</div><div class='output co'>#&gt; 12:34:56</div><div class='input'><span class='fu'>hms</span>()
+</div><div class='output co'>#&gt; hms()</div><div class='input'>
+<span class='fu'>new_hms</span>(<span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span>(<span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span>))
+</div><div class='output co'>#&gt; 00:00:01
 #&gt; 00:00:02
 #&gt; 00:00:03</div><div class='input'><span class='co'># Supports numeric only!</span>
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>new_hms</span>(<span class='fl'>1</span>:<span class='fl'>3</span>))</div><div class='output co'>#&gt; Error : `x` must be a vector with type &lt;double&gt;.
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>new_hms</span>(<span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span>))
+</div><div class='output co'>#&gt; Error : `x` must be a vector with type &lt;double&gt;.
 #&gt; Instead, it has type &lt;integer&gt;.</div><div class='input'>
-<span class='fu'>as_hms</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; 00:00:01</div><div class='input'><span class='fu'>as_hms</span>(<span class='st'>"12:34:56"</span>)</div><div class='output co'>#&gt; 12:34:56</div><div class='input'><span class='fu'>as_hms</span>(<span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span>())</div><div class='output co'>#&gt; 16:22:52.355127</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></span>(<span class='fu'>hms</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; [1] "1970-01-01 00:00:01 UTC"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fu'>hms</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt;          a
-#&gt; 1 00:00:01</div><div class='input'><span class='no'>d</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>hours</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>3</span>)
-<span class='no'>d</span>$<span class='no'>hours</span> <span class='kw'>&lt;-</span> <span class='fu'>hms</span>(<span class='kw'>hours</span> <span class='kw'>=</span> <span class='no'>d</span>$<span class='no'>hours</span>)
-<span class='no'>d</span></div><div class='output co'>#&gt;      hours
+<span class='fu'>as_hms</span>(<span class='fl'>1</span>)
+</div><div class='output co'>#&gt; 00:00:01</div><div class='input'><span class='fu'>as_hms</span>(<span class='st'>"12:34:56"</span>)
+</div><div class='output co'>#&gt; 12:34:56</div><div class='input'><span class='fu'>as_hms</span>(<span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span>())
+</div><div class='output co'>#&gt; 08:16:26.598932</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></span>(<span class='fu'>hms</span>(<span class='fl'>1</span>))
+</div><div class='output co'>#&gt; [1] "1970-01-01 00:00:01 UTC"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(a = <span class='fu'>hms</span>(<span class='fl'>1</span>))
+</div><div class='output co'>#&gt;          a
+#&gt; 1 00:00:01</div><div class='input'><span class='kw'>d</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(hours = <span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span>)
+<span class='kw'>d</span><span class='op'>$</span><span class='kw'>hours</span> <span class='op'>&lt;-</span> <span class='fu'>hms</span>(hours = <span class='kw'>d</span><span class='op'>$</span><span class='kw'>hours</span>)
+<span class='kw'>d</span>
+</div><div class='output co'>#&gt;      hours
 #&gt; 1 01:00:00
 #&gt; 2 02:00:00
 #&gt; 3 03:00:00</div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#details">Details</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 

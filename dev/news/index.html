@@ -17,27 +17,35 @@
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
 <!-- Bootstrap -->
 <link href="../tidyverse.css" rel="stylesheet">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script>
 <link href="../tidyverse-2.css" rel="stylesheet">
+
+<!--optional theme-->
+<link href="../.css" rel="stylesheet">
+
 
 
 
@@ -69,7 +77,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -84,9 +92,9 @@
 
       <div class="navbar-brand-container">
         <a class="navbar-brand" href="../index.html">hms</a>
-        <div class="info">
+        <div class="info hidden-xs hidden-sm">
           <span class="partof">part of the <a href="https://tidyverse.org">tidyverse</a></span>
-          <span class="version version-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.5.2.9002</span>
+          <span class="version version-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.5.3.9000</span>
         </div>
       </div>
     </div>
@@ -117,30 +125,31 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Changelog <small></small></h1>
+      <h1 data-toc-skip>Changelog <small></small></h1>
       <small>Source: <a href='https://github.com/tidyverse/hms/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div id="hms-0-5-2-9002" class="section level1">
-<h1 class="page-header">
-<a href="#hms-0-5-2-9002" class="anchor"></a>hms 0.5.2.9002<small> Unreleased </small>
+    <div id="hms-0-5-3-9000" class="section level1">
+<h1 class="page-header" data-toc-text="0.5.3.9000">
+<a href="#hms-0-5-3-9000" class="anchor"></a>hms 0.5.3.9000<small> Unreleased </small>
+</h1>
+<ul>
+<li>Internal changes only.</li>
+</ul>
+</div>
+    <div id="hms-0-5-3" class="section level1">
+<h1 class="page-header" data-toc-text="0.5.3">
+<a href="#hms-0-5-3" class="anchor"></a>hms 0.5.3<small> 2020-01-08 </small>
 </h1>
 <ul>
 <li>Use <code>vec_default_ptype2()</code>, remove <code>vec_ptype2.hms.unspecified()</code> (<a href='https://github.com/tidyverse/hms/issues/80'>#80</a>, <a href='https://github.com/romainfrancois'>@romainfrancois</a>).</li>
-</ul>
-</div>
-    <div id="hms-0-5-2-9001" class="section level1">
-<h1 class="page-header">
-<a href="#hms-0-5-2-9001" class="anchor"></a>hms 0.5.2.9001<small> Unreleased </small>
-</h1>
-<ul>
 <li>
 <code>vec_ptype2.hms.default()</code> forwards to <code>vec_default_ptype2()</code> for compatibility with vctrs 0.2.1.</li>
 <li>Remove <code>as.data.frame.hms()</code>, handeld by vctrs.</li>
 </ul>
 </div>
     <div id="hms-0-5-2-9000" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.5.2.9000">
 <a href="#hms-0-5-2-9000" class="anchor"></a>hms 0.5.2.9000<small> Unreleased </small>
 </h1>
 <ul>
@@ -148,7 +157,7 @@
 </ul>
 </div>
     <div id="hms-0-5-2" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.5.2">
 <a href="#hms-0-5-2" class="anchor"></a>hms 0.5.2<small> 2019-10-30 </small>
 </h1>
 <ul>
@@ -156,7 +165,7 @@
 </ul>
 </div>
     <div id="hms-0-5-1" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.5.1">
 <a href="#hms-0-5-1" class="anchor"></a>hms 0.5.1<small> 2019-08-23 </small>
 </h1>
 <ul>
@@ -164,7 +173,7 @@
 </ul>
 </div>
     <div id="hms-0-5-0" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.5.0">
 <a href="#hms-0-5-0" class="anchor"></a>hms 0.5.0<small> 2019-07-09 </small>
 </h1>
 <div id="breaking-changes" class="section level2">
@@ -193,7 +202,7 @@
 </div>
 </div>
     <div id="hms-0-4-2" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.4.2">
 <a href="#hms-0-4-2" class="anchor"></a>hms 0.4.2<small> 2018-03-10 </small>
 </h1>
 <ul>
@@ -201,7 +210,7 @@
 </ul>
 </div>
     <div id="hms-0-4-1" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.4.1">
 <a href="#hms-0-4-1" class="anchor"></a>hms 0.4.1<small> 2018-01-24 </small>
 </h1>
 <ul>
@@ -210,7 +219,7 @@
 </ul>
 </div>
     <div id="hms-0-4-0" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.4.0">
 <a href="#hms-0-4-0" class="anchor"></a>hms 0.4.0<small> 2017-11-22 </small>
 </h1>
 <div id="breaking-changes-1" class="section level2">
@@ -260,7 +269,7 @@
 </div>
 </div>
     <div id="hms-0-3" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.3">
 <a href="#hms-0-3" class="anchor"></a>hms 0.3<small> 2016-11-22 </small>
 </h1>
 <ul>
@@ -269,7 +278,7 @@
 </ul>
 </div>
     <div id="hms-0-2" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.2">
 <a href="#hms-0-2" class="anchor"></a>hms 0.2<small> 2016-06-17 </small>
 </h1>
 <p>Minor fixes and improvements.</p>
@@ -282,7 +291,7 @@
 </ul>
 </div>
     <div id="hms-0-1" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.1">
 <a href="#hms-0-1" class="anchor"></a>hms 0.1<small> 2016-05-02 </small>
 </h1>
 <p>First CRAN release.</p>
@@ -328,24 +337,10 @@
 </div>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <div id="tocnav">
-      <h2>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-        <li><a href="#hms-0-5-2-9002">0.5.2.9002</a></li>
-        <li><a href="#hms-0-5-2-9001">0.5.2.9001</a></li>
-        <li><a href="#hms-0-5-2-9000">0.5.2.9000</a></li>
-        <li><a href="#hms-0-5-2">0.5.2</a></li>
-        <li><a href="#hms-0-5-1">0.5.1</a></li>
-        <li><a href="#hms-0-5-0">0.5.0</a></li>
-        <li><a href="#hms-0-4-2">0.4.2</a></li>
-        <li><a href="#hms-0-4-1">0.4.1</a></li>
-        <li><a href="#hms-0-4-0">0.4.0</a></li>
-        <li><a href="#hms-0-3">0.3</a></li>
-        <li><a href="#hms-0-2">0.2</a></li>
-        <li><a href="#hms-0-1">0.1</a></li>
-      </ul>
-    </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 
 </div>
