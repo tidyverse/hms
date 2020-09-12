@@ -1,3 +1,8 @@
+# hms 0.5.3.9000
+
+- Internal changes only.
+
+
 # hms 0.5.3
 
 - Use `vec_default_ptype2()`, remove `vec_ptype2.hms.unspecified()` (#80, @romainfrancois).
