@@ -145,18 +145,18 @@ not the current system's timezone.
 Change the timezone before converting if necessary, e.g. using <code><a href='http://lubridate.tidyverse.org/reference/with_tz.html'>lubridate::with_tz()</a></code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>is.hms</span>(<span class='kw'>x</span>)
+    <pre class="usage"><span class='fu'>is.hms</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
-<span class='fu'>as.hms</span>(<span class='kw'>x</span>, <span class='kw'>...</span>)
+<span class='fu'>as.hms</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S3 method for default</span>
-<span class='fu'>as.hms</span>(<span class='kw'>x</span>, <span class='kw'>...</span>)
+<span class='fu'>as.hms</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S3 method for POSIXt</span>
-<span class='fu'>as.hms</span>(<span class='kw'>x</span>, tz = <span class='kw'>pkgconfig</span>::<span class='fu'><a href='https://rdrr.io/pkg/pkgconfig/man/get_config.html'>get_config</a></span>(<span class='st'>"hms::default_tz"</span>, <span class='st'>""</span>), <span class='kw'>...</span>)
+<span class='fu'>as.hms</span><span class='op'>(</span><span class='va'>x</span>, tz <span class='op'>=</span> <span class='fu'>pkgconfig</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/pkgconfig/man/get_config.html'>get_config</a></span><span class='op'>(</span><span class='st'>"hms::default_tz"</span>, <span class='st'>""</span><span class='op'>)</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S3 method for POSIXlt</span>
-<span class='fu'>as.hms</span>(<span class='kw'>x</span>, tz = <span class='kw'>pkgconfig</span>::<span class='fu'><a href='https://rdrr.io/pkg/pkgconfig/man/get_config.html'>get_config</a></span>(<span class='st'>"hms::default_tz"</span>, <span class='st'>""</span>), <span class='kw'>...</span>)</pre>
+<span class='fu'>as.hms</span><span class='op'>(</span><span class='va'>x</span>, tz <span class='op'>=</span> <span class='fu'>pkgconfig</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/pkgconfig/man/get_config.html'>get_config</a></span><span class='op'>(</span><span class='st'>"hms::default_tz"</span>, <span class='st'>""</span><span class='op'>)</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
