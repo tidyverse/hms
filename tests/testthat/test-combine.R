@@ -11,6 +11,7 @@ test_that("combination coerces to hms", {
   scoped_lifecycle_silence()
 
   expect_identical(c(hms(1), 2), hms(1:2))
+  expect_identical(c(hms(1), hms(2)), hms(1:2))
   if (getRversion() < "3.3") skip("Only for R >= 3.3")
   expect_identical(c(hms(1), "00:00:02"), hms(1:2))
   expect_identical(vec_c("00:00:01", hms(2)), hms(1:2))
