@@ -4,14 +4,17 @@
 #' @param x A vector of class [hms]
 #' @param secs Multiple of seconds, a positive numeric. Values less than one
 #'   are supported
-#' @param digits Number of digits, a whole number between -100 and 100.
-#' @return The input, rounded or truncated to the nearest multiple of `secs` (or number of `digits`)
+#' @param digits Number of digits, a whole number.
+#'   Negative numbers are supported.
+#' @return The input, rounded or truncated to the nearest multiple of `secs`
+#'   (or number of `digits`)
 #' @export
 #' @examples
 #' round_hms(as_hms("12:34:56"), 5)
 #' round_hms(as_hms("12:34:56"), 60)
-#' round_hms(as_hms("12:34:56"), digits = 1)
-#' round_hms(as_hms("12:34:56"), digits = -2)
+#' round_hms(as_hms("12:34:56.78"), 0.25)
+#' round_hms(as_hms("12:34:56.78"), digits = 1)
+#' round_hms(as_hms("12:34:56.78"), digits = -2)
 round_hms <- function(x, secs = NULL, digits = NULL) {
   secs <- digits_to_secs(secs, digits)
 
