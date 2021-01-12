@@ -1,5 +1,3 @@
-context("pillar")
-
 test_that("pillar", {
   expect_known_pillar_shaft_display(
     hms(c(-3600, -123.45 -60, -1, -0.001, 0, 0.001, 1, 60, 123.45, 3600, NA)),

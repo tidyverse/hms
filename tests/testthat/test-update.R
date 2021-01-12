@@ -1,5 +1,3 @@
-context("update")
-
 test_that("Can't update units", {
   x <- hms(minutes = 3)
   expect_equal(units(x), "secs")

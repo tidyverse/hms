@@ -1,5 +1,3 @@
-context("coercion")
-
 test_that("coercion in", {
   expect_identical(as_hms(0.5 * 86400), hms(hours = 12))
   expect_identical(as_hms(-0.25 * 86400), hms(hours = -6))

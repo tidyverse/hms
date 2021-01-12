@@ -1,5 +1,3 @@
-context("coercion-deprecated")
-
 test_that("coercion in", {
   scoped_lifecycle_silence()
 

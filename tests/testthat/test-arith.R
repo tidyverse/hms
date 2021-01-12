@@ -1,5 +1,3 @@
-context("arith")
-
 test_that("arithmetics work", {
   expect_equal(as.Date("2016-03-31") + hms(hours = 1), as.Date("2016-03-31"))
   expect_equal(as.Date("2016-03-31") + hms(days = -1), as.Date("2016-03-30"))

@@ -1,5 +1,3 @@
-context("combine")
-
 test_that("combination keeps class and order", {
   expect_identical(c(hms(1), hms(2)), hms(1:2))
 })

@@ -1,5 +1,3 @@
-context("lubridate")
-
 test_that("duration", {
   skip_if_not_installed("lubridate")
   expect_identical(lubridate::as.duration(hms(minutes = 1:3)),
