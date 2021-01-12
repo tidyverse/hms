@@ -18,7 +18,7 @@ new_hms(x = numeric())
 
 is_hms(x)
 
-as_hms(x)
+as_hms(x, ...)
 
 \method{as.POSIXct}{hms}(x, ...)
 

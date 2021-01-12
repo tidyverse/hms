@@ -126,7 +126,14 @@ vec_ptype_full.hms <- function(x) {
 #' @rdname hms
 #' @param x An object.
 #' @export
-as_hms <- function(x) {
+as_hms <- function(x, ...) {
+  check_dots_used()
+
+  UseMethod("as_hms")
+}
+
+#' @export
+as_hms.default <- function(x, ...) {
   vec_cast(x, new_hms())
 }
 
