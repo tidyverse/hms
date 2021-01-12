@@ -1,5 +1,3 @@
-context("subset")
-
 test_that("range subsetting keeps class", {
   expect_identical(hms(1:3)[2], hms(2))
   expect_identical(hms(1:3)[2:3], hms(2:3))

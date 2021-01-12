@@ -1,5 +1,3 @@
-context("output")
-
 test_that("output", {
   expect_identical(format(hms()), "hms()")
   expect_identical(format(hms(1:2, minutes = c(0, 0), hours = 3:4)),

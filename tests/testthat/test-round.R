@@ -1,5 +1,3 @@
-context("round")
-
 test_that("round_hms", {
   expect_equal(round_hms(parse_hms("12:34:56"), 5), hms(55, 34, 12))
   expect_equal(round_hms(parse_hms("12:34:56"), 60), hms(0, 35, 12))
