@@ -19,8 +19,7 @@ test_that("range updating warns if lossy cast", {
 
   x <- hms(1:3)
 
-  # r-lib/testthat#783
-  expect_warning(x[2] <- "a")
+  expect_error(x[2] <- "a")
 })
 
 test_that("index subsetting keeps class", {
