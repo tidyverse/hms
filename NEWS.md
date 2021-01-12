@@ -1,3 +1,9 @@
+# hms 0.5.3.9002
+
+- `round_hms()` and `trunc_hms()` gain `digits` argument (#78, @hglanz).
+- `as_hms()` and `vec_cast()` now correctly treat objects of class `"difftime"` with `integer` mode (#84).
+
+
 # hms 0.5.3.9001
 
 - hms has been re-licensed as MIT (#86).
