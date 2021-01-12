@@ -98,7 +98,7 @@ NULL
 #' @export
 #' @keywords internal
 is.hms <- function(x) {
-  signal_soft_deprecated("is.hms() is deprecated, please use is_hms().")
+  deprecate_soft("0.5.0", "hms::is.hms()", "hms::is_hms()")
   is_hms(x)
 }
 
@@ -143,7 +143,7 @@ as_hms <- function(x) {
 #' @export
 #' @keywords internal
 as.hms <- function(x, ...) {
-  signal_soft_deprecated("as.hms() is deprecated, please use as_hms().")
+  deprecate_soft("0.5.0", "hms::as.hms()", "hms::as_hms()")
   UseMethod("as.hms", x)
 }
 
