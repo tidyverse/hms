@@ -13,17 +13,7 @@
 #' round_hms(as_hms("12:34:56"), digits = 1)
 #' round_hms(as_hms("12:34:56"), digits = -2)
 round_hms <- function(x, secs = NULL, digits = NULL) {
-  if (!is.null(digits)) {
-    if (d %% 1 == 0) {
-      if (d <= 100 & d >= -100) {
-        secs <- digits2sec(digits)
-      } else {
-        # error message here
-      }
-    } else {
-      # error message here
-    }
-  }
+  secs <- digits_to_secs(secs, digits)
 
   vec_restore(round(as.numeric(x) / secs) * secs, x)
 }
@@ -33,28 +23,37 @@ round_hms <- function(x, secs = NULL, digits = NULL) {
 #' @examples
 #' trunc_hms(as_hms("12:34:56"), 60)
 trunc_hms <- function(x, secs = NULL, digits = NULL) {
-  if (!is.null(digits)) {
-    if (d %% 1 == 0) {
-      if (d <= 100 & d >= -100) {
-        secs <- digits2sec(digits)
-      } else {
-        # error message here
-      }
-    } else {
-      # error message here
-    }
-  }
+  secs <- digits_to_secs(secs, digits)
 
   vec_restore(trunc(as.numeric(x) / secs) * secs, x)
 }
 
+digits_to_secs <- function(secs, digits) {
+  if (is.null(digits)) {
+    if (is.null(secs)) {
+      abort("Exactly one of `secs` or `digits` is required.")
+    }
 
-digits2sec <- function(digits) {
-  if (digits >= -1) {
-    secs <- 10 ^ -digits
-  } else if (digits < -1) {
-    secs <- 60 ^ (-digits - 1)
+    return(secs)
   }
 
-  return(secs)
+  if (!is.null(secs)) {
+    abort("Exactly one of `secs` or `digits` is required.")
+  }
+
+  if (!is_integerish(digits)) {
+    abort("`digits` must be a whole number")
+  }
+
+  if (digits >= -1) {
+    secs <- 10 ^ -digits
+  } else if (digits == -2) {
+    secs <- 60
+  } else if (digits == -3) {
+    secs <- 600
+  } else if (digits <= -4) {
+    secs <- 3600 * (10^ (-digits - 4))
+  }
+
+  secs
 }
