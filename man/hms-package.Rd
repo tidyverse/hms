@@ -27,7 +27,7 @@ Useful links:
 
 Other contributors:
 \itemize{
-  \item The R Consortium [funder]
+  \item R Consortium [funder]
   \item RStudio [funder]
 }
 
