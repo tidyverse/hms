@@ -1,5 +1,6 @@
 #' @details
 #' `r lifecycle::badge("stable")`
+#' @import lifecycle
 #' @import vctrs
 #' @import rlang
 #' @aliases hms-package NULL
