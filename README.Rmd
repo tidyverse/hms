@@ -18,8 +18,7 @@ pkgload::load_all()
 
 <!-- badges: start -->
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![Travis-CI Build Status](https://travis-ci.org/tidyverse/hms.svg?branch=master)](https://travis-ci.org/tidyverse/hms)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/tidyverse/hms?branch=master&svg=true)](https://ci.appveyor.com/project/tidyverse/hms)
+[![rcc](https://github.com/tidyverse/hms/workflows/rcc/badge.svg)](https://github.com/tidyverse/hms/actions)
 [![codecov](https://codecov.io/gh/tidyverse/hms/branch/master/graph/badge.svg)](https://codecov.io/gh/tidyverse/hms)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
 <!-- badges: end -->

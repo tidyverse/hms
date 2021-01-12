@@ -2,7 +2,7 @@
 
 <!-- badges: start -->
 
-[![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing) [![Travis-CI Build Status](https://travis-ci.org/tidyverse/hms.svg?branch=master)](https://travis-ci.org/tidyverse/hms) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/tidyverse/hms?branch=master&svg=true)](https://ci.appveyor.com/project/tidyverse/hms) [![codecov](https://codecov.io/gh/tidyverse/hms/branch/master/graph/badge.svg)](https://codecov.io/gh/tidyverse/hms) [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
+[![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing) [![rcc](https://github.com/tidyverse/hms/workflows/rcc/badge.svg)](https://github.com/tidyverse/hms/actions) [![codecov](https://codecov.io/gh/tidyverse/hms/branch/master/graph/badge.svg)](https://codecov.io/gh/tidyverse/hms) [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
 
 <!-- badges: end -->
 
@@ -41,7 +41,7 @@ The following example showcases ways of using the `hms` class standalone or as a
 <span class='nf'><a href='https://hms.tidyverse.org/reference/hms.html'>hms</a></span><span class='o'>(</span><span class='m'>56</span>, <span class='m'>34</span>, <span class='m'>12</span><span class='o'>)</span>
 <span class='c'>#&gt; 12:34:56</span>
 <span class='nf'><a href='https://hms.tidyverse.org/reference/hms.html'>as_hms</a></span><span class='o'>(</span><span class='nf'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span><span class='o'>(</span><span class='o'>)</span><span class='o'>)</span>
-<span class='c'>#&gt; 06:10:12.9811</span>
+<span class='c'>#&gt; 06:10:37.753343</span>
 <span class='nf'><a href='https://hms.tidyverse.org/reference/parse_hms.html'>parse_hms</a></span><span class='o'>(</span><span class='s'>"12:34:56"</span><span class='o'>)</span>
 <span class='c'>#&gt; 12:34:56</span>
 <span class='nf'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></span><span class='o'>(</span><span class='nf'><a href='https://hms.tidyverse.org/reference/hms.html'>hms</a></span><span class='o'>(</span><span class='m'>1</span><span class='o'>)</span><span class='o'>)</span>
