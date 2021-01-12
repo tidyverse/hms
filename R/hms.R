@@ -1,5 +1,5 @@
 #' @details
-#' \Sexpr[results=rd, stage=render]{hms:::lifecycle("stable")}
+#' `r lifecycle::badge("stable")`
 #' @import vctrs
 #' @import rlang
 #' @aliases hms-package NULL

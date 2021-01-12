@@ -11,7 +11,7 @@ Implements an S3 class for storing and formatting time-of-day
     values, based on the 'difftime' class.
 }
 \details{
-\Sexpr[results=rd, stage=render]{hms:::lifecycle("stable")}
+\ifelse{html}{\out{<a href='https://www.tidyverse.org/lifecycle/#stable'><img src='figures/lifecycle-stable.svg' alt='Stable lifecycle'></a>}}{\strong{Stable}}
 }
 \seealso{
 Useful links:
