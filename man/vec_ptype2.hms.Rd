@@ -15,11 +15,11 @@
 
 \item{x_arg}{Argument names for \code{x} and \code{y}. These are used
 in error messages to inform the user about the locations of
-incompatible types (see \code{\link[vctrs:stop_incompatible_type]{stop_incompatible_type()}}).}
+incompatible types (see \code{\link[vctrs:vctrs-conditions]{stop_incompatible_type()}}).}
 
 \item{y_arg}{Argument names for \code{x} and \code{y}. These are used
 in error messages to inform the user about the locations of
-incompatible types (see \code{\link[vctrs:stop_incompatible_type]{stop_incompatible_type()}}).}
+incompatible types (see \code{\link[vctrs:vctrs-conditions]{stop_incompatible_type()}}).}
 }
 \description{
 Double dispatch methods to support \code{\link[vctrs:vec_ptype2]{vctrs::vec_ptype2()}}.
