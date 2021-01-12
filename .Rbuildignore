@@ -7,7 +7,6 @@
 ^Makefile$
 ^cran-comments\.md$
 ^revdep$
-^tic\.R$
 ^docs$
 ^_pkgdown\.yml$
 ^\.github$
