@@ -42,7 +42,6 @@ test_that("bad input", {
 })
 
 test_that("is.hms()", {
-  scoped_lifecycle_silence()
-  expect_identical(is.hms(hms), is_hms(hms))
-  expect_identical(is.hms(3), is_hms(3))
+  expect_deprecated(expect_identical(is.hms(hms), is_hms(hms)))
+  expect_deprecated(expect_identical(is.hms(3), is_hms(3)))
 })
