@@ -11,9 +11,14 @@ test_that("constructor", {
   expect_is(hms(1), "difftime")
   expect_identical(as.numeric(hms(1)), 1)
   expect_identical(as.difftime(hms(1)), hms(1))
+})
 
+
+test_that("casting", {
   expect_identical(units(as_hms(as.difftime(1, units = "mins"))), "secs")
   expect_identical(as_hms(hms(1)), hms(1))
+
+  expect_identical(as_hms(as.difftime(1:3, units = "secs")), hms(as.numeric(1:3)))
 })
 
 test_that("zero length (#35)", {
