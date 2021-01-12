@@ -3,6 +3,7 @@
 #' @import lifecycle
 #' @import vctrs
 #' @import rlang
+#' @import ellipsis
 #' @aliases hms-package NULL
 "_PACKAGE"
 
