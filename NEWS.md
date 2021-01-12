@@ -1,8 +1,11 @@
+# hms 0.5.3.9001
+
+- hms has been re-licensed as MIT (#86).
+
+
 # hms 0.5.3.9000
 
 - Internal changes only.
-
-- hms has been re-licensed as MIT (#86).
 
 
 # hms 0.5.3
