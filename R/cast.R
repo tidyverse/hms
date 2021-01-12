@@ -21,7 +21,7 @@ vec_cast.hms.hms <- function(x, to, ...) x
 #' @export
 vec_cast.hms.difftime <- function(x, to, ...) {
   units(x) <- "secs"
-  new_hms(vec_data(x))
+  new_hms(as.numeric(vec_data(x)))
 }
 
 #' @method vec_cast.difftime hms
