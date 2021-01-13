@@ -39,7 +39,7 @@ jobs:
       - id: set-matrix
         run: |
           package <- read.dcf("DESCRIPTION")[, "Package"][[1]]
-          deps <- tools:::package_dependencies(package, reverse = TRUE, which = c("Depends", "Imports", "LinkingTo", "Suggests"))
+          deps <- tools:::package_dependencies(package, reverse = TRUE, which = c("Depends", "Imports", "LinkingTo", "Suggests"))[[1]]
           json <- paste0(
             '{"package:[',
             paste0('"', deps, '"', collapse = ","),
