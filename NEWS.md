@@ -1,5 +1,9 @@
 # hms 1.0.0
 
+## Life cycle
+
+- hms is now marked as "stable".
+
 ## Breaking changes
 
 - `"hms"` objects no longer have a common type with `character` and `numeric`. Combining such values previously threw a warning, now throws an error (#94).
