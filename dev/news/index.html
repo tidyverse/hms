@@ -147,42 +147,49 @@
 <h1 class="page-header" data-toc-text="1.0.0">
 <a href="#hms-100" class="anchor"></a>hms 1.0.0<small> Unreleased </small>
 </h1>
+<div id="life-cycle" class="section level2">
+<h2 class="hasAnchor">
+<a href="#life-cycle" class="anchor"></a>Life cycle</h2>
+<ul>
+<li>hms is now marked as “stable”.</li>
+</ul>
+</div>
+<div id="breaking-changes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#breaking-changes" class="anchor"></a>Breaking changes</h2>
+<ul>
+<li>
+<code>"hms"</code> objects no longer have a common type with <code>character</code> and <code>numeric</code>. Combining such values previously threw a warning, now throws an error (<a href='https://github.com/tidyverse/hms/issues/94'>#94</a>).</li>
+<li>
+<code>vec_cast()</code> and <code><a href="../reference/hms.html">as_hms()</a></code> now throw error instead of a warning if input can’t be parsed (<a href='https://github.com/tidyverse/hms/issues/68'>#68</a>).</li>
+</ul>
+</div>
+<div id="features" class="section level2">
+<h2 class="hasAnchor">
+<a href="#features" class="anchor"></a>Features</h2>
 <ul>
 <li>
 <code><a href="../reference/hms.html">as_hms()</a></code> is a generic again (<a href='https://github.com/tidyverse/hms/issues/81'>#81</a>).</li>
 <li>
-<code>"hms"</code> objects no longer have a common type with <code>character</code> and <code>numeric</code>. Combining such values previously threw a warning, now throws an error (<a href='https://github.com/tidyverse/hms/issues/94'>#94</a>).</li>
-<li>Using lifecycle package (<a href='https://github.com/tidyverse/hms/issues/94'>#94</a>).</li>
-<li>
-<code>vec_cast()</code> and <code><a href="../reference/hms.html">as_hms()</a></code> throw error instead of a warning if input can’t be parsed (<a href='https://github.com/tidyverse/hms/issues/68'>#68</a>).</li>
+<code><a href="../reference/round_hms.html">round_hms()</a></code> and <code><a href="../reference/round_hms.html">trunc_hms()</a></code> gain <code>digits</code> argument (<a href='https://github.com/tidyverse/hms/issues/78'>#78</a>, <a href='https://github.com/hglanz'>@hglanz</a>).</li>
 </ul>
 </div>
-    <div id="hms-0539002" class="section level1">
-<h1 class="page-header" data-toc-text="0.5.3.9002">
-<a href="#hms-0539002" class="anchor"></a>hms 0.5.3.9002<small> Unreleased </small>
-</h1>
+<div id="bug-fixes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#bug-fixes" class="anchor"></a>Bug fixes</h2>
 <ul>
-<li>
-<code><a href="../reference/round_hms.html">round_hms()</a></code> and <code><a href="../reference/round_hms.html">trunc_hms()</a></code> gain <code>digits</code> argument (<a href='https://github.com/tidyverse/hms/issues/78'>#78</a>, <a href='https://github.com/hglanz'>@hglanz</a>).</li>
 <li>
 <code><a href="../reference/hms.html">as_hms()</a></code> and <code>vec_cast()</code> now correctly treat objects of class <code>"difftime"</code> with <code>integer</code> mode (<a href='https://github.com/tidyverse/hms/issues/84'>#84</a>).</li>
 </ul>
 </div>
-    <div id="hms-0539001" class="section level1">
-<h1 class="page-header" data-toc-text="0.5.3.9001">
-<a href="#hms-0539001" class="anchor"></a>hms 0.5.3.9001<small> Unreleased </small>
-</h1>
+<div id="internal" class="section level2">
+<h2 class="hasAnchor">
+<a href="#internal" class="anchor"></a>Internal</h2>
 <ul>
+<li>Using lifecycle package (<a href='https://github.com/tidyverse/hms/issues/94'>#94</a>).</li>
 <li>hms has been re-licensed as MIT (<a href='https://github.com/tidyverse/hms/issues/86'>#86</a>).</li>
 </ul>
 </div>
-    <div id="hms-0539000" class="section level1">
-<h1 class="page-header" data-toc-text="0.5.3.9000">
-<a href="#hms-0539000" class="anchor"></a>hms 0.5.3.9000<small> Unreleased </small>
-</h1>
-<ul>
-<li>Internal changes only.</li>
-</ul>
 </div>
     <div id="hms-053" class="section level1">
 <h1 class="page-header" data-toc-text="0.5.3">
@@ -223,9 +230,9 @@
 <h1 class="page-header" data-toc-text="0.5.0">
 <a href="#hms-050" class="anchor"></a>hms 0.5.0<small> 2019-07-09 </small>
 </h1>
-<div id="breaking-changes" class="section level2">
+<div id="breaking-changes-1" class="section level2">
 <h2 class="hasAnchor">
-<a href="#breaking-changes" class="anchor"></a>Breaking changes</h2>
+<a href="#breaking-changes-1" class="anchor"></a>Breaking changes</h2>
 <ul>
 <li><p>Now based on vctrs &gt;= 0.2.0 (<a href='https://github.com/tidyverse/hms/issues/61'>#61</a>). This adds support for <code>vec_cast()</code> and <code>vec_ptype2()</code>. Some operations (such as subset assignment) are now stricter. The <code><a href="../reference/hms.html">new_hms()</a></code> constructor permits safe construction of <code>hms</code> objects from a numeric vector.</p></li>
 <li><p>The new <code><a href="../reference/hms.html">is_hms()</a></code> deprecates the existing <code><a href="../reference/Deprecated.html">is.hms()</a></code>. <code><a href="../reference/Deprecated.html">as.hms()</a></code> is deprecated in favor of <code>vec_cast()</code> or the new <code><a href="../reference/hms.html">as_hms()</a></code> (which is just a thin wrapper around <code>vec_cast()</code>).</p></li>
@@ -239,9 +246,9 @@
 <li><p>Values with nonzero hours, seconds and split-seconds are now displayed correctly in tibbles (<a href='https://github.com/tidyverse/hms/issues/56'>#56</a>), even with a very small distance to the full second (<a href='https://github.com/tidyverse/hms/issues/64'>#64</a>).</p></li>
 </ul>
 </div>
-<div id="internal" class="section level2">
+<div id="internal-1" class="section level2">
 <h2 class="hasAnchor">
-<a href="#internal" class="anchor"></a>Internal</h2>
+<a href="#internal-1" class="anchor"></a>Internal</h2>
 <ul>
 <li>Don’t test colored output on CRAN.</li>
 <li>Correct reference link on r4ds (<a href='https://github.com/tidyverse/hms/issues/58'>#58</a>, <a href='https://github.com/evanhaldane'>@evanhaldane</a>).</li>
@@ -269,9 +276,9 @@
 <h1 class="page-header" data-toc-text="0.4.0">
 <a href="#hms-040" class="anchor"></a>hms 0.4.0<small> 2017-11-22 </small>
 </h1>
-<div id="breaking-changes-1" class="section level2">
+<div id="breaking-changes-2" class="section level2">
 <h2 class="hasAnchor">
-<a href="#breaking-changes-1" class="anchor"></a>Breaking changes</h2>
+<a href="#breaking-changes-2" class="anchor"></a>Breaking changes</h2>
 <ul>
 <li>
 <code><a href="../reference/Deprecated.html">as.hms.POSIXt()</a></code> now defaults to the current time zone, the previous default was <code>"UTC"</code> and can be restored by calling <code><a href="https://rdrr.io/pkg/pkgconfig/man/set_config.html">pkgconfig::set_config("hms::default_tz", "UTC")</a></code>.</li>
@@ -290,9 +297,9 @@
 <code>as.hms.character()</code> and <code><a href="../reference/parse_hms.html">parse_hms()</a></code> accept fractional seconds (<a href='https://github.com/tidyverse/hms/issues/33'>#33</a>).</li>
 </ul>
 </div>
-<div id="bug-fixes" class="section level2">
+<div id="bug-fixes-1" class="section level2">
 <h2 class="hasAnchor">
-<a href="#bug-fixes" class="anchor"></a>Bug fixes</h2>
+<a href="#bug-fixes-1" class="anchor"></a>Bug fixes</h2>
 <ul>
 <li>
 <code><a href="../reference/hms.html">hms()</a></code> now works correctly if all four components (days, hours, minutes, seconds) are passed (<a href='https://github.com/tidyverse/hms/issues/49'>#49</a>).</li>
