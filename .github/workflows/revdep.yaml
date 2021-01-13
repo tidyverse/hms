@@ -142,11 +142,6 @@ jobs:
           saveRDS(check, "revdep/${{ matrix.package }}/old.rds")
         shell: Rscript {0}
 
-      - name: Show test output
-        if: always()
-        run: find check -name '*.Rout*' -exec head -n 1000000 '{}' \; || true
-        shell: bash
-
       - name: Install local package
         run: |
           remotes::install_local(".")
