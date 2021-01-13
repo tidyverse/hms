@@ -138,6 +138,9 @@ jobs:
           compare
           cmp <- compare$cmp
           if (!identical(cmp[cmp$which == "old", "output"], cmp[cmp$which == "new", "output"])) {
+            if (!requireNamespace("waldo", quietly = TRUE)) install.packages("waldo")
+            print(waldo::compare(old, new))
+
             stop("Check output differs.")
           }
         shell: Rscript {0}
