@@ -133,7 +133,7 @@ jobs:
           _R_CHECK_SYSTEM_CLOCK_: false
           _R_CHECK_FUTURE_FILE_TIMESTAMPS_: false
         run: |
-          path <- download.packages("${{ matrix.package }}", destdir = ".github")
+          path <- download.packages("${{ matrix.package }}", destdir = ".github")[, 2]
           print(path)
           # Begin custom: rcmdcheck error_on
           # End custom: rcmdcheck error_on
