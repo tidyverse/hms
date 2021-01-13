@@ -7,7 +7,59 @@ on:
 name: revdep
 
 jobs:
+  matrix:
+    runs-on: ubuntu-18.04
+
+    name: Collect revdeps
+
+    env:
+      R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
+      RSPM: https://packagemanager.rstudio.com/cran/__linux__/bionic/latest
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      # prevent rgl issues because no X11 display is available
+      RGL_USE_NULL: true
+      # Begin custom: env vars
+      # End custom: env vars
+
+    steps:
+      - name: Check rate limits
+        run: |
+          curl -s --header "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/rate_limit
+        shell: bash
+
+      - uses: actions/checkout@v2
+
+      #- uses: r-lib/actions/setup-r@v1
+
+      - id: set-matrix
+        run: |
+          matrix=$((
+            echo '{ "package" : ['
+            echo "E4tools checkr hmstimer" | sed 's/ /, /g' | xargs -n 1 echo | sed -r 's/^([^,]*)(,?)$/"\1"\2/'
+            echo " ]}"
+          ) | jq -c .)
+          echo $matrix
+          echo $matrix | jq .
+          echo "::set-output name=matrix::$matrix"
+
+  check-matrix:
+    runs-on: ubuntu-18.04
+    needs: matrix
+    steps:
+      - name: Install json2yaml
+        run: |
+          sudo npm install -g json2yaml
+
+      - name: Check matrix definition
+        run: |
+          matrix='${{ needs.matrix.outputs.matrix }}'
+          echo $matrix
+          echo $matrix | jq .
+          echo $matrix | json2yaml
+
   R-CMD-check:
+    needs: matrix
+
     runs-on: ubuntu-18.04
 
     name: ${{ matrix.package }}
@@ -17,45 +69,7 @@ jobs:
 
     strategy:
       fail-fast: false
-      matrix:
-        package:
-          - DBI
-          - DBItest
-          - E4tools
-          - MEDITS
-          - RMariaDB
-          - RPostgres
-          - ari
-          - arrow
-          - bigrquery
-          - checkr
-          - dbx
-          - dttr2
-          - eatGADS
-          - edeaR
-          - eplusr
-          - extras
-          - feather
-          - gtfsrouter
-          - haven
-          - hmstimer
-          - mudata2
-          - odbc
-          - processmapR
-          - progress
-          - ratPASTA
-          - readr
-          - readwritesqlite
-          - rwalkr
-          - scales
-          - tibble
-          - tibbletime
-          - tidytransit
-          - tidyverse
-          - timetk
-          - tsibble
-          - tuber
-          - vroom
+      matrix: ${{fromJson(needs.matrix.outputs.matrix)}}
 
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
