@@ -31,18 +31,23 @@ jobs:
 
       - uses: actions/checkout@v2
 
-      #- uses: r-lib/actions/setup-r@v1
+      - uses: r-lib/actions/setup-r@v1
 
+      # FIXME: Avoid reissuing succesful jobs
+      # https://docs.github.com/en/free-pro-team@latest/rest/reference/actions#list-jobs-for-a-workflow-run
+      # https://docs.github.com/en/free-pro-team@latest/rest/reference/actions#workflow-runs
       - id: set-matrix
         run: |
-          matrix=$((
-            echo '{ "package" : ['
-            echo "E4tools checkr hmstimer" | sed 's/ /, /g' | xargs -n 1 echo | sed -r 's/^([^,]*)(,?)$/"\1"\2/'
-            echo " ]}"
-          ) | jq -c .)
-          echo $matrix
-          echo $matrix | jq .
-          echo "::set-output name=matrix::$matrix"
+          package <- read.dcf("DESCRIPTION")[, "Package"][[1]]
+          deps <- tools:::package_dependencies(package, reverse = TRUE, which = c("Depends", "Imports", "LinkingTo", "Suggests"))
+          json <- paste0(
+            '{"package:[',
+            paste0('"', deps, '"', collapse = ","),
+            ']}'
+          )
+          writeLines(json)
+          writeLines(paste0("::set-output name=matrix::", json))
+        shell: Rscript {0}
 
   check-matrix:
     runs-on: ubuntu-18.04
