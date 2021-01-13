@@ -51,10 +51,7 @@
 
 <meta property="og:title" content="Deprecated functions — Deprecated" />
 <meta property="og:description" content="is.hms() has been replaced by is_hms().
-as.hms() has been replaced by as_hms(), which is no longer generic and also
-does not have a tz argument.
-It also uses the time zone of the argument for conversion,
-not the current system's timezone.
+as.hms() has been replaced by as_hms(), which does not have a tz argument.
 Change the timezone before converting if necessary, e.g. using lubridate::with_tz()." />
 <meta property="og:image" content="https://hms.tidyverse.org/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -100,7 +97,7 @@ Change the timezone before converting if necessary, e.g. using lubridate::with_t
         <a class="navbar-brand" href="../index.html">hms</a>
         <div class="info hidden-xs hidden-sm">
           <span class="partof">part of the <a href="https://tidyverse.org">tidyverse</a></span>
-          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.3</span>
+          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
         </div>
       </div>
     </div>
@@ -114,7 +111,7 @@ Change the timezone before converting if necessary, e.g. using lubridate::with_t
 </li>
         <li>
   <a href="https://github.com/tidyverse/hms">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fas fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -138,25 +135,22 @@ Change the timezone before converting if necessary, e.g. using lubridate::with_t
 
     <div class="ref-description">
     <p><code>is.hms()</code> has been replaced by <code><a href='hms.html'>is_hms()</a></code>.</p>
-<p><code>as.hms()</code> has been replaced by <code><a href='hms.html'>as_hms()</a></code>, which is no longer generic and also
-does not have a <code>tz</code> argument.
-It also uses the time zone of the argument for conversion,
-not the current system's timezone.
+<p><code>as.hms()</code> has been replaced by <code><a href='hms.html'>as_hms()</a></code>, which does not have a <code>tz</code> argument.
 Change the timezone before converting if necessary, e.g. using <code><a href='http://lubridate.tidyverse.org/reference/with_tz.html'>lubridate::with_tz()</a></code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>is.hms</span>(<span class='kw'>x</span>)
+    <pre class="usage"><span class='fu'>is.hms</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
-<span class='fu'>as.hms</span>(<span class='kw'>x</span>, <span class='kw'>...</span>)
+<span class='fu'>as.hms</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S3 method for default</span>
-<span class='fu'>as.hms</span>(<span class='kw'>x</span>, <span class='kw'>...</span>)
+<span class='fu'>as.hms</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S3 method for POSIXt</span>
-<span class='fu'>as.hms</span>(<span class='kw'>x</span>, tz = <span class='kw'>pkgconfig</span>::<span class='fu'><a href='https://rdrr.io/pkg/pkgconfig/man/get_config.html'>get_config</a></span>(<span class='st'>"hms::default_tz"</span>, <span class='st'>""</span>), <span class='kw'>...</span>)
+<span class='fu'>as.hms</span><span class='op'>(</span><span class='va'>x</span>, tz <span class='op'>=</span> <span class='fu'>pkgconfig</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/pkgconfig/man/get_config.html'>get_config</a></span><span class='op'>(</span><span class='st'>"hms::default_tz"</span>, <span class='st'>""</span><span class='op'>)</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S3 method for POSIXlt</span>
-<span class='fu'>as.hms</span>(<span class='kw'>x</span>, tz = <span class='kw'>pkgconfig</span>::<span class='fu'><a href='https://rdrr.io/pkg/pkgconfig/man/get_config.html'>get_config</a></span>(<span class='st'>"hms::default_tz"</span>, <span class='st'>""</span>), <span class='kw'>...</span>)</pre>
+<span class='fu'>as.hms</span><span class='op'>(</span><span class='va'>x</span>, tz <span class='op'>=</span> <span class='fu'>pkgconfig</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/pkgconfig/man/get_config.html'>get_config</a></span><span class='op'>(</span><span class='st'>"hms::default_tz"</span>, <span class='st'>""</span><span class='op'>)</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -196,7 +190,7 @@ for v0.3 and earlier.  The previous behavior can be restored by calling
 
 <div class="author">
   <p>
-    Developed by <a href='http://krlmlr.info'>Kirill Müller</a>, The R Consortium, <a href='https://www.rstudio.com'><img src='https://www.tidyverse.org/rstudio-logo.svg' alt='RStudio' height='24' /></a>.
+    Developed by <a href='http://krlmlr.info'>Kirill Müller</a>, <a href='https://www.r-consortium.org'>R Consortium</a>, <a href='https://www.rstudio.com'><img src='https://www.tidyverse.org/rstudio-logo.svg' alt='RStudio' height='24' /></a>.
     Site built by <a href="https://pkgdown.r-lib.org">pkgdown</a>.
   </p>
 </div>
