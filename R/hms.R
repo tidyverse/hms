@@ -117,7 +117,8 @@ vec_ptype_full.hms <- function(x) {
 
 #' as_hms()
 #'
-#' `as_hms()` forwards to [vec_cast()].
+#' `as_hms()` is a generic that supports conversions beyond casting.
+#' The default method forwards to [vec_cast()].
 #'
 #' For arguments of type [POSIXct] and [POSIXlt], `as_hms()` does not perform timezone
 #' conversion.
@@ -139,10 +140,7 @@ as_hms.default <- function(x, ...) {
 
 #' Deprecated as.hms()
 #'
-#' `as.hms()` has been replaced by [as_hms()], which is no longer generic and also
-#' does not have a `tz` argument.
-#' It also uses the time zone of the argument for conversion,
-#' not the current system's timezone.
+#' `as.hms()` has been replaced by [as_hms()], which does not have a `tz` argument.
 #' Change the timezone before converting if necessary, e.g. using [lubridate::with_tz()].
 #'
 #' @inheritParams as_hms
