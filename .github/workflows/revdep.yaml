@@ -20,42 +20,42 @@ jobs:
       matrix:
         package:
           - DBI
-          #- DBItest
-          #- E4tools
-          #- MEDITS
-          #- RMariaDB
-          #- RPostgres
-          #- ari
+          - DBItest
+          - E4tools
+          - MEDITS
+          - RMariaDB
+          - RPostgres
+          - ari
           - arrow
-          #- bigrquery
-          #- checkr
-          #- dbx
-          #- dttr2
-          #- eatGADS
-          #- edeaR
-          #- eplusr
-          #- extras
-          #- feather
-          #- gtfsrouter
-          #- haven
+          - bigrquery
+          - checkr
+          - dbx
+          - dttr2
+          - eatGADS
+          - edeaR
+          - eplusr
+          - extras
+          - feather
+          - gtfsrouter
+          - haven
           - hmstimer
-          #- mudata2
-          #- odbc
-          #- processmapR
-          #- progress
-          #- ratPASTA
-          #- readr
-          #- readwritesqlite
-          #- rwalkr
-          #- scales
-          #- tibble
-          #- tibbletime
-          #- tidytransit
-          #- tidyverse
-          #- timetk
-          #- tsibble
-          #- tuber
-          #- vroom
+          - mudata2
+          - odbc
+          - processmapR
+          - progress
+          - ratPASTA
+          - readr
+          - readwritesqlite
+          - rwalkr
+          - scales
+          - tibble
+          - tibbletime
+          - tidytransit
+          - tidyverse
+          - timetk
+          - tsibble
+          - tuber
+          - vroom
 
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
