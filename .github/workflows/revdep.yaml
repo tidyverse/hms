@@ -86,6 +86,7 @@ jobs:
           if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
         shell: Rscript {0}
 
+      # FIXME: Remove
       - name: Prepare cache keys
         if: runner.os != 'Windows'
         id: date
