@@ -137,8 +137,8 @@ jobs:
           print(path)
           # Begin custom: rcmdcheck error_on
           # End custom: rcmdcheck error_on
-          check <- rcmdcheck::rcmdcheck(path, args = c("--no-manual", "--as-cran"), error_on = "never", check_dir = "revdep/${{ matrix.package }}/old")
           dir.create("revdep/${{ matrix.package }}", showWarnings = FALSE, recursive = TRUE)
+          check <- rcmdcheck::rcmdcheck(path, args = c("--no-manual", "--as-cran"), error_on = "never", check_dir = "revdep/${{ matrix.package }}/old")
           saveRDS(check, "revdep/${{ matrix.package }}/old.rds")
         shell: Rscript {0}
 
