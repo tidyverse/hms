@@ -160,7 +160,7 @@ jobs:
           _R_CHECK_SYSTEM_CLOCK_: false
           _R_CHECK_FUTURE_FILE_TIMESTAMPS_: false
         run: |
-          path <- dir(".github", pattern = "^${{ matrix.package }}")[[1]]
+          path <- dir(".github", pattern = "^${{ matrix.package }}", full.names = TRUE)[[1]]
           print(path)
           check <- rcmdcheck::rcmdcheck(path, args = c("--no-manual", "--as-cran"), error_on = "never", check_dir = "revdep/${{ matrix.package }}/new")
           saveRDS(check, "revdep/${{ matrix.package }}/new.rds")
