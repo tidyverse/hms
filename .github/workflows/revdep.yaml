@@ -4,7 +4,7 @@ on:
     branches:
       - "revdep*"
 
-name: rcc dev
+name: revdep
 
 jobs:
   R-CMD-check:
