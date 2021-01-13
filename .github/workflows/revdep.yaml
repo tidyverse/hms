@@ -19,16 +19,16 @@ jobs:
       fail-fast: false
       matrix:
         package:
-          - DBI
+          #- DBI
           #- DBItest
-          #- E4tools
+          - E4tools
           #- MEDITS
           #- RMariaDB
           #- RPostgres
           #- ari
-          - arrow
+          #- arrow
           #- bigrquery
-          #- checkr
+          - checkr
           #- dbx
           #- dttr2
           #- eatGADS
