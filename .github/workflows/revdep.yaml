@@ -1,0 +1,197 @@
+# This workflow creates many jobs, run only when a branch is created
+on:
+  push:
+    branches:
+      - "revdep*"
+
+name: rcc dev
+
+jobs:
+  R-CMD-check:
+    runs-on: ubuntu-18.04
+
+    name: ${{ matrix.package }}
+
+    # Begin custom: services
+    # End custom: services
+
+    strategy:
+      fail-fast: false
+      matrix:
+        package:
+          - DBI
+          #- DBItest
+          #- E4tools
+          #- MEDITS
+          #- RMariaDB
+          #- RPostgres
+          #- ari
+          - arrow
+          #- bigrquery
+          #- checkr
+          #- dbx
+          #- dttr2
+          #- eatGADS
+          #- edeaR
+          #- eplusr
+          #- extras
+          #- feather
+          #- gtfsrouter
+          #- haven
+          - hmstimer
+          #- mudata2
+          #- odbc
+          #- processmapR
+          #- progress
+          #- ratPASTA
+          #- readr
+          #- readwritesqlite
+          #- rwalkr
+          #- scales
+          #- tibble
+          #- tibbletime
+          #- tidytransit
+          #- tidyverse
+          #- timetk
+          #- tsibble
+          #- tuber
+          #- vroom
+
+    env:
+      R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
+      RSPM: https://packagemanager.rstudio.com/cran/__linux__/bionic/latest
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      # prevent rgl issues because no X11 display is available
+      RGL_USE_NULL: true
+      # Begin custom: env vars
+      # End custom: env vars
+
+    steps:
+      - name: Check rate limits
+        run: |
+          curl -s --header "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/rate_limit
+        shell: bash
+
+      - uses: actions/checkout@v2
+
+      - uses: r-lib/actions/setup-r@v1
+        with:
+          r-version: ${{ matrix.config.r }}
+
+      - uses: r-lib/actions/setup-pandoc@v1
+
+      - name: Install remotes
+        run: |
+          if (!requireNamespace("curl", quietly = TRUE)) install.packages("curl")
+          if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
+        shell: Rscript {0}
+
+      - name: Prepare cache keys
+        if: runner.os != 'Windows'
+        id: date
+        run: echo "::set-output name=date::$(date -Ihours)"
+
+      - name: Cache R packages
+        if: runner.os != 'Windows'
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: a
+          restore-keys: a
+
+      - name: Install system dependencies
+        if: runner.os == 'Linux'
+        run: |
+          Rscript -e 'writeLines(remotes::system_requirements("ubuntu", "18.04")); writeLines(remotes::system_requirements("ubuntu", "18.04", package = "${{ matrix.package }}"))' | sort | uniq > .github/deps.sh
+          cat .github/deps.sh
+          sudo sh < .github/deps.sh
+
+      # Begin custom: before install
+      # End custom: before install
+
+      - name: Install package
+        run: |
+          install.packages("${{ matrix.package }}", dependencies = TRUE)
+          remotes::install_cran("rcmdcheck")
+        shell: Rscript {0}
+
+      - name: Session info old
+        run: |
+          options(width = 100)
+          if (!requireNamespace("sessioninfo", quietly = TRUE)) install.packages("sessioninfo")
+          pkgs <- installed.packages()[, "Package"]
+          sessioninfo::session_info(pkgs, include_base = TRUE)
+        shell: Rscript {0}
+
+      # Begin custom: after install
+      # End custom: after install
+
+      - name: Check old
+        env:
+          _R_CHECK_CRAN_INCOMING_: false
+          _R_CHECK_SYSTEM_CLOCK_: false
+          _R_CHECK_FUTURE_FILE_TIMESTAMPS_: false
+        run: |
+          path <- download.packages("${{ matrix.package }}", destdir = ".github")
+          print(path)
+          # Begin custom: rcmdcheck error_on
+          # End custom: rcmdcheck error_on
+          check <- rcmdcheck::rcmdcheck(path, args = c("--no-manual", "--as-cran"), error_on = "never", check_dir = "revdep/${{ matrix.package }}/old")
+          dir.create("revdep/${{ matrix.package }}", showWarnings = FALSE, recursive = TRUE)
+          saveRDS(check, "revdep/${{ matrix.package }}/old.rds")
+        shell: Rscript {0}
+
+      - name: Show test output
+        if: always()
+        run: find check -name '*.Rout*' -exec head -n 1000000 '{}' \; || true
+        shell: bash
+
+      - name: Install local package
+        run: |
+          remotes::install_local(".")
+        shell: Rscript {0}
+
+      - name: Session info new
+        run: |
+          options(width = 100)
+          pkgs <- installed.packages()[, "Package"]
+          sessioninfo::session_info(pkgs, include_base = TRUE)
+        shell: Rscript {0}
+
+      - name: Check new
+        env:
+          _R_CHECK_CRAN_INCOMING_: false
+          _R_CHECK_SYSTEM_CLOCK_: false
+          _R_CHECK_FUTURE_FILE_TIMESTAMPS_: false
+        run: |
+          path <- dir(".github", pattern = "^${{ matrix.package }}")[[1]]
+          print(path)
+          # Begin custom: rcmdcheck error_on
+          # End custom: rcmdcheck error_on
+          check <- rcmdcheck::rcmdcheck(path, args = c("--no-manual", "--as-cran"), error_on = "never", check_dir = "revdep/${{ matrix.package }}/new")
+          saveRDS(check, "revdep/${{ matrix.package }}/new.rds")
+        shell: Rscript {0}
+
+      - name: Compare
+        run: |
+          old <- readRDS("revdep/${{ matrix.package }}/old.rds")
+          new <- readRDS("revdep/${{ matrix.package }}/new.rds")
+          compare <- rcmdcheck::compare_checks(old, new)
+          compare
+          if (NROW(compare$cmp) > 0) {
+            stop("Check results differ.")
+          }
+        shell: Rscript {0}
+
+      - name: Upload check results
+        if: failure()
+        uses: actions/upload-artifact@main
+        with:
+          name: ${{ matrix.package }}-results
+          path: revdep/${{ matrix.package }}
+
+      - name: Check rate limits
+        if: always()
+        run: |
+          curl -s --header "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/rate_limit
+        shell: bash
