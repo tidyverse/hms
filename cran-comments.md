@@ -1,15 +1,15 @@
-Fix vctrs compatibility and CRAN notes.
+hms 1.0.0
 
-## Test environments
-* ubuntu 18.04 (local install), R 3.6.1
-* ubuntu 16.04 (on travis-ci), R devel, release, and oldrel
-* win-builder (devel and release)
+## Cran Repository Policy
+
+- [x] Reviewed CRP last edited 2020-10-29.
 
 ## R CMD check results
 
-0 errors | 0 warnings | 0 notes
+- [x] Checked locally, R 4.0.3
+- [x] Checked on CI system, R 4.0.3
+- [x] Checked on win-builder, R devel
 
+## Current CRAN check results
 
-## Reverse dependencies
-
-Not checked.
+- [x] Checked on 2021-01-13, no problems found.
