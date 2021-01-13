@@ -142,7 +142,8 @@ jobs:
 
           dir <- file.path("revdep", package)
           dir.create(dir, showWarnings = FALSE, recursive = TRUE)
-          check <- rcmdcheck::rcmdcheck(path, args = c("--no-manual", "--as-cran"), error_on = "never", check_dir = file.path(dir, "old"))
+          check <- rcmdcheck::rcmdcheck(path, args = c("--no-manual", "--as-cran"), error_on = "never", check_dir = file.path(dir, "check"))
+          file.rename(file.path(dir, "check"), file.path(dir, "old"))
           saveRDS(check, file.path(dir, "old.rds"))
         shell: Rscript {0}
 
@@ -169,7 +170,8 @@ jobs:
           print(path)
 
           dir <- file.path("revdep", package)
-          check <- rcmdcheck::rcmdcheck(path, args = c("--no-manual", "--as-cran"), error_on = "never", check_dir = file.path(dir, "new"))
+          check <- rcmdcheck::rcmdcheck(path, args = c("--no-manual", "--as-cran"), error_on = "never", check_dir = file.path(dir, "check"))
+          file.rename(file.path(dir, "check"), file.path(dir, "new"))
           saveRDS(check, file.path(dir, "new.rds"))
         shell: Rscript {0}
 
