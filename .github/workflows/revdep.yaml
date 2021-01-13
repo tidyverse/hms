@@ -132,7 +132,9 @@ jobs:
           _R_CHECK_CRAN_INCOMING_: false
           _R_CHECK_SYSTEM_CLOCK_: false
           _R_CHECK_FUTURE_FILE_TIMESTAMPS_: false
+        # Avoid downloading binary package from RSPM
         run: |
+          options(HTTPUserAgent = "gha")
           path <- download.packages("${{ matrix.package }}", destdir = ".github")[, 2]
           print(path)
           # Begin custom: rcmdcheck error_on
