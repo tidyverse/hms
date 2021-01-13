@@ -1,25 +1,23 @@
 # hms 1.0.0
 
-- `as_hms()` is a generic again (#81).
+## Breaking changes
+
 - `"hms"` objects no longer have a common type with `character` and `numeric`. Combining such values previously threw a warning, now throws an error (#94).
-- Using lifecycle package (#94).
-- `vec_cast()` and `as_hms()` throw error instead of a warning if input can't be parsed (#68).
+- `vec_cast()` and `as_hms()` now throw error instead of a warning if input can't be parsed (#68).
 
+## Features
 
-# hms 0.5.3.9002
-
+- `as_hms()` is a generic again (#81).
 - `round_hms()` and `trunc_hms()` gain `digits` argument (#78, @hglanz).
+
+## Bug fixes
+
 - `as_hms()` and `vec_cast()` now correctly treat objects of class `"difftime"` with `integer` mode (#84).
 
+## Internal
 
-# hms 0.5.3.9001
-
+- Using lifecycle package (#94).
 - hms has been re-licensed as MIT (#86).
-
-
-# hms 0.5.3.9000
-
-- Internal changes only.
 
 
 # hms 0.5.3
