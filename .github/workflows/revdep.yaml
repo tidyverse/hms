@@ -137,8 +137,6 @@ jobs:
           options(HTTPUserAgent = "gha")
           path <- download.packages("${{ matrix.package }}", destdir = ".github")[, 2]
           print(path)
-          # Begin custom: rcmdcheck error_on
-          # End custom: rcmdcheck error_on
           dir.create("revdep/${{ matrix.package }}", showWarnings = FALSE, recursive = TRUE)
           check <- rcmdcheck::rcmdcheck(path, args = c("--no-manual", "--as-cran"), error_on = "never", check_dir = "revdep/${{ matrix.package }}/old")
           saveRDS(check, "revdep/${{ matrix.package }}/old.rds")
@@ -164,8 +162,6 @@ jobs:
         run: |
           path <- dir(".github", pattern = "^${{ matrix.package }}")[[1]]
           print(path)
-          # Begin custom: rcmdcheck error_on
-          # End custom: rcmdcheck error_on
           check <- rcmdcheck::rcmdcheck(path, args = c("--no-manual", "--as-cran"), error_on = "never", check_dir = "revdep/${{ matrix.package }}/new")
           saveRDS(check, "revdep/${{ matrix.package }}/new.rds")
         shell: Rscript {0}
