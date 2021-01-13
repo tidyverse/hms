@@ -18,7 +18,7 @@ new_hms(x = numeric())
 
 is_hms(x)
 
-as_hms(x)
+as_hms(x, ...)
 
 \method{as.POSIXct}{hms}(x, ...)
 
@@ -52,7 +52,8 @@ as numeric vectors.
 
 \code{is_hms()} checks if an object is of class \code{hms}.
 
-\code{as_hms()} forwards to \code{\link[=vec_cast]{vec_cast()}}.
+\code{as_hms()} is a generic that supports conversions beyond casting.
+The default method forwards to \code{\link[=vec_cast]{vec_cast()}}.
 }
 \details{
 For \code{hms}, all arguments must have the same length or be

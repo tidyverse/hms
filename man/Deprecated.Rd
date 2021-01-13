@@ -33,10 +33,7 @@ for v0.3 and earlier.  The previous behavior can be restored by calling
 \description{
 \code{is.hms()} has been replaced by \code{\link[=is_hms]{is_hms()}}.
 
-\code{as.hms()} has been replaced by \code{\link[=as_hms]{as_hms()}}, which is no longer generic and also
-does not have a \code{tz} argument.
-It also uses the time zone of the argument for conversion,
-not the current system's timezone.
+\code{as.hms()} has been replaced by \code{\link[=as_hms]{as_hms()}}, which does not have a \code{tz} argument.
 Change the timezone before converting if necessary, e.g. using \code{\link[lubridate:with_tz]{lubridate::with_tz()}}.
 }
 \keyword{internal}
