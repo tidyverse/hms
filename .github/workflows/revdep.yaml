@@ -181,8 +181,9 @@ jobs:
           new <- readRDS(file.path(dir, "new.rds"))
           compare <- rcmdcheck::compare_checks(old, new)
           compare
-          if (NROW(compare$cmp) > 0) {
-            stop("Check results differ.")
+          cmp <- compare$cmp
+          if (!identical(cmp[cmp$which == "old", "output"], cmp[cmp$which == "new", "output"])) {
+            stop("Check output differs.")
           }
         shell: Rscript {0}
 
