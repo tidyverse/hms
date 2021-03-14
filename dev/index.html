@@ -37,6 +37,8 @@
 </script>
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -107,32 +109,32 @@
 <a href="#installation" class="anchor"></a>Installation</h2>
 <pre class="chroma">
 <span class="c"># The easiest way to get hms is to install the whole tidyverse:</span>
-<span class="nf"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="o">(</span><span class="s">"tidyverse"</span><span class="o">)</span>
+<span class="nf"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="o">(</span><span class="s">"tidyverse"</span><span class="o">)</span>
 
 <span class="c"># Alternatively, install just hms:</span>
-<span class="nf"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="o">(</span><span class="s">"hms"</span><span class="o">)</span>
+<span class="nf"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="o">(</span><span class="s">"hms"</span><span class="o">)</span>
 
 <span class="c"># Or the the development version from GitHub:</span>
 <span class="c"># install.packages("devtools")</span>
-<span class="nf">devtools</span><span class="nf">::</span><span class="nf"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="o">(</span><span class="s">"tidyverse/hms"</span><span class="o">)</span></pre>
+<span class="nf">devtools</span><span class="nf">::</span><span class="nf"><a href="https://devtools.r-lib.org//reference/remote-reexports.html" class="external-link">install_github</a></span><span class="o">(</span><span class="s">"tidyverse/hms"</span><span class="o">)</span></pre>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
 <p>The following example showcases ways of using the <code>hms</code> class standalone or as a data frame column.</p>
 <pre class="chroma">
-<span class="kr"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="o">(</span><span class="nv"><a href="https://hms.tidyverse.org/">hms</a></span><span class="o">)</span>
+<span class="kr"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="o">(</span><span class="nv"><a href="https://hms.tidyverse.org/">hms</a></span><span class="o">)</span>
 
 <span class="nf"><a href="https://hms.tidyverse.org/reference/hms.html">hms</a></span><span class="o">(</span><span class="m">56</span>, <span class="m">34</span>, <span class="m">12</span><span class="o">)</span>
 <span class="c">#&gt; 12:34:56</span>
-<span class="nf"><a href="https://hms.tidyverse.org/reference/hms.html">as_hms</a></span><span class="o">(</span><span class="nf"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.time</a></span><span class="o">(</span><span class="o">)</span><span class="o">)</span>
+<span class="nf"><a href="https://hms.tidyverse.org/reference/hms.html">as_hms</a></span><span class="o">(</span><span class="nf"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.time</a></span><span class="o">(</span><span class="o">)</span><span class="o">)</span>
 <span class="c">#&gt; 11:55:02.553476</span>
 <span class="nf"><a href="https://hms.tidyverse.org/reference/parse_hms.html">parse_hms</a></span><span class="o">(</span><span class="s">"12:34:56"</span><span class="o">)</span>
 <span class="c">#&gt; 12:34:56</span>
-<span class="nf"><a href="https://rdrr.io/r/base/as.POSIXlt.html">as.POSIXct</a></span><span class="o">(</span><span class="nf"><a href="https://hms.tidyverse.org/reference/hms.html">hms</a></span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="o">)</span>
+<span class="nf"><a href="https://rdrr.io/r/base/as.POSIXlt.html" class="external-link">as.POSIXct</a></span><span class="o">(</span><span class="nf"><a href="https://hms.tidyverse.org/reference/hms.html">hms</a></span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="o">)</span>
 <span class="c">#&gt; [1] "1970-01-01 00:00:01 UTC"</span>
 
-<span class="nf"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="o">(</span>hours <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">3</span>, hms <span class="o">=</span> <span class="nf"><a href="https://hms.tidyverse.org/reference/hms.html">hms</a></span><span class="o">(</span>hours <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="o">)</span><span class="o">)</span>
+<span class="nf"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="o">(</span>hours <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">3</span>, hms <span class="o">=</span> <span class="nf"><a href="https://hms.tidyverse.org/reference/hms.html">hms</a></span><span class="o">(</span>hours <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="o">)</span><span class="o">)</span>
 <span class="c">#&gt;   hours      hms</span>
 <span class="c">#&gt; 1     1 01:00:00</span>
 <span class="c">#&gt; 2     2 02:00:00</span>
@@ -141,15 +143,15 @@
 <div id="internal-representation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#internal-representation" class="anchor"></a>Internal representation</h2>
-<p>Objects of the <code>hms</code> and its underlying <code>difftime</code> classes are stored as number of seconds since <code>00:00:00</code>. Use <a href="https://rdrr.io/r/base/numeric.html"><code>as.numeric()</code></a> and <a href="https://hms.tidyverse.org/reference/hms.html"><code>as_hms()</code></a> to convert to and from numbers.</p>
+<p>Objects of the <code>hms</code> and its underlying <code>difftime</code> classes are stored as number of seconds since <code>00:00:00</code>. Use <a href="https://rdrr.io/r/base/numeric.html" class="external-link"><code>as.numeric()</code></a> and <a href="https://hms.tidyverse.org/reference/hms.html"><code>as_hms()</code></a> to convert to and from numbers.</p>
 <pre class="chroma">
-<span class="nv">times</span> <span class="o">&lt;-</span> <span class="nf"><a href="https://hms.tidyverse.org/reference/parse_hms.html">parse_hms</a></span><span class="o">(</span><span class="nf"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="o">(</span><span class="s">"00:00:00.25"</span>, <span class="s">"00:00:01"</span>, <span class="s">"00:01:30"</span>, <span class="s">"01:00:00"</span><span class="o">)</span><span class="o">)</span>
+<span class="nv">times</span> <span class="o">&lt;-</span> <span class="nf"><a href="https://hms.tidyverse.org/reference/parse_hms.html">parse_hms</a></span><span class="o">(</span><span class="nf"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="o">(</span><span class="s">"00:00:00.25"</span>, <span class="s">"00:00:01"</span>, <span class="s">"00:01:30"</span>, <span class="s">"01:00:00"</span><span class="o">)</span><span class="o">)</span>
 <span class="nv">times</span>
 <span class="c">#&gt; 00:00:00.25</span>
 <span class="c">#&gt; 00:00:01.00</span>
 <span class="c">#&gt; 00:01:30.00</span>
 <span class="c">#&gt; 01:00:00.00</span>
-<span class="nv">times_num</span> <span class="o">&lt;-</span> <span class="nf"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="o">(</span><span class="nv">times</span><span class="o">)</span>
+<span class="nv">times_num</span> <span class="o">&lt;-</span> <span class="nf"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">as.numeric</a></span><span class="o">(</span><span class="nv">times</span><span class="o">)</span>
 <span class="nv">times_num</span>
 <span class="c">#&gt; [1]    0.25    1.00   90.00 3600.00</span>
 <span class="nf"><a href="https://hms.tidyverse.org/reference/hms.html">as_hms</a></span><span class="o">(</span><span class="nv">times_num</span><span class="o">)</span>
@@ -158,14 +160,14 @@
 <span class="c">#&gt; 00:01:30.00</span>
 <span class="c">#&gt; 01:00:00.00</span></pre>
 <hr>
-<p>Please note that the ‘hms’ project is released with a <a href="https://github.com/tidyverse/hms/blob/master/CODE_OF_CONDUCT.md">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<p>Please note that the ‘hms’ project is released with a <a href="https://github.com/tidyverse/hms/blob/master/CODE_OF_CONDUCT.md" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
 <li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=hms">https://​cloud.r-project.org/​package=hms</a>
 </li>
@@ -177,22 +179,25 @@
 </li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
 <li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+
 <div class="community">
-<h2>Community</h2>
+<h2 data-toc-skip>Community</h2>
 <ul class="list-unstyled">
 <li><a href="CONTRIBUTING.html">Contributing guide</a></li>
 <li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
 </ul>
 </div>
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>
 <a href="http://krlmlr.info">Kirill Müller</a> <br><small class="roles"> Author, maintainer </small>  </li>
@@ -203,21 +208,23 @@
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.tidyverse.org/lifecycle/#stable"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
-<li><a href="https://github.com/tidyverse/hms/actions"><img src="https://github.com/tidyverse/hms/workflows/rcc/badge.svg" alt="rcc"></a></li>
-<li><a href="https://codecov.io/gh/tidyverse/hms"><img src="https://codecov.io/gh/tidyverse/hms/branch/master/graph/badge.svg" alt="codecov"></a></li>
-<li><a href="https://cran.r-project.org/package=hms"><img src="https://www.r-pkg.org/badges/version/hms" alt="CRAN_Status_Badge"></a></li>
+<li><a href="https://www.tidyverse.org/lifecycle/#stable" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
+<li><a href="https://github.com/tidyverse/hms/actions" class="external-link"><img src="https://github.com/tidyverse/hms/workflows/rcc/badge.svg" alt="rcc"></a></li>
+<li><a href="https://codecov.io/gh/tidyverse/hms" class="external-link"><img src="https://codecov.io/gh/tidyverse/hms/branch/master/graph/badge.svg" alt="codecov"></a></li>
+<li><a href="https://cran.r-project.org/package=hms" class="external-link"><img src="https://www.r-pkg.org/badges/version/hms" alt="CRAN_Status_Badge"></a></li>
 </ul>
 </div>
-</div>
+
+  </div>
 </div>
 
 
       <footer><div class="tidyverse">
-  <p>hms is a part of the <strong>tidyverse</strong>, an ecosystem of packages designed with common APIs and a shared philosophy. Learn more at <a href="https://tidyverse.org">tidyverse.org</a>.</p>
+  <p></p>
+<p>Developed by <a href="http://krlmlr.info" class="external-link">Kirill Müller</a>, <a href="https://www.r-consortium.org" class="external-link">R Consortium</a>, <a href="https://www.rstudio.com" class="external-link"><img src="https://www.tidyverse.org/rstudio-logo.svg" alt="RStudio" height="24"></a>.</p>,<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
 <div class="author">
@@ -232,6 +239,8 @@
 
   
 
+
+  
 
   </body>
 </html>
