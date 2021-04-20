@@ -113,10 +113,6 @@ jobs:
         shell: Rscript {0}
 
       # Begin custom: install
-      - name: Install tidytemplate
-        run: |
-          remotes::install_github("tidyverse/tidytemplate")
-        shell: Rscript {0}
       # End custom: install
 
       - name: Session info
