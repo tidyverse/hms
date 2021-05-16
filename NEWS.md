@@ -1,3 +1,12 @@
+<!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
+
+# hms 1.0.0.9001
+
+- Avoid `LazyData` in `DESCRIPTION`.
+- Bump required versions of ellipsis and vctrs to avoid warning during package load.
+- New `unique.hms()` method (#98, @joethorley).
+
+
 # hms 1.0.0.9000
 
 - `as_hms()` is a generic again (#81).
