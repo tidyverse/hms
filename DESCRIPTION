@@ -23,7 +23,6 @@ Suggests:
     testthat (>= 3.0.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
 URL: https://hms.tidyverse.org/, https://github.com/tidyverse/hms
 BugReports: https://github.com/tidyverse/hms/issues
 RoxygenNote: 7.1.1.9000
