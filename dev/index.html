@@ -91,7 +91,7 @@
 <!-- badges: end -->
 <div id="overview" class="section level2">
 <h2 class="hasAnchor">
-<a href="#overview" class="anchor"></a>Overview</h2>
+<a href="#overview" class="anchor" aria-hidden="true"></a>Overview</h2>
 <p>The hms package provides a simple class for storing durations or time-of-day values and displaying them in the hh:mm:ss format. This class is intended to simplify data exchange with databases, spreadsheets, and other data sources:</p>
 <ul>
 <li>Stores values as a numeric vector that contains the number of seconds since midnight</li>
@@ -106,7 +106,7 @@
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<a href="#installation" class="anchor" aria-hidden="true"></a>Installation</h2>
 <pre class="chroma">
 <span class="c"># The easiest way to get hms is to install the whole tidyverse:</span>
 <span class="nf"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="o">(</span><span class="s">"tidyverse"</span><span class="o">)</span>
@@ -120,7 +120,7 @@
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
-<a href="#usage" class="anchor"></a>Usage</h2>
+<a href="#usage" class="anchor" aria-hidden="true"></a>Usage</h2>
 <p>The following example showcases ways of using the <code>hms</code> class standalone or as a data frame column.</p>
 <pre class="chroma">
 <span class="kr"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="o">(</span><span class="nv"><a href="https://hms.tidyverse.org/">hms</a></span><span class="o">)</span>
@@ -142,7 +142,7 @@
 </div>
 <div id="internal-representation" class="section level2">
 <h2 class="hasAnchor">
-<a href="#internal-representation" class="anchor"></a>Internal representation</h2>
+<a href="#internal-representation" class="anchor" aria-hidden="true"></a>Internal representation</h2>
 <p>Objects of the <code>hms</code> and its underlying <code>difftime</code> classes are stored as number of seconds since <code>00:00:00</code>. Use <a href="https://rdrr.io/r/base/numeric.html" class="external-link"><code>as.numeric()</code></a> and <a href="https://hms.tidyverse.org/reference/hms.html"><code>as_hms()</code></a> to convert to and from numbers.</p>
 <pre class="chroma">
 <span class="nv">times</span> <span class="o">&lt;-</span> <span class="nf"><a href="https://hms.tidyverse.org/reference/parse_hms.html">parse_hms</a></span><span class="o">(</span><span class="nf"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="o">(</span><span class="s">"00:00:00.25"</span>, <span class="s">"00:00:01"</span>, <span class="s">"00:01:30"</span>, <span class="s">"01:00:00"</span><span class="o">)</span><span class="o">)</span>
