@@ -1,23 +1,22 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
-# hms 1.0.1
+# hms 1.1.0
 
-- Same as previous version.
+## Breaking changes
 
+- `"hms"` objects no longer have a common type with `character` and `numeric`. Combining such values previously threw a warning, now throws an error (#94).
+- `vec_cast()` and `as_hms()` throw error instead of a warning if input can't be parsed (#68).
 
-# hms 1.0.0.9001
+## Features
+
+- New `unique.hms()` method (#98, @joethorley).
+- `as_hms()` is a generic again (#81).
+
+## Internal
 
 - Avoid `LazyData` in `DESCRIPTION`.
 - Bump required versions of ellipsis and vctrs to avoid warning during package load.
-- New `unique.hms()` method (#98, @joethorley).
-
-
-# hms 1.0.0.9000
-
-- `as_hms()` is a generic again (#81).
-- `"hms"` objects no longer have a common type with `character` and `numeric`. Combining such values previously threw a warning, now throws an error (#94).
 - Using lifecycle package (#94).
-- `vec_cast()` and `as_hms()` throw error instead of a warning if input can't be parsed (#68).
 
 
 # hms 1.0.0
