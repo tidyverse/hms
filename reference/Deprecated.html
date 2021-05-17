@@ -78,9 +78,15 @@ Change the timezone before converting if necessary, e.g. using lubridate::with_t
   gtag('config', 'UA-115082821-1');
 </script>
 
+  
+
+  
+
   </head>
 
   <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -97,7 +103,7 @@ Change the timezone before converting if necessary, e.g. using lubridate::with_t
         <a class="navbar-brand" href="../index.html">hms</a>
         <div class="info hidden-xs hidden-sm">
           <span class="partof">part of the <a href="https://tidyverse.org">tidyverse</a></span>
-          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
+          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.1</span>
         </div>
       </div>
     </div>
@@ -139,7 +145,7 @@ Change the timezone before converting if necessary, e.g. using lubridate::with_t
 Change the timezone before converting if necessary, e.g. using <code><a href='http://lubridate.tidyverse.org/reference/with_tz.html'>lubridate::with_tz()</a></code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>is.hms</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>is.hms</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='fu'>as.hms</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
@@ -150,7 +156,7 @@ Change the timezone before converting if necessary, e.g. using <code><a href='ht
 <span class='fu'>as.hms</span><span class='op'>(</span><span class='va'>x</span>, tz <span class='op'>=</span> <span class='fu'>pkgconfig</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/pkgconfig/man/get_config.html'>get_config</a></span><span class='op'>(</span><span class='st'>"hms::default_tz"</span>, <span class='st'>""</span><span class='op'>)</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S3 method for POSIXlt</span>
-<span class='fu'>as.hms</span><span class='op'>(</span><span class='va'>x</span>, tz <span class='op'>=</span> <span class='fu'>pkgconfig</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/pkgconfig/man/get_config.html'>get_config</a></span><span class='op'>(</span><span class='st'>"hms::default_tz"</span>, <span class='st'>""</span><span class='op'>)</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+<span class='fu'>as.hms</span><span class='op'>(</span><span class='va'>x</span>, tz <span class='op'>=</span> <span class='fu'>pkgconfig</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/pkgconfig/man/get_config.html'>get_config</a></span><span class='op'>(</span><span class='st'>"hms::default_tz"</span>, <span class='st'>""</span><span class='op'>)</span>, <span class='va'>...</span><span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -168,7 +174,7 @@ Change the timezone before converting if necessary, e.g. using <code><a href='ht
       <td><p>The time zone in which to interpret a POSIXt time for extracting
 the time of day.  The default is now the zone of <code>x</code> but was <code>"UTC"</code>
 for v0.3 and earlier.  The previous behavior can be restored by calling
-<code><a href='https://rdrr.io/pkg/pkgconfig/man/set_config.html'>pkgconfig::set_config("hms::default_tz", "UTC")</a></code>, see
+<code>pkgconfig::set_config("hms::default_tz", "UTC")</code>, see
 <code><a href='https://rdrr.io/pkg/pkgconfig/man/set_config.html'>pkgconfig::set_config()</a></code>.</p></td>
     </tr>
     </table>
@@ -190,7 +196,7 @@ for v0.3 and earlier.  The previous behavior can be restored by calling
 
 <div class="author">
   <p>
-    Developed by <a href='http://krlmlr.info'>Kirill Müller</a>, <a href='https://www.r-consortium.org'>R Consortium</a>, <a href='https://www.rstudio.com'><img src='https://www.tidyverse.org/rstudio-logo.svg' alt='RStudio' height='24' /></a>.
+    Developed by <a href='https://krlmlr.info'>Kirill Müller</a>, <a href='https://www.r-consortium.org'>R Consortium</a>, <a href='https://www.rstudio.com'><img src="https://www.tidyverse.org/rstudio-logo.svg" alt="RStudio" height="24"></a>.
     Site built by <a href="https://pkgdown.r-lib.org">pkgdown</a>.
   </p>
 </div>
@@ -200,6 +206,8 @@ for v0.3 and earlier.  The previous behavior can be restored by calling
 
   
 
+
+  
 
   </body>
 </html>
