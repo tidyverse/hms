@@ -1,6 +1,6 @@
 #' @details
 #' `r lifecycle::badge("stable")`
-#' @import lifecycle
+#' @importFrom lifecycle deprecate_soft expect_deprecated
 #' @import vctrs
 #' @import rlang
 #' @import ellipsis

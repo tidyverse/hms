@@ -15,12 +15,15 @@ reference:
   - hms
 - title: Conversion
   contents:
-  - vec_cast
-  - vec_ptype2
+  - vec_cast.hms
+  - vec_ptype2.hms
   - parse_hm
 - title: Utilities
   contents:
   - round_hms
+- title: Package documentation
+  contents:
+  - hms-package
 
 navbar:
   title: ~
