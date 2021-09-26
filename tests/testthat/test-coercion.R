@@ -4,13 +4,13 @@ test_that("coercion in", {
   expect_hms_equal(as_hms("12:34:56"), hms(56, 34, 12))
   expect_hms_equal(as_hms(strptime("12:34:56", format = "%H:%M:%S", tz = "UTC")),
                    hms(56, 34, 12))
-  expect_hms_equal(as_hms(strptime("12:34:56", format = "%H:%M:%S", tz = "CEST")),
+  expect_hms_equal(as_hms(strptime("12:34:56", format = "%H:%M:%S", tz = "Europe/Zurich")),
                    hms(56, 34, 12))
   expect_hms_equal(as_hms(strptime("12:34:56", format = "%H:%M:%S", tz = "PST8PDT")),
                    hms(56, 34, 12))
   expect_hms_equal(as_hms(as.POSIXct(strptime("12:34:56", format = "%H:%M:%S", tz = "UTC"))),
                    hms(56, 34, 12))
-  expect_hms_equal(as_hms(as.POSIXct(strptime("12:34:56", format = "%H:%M:%S", tz = "CEST"))),
+  expect_hms_equal(as_hms(as.POSIXct(strptime("12:34:56", format = "%H:%M:%S", tz = "Europe/Zurich"))),
                    hms(56, 34, 12))
   expect_hms_equal(as_hms(as.POSIXct(strptime("12:34:56", format = "%H:%M:%S", tz = "PST8PDT"))),
                    hms(56, 34, 12))

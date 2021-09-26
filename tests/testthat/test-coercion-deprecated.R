@@ -7,7 +7,7 @@ test_that("coercion in", {
     hms(56, 34, 12)
   )
   expect_hms_equal(
-    expect_deprecated(as.hms(strptime("12:34:56", format = "%H:%M:%S", tz = "CEST"), tz = "CEST")),
+    expect_deprecated(as.hms(strptime("12:34:56", format = "%H:%M:%S", tz = "Europe/Zurich"), tz = "Europe/Zurich")),
     hms(56, 34, 12)
   )
   expect_hms_equal(
