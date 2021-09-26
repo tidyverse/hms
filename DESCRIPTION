@@ -1,7 +1,7 @@
 Package: hms
 Title: Pretty Time of Day
 Date: 2021-09-26
-Version: 1.1.0.9001
+Version: 1.1.0.9002
 Authors@R: c(
     person("Kirill", "Müller", role = c("aut", "cre"), email = "krlmlr+r@mailbox.org"),
     person("R Consortium", role = "fnd"),
