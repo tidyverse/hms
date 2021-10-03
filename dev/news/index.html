@@ -142,24 +142,9 @@
 </ul></div>
     <div id="hms-111" class="section level1">
 <h1 class="page-header" data-toc-text="1.1.1">
-<a href="#hms-111" class="anchor" aria-hidden="true"></a>hms 1.1.1<small> Unreleased </small></h1>
-<ul><li>Same as previous version.</li>
-</ul></div>
-    <div id="hms-1109002" class="section level1">
-<h1 class="page-header" data-toc-text="1.1.0.9002">
-<a href="#hms-1109002" class="anchor" aria-hidden="true"></a>hms 1.1.0.9002<small> Unreleased </small></h1>
+<a href="#hms-111" class="anchor" aria-hidden="true"></a>hms 1.1.1<small> 2021-09-26 </small></h1>
 <ul><li>Avoid blanket import for lifecycle package for compatibility with upcoming rlang.</li>
 <li>Establish compatibility with development version of testthat (<a href='https://github.com/tidyverse/hms/issues/101'>#101</a>, <a href='https://github.com/lionel-'>@lionel-</a>).</li>
-</ul></div>
-    <div id="hms-1109001" class="section level1">
-<h1 class="page-header" data-toc-text="1.1.0.9001">
-<a href="#hms-1109001" class="anchor" aria-hidden="true"></a>hms 1.1.0.9001<small> Unreleased </small></h1>
-<ul><li>Same as previous version.</li>
-</ul></div>
-    <div id="hms-1109000" class="section level1">
-<h1 class="page-header" data-toc-text="1.1.0.9000">
-<a href="#hms-1109000" class="anchor" aria-hidden="true"></a>hms 1.1.0.9000<small> Unreleased </small></h1>
-<ul><li>Same as previous version.</li>
 </ul></div>
     <div id="hms-110" class="section level1">
 <h1 class="page-header" data-toc-text="1.1.0">
@@ -170,7 +155,7 @@
 <ul><li>
 <code>"hms"</code> objects no longer have a common type with <code>character</code> and <code>numeric</code>. Combining such values previously threw a warning, now throws an error (<a href='https://github.com/tidyverse/hms/issues/94'>#94</a>).</li>
 <li>
-<code>vec_cast()</code> and <code><a href="../reference/hms.html">as_hms()</a></code> throw error instead of a warning if input can’t be parsed (<a href='https://github.com/tidyverse/hms/issues/68'>#68</a>).</li>
+<code>vec_cast()</code> and <code><a href="../reference/hms.html">as_hms()</a></code> throw error instead of a warning if input canât be parsed (<a href='https://github.com/tidyverse/hms/issues/68'>#68</a>).</li>
 </ul></div>
 <div id="features" class="section level2">
 <h2 class="hasAnchor">
@@ -193,7 +178,7 @@
 <div id="life-cycle" class="section level2">
 <h2 class="hasAnchor">
 <a href="#life-cycle" class="anchor" aria-hidden="true"></a>Life cycle</h2>
-<ul><li>hms is now marked as “stable”.</li>
+<ul><li>hms is now marked as âstableâ.</li>
 </ul></div>
 <div id="breaking-changes-1" class="section level2">
 <h2 class="hasAnchor">
@@ -201,7 +186,7 @@
 <ul><li>
 <code>"hms"</code> objects no longer have a common type with <code>character</code> and <code>numeric</code>. Combining such values previously threw a warning, now throws an error (<a href='https://github.com/tidyverse/hms/issues/94'>#94</a>).</li>
 <li>
-<code>vec_cast()</code> and <code><a href="../reference/hms.html">as_hms()</a></code> now throw error instead of a warning if input can’t be parsed (<a href='https://github.com/tidyverse/hms/issues/68'>#68</a>).</li>
+<code>vec_cast()</code> and <code><a href="../reference/hms.html">as_hms()</a></code> now throw error instead of a warning if input canât be parsed (<a href='https://github.com/tidyverse/hms/issues/68'>#68</a>).</li>
 </ul></div>
 <div id="features-1" class="section level2">
 <h2 class="hasAnchor">
@@ -265,7 +250,7 @@
 <div id="internal-2" class="section level2">
 <h2 class="hasAnchor">
 <a href="#internal-2" class="anchor" aria-hidden="true"></a>Internal</h2>
-<ul><li>Don’t test colored output on CRAN.</li>
+<ul><li>Donât test colored output on CRAN.</li>
 <li>Correct reference link on r4ds (<a href='https://github.com/tidyverse/hms/issues/58'>#58</a>, <a href='https://github.com/evanhaldane'>@evanhaldane</a>).</li>
 </ul></div>
 </div>
@@ -294,7 +279,7 @@
 <a href="#new-features" class="anchor" aria-hidden="true"></a>New features</h2>
 <ul><li>Pillar support, will display <code>hms</code> columns in tibbles in color on terminals that support it (<a href='https://github.com/tidyverse/hms/issues/43'>#43</a>).</li>
 <li>New <code><a href="../reference/round_hms.html">round_hms()</a></code> and <code><a href="../reference/round_hms.html">trunc_hms()</a></code> for rounding or truncating to a given multiple of seconds (<a href='https://github.com/tidyverse/hms/issues/31'>#31</a>).</li>
-<li>New <code><a href="../reference/parse_hms.html">parse_hms()</a></code> and <code><a href="../reference/parse_hms.html">parse_hm()</a></code> to parse strings in “HH:MM:SS” and “HH:MM” formats (<a href='https://github.com/tidyverse/hms/issues/30'>#30</a>).</li>
+<li>New <code><a href="../reference/parse_hms.html">parse_hms()</a></code> and <code><a href="../reference/parse_hms.html">parse_hm()</a></code> to parse strings in âHH:MM:SSâ and âHH:MMâ formats (<a href='https://github.com/tidyverse/hms/issues/30'>#30</a>).</li>
 <li>
 <code><a href="../reference/Deprecated.html">as.hms.POSIXt()</a></code> gains <code>tz</code> argument, default <code>"UTC"</code> (<a href='https://github.com/tidyverse/hms/issues/28'>#28</a>).</li>
 <li>
