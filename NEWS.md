@@ -7,23 +7,8 @@
 
 # hms 1.1.1
 
-- Same as previous version.
-
-
-# hms 1.1.0.9002
-
 - Avoid blanket import for lifecycle package for compatibility with upcoming rlang.
 - Establish compatibility with development version of testthat (#101, @lionel-).
-
-
-# hms 1.1.0.9001
-
-- Same as previous version.
-
-
-# hms 1.1.0.9000
-
-- Same as previous version.
 
 
 # hms 1.1.0
