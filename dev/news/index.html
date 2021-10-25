@@ -25,7 +25,7 @@
       <div class="navbar-brand-container">
         <a class="navbar-brand" href="../index.html">hms</a>
         <div class="info hidden-xs hidden-sm">
-          <span class="partof">part of the <a href="https://tidyverse.org">tidyverse</a></span>
+          <span class="partof">part of the <a href="https://tidyverse.org" class="external-link">tidyverse</a></span>
           <span class="version version-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">1.1.1.9000</span>
         </div>
       </div>
@@ -38,7 +38,7 @@
   <a href="../news/index.html">News</a>
 </li>
         <li>
-  <a href="https://github.com/tidyverse/hms">
+  <a href="https://github.com/tidyverse/hms" class="external-link">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -53,199 +53,169 @@
   <div class="col-md-9 contents">
     <div class="page-header">
       <h1 data-toc-skip>Changelog <small></small></h1>
-      <small>Source: <a href="https://github.com/tidyverse/hms/blob/master/NEWS.md"><code>NEWS.md</code></a></small>
+      <small>Source: <a href="https://github.com/tidyverse/hms/blob/master/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
-    <div id="hms-1119000" class="section level1">
-<h1 class="page-header" data-toc-text="1.1.1.9000">hms 1.1.1.9000<a class="anchor" aria-label="anchor" href="#hms-1119000"></a>
-<small> Unreleased </small></h1>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="1.1.1.9000" id="hms-1119000">hms 1.1.1.9000<a class="anchor" aria-label="anchor" href="#hms-1119000"></a></h2>
 <ul><li>Same as previous version.</li>
 </ul></div>
-    <div id="hms-111" class="section level1">
-<h1 class="page-header" data-toc-text="1.1.1">hms 1.1.1<a class="anchor" aria-label="anchor" href="#hms-111"></a>
-<small> 2021-09-26 </small></h1>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="1.1.1" id="hms-111">hms 1.1.1<small>2021-09-26</small><a class="anchor" aria-label="anchor" href="#hms-111"></a></h2>
 <ul><li>Avoid blanket import for lifecycle package for compatibility with upcoming rlang.</li>
-<li>Establish compatibility with development version of testthat (<a href="https://github.com/tidyverse/hms/issues/101">#101</a>, <a href="https://github.com/lionel-">@lionel-</a>).</li>
+<li>Establish compatibility with development version of testthat (<a href="https://github.com/tidyverse/hms/issues/101" class="external-link">#101</a>, <a href="https://github.com/lionel-" class="external-link">@lionel-</a>).</li>
 </ul></div>
-    <div id="hms-110" class="section level1">
-<h1 class="page-header" data-toc-text="1.1.0">hms 1.1.0<a class="anchor" aria-label="anchor" href="#hms-110"></a>
-<small> 2021-05-17 </small></h1>
-<div id="breaking-changes" class="section level2">
-<h2>Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes"></a>
-</h2>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="1.1.0" id="hms-110">hms 1.1.0<small>2021-05-17</small><a class="anchor" aria-label="anchor" href="#hms-110"></a></h2>
+<div class="section level3">
+<h3 id="breaking-changes-1-1-0">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-1-1-0"></a></h3>
 <ul><li>
-<code>"hms"</code> objects no longer have a common type with <code>character</code> and <code>numeric</code>. Combining such values previously threw a warning, now throws an error (<a href="https://github.com/tidyverse/hms/issues/94">#94</a>).</li>
+<code>"hms"</code> objects no longer have a common type with <code>character</code> and <code>numeric</code>. Combining such values previously threw a warning, now throws an error (<a href="https://github.com/tidyverse/hms/issues/94" class="external-link">#94</a>).</li>
 <li>
-<code>vec_cast()</code> and <code><a href="../reference/hms.html">as_hms()</a></code> throw error instead of a warning if input can’t be parsed (<a href="https://github.com/tidyverse/hms/issues/68">#68</a>).</li>
+<code>vec_cast()</code> and <code><a href="../reference/hms.html">as_hms()</a></code> throw error instead of a warning if input can’t be parsed (<a href="https://github.com/tidyverse/hms/issues/68" class="external-link">#68</a>).</li>
 </ul></div>
-<div id="features" class="section level2">
-<h2>Features<a class="anchor" aria-label="anchor" href="#features"></a>
-</h2>
-<ul><li>New <code>unique.hms()</code> method (<a href="https://github.com/tidyverse/hms/issues/98">#98</a>, <a href="https://github.com/joethorley">@joethorley</a>).</li>
+<div class="section level3">
+<h3 id="features-1-1-0">Features<a class="anchor" aria-label="anchor" href="#features-1-1-0"></a></h3>
+<ul><li>New <code>unique.hms()</code> method (<a href="https://github.com/tidyverse/hms/issues/98" class="external-link">#98</a>, <a href="https://github.com/joethorley" class="external-link">@joethorley</a>).</li>
 <li>
-<code><a href="../reference/hms.html">as_hms()</a></code> is a generic again (<a href="https://github.com/tidyverse/hms/issues/81">#81</a>).</li>
+<code><a href="../reference/hms.html">as_hms()</a></code> is a generic again (<a href="https://github.com/tidyverse/hms/issues/81" class="external-link">#81</a>).</li>
 </ul></div>
-<div id="internal" class="section level2">
-<h2>Internal<a class="anchor" aria-label="anchor" href="#internal"></a>
-</h2>
+<div class="section level3">
+<h3 id="internal-1-1-0">Internal<a class="anchor" aria-label="anchor" href="#internal-1-1-0"></a></h3>
 <ul><li>Avoid <code>LazyData</code> in <code>DESCRIPTION</code>.</li>
 <li>Bump required versions of ellipsis and vctrs to avoid warning during package load.</li>
-<li>Using lifecycle package (<a href="https://github.com/tidyverse/hms/issues/94">#94</a>).</li>
+<li>Using lifecycle package (<a href="https://github.com/tidyverse/hms/issues/94" class="external-link">#94</a>).</li>
 </ul></div>
 </div>
-    <div id="hms-100" class="section level1">
-<h1 class="page-header" data-toc-text="1.0.0">hms 1.0.0<a class="anchor" aria-label="anchor" href="#hms-100"></a>
-<small> 2021-01-13 </small></h1>
-<div id="life-cycle" class="section level2">
-<h2>Life cycle<a class="anchor" aria-label="anchor" href="#life-cycle"></a>
-</h2>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="1.0.0" id="hms-100">hms 1.0.0<small>2021-01-13</small><a class="anchor" aria-label="anchor" href="#hms-100"></a></h2>
+<div class="section level3">
+<h3 id="life-cycle-1-0-0">Life cycle<a class="anchor" aria-label="anchor" href="#life-cycle-1-0-0"></a></h3>
 <ul><li>hms is now marked as “stable”.</li>
 </ul></div>
-<div id="breaking-changes-1" class="section level2">
-<h2>Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-1"></a>
-</h2>
+<div class="section level3">
+<h3 id="breaking-changes-1-0-0">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-1-0-0"></a></h3>
 <ul><li>
-<code>"hms"</code> objects no longer have a common type with <code>character</code> and <code>numeric</code>. Combining such values previously threw a warning, now throws an error (<a href="https://github.com/tidyverse/hms/issues/94">#94</a>).</li>
+<code>"hms"</code> objects no longer have a common type with <code>character</code> and <code>numeric</code>. Combining such values previously threw a warning, now throws an error (<a href="https://github.com/tidyverse/hms/issues/94" class="external-link">#94</a>).</li>
 <li>
-<code>vec_cast()</code> and <code><a href="../reference/hms.html">as_hms()</a></code> now throw error instead of a warning if input can’t be parsed (<a href="https://github.com/tidyverse/hms/issues/68">#68</a>).</li>
+<code>vec_cast()</code> and <code><a href="../reference/hms.html">as_hms()</a></code> now throw error instead of a warning if input can’t be parsed (<a href="https://github.com/tidyverse/hms/issues/68" class="external-link">#68</a>).</li>
 </ul></div>
-<div id="features-1" class="section level2">
-<h2>Features<a class="anchor" aria-label="anchor" href="#features-1"></a>
-</h2>
+<div class="section level3">
+<h3 id="features-1-0-0">Features<a class="anchor" aria-label="anchor" href="#features-1-0-0"></a></h3>
 <ul><li>
-<code><a href="../reference/hms.html">as_hms()</a></code> is a generic again (<a href="https://github.com/tidyverse/hms/issues/81">#81</a>).</li>
+<code><a href="../reference/hms.html">as_hms()</a></code> is a generic again (<a href="https://github.com/tidyverse/hms/issues/81" class="external-link">#81</a>).</li>
 <li>
-<code><a href="../reference/round_hms.html">round_hms()</a></code> and <code><a href="../reference/round_hms.html">trunc_hms()</a></code> gain <code>digits</code> argument (<a href="https://github.com/tidyverse/hms/issues/78">#78</a>, <a href="https://github.com/hglanz">@hglanz</a>).</li>
+<code><a href="../reference/round_hms.html">round_hms()</a></code> and <code><a href="../reference/round_hms.html">trunc_hms()</a></code> gain <code>digits</code> argument (<a href="https://github.com/tidyverse/hms/issues/78" class="external-link">#78</a>, <a href="https://github.com/hglanz" class="external-link">@hglanz</a>).</li>
 </ul></div>
-<div id="bug-fixes" class="section level2">
-<h2>Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes"></a>
-</h2>
+<div class="section level3">
+<h3 id="bug-fixes-1-0-0">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-1-0-0"></a></h3>
 <ul><li>
-<code><a href="../reference/hms.html">as_hms()</a></code> and <code>vec_cast()</code> now correctly treat objects of class <code>"difftime"</code> with <code>integer</code> mode (<a href="https://github.com/tidyverse/hms/issues/84">#84</a>).</li>
+<code><a href="../reference/hms.html">as_hms()</a></code> and <code>vec_cast()</code> now correctly treat objects of class <code>"difftime"</code> with <code>integer</code> mode (<a href="https://github.com/tidyverse/hms/issues/84" class="external-link">#84</a>).</li>
 </ul></div>
-<div id="internal-1" class="section level2">
-<h2>Internal<a class="anchor" aria-label="anchor" href="#internal-1"></a>
-</h2>
-<ul><li>Using lifecycle package (<a href="https://github.com/tidyverse/hms/issues/94">#94</a>).</li>
-<li>hms has been re-licensed as MIT (<a href="https://github.com/tidyverse/hms/issues/86">#86</a>).</li>
+<div class="section level3">
+<h3 id="internal-1-0-0">Internal<a class="anchor" aria-label="anchor" href="#internal-1-0-0"></a></h3>
+<ul><li>Using lifecycle package (<a href="https://github.com/tidyverse/hms/issues/94" class="external-link">#94</a>).</li>
+<li>hms has been re-licensed as MIT (<a href="https://github.com/tidyverse/hms/issues/86" class="external-link">#86</a>).</li>
 </ul></div>
 </div>
-    <div id="hms-053" class="section level1">
-<h1 class="page-header" data-toc-text="0.5.3">hms 0.5.3<a class="anchor" aria-label="anchor" href="#hms-053"></a>
-<small> 2020-01-08 </small></h1>
-<ul><li>Use <code>vec_default_ptype2()</code>, remove <code>vec_ptype2.hms.unspecified()</code> (<a href="https://github.com/tidyverse/hms/issues/80">#80</a>, <a href="https://github.com/romainfrancois">@romainfrancois</a>).</li>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="0.5.3" id="hms-053">hms 0.5.3<small>2020-01-08</small><a class="anchor" aria-label="anchor" href="#hms-053"></a></h2>
+<ul><li>Use <code>vec_default_ptype2()</code>, remove <code>vec_ptype2.hms.unspecified()</code> (<a href="https://github.com/tidyverse/hms/issues/80" class="external-link">#80</a>, <a href="https://github.com/romainfrancois" class="external-link">@romainfrancois</a>).</li>
 <li>
 <code>vec_ptype2.hms.default()</code> forwards to <code>vec_default_ptype2()</code> for compatibility with vctrs 0.2.1.</li>
 <li>Remove <code>as.data.frame.hms()</code>, handeld by vctrs.</li>
 </ul></div>
-    <div id="hms-0529000" class="section level1">
-<h1 class="page-header" data-toc-text="0.5.2.9000">hms 0.5.2.9000<a class="anchor" aria-label="anchor" href="#hms-0529000"></a>
-<small> Unreleased </small></h1>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="0.5.2.9000" id="hms-0529000">hms 0.5.2.9000<a class="anchor" aria-label="anchor" href="#hms-0529000"></a></h2>
 <ul><li>Internal changes only.</li>
 </ul></div>
-    <div id="hms-052" class="section level1">
-<h1 class="page-header" data-toc-text="0.5.2">hms 0.5.2<a class="anchor" aria-label="anchor" href="#hms-052"></a>
-<small> 2019-10-30 </small></h1>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="0.5.2" id="hms-052">hms 0.5.2<small>2019-10-30</small><a class="anchor" aria-label="anchor" href="#hms-052"></a></h2>
 <ul><li>Work around parsing error that occurs on DST changeover dates (<a href="https://bugs.r-project.org/bugzilla/show_bug.cgi?id=16764" class="external-link uri">https://bugs.r-project.org/bugzilla/show_bug.cgi?id=16764</a>).</li>
 </ul></div>
-    <div id="hms-051" class="section level1">
-<h1 class="page-header" data-toc-text="0.5.1">hms 0.5.1<a class="anchor" aria-label="anchor" href="#hms-051"></a>
-<small> 2019-08-23 </small></h1>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="0.5.1" id="hms-051">hms 0.5.1<small>2019-08-23</small><a class="anchor" aria-label="anchor" href="#hms-051"></a></h2>
 <ul><li>Lossy casts from <code>character</code> vectors to <code>hms</code> now also trigger a warning if the cast succeeds in the first element of the vector but fails for other elements.</li>
 </ul></div>
-    <div id="hms-050" class="section level1">
-<h1 class="page-header" data-toc-text="0.5.0">hms 0.5.0<a class="anchor" aria-label="anchor" href="#hms-050"></a>
-<small> 2019-07-09 </small></h1>
-<div id="breaking-changes-2" class="section level2">
-<h2>Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-2"></a>
-</h2>
-<ul><li><p>Now based on vctrs &gt;= 0.2.0 (<a href="https://github.com/tidyverse/hms/issues/61">#61</a>). This adds support for <code>vec_cast()</code> and <code>vec_ptype2()</code>. Some operations (such as subset assignment) are now stricter. The <code><a href="../reference/hms.html">new_hms()</a></code> constructor permits safe construction of <code>hms</code> objects from a numeric vector.</p></li>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="0.5.0" id="hms-050">hms 0.5.0<small>2019-07-09</small><a class="anchor" aria-label="anchor" href="#hms-050"></a></h2>
+<div class="section level3">
+<h3 id="breaking-changes-0-5-0">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-0-5-0"></a></h3>
+<ul><li><p>Now based on vctrs &gt;= 0.2.0 (<a href="https://github.com/tidyverse/hms/issues/61" class="external-link">#61</a>). This adds support for <code>vec_cast()</code> and <code>vec_ptype2()</code>. Some operations (such as subset assignment) are now stricter. The <code><a href="../reference/hms.html">new_hms()</a></code> constructor permits safe construction of <code>hms</code> objects from a numeric vector.</p></li>
 <li><p>The new <code><a href="../reference/hms.html">is_hms()</a></code> deprecates the existing <code><a href="../reference/Deprecated.html">is.hms()</a></code>. <code><a href="../reference/Deprecated.html">as.hms()</a></code> is deprecated in favor of <code>vec_cast()</code> or the new <code><a href="../reference/hms.html">as_hms()</a></code> (which is just a thin wrapper around <code>vec_cast()</code>).</p></li>
 </ul></div>
-<div id="printing" class="section level2">
-<h2>Printing<a class="anchor" aria-label="anchor" href="#printing"></a>
-</h2>
-<ul><li><p>Always show seconds in a pillar if they are different from zero (<a href="https://github.com/tidyverse/hms/issues/54">#54</a>).</p></li>
-<li><p>Values with nonzero hours, seconds and split-seconds are now displayed correctly in tibbles (<a href="https://github.com/tidyverse/hms/issues/56">#56</a>), even with a very small distance to the full second (<a href="https://github.com/tidyverse/hms/issues/64">#64</a>).</p></li>
+<div class="section level3">
+<h3 id="printing-0-5-0">Printing<a class="anchor" aria-label="anchor" href="#printing-0-5-0"></a></h3>
+<ul><li><p>Always show seconds in a pillar if they are different from zero (<a href="https://github.com/tidyverse/hms/issues/54" class="external-link">#54</a>).</p></li>
+<li><p>Values with nonzero hours, seconds and split-seconds are now displayed correctly in tibbles (<a href="https://github.com/tidyverse/hms/issues/56" class="external-link">#56</a>), even with a very small distance to the full second (<a href="https://github.com/tidyverse/hms/issues/64" class="external-link">#64</a>).</p></li>
 </ul></div>
-<div id="internal-2" class="section level2">
-<h2>Internal<a class="anchor" aria-label="anchor" href="#internal-2"></a>
-</h2>
+<div class="section level3">
+<h3 id="internal-0-5-0">Internal<a class="anchor" aria-label="anchor" href="#internal-0-5-0"></a></h3>
 <ul><li>Don’t test colored output on CRAN.</li>
-<li>Correct reference link on r4ds (<a href="https://github.com/tidyverse/hms/issues/58">#58</a>, <a href="https://github.com/evanhaldane">@evanhaldane</a>).</li>
+<li>Correct reference link on r4ds (<a href="https://github.com/tidyverse/hms/issues/58" class="external-link">#58</a>, <a href="https://github.com/evanhaldane" class="external-link">@evanhaldane</a>).</li>
 </ul></div>
 </div>
-    <div id="hms-042" class="section level1">
-<h1 class="page-header" data-toc-text="0.4.2">hms 0.4.2<a class="anchor" aria-label="anchor" href="#hms-042"></a>
-<small> 2018-03-10 </small></h1>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="0.4.2" id="hms-042">hms 0.4.2<small>2018-03-10</small><a class="anchor" aria-label="anchor" href="#hms-042"></a></h2>
 <ul><li>Adapted tests to pillar 1.2.1.</li>
 </ul></div>
-    <div id="hms-041" class="section level1">
-<h1 class="page-header" data-toc-text="0.4.1">hms 0.4.1<a class="anchor" aria-label="anchor" href="#hms-041"></a>
-<small> 2018-01-24 </small></h1>
-<ul><li>Preserve <code>NA</code> when converting to <code>character</code> (<a href="https://github.com/tidyverse/hms/issues/51">#51</a>, <a href="https://github.com/jeroen">@jeroen</a>).</li>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="0.4.1" id="hms-041">hms 0.4.1<small>2018-01-24</small><a class="anchor" aria-label="anchor" href="#hms-041"></a></h2>
+<ul><li>Preserve <code>NA</code> when converting to <code>character</code> (<a href="https://github.com/tidyverse/hms/issues/51" class="external-link">#51</a>, <a href="https://github.com/jeroen" class="external-link">@jeroen</a>).</li>
 <li>Adapted tests to pillar 1.1.0.</li>
 </ul></div>
-    <div id="hms-040" class="section level1">
-<h1 class="page-header" data-toc-text="0.4.0">hms 0.4.0<a class="anchor" aria-label="anchor" href="#hms-040"></a>
-<small> 2017-11-22 </small></h1>
-<div id="breaking-changes-3" class="section level2">
-<h2>Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-3"></a>
-</h2>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="0.4.0" id="hms-040">hms 0.4.0<small>2017-11-22</small><a class="anchor" aria-label="anchor" href="#hms-040"></a></h2>
+<div class="section level3">
+<h3 id="breaking-changes-0-4-0">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-0-4-0"></a></h3>
 <ul><li>
 <code><a href="../reference/Deprecated.html">as.hms.POSIXt()</a></code> now defaults to the current time zone, the previous default was <code>"UTC"</code> and can be restored by calling <code>pkgconfig::set_config("hms::default_tz", "UTC")</code>.</li>
 </ul></div>
-<div id="new-features" class="section level2">
-<h2>New features<a class="anchor" aria-label="anchor" href="#new-features"></a>
-</h2>
-<ul><li>Pillar support, will display <code>hms</code> columns in tibbles in color on terminals that support it (<a href="https://github.com/tidyverse/hms/issues/43">#43</a>).</li>
-<li>New <code><a href="../reference/round_hms.html">round_hms()</a></code> and <code><a href="../reference/round_hms.html">trunc_hms()</a></code> for rounding or truncating to a given multiple of seconds (<a href="https://github.com/tidyverse/hms/issues/31">#31</a>).</li>
-<li>New <code><a href="../reference/parse_hms.html">parse_hms()</a></code> and <code><a href="../reference/parse_hms.html">parse_hm()</a></code> to parse strings in “HH:MM:SS” and “HH:MM” formats (<a href="https://github.com/tidyverse/hms/issues/30">#30</a>).</li>
+<div class="section level3">
+<h3 id="new-features-0-4-0">New features<a class="anchor" aria-label="anchor" href="#new-features-0-4-0"></a></h3>
+<ul><li>Pillar support, will display <code>hms</code> columns in tibbles in color on terminals that support it (<a href="https://github.com/tidyverse/hms/issues/43" class="external-link">#43</a>).</li>
+<li>New <code><a href="../reference/round_hms.html">round_hms()</a></code> and <code><a href="../reference/round_hms.html">trunc_hms()</a></code> for rounding or truncating to a given multiple of seconds (<a href="https://github.com/tidyverse/hms/issues/31" class="external-link">#31</a>).</li>
+<li>New <code><a href="../reference/parse_hms.html">parse_hms()</a></code> and <code><a href="../reference/parse_hms.html">parse_hm()</a></code> to parse strings in “HH:MM:SS” and “HH:MM” formats (<a href="https://github.com/tidyverse/hms/issues/30" class="external-link">#30</a>).</li>
 <li>
-<code><a href="../reference/Deprecated.html">as.hms.POSIXt()</a></code> gains <code>tz</code> argument, default <code>"UTC"</code> (<a href="https://github.com/tidyverse/hms/issues/28">#28</a>).</li>
+<code><a href="../reference/Deprecated.html">as.hms.POSIXt()</a></code> gains <code>tz</code> argument, default <code>"UTC"</code> (<a href="https://github.com/tidyverse/hms/issues/28" class="external-link">#28</a>).</li>
 <li>
-<code>as.hms.character()</code> and <code><a href="../reference/parse_hms.html">parse_hms()</a></code> accept fractional seconds (<a href="https://github.com/tidyverse/hms/issues/33">#33</a>).</li>
+<code>as.hms.character()</code> and <code><a href="../reference/parse_hms.html">parse_hms()</a></code> accept fractional seconds (<a href="https://github.com/tidyverse/hms/issues/33" class="external-link">#33</a>).</li>
 </ul></div>
-<div id="bug-fixes-1" class="section level2">
-<h2>Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-1"></a>
-</h2>
+<div class="section level3">
+<h3 id="bug-fixes-0-4-0">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-0-4-0"></a></h3>
 <ul><li>
-<code><a href="../reference/hms.html">hms()</a></code> now works correctly if all four components (days, hours, minutes, seconds) are passed (<a href="https://github.com/tidyverse/hms/issues/49">#49</a>).</li>
+<code><a href="../reference/hms.html">hms()</a></code> now works correctly if all four components (days, hours, minutes, seconds) are passed (<a href="https://github.com/tidyverse/hms/issues/49" class="external-link">#49</a>).</li>
 <li>
 <code><a href="../reference/hms.html">hms()</a></code> creates a zero-length object of class <code>hms</code> that prints as <code>"hms()"</code>.</li>
 <li>
 <code>hms(integer())</code> and <code>as.hms(integer())</code> both work and are identical to <code><a href="../reference/hms.html">hms()</a></code>.</li>
-<li>Values with durations of over 10000 hours are now printed correctly (<a href="https://github.com/tidyverse/hms/issues/48">#48</a>).</li>
+<li>Values with durations of over 10000 hours are now printed correctly (<a href="https://github.com/tidyverse/hms/issues/48" class="external-link">#48</a>).</li>
 <li>
-<code><a href="https://rdrr.io/r/base/c.html" class="external-link">c()</a></code> now returns a hms (<a href="https://github.com/tidyverse/hms/issues/41">#41</a>, <a href="https://github.com/qgeissmann">@qgeissmann</a>).</li>
+<code><a href="https://rdrr.io/r/base/c.html" class="external-link">c()</a></code> now returns a hms (<a href="https://github.com/tidyverse/hms/issues/41" class="external-link">#41</a>, <a href="https://github.com/qgeissmann" class="external-link">@qgeissmann</a>).</li>
 </ul></div>
-<div id="documentation-and-error-messages" class="section level2">
-<h2>Documentation and error messages<a class="anchor" aria-label="anchor" href="#documentation-and-error-messages"></a>
-</h2>
+<div class="section level3">
+<h3 id="documentation-and-error-messages-0-4-0">Documentation and error messages<a class="anchor" aria-label="anchor" href="#documentation-and-error-messages-0-4-0"></a></h3>
 <ul><li>Fix and enhance examples in <code><a href="../reference/hms.html">?hms</a></code>.</li>
 <li>Documentation is in Markdown format now.</li>
-<li>Improved error message if calling <code><a href="../reference/hms.html">hms()</a></code> with a character argument (<a href="https://github.com/tidyverse/hms/issues/29">#29</a>).</li>
+<li>Improved error message if calling <code><a href="../reference/hms.html">hms()</a></code> with a character argument (<a href="https://github.com/tidyverse/hms/issues/29" class="external-link">#29</a>).</li>
 </ul></div>
 </div>
-    <div id="hms-03" class="section level1">
-<h1 class="page-header" data-toc-text="0.3">hms 0.3<a class="anchor" aria-label="anchor" href="#hms-03"></a>
-<small> 2016-11-22 </small></h1>
-<ul><li>Fix <code>lubridate</code> test for compatibility with 1.6.0 (<a href="https://github.com/tidyverse/hms/issues/23">#23</a>, <a href="https://github.com/vspinu">@vspinu</a>).</li>
-<li>NA values are formatted as <code>NA</code> (<a href="https://github.com/tidyverse/hms/issues/22">#22</a>).</li>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="0.3" id="hms-03">hms 0.3<small>2016-11-22</small><a class="anchor" aria-label="anchor" href="#hms-03"></a></h2>
+<ul><li>Fix <code>lubridate</code> test for compatibility with 1.6.0 (<a href="https://github.com/tidyverse/hms/issues/23" class="external-link">#23</a>, <a href="https://github.com/vspinu" class="external-link">@vspinu</a>).</li>
+<li>NA values are formatted as <code>NA</code> (<a href="https://github.com/tidyverse/hms/issues/22" class="external-link">#22</a>).</li>
 </ul></div>
-    <div id="hms-02" class="section level1">
-<h1 class="page-header" data-toc-text="0.2">hms 0.2<a class="anchor" aria-label="anchor" href="#hms-02"></a>
-<small> 2016-06-17 </small></h1>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="0.2" id="hms-02">hms 0.2<small>2016-06-17</small><a class="anchor" aria-label="anchor" href="#hms-02"></a></h2>
 <p>Minor fixes and improvements.</p>
-<ul><li>Subsetting keeps <code>hms</code> class (<a href="https://github.com/tidyverse/hms/issues/16">#16</a>).</li>
+<ul><li>Subsetting keeps <code>hms</code> class (<a href="https://github.com/tidyverse/hms/issues/16" class="external-link">#16</a>).</li>
 <li>
 <code><a href="../reference/hms.html">format.hms()</a></code> right-justifies the output by padding with spaces from the left, <code><a href="../reference/hms.html">as.character.hms()</a></code> remains unchanged.</li>
-<li>Times larger than 24 hours or with split seconds are now formatted correctly (<a href="https://github.com/tidyverse/hms/issues/12">#12</a>, <a href="https://github.com/tidyverse/hms/issues/13">#13</a>).</li>
-<li>Sub-second part is printed with up to six digits, for even smaller values trailing zeros are shown (<a href="https://github.com/tidyverse/hms/issues/17">#17</a>).</li>
+<li>Times larger than 24 hours or with split seconds are now formatted correctly (<a href="https://github.com/tidyverse/hms/issues/12" class="external-link">#12</a>, <a href="https://github.com/tidyverse/hms/issues/13" class="external-link">#13</a>).</li>
+<li>Sub-second part is printed with up to six digits, for even smaller values trailing zeros are shown (<a href="https://github.com/tidyverse/hms/issues/17" class="external-link">#17</a>).</li>
 </ul></div>
-    <div id="hms-01" class="section level1">
-<h1 class="page-header" data-toc-text="0.1">hms 0.1<a class="anchor" aria-label="anchor" href="#hms-01"></a>
-<small> 2016-05-02 </small></h1>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="0.1" id="hms-01">hms 0.1<small>2016-05-02</small><a class="anchor" aria-label="anchor" href="#hms-01"></a></h2>
 <p>First CRAN release.</p>
 <ul><li>Values are stored as a numeric vector that contains the number of seconds since midnight.
 <ul><li>Inherits from <code>difftime</code> class.</li>
@@ -258,7 +228,7 @@
 <li>Can be used as a regular column in a data frame.</li>
 <li>Full test coverage.
 <ul><li>Test for arithmetic with <code>Date</code>, <code>POSIXt</code> and <code>hms</code> classes.</li>
-<li>Test basic compatibility with <code>lubridate</code> package (<a href="https://github.com/tidyverse/hms/issues/5">#5</a>).</li>
+<li>Test basic compatibility with <code>lubridate</code> package (<a href="https://github.com/tidyverse/hms/issues/5" class="external-link">#5</a>).</li>
 </ul></li>
 <li>Interface:
 <ul><li>
@@ -287,13 +257,13 @@
 
 
       <footer><div class="tidyverse">
-  <p>hms is a part of the <strong>tidyverse</strong>, an ecosystem of packages designed with common APIs and a shared philosophy. Learn more at <a href="https://tidyverse.org">tidyverse.org</a>.</p>
+  <p>hms is a part of the <strong>tidyverse</strong>, an ecosystem of packages designed with common APIs and a shared philosophy. Learn more at <a href="https://tidyverse.org" class="external-link">tidyverse.org</a>.</p>
 </div>
 
 <div class="author">
   <p>
-    Developed by <a href="https://krlmlr.info">Kirill Müller</a>, <a href="https://www.r-consortium.org">R Consortium</a>, <a href="https://www.rstudio.com"><img src="https://www.tidyverse.org/rstudio-logo.svg" alt="RStudio" height="24"></a>.
-    Site built by <a href="https://pkgdown.r-lib.org">pkgdown</a>.
+    Developed by .
+    Site built by <a href="https://pkgdown.r-lib.org" class="external-link">pkgdown</a>.
   </p>
 </div>
 
