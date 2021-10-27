@@ -55,7 +55,7 @@ Change the timezone before converting if necessary, e.g. using lubridate::with_t
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Deprecated functions</h1>
-    <small class="dont-index">Source: <a href="https://github.com/tidyverse/hms/blob/master/R/hms.R" class="external-link"><code>R/hms.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/tidyverse/hms/blob/HEAD/R/hms.R" class="external-link"><code>R/hms.R</code></a></small>
     <div class="hidden name"><code>Deprecated.Rd</code></div>
     </div>
 
@@ -81,11 +81,12 @@ Change the timezone before converting if necessary, e.g. using <code><a href="ht
     <div id="ref-sections">
     <div id="arguments">
     <h2>Arguments</h2>
-    
-
-<dl><dt>x</dt><dd><p>An object.</p></dd>
-</dl><dl><dt>...</dt><dd><p>Arguments passed on to further methods.</p></dd>
-</dl><dl><dt>tz</dt><dd><p>The time zone in which to interpret a POSIXt time for extracting
+    <dl><dt>x</dt>
+<dd><p>An object.</p></dd>
+<dt>...</dt>
+<dd><p>Arguments passed on to further methods.</p></dd>
+<dt>tz</dt>
+<dd><p>The time zone in which to interpret a POSIXt time for extracting
 the time of day.  The default is now the zone of <code>x</code> but was <code>"UTC"</code>
 for v0.3 and earlier.  The previous behavior can be restored by calling
 <code>pkgconfig::set_config("hms::default_tz", "UTC")</code>, see
