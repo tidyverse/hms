@@ -1,8 +1,8 @@
 pandoc: 2.7.3
-pkgdown: 1.9000.9000.9000
-pkgdown_sha: a96b2672b5ed1d6e666601ef274f36cdf0d1fe76
+pkgdown: 2.0.1.9000
+pkgdown_sha: 1c2bedc10283fe39c5e539083021cb87f208903a
 articles: {}
-last_built: 2021-10-27T23:04Z
+last_built: 2021-12-07T05:06Z
 urls:
   reference: https://hms.tidyverse.org/reference
   article: https://hms.tidyverse.org/articles

@@ -81,7 +81,8 @@ as numeric vectors.</p>
 The default method forwards to <code>vec_cast()</code>.</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class="sourceCode r"><code><span class="fu">hms</span><span class="op">(</span>seconds <span class="op">=</span> <span class="cn">NULL</span>, minutes <span class="op">=</span> <span class="cn">NULL</span>, hours <span class="op">=</span> <span class="cn">NULL</span>, days <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>
+    <div id="ref-usage">
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">hms</span><span class="op">(</span>seconds <span class="op">=</span> <span class="cn">NULL</span>, minutes <span class="op">=</span> <span class="cn">NULL</span>, hours <span class="op">=</span> <span class="cn">NULL</span>, days <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>
 
 <span class="fu">new_hms</span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">numeric</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 
@@ -103,8 +104,8 @@ The default method forwards to <code>vec_cast()</code>.</p>
 
 <span class="co"># S3 method for hms</span>
 <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
+    </div>
 
-    <div id="ref-sections">
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>seconds, minutes, hours, days</dt>
@@ -124,11 +125,10 @@ performed.</p></dd>
 conversion.
 Use <code><a href="https://lubridate.tidyverse.org/reference/with_tz.html" class="external-link">lubridate::with_tz()</a></code> and <code><a href="https://lubridate.tidyverse.org/reference/force_tz.html" class="external-link">lubridate::force_tz()</a></code> as necessary.</p>
     </div>
-    </div>
 
-    <div id="examples">
+    <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">hms</span><span class="op">(</span><span class="fl">56</span>, <span class="fl">34</span>, <span class="fl">12</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">hms</span><span class="op">(</span><span class="fl">56</span>, <span class="fl">34</span>, <span class="fl">12</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 12:34:56</span>
 <span class="r-in"><span class="fu">hms</span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> hms()</span>
@@ -148,7 +148,7 @@ Use <code><a href="https://lubridate.tidyverse.org/reference/with_tz.html" class
 <span class="r-in"><span class="fu">as_hms</span><span class="op">(</span><span class="st">"12:34:56"</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 12:34:56</span>
 <span class="r-in"><span class="fu">as_hms</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.time</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23:04:35.664715</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 05:06:43.884312</span>
 <span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html" class="external-link">as.POSIXct</a></span><span class="op">(</span><span class="fu">hms</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1970-01-01 00:00:01 UTC"</span>
 <span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>a <span class="op">=</span> <span class="fu">hms</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
