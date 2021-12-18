@@ -7,8 +7,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-Implements an S3 class for storing and formatting time-of-day
-    values, based on the 'difftime' class.
+Implements an S3 class for storing and formatting time-of-day values, based on the 'difftime' class.
 }
 \details{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#stable}{\figure{lifecycle-stable.svg}{options: alt='[Stable]'}}}{\strong{[Stable]}}
