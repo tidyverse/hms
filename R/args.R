@@ -9,14 +9,14 @@ check_args <- function(args) {
 
   if (!all(diff(which(!is_null)) == 1L)) {
     stop("Can't pass only ", paste(names(is_null)[!is_null], collapse = ", "),
-         " to hms().", call. = FALSE)
+      " to hms().", call. = FALSE)
   }
 
   lengths <- map_int(args[!is_null], length)
   if (length(unique(lengths)) > 1L) {
     stop("All arguments to hms() must have the same length or be NULL. Found ",
-         paste0("length(", names(lengths), ") = ", lengths, collapse = ", "), ".",
-         call. = FALSE)
+      paste0("length(", names(lengths), ") = ", lengths, collapse = ", "), ".",
+      call. = FALSE)
   }
 }
 

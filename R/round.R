@@ -49,13 +49,13 @@ digits_to_secs <- function(secs, digits) {
   }
 
   if (digits >= -1) {
-    secs <- 10 ^ -digits
+    secs <- 10^-digits
   } else if (digits == -2) {
     secs <- 60
   } else if (digits == -3) {
     secs <- 600
   } else if (digits <= -4) {
-    secs <- 3600 * (10^ (-digits - 4))
+    secs <- 3600 * (10^(-digits - 4))
   }
 
   secs
