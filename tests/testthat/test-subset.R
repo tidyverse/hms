@@ -8,10 +8,10 @@ test_that("range updating keeps class", {
 
   x <- hms(1:3)
   x[2] <- hms(4)
-  expect_identical(x, hms(c(1,4,3)))
+  expect_identical(x, hms(c(1, 4, 3)))
   x <- hms(1:4)
   x[2:3] <- hms(5:6)
-  expect_identical(x, hms(c(1,5,6,4)))
+  expect_identical(x, hms(c(1, 5, 6, 4)))
 })
 
 test_that("range updating warns if lossy cast", {
@@ -29,5 +29,5 @@ test_that("index subsetting keeps class", {
 test_that("index updating keeps class", {
   x <- hms(1:3)
   x[[2]] <- 4
-  expect_identical(x, hms(c(1,4,3)))
+  expect_identical(x, hms(c(1, 4, 3)))
 })
