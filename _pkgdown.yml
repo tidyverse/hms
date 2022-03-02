@@ -2,9 +2,16 @@ url: https://hms.tidyverse.org
 
 template:
   package: tidytemplate
+  bootstrap: 5
+
+  includes:
+    in_header: |
+      <script defer data-domain="hms.tidyverse.org,all.tidyverse.org" src="https://plausible.io/js/plausible.js"></script>
+
+development:
+  mode: auto
 
 home:
-  strip_header: true
   links:
   - text: Learn more
     href: http://r4ds.had.co.nz/dates-and-times.html
@@ -24,22 +31,3 @@ reference:
 - title: Package documentation
   contents:
   - hms-package
-
-navbar:
-  title: ~
-  type: default
-  left:
-  - text: Reference
-    href: reference/index.html
-  - text: News
-    href: news/index.html
-  right:
-  - icon: fa-github fa-lg
-    href: https://github.com/tidyverse/hms
-
-development:
-  mode: auto
-
-authors:
-  Kirill Müller:
-    href: https://krlmlr.info

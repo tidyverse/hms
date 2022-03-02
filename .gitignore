@@ -3,3 +3,4 @@
 .RData
 /revdep/.cache.rds
 CRAN-RELEASE
+docs
