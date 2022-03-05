@@ -2,7 +2,7 @@
 
 <!-- badges: start -->
 
-[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html) [![rcc](https://github.com/tidyverse/hms/workflows/rcc/badge.svg)](https://github.com/tidyverse/hms/actions) [![codecov](https://codecov.io/gh/tidyverse/hms/branch/master/graph/badge.svg)](https://codecov.io/gh/tidyverse/hms) [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html) [![rcc](https://github.com/tidyverse/hms/workflows/rcc/badge.svg)](https://github.com/tidyverse/hms/actions) [![Codecov test coverage](https://codecov.io/gh/tidyverse/hms/branch/main/graph/badge.svg)](https://app.codecov.io/gh/tidyverse/hms?branch=main) [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
 
 <!-- badges: end -->
 
@@ -29,7 +29,7 @@ The hms package provides a simple class for storing durations or time-of-day val
 
 <span class='c'># Or the the development version from GitHub:</span>
 <span class='c'># install.packages("devtools")</span>
-<span class='nf'>devtools</span><span class='nf'>::</span><span class='nf'><a href='https://devtools.r-lib.org//reference/remote-reexports.html'>install_github</a></span><span class='o'>(</span><span class='s'>"tidyverse/hms"</span><span class='o'>)</span></pre>
+<span class='nf'>devtools</span><span class='nf'>::</span><span class='nf'><a href='https://devtools.r-lib.org/reference/remote-reexports.html'>install_github</a></span><span class='o'>(</span><span class='s'>"tidyverse/hms"</span><span class='o'>)</span></pre>
 
 ## Usage
 
