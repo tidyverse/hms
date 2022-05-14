@@ -25,7 +25,7 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 URL: https://hms.tidyverse.org/, https://github.com/tidyverse/hms
 BugReports: https://github.com/tidyverse/hms/issues
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.0
 Roxygen: list(markdown = TRUE)
 Config/testthat/edition: 3
 Config/autostyle/scope: line_breaks
