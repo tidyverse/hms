@@ -3,7 +3,6 @@
 #' @importFrom lifecycle deprecate_soft expect_deprecated
 #' @import vctrs
 #' @import rlang
-#' @import ellipsis
 #' @aliases hms-package NULL
 "_PACKAGE"
 
