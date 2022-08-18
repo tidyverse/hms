@@ -14,3 +14,4 @@
 ^CODE_OF_CONDUCT\.md$
 ^CRAN-RELEASE$
 ^LICENSE\.md$
+^\.vscode$
