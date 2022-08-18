@@ -1,4 +1,4 @@
-# hms <a href='https:/hms.tidyverse.org'><img src='man/figures/logo.png' style="float:right" height="139" /></a>
+# hms <a href='https:/hms.tidyverse.org'><img src='man/figures/logo.png' style="float: right;" height="139" /></a>
 
 <!-- badges: start -->
 
@@ -41,7 +41,7 @@ The following example showcases ways of using the `hms` class standalone or as a
 <span class='nf'><a href='https://hms.tidyverse.org/reference/hms.html'>hms</a></span><span class='o'>(</span><span class='m'>56</span>, <span class='m'>34</span>, <span class='m'>12</span><span class='o'>)</span>
 <span class='c'>#&gt; 12:34:56</span>
 <span class='nf'><a href='https://hms.tidyverse.org/reference/hms.html'>as_hms</a></span><span class='o'>(</span><span class='nf'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span><span class='o'>(</span><span class='o'>)</span><span class='o'>)</span>
-<span class='c'>#&gt; 19:12:19.160821</span>
+<span class='c'>#&gt; 19:13:30.475794</span>
 <span class='nf'><a href='https://hms.tidyverse.org/reference/parse_hms.html'>parse_hms</a></span><span class='o'>(</span><span class='s'>"12:34:56"</span><span class='o'>)</span>
 <span class='c'>#&gt; 12:34:56</span>
 <span class='nf'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></span><span class='o'>(</span><span class='nf'><a href='https://hms.tidyverse.org/reference/hms.html'>hms</a></span><span class='o'>(</span><span class='m'>1</span><span class='o'>)</span><span class='o'>)</span>
