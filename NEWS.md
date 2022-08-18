@@ -2,17 +2,7 @@
 
 # hms 1.1.2
 
-- Same as previous version.
-
-
-# hms 1.1.1.9001
-
-- GHA changes.
-
-
-# hms 1.1.1.9000
-
-- Same as previous version.
+- Re-rendered documentation for compatibility with R-devel.
 
 
 # hms 1.1.1
