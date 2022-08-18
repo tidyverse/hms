@@ -1,8 +1,8 @@
-# hms <a href='https:/hms.tidyverse.org'><img src='man/figures/logo.png' style="float: right;" height="139" /></a>
+# hms <a href='https:/hms.tidyverse.org'><img src='man/figures/logo.png' align="right" height="139" /></a>
 
 <!-- badges: start -->
 
-[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html) [![rcc](https://github.com/tidyverse/hms/workflows/rcc/badge.svg)](https://github.com/tidyverse/hms/actions) [![Codecov test coverage](https://codecov.io/gh/tidyverse/hms/branch/main/graph/badge.svg)](https://app.codecov.io/gh/tidyverse/hms?branch=main) [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html) [![rcc](https://github.com/tidyverse/hms/workflows/rcc/badge.svg)](https://github.com/tidyverse/hms/actions) [![Codecov test coverage](https://codecov.io/gh/tidyverse/hms/branch/main/graph/badge.svg)](https://app.codecov.io/gh/tidyverse/hms?branch=main) [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
 
 <!-- badges: end -->
 
@@ -41,7 +41,7 @@ The following example showcases ways of using the `hms` class standalone or as a
 <span class='nf'><a href='https://hms.tidyverse.org/reference/hms.html'>hms</a></span><span class='o'>(</span><span class='m'>56</span>, <span class='m'>34</span>, <span class='m'>12</span><span class='o'>)</span>
 <span class='c'>#&gt; 12:34:56</span>
 <span class='nf'><a href='https://hms.tidyverse.org/reference/hms.html'>as_hms</a></span><span class='o'>(</span><span class='nf'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span><span class='o'>(</span><span class='o'>)</span><span class='o'>)</span>
-<span class='c'>#&gt; 19:13:30.475794</span>
+<span class='c'>#&gt; 11:55:02.553476</span>
 <span class='nf'><a href='https://hms.tidyverse.org/reference/parse_hms.html'>parse_hms</a></span><span class='o'>(</span><span class='s'>"12:34:56"</span><span class='o'>)</span>
 <span class='c'>#&gt; 12:34:56</span>
 <span class='nf'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></span><span class='o'>(</span><span class='nf'><a href='https://hms.tidyverse.org/reference/hms.html'>hms</a></span><span class='o'>(</span><span class='m'>1</span><span class='o'>)</span><span class='o'>)</span>
