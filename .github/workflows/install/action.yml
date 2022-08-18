@@ -1,4 +1,4 @@
-name: 'Actions to run for installing R packages'
+name: "Actions to run for installing R packages"
 inputs:
   token:
     description: GitHub token, set to secrets.GITHUB_TOKEN
@@ -14,7 +14,7 @@ inputs:
   needs:
     description: Passed on to r-lib/actions/setup-r-dependencies@v2
     required: false
-    default: ''
+    default: ""
   extra-packages:
     description: Passed on to r-lib/actions/setup-r-dependencies@v2
     required: false
@@ -76,6 +76,13 @@ runs:
       run: |
         sudo ln -s $(which true) /usr/local/bin/qpdf
         sudo ln -s $(which true) /usr/local/bin/checkbashisms
+      shell: bash
+
+    - name: Install tidy
+      if: runner.os == 'Linux'
+      run: |
+        sudo apt-get update -qq
+        sudo apt-get install -y tidy
       shell: bash
 
     - name: "Band aid: install rmarkdown from GitHub in older R"
