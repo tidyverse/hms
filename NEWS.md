@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# hms 1.1.2.9000
+
+- Internal changes only.
+
+
 # hms 1.1.2
 
 - Same as previous version.
