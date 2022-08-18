@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 pkgload::load_all()
 ```
 
-# hms <a href='https:/hms.tidyverse.org'><img src='man/figures/logo.png' align="right" height="139" /></a>
+# hms <a href='https:/hms.tidyverse.org'><img src='man/figures/logo.png' style="float:right" height="139" /></a>
 
 <!-- badges: start -->
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
