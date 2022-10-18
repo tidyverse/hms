@@ -85,12 +85,3 @@ runs:
         sudo apt-get update -qq
         sudo apt-get install -y tidy
       shell: bash
-
-    - name: "Band aid: install rmarkdown from GitHub in older R"
-      run: |
-        try(
-          if (getRversion() < "3.5" && packageVersion("rmarkdown") < "2.13") {
-            pak::pak("rstudio/rmarkdown")
-          }
-        )
-      shell: Rscript {0}
