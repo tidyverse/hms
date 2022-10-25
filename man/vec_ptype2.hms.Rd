@@ -11,11 +11,7 @@
 
 \item{...}{These dots are for future extensions and must be empty.}
 
-\item{x_arg}{Argument names for \code{x} and \code{y}. These are used
-in error messages to inform the user about the locations of
-incompatible types (see \code{\link[vctrs:stop_incompatible_type]{stop_incompatible_type()}}).}
-
-\item{y_arg}{Argument names for \code{x} and \code{y}. These are used
+\item{x_arg, y_arg}{Argument names for \code{x} and \code{y}. These are used
 in error messages to inform the user about the locations of
 incompatible types (see \code{\link[vctrs:stop_incompatible_type]{stop_incompatible_type()}}).}
 }
