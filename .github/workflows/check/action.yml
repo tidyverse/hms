@@ -7,12 +7,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Set extra env vars for HTML5 check
-      run: |
-        echo "R_KEEP_PKG_SOURCE=yes" >> $GITHUB_ENV
-        echo "_R_CHECK_RD_VALIDATE_RD2HTML_=TRUE" >> $GITHUB_ENV
-      shell: bash
-
     - uses: r-lib/actions/check-r-package@v2
       with:
         error-on: ${{ env.RCMDCHECK_ERROR_ON || '"note"' }}

@@ -78,10 +78,3 @@ runs:
         sudo ln -s $(which true) /usr/local/bin/qpdf
         sudo ln -s $(which true) /usr/local/bin/checkbashisms
       shell: bash
-
-    - name: Install tidy
-      if: runner.os == 'Linux'
-      run: |
-        sudo apt-get update -qq
-        sudo apt-get install -y tidy
-      shell: bash
