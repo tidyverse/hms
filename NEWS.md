@@ -1,4 +1,9 @@
-<!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
+<!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
+
+# hms 1.1.2.9003
+
+- Internal changes only.
+
 
 # hms 1.1.2.9002
 
