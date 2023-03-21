@@ -10,11 +10,10 @@ Authors@R: c(
 Description: Implements an S3 class for storing and formatting time-of-day
     values, based on the 'difftime' class.
 Imports:
-    ellipsis (>= 0.3.2),
     lifecycle,
     methods,
     pkgconfig,
-    rlang,
+    rlang (>= 1.0.2),
     vctrs (>= 0.3.8)
 Suggests:
     crayon,
