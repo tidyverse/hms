@@ -6,34 +6,9 @@
 
 - Fix method consistency, checked by R-devel.
 
-## Chore
+## Internal
 
 - Use rlang instead of ellipsis (#106).
-
-
-# hms 1.1.2.9003
-
-- Internal changes only.
-
-
-# hms 1.1.2.9002
-
-- Internal changes only.
-
-
-# hms 1.1.2.9001
-
-- Harmonize yaml formatting.
-
-- Revert changes to matrix section.
-
-- Merged cran-1.1.2 into main.
-
-
-
-# hms 1.1.2.9000
-
-- Internal changes only.
 
 
 # hms 1.1.2
