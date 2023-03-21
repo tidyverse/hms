@@ -44,7 +44,7 @@ NULL
 #' as numeric vectors.
 #'
 #' @rdname hms
-#' @details For `hms`, all arguments must have the same length or be
+#' @details For `hms()`, all arguments must have the same length or be
 #'   `NULL`.  Odd combinations (e.g., passing only `seconds` and
 #'   `hours` but not `minutes`) are rejected.
 #' @param seconds,minutes,hours,days Time since midnight. No bounds checking is

@@ -56,7 +56,7 @@ as numeric vectors.
 The default method forwards to \code{\link[=vec_cast]{vec_cast()}}.
 }
 \details{
-For \code{hms}, all arguments must have the same length or be
+For \code{hms()}, all arguments must have the same length or be
 \code{NULL}.  Odd combinations (e.g., passing only \code{seconds} and
 \code{hours} but not \code{minutes}) are rejected.
 
