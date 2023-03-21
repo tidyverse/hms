@@ -103,12 +103,12 @@ is.hms <- function(x) {
 }
 
 #' @export
-vec_ptype_abbr.hms <- function(x) {
+vec_ptype_abbr.hms <- function(x, ...) {
   "time"
 }
 
 #' @export
-vec_ptype_full.hms <- function(x) {
+vec_ptype_full.hms <- function(x, ...) {
   "time"
 }
 
