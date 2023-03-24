@@ -274,3 +274,18 @@ print.hms <- function(x, ...) {
   cat(format(x), sep = "\n")
   invisible(x)
 }
+
+# Operations --------------------------------------------------------------
+
+#' @export
+Ops.hms <- function (e1, e2) {
+    boolean <- switch(.Generic, `<` = , `>` = , `==` = , `!=` = , 
+        `<=` = , `>=` = TRUE, FALSE)
+    if (boolean) {
+      if (inherits(e1, "hms"))
+          e1 <- as.character(e1)
+      if (inherits(e2, "hms"))
+          e2 <- as.character(e2)
+    }
+    NextMethod(.Generic)
+}
