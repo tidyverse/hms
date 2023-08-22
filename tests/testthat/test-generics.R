@@ -56,10 +56,52 @@ test_that("generic operations work as intended", {
 
   # Can't reproduce this warning because we forced compatibility
   hms_result <- hms_test_vec - date_vec
-  expect_warning({
-    difftime_result <- as_hms(difftime_test_vec - date_vec)
-  }, regexp = "Incompatible methods \\(\"Ops.difftime\", \"-.Date\") for \"-\"")
-  expect_equal(hms_result, difftime_result)
+  expect_warning(
+    difftime_result <- as_hms(difftime_test_vec - date_vec),
+    regexp = "Incompatible methods \\(\"Ops.difftime\", \"-.Date\") for \"-\""
+  )
+  expect_equal(hms_result, difftime_result, info = "hms - Date not equal to difftime - Date")
 
   expect_equal(date_vec - hms_test_vec, date_vec - difftime_test_vec)
+
+  # hms {+-} POSIXt
+  posixct_vec <- as.POSIXct(
+    c("2023-03-26 03:00:00", "2023-10-29 02:00:00", NA_character_, "1970-01-01 00:00:00"),
+    tz = "Europe/Berlin"
+  )
+
+  posix_difftime_result <- posixct_vec + as.difftime(1.0, units = "hours")
+  expect_equal(
+    format(posix_difftime_result, usetz = TRUE),
+    c("2023-03-26 04:00:00 CEST", "2023-10-29 02:00:00 CET", NA_character_, "1970-01-01 01:00:00 CET")
+  )
+  expect_equal(posixct_vec + hms(hours = 1L), posix_difftime_result)
+  expect_equal(hms(hours = 1L) + posixct_vec, posix_difftime_result)
+  expect_equal(as.difftime(1.0, units = "hours") + posixct_vec, posix_difftime_result)
+
+  posix_difftime_result <- posixct_vec - as.difftime(1.0, units = "hours")
+  expect_equal(
+    format(posix_difftime_result, usetz = TRUE),
+    c("2023-03-26 01:00:00 CET", "2023-10-29 01:00:00 CEST", NA, "1969-12-31 23:00:00 CET"),
+    info = "POSIXct - difftime"
+  )
+  expect_equal(posixct_vec - hms(hours = 1L), posix_difftime_result)
+
+  hms_result <- hms(hours = 1L) - posixct_vec
+  expect_warning(
+    difftime_result <- as.difftime(3600.0, units = "secs") - posixct_vec,
+    regexp = "Incompatible methods \\(\"Ops.difftime\", \"-.POSIXt\") for \"-\""
+  )
+  # FIXME this currently returns a different result than difftime - POSIXt.
+  # hms - POSIXt produces a hms
+  # difftime - POSIXt produces a POSIXt
+  expect_equal(
+    as.numeric(hms_result), as.numeric(difftime_result),
+    info = "hms - POSIXt not equal to difftime - POSIXt"
+  )
+  expect_hms_equal(hms_result, new_hms(c(-1679788800.0, -1698534000.0, NA_real_, 7200.0)))
+  expect_equal(
+    difftime_result,
+    as.POSIXct(c(-1679788800.0, -1698534000.0, NA_real_, 7200.0), origin = "1970-01-01", tz = "Europe/Berlin")
+  )
 })
