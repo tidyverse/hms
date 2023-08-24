@@ -1,4 +1,11 @@
-#' @export
+#' @rawNamespace
+#' if (getRversion() >= "4.1") {
+#'   S3method("+",Date)
+#'   S3method("+",POSIXt)
+#'   S3method("-",Date)
+#'   S3method("-",POSIXt)
+#'   S3method(Ops,hms)
+#' }
 Ops.hms <- function(e1, e2) {
   # This logic is hard-coded in R for difftime
   # cf. https://github.com/wch/r-source/blob/a46559e8f728317da979be60e401899ae60086b2/src/main/eval.c#L3406-L3419
@@ -21,14 +28,7 @@ Ops.hms <- function(e1, e2) {
   }
 }
 
-#' @export
 `+.Date` <- Ops.hms
-
-#' @export
 `-.Date` <- Ops.hms
-
-#' @export
 `+.POSIXt` <- Ops.hms
-
-#' @export
 `-.POSIXt` <- Ops.hms

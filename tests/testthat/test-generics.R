@@ -1,4 +1,5 @@
 test_that("generic operations work as intended", {
+  skip_if(getRversion() < "4.1")
   # Test that all binary operations involving hms and one of Date, POSIXct, POSIXlt, difftime, hms, numeric, integer
   # behave the same as the operation would with a difftime of the same length, except for difftime results, wich should
   # be hms of the same value instead.
