@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.3.9003
+
+- Internal changes only.
+
+
 # hms 1.1.3.9002
 
 - Merged cran-1.1.3 into main.
