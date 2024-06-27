@@ -1,51 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://hms.tidyverse.org/dev/CODE_OF_CONDUCT.html</loc>
-  </url>
-  <url>
-    <loc>https://hms.tidyverse.org/dev/CONTRIBUTING.html</loc>
-  </url>
-  <url>
-    <loc>https://hms.tidyverse.org/dev/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://hms.tidyverse.org/dev/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://hms.tidyverse.org/dev/SUPPORT.html</loc>
-  </url>
-  <url>
-    <loc>https://hms.tidyverse.org/dev/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://hms.tidyverse.org/dev/index.html</loc>
-  </url>
-  <url>
-    <loc>https://hms.tidyverse.org/dev/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://hms.tidyverse.org/dev/reference/Deprecated.html</loc>
-  </url>
-  <url>
-    <loc>https://hms.tidyverse.org/dev/reference/hms-package.html</loc>
-  </url>
-  <url>
-    <loc>https://hms.tidyverse.org/dev/reference/hms.html</loc>
-  </url>
-  <url>
-    <loc>https://hms.tidyverse.org/dev/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://hms.tidyverse.org/dev/reference/parse_hms.html</loc>
-  </url>
-  <url>
-    <loc>https://hms.tidyverse.org/dev/reference/round_hms.html</loc>
-  </url>
-  <url>
-    <loc>https://hms.tidyverse.org/dev/reference/vec_cast.hms.html</loc>
-  </url>
-  <url>
-    <loc>https://hms.tidyverse.org/dev/reference/vec_ptype2.hms.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://hms.tidyverse.org/dev/CODE_OF_CONDUCT.html</loc></url>
+<url><loc>https://hms.tidyverse.org/dev/CONTRIBUTING.html</loc></url>
+<url><loc>https://hms.tidyverse.org/dev/LICENSE-text.html</loc></url>
+<url><loc>https://hms.tidyverse.org/dev/LICENSE.html</loc></url>
+<url><loc>https://hms.tidyverse.org/dev/SUPPORT.html</loc></url>
+<url><loc>https://hms.tidyverse.org/dev/authors.html</loc></url>
+<url><loc>https://hms.tidyverse.org/dev/index.html</loc></url>
+<url><loc>https://hms.tidyverse.org/dev/news/index.html</loc></url>
+<url><loc>https://hms.tidyverse.org/dev/reference/Deprecated.html</loc></url>
+<url><loc>https://hms.tidyverse.org/dev/reference/hms-package.html</loc></url>
+<url><loc>https://hms.tidyverse.org/dev/reference/hms.html</loc></url>
+<url><loc>https://hms.tidyverse.org/dev/reference/index.html</loc></url>
+<url><loc>https://hms.tidyverse.org/dev/reference/parse_hms.html</loc></url>
+<url><loc>https://hms.tidyverse.org/dev/reference/round_hms.html</loc></url>
+<url><loc>https://hms.tidyverse.org/dev/reference/vec_cast.hms.html</loc></url>
+<url><loc>https://hms.tidyverse.org/dev/reference/vec_ptype2.hms.html</loc></url>
 </urlset>
+
