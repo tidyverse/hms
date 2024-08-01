@@ -9,7 +9,7 @@ as numeric vectors.
 new_hms() is a low-level constructor that only checks that its input has the correct base type, numeric.
 is_hms() checks if an object is of class hms.
 as_hms() is a generic that supports conversions beyond casting.
-The default method forwards to vec_cast().'><meta property="og:description" content='The values are stored as a difftime vector with a custom class,
+The default method forwards to vctrs::vec_cast().'><meta property="og:description" content='The values are stored as a difftime vector with a custom class,
 and always with "seconds" as unit for robust coercion to numeric.
 Supports construction from time values, coercion to and from
 various data types, and formatting.  Can be used as a regular column in a
@@ -19,7 +19,7 @@ as numeric vectors.
 new_hms() is a low-level constructor that only checks that its input has the correct base type, numeric.
 is_hms() checks if an object is of class hms.
 as_hms() is a generic that supports conversions beyond casting.
-The default method forwards to vec_cast().'><meta property="og:image" content="https://hms.tidyverse.org/logo.png"><meta name="robots" content="noindex"><script defer data-domain="hms.tidyverse.org,all.tidyverse.org" src="https://plausible.io/js/plausible.js"></script></head><body>
+The default method forwards to vctrs::vec_cast().'><meta property="og:image" content="https://hms.tidyverse.org/logo.png"><meta name="robots" content="noindex"><script defer data-domain="hms.tidyverse.org,all.tidyverse.org" src="https://plausible.io/js/plausible.js"></script></head><body>
     <a href="#container" class="visually-hidden-focusable">Skip to content</a>
 
 
@@ -63,7 +63,7 @@ as numeric vectors.</p>
 <p><code>new_hms()</code> is a low-level constructor that only checks that its input has the correct base type, <a href="https://rdrr.io/r/base/numeric.html" class="external-link">numeric</a>.</p>
 <p><code>is_hms()</code> checks if an object is of class <code>hms</code>.</p>
 <p><code>as_hms()</code> is a generic that supports conversions beyond casting.
-The default method forwards to <code>vec_cast()</code>.</p>
+The default method forwards to <code><a href="https://vctrs.r-lib.org/reference/vec_cast.html" class="external-link">vctrs::vec_cast()</a></code>.</p>
     </div>
 
     <div class="section level2">
@@ -114,7 +114,7 @@ performed.</p></dd>
     <p>For <code>hms()</code>, all arguments must have the same length or be
 <code>NULL</code>.  Odd combinations (e.g., passing only <code>seconds</code> and
 <code>hours</code> but not <code>minutes</code>) are rejected.</p>
-<p>For arguments of type <a href="https://rdrr.io/r/base/DateTimeClasses.html" class="external-link">POSIXct</a> and <a href="https://rdrr.io/r/base/DateTimeClasses.html" class="external-link">POSIXlt</a>, <code>as_hms()</code> does not perform timezone
+<p>For arguments of type lubridate::POSIXct and <a href="https://rdrr.io/r/base/DateTimeClasses.html" class="external-link">POSIXlt</a>, <code>as_hms()</code> does not perform timezone
 conversion.
 Use <code><a href="https://lubridate.tidyverse.org/reference/with_tz.html" class="external-link">lubridate::with_tz()</a></code> and <code><a href="https://lubridate.tidyverse.org/reference/force_tz.html" class="external-link">lubridate::force_tz()</a></code> as necessary.</p>
     </div>
@@ -140,7 +140,7 @@ Use <code><a href="https://lubridate.tidyverse.org/reference/with_tz.html" class
 <span class="r-in"><span><span class="fu">as_hms</span><span class="op">(</span><span class="st">"12:34:56"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 12:34:56</span>
 <span class="r-in"><span><span class="fu">as_hms</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.time</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18:00:48.798293</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14:28:21.382165</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html" class="external-link">as.POSIXct</a></span><span class="op">(</span><span class="fu">hms</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1970-01-01 00:00:01 UTC"</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>a <span class="op">=</span> <span class="fu">hms</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></span>
@@ -166,7 +166,7 @@ Use <code><a href="https://lubridate.tidyverse.org/reference/with_tz.html" class
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.9000.</p>
 </div>
 
   </div></footer></body></html>
