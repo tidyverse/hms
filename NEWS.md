@@ -1,5 +1,52 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.3.9006
+
+## Chore
+
+  - Auto-update from GitHub Actions.
+    
+    Run: https://github.com/tidyverse/hms/actions/runs/10425483161
+
+  - Auto-update from GitHub Actions.
+    
+    Run: https://github.com/tidyverse/hms/actions/runs/10200113283
+
+  - Auto-update from GitHub Actions.
+    
+    Run: https://github.com/tidyverse/hms/actions/runs/9728444063
+
+  - Auto-update from GitHub Actions.
+    
+    Run: https://github.com/tidyverse/hms/actions/runs/9691617778
+
+## Continuous integration
+
+  - Install local package for pkgdown builds.
+
+  - Improve support for protected branches with fledge.
+
+  - Improve support for protected branches, without fledge.
+
+  - Sync with latest developments.
+
+  - Use v2 instead of master.
+
+  - Inline action.
+
+  - Use dev roxygen2 and decor.
+
+  - Fix on Windows, tweak lock workflow.
+
+  - Avoid checking bashisms on Windows.
+
+  - Better commit message.
+
+  - Bump versions, better default, consume custom matrix.
+
+  - Recent updates.
+
+
 # hms 1.1.3.9005
 
 - Internal changes only.
