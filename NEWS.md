@@ -1,5 +1,16 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.3.9007
+
+## Continuous integration
+
+  - Install via R CMD INSTALL ., not pak (#122).
+    
+      - ci: Install via R CMD INSTALL ., not pak
+    
+      - ci: Bump version of upload-artifact action
+
+
 # hms 1.1.3.9006
 
 ## Chore
