@@ -1,5 +1,18 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.3.9008
+
+## Continuous integration
+
+  - Trigger run (#124).
+
+  - Use pkgdown branch (#123).
+    
+      - ci: Use pkgdown branch
+    
+      - ci: Updates from duckdb
+
+
 # hms 1.1.3.9007
 
 ## Continuous integration
