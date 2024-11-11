@@ -1,5 +1,16 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.3.9009
+
+## Continuous integration
+
+  - Trigger run (#126).
+    
+      - ci: Trigger run
+    
+      - ci: Latest changes
+
+
 # hms 1.1.3.9008
 
 ## Continuous integration
