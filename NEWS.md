@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.3.9010
+
+## Continuous integration
+
+  - Use stable pak (#129).
+
+
 # hms 1.1.3.9009
 
 ## Continuous integration
