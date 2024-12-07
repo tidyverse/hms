@@ -1,5 +1,32 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.3.9011
+
+## Bug fixes
+
+- Sub-second value parsing accurately (@eitsupi, #127, #128).
+
+## Continuous integration
+
+- Use larger retry count for lock-threads workflow (#152).
+
+- Ignore errors when removing pkg-config on macOS (#142).
+
+- Explicit permissions (#140).
+
+- Use styler from main branch (#138).
+
+- Need to install R on Ubuntu 24.04 (#136).
+
+- Use Ubuntu 24.04 and styler PR (#134).
+
+- Correctly detect branch protection (#130).
+
+## Uncategorized
+
+- PLACEHOLDER https://github.com/tidyverse/hms/pull/16 (#16).
+
+
 # hms 1.1.3.9010
 
 ## Continuous integration
