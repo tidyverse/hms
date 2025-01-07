@@ -1,5 +1,145 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.3.9013
+
+## Continuous integration
+
+- Avoid failure in fledge workflow if no changes (#156).
+
+
+# hms 1.1.3.9012
+
+## Continuous integration
+
+- Fetch tags for fledge workflow to avoid unnecessary NEWS entries (#154).
+
+
+# hms 1.1.3.9011
+
+## Bug fixes
+
+- Sub-second value parsing accurately (@eitsupi, #127, #128).
+
+## Continuous integration
+
+- Use larger retry count for lock-threads workflow (#152).
+
+- Ignore errors when removing pkg-config on macOS (#142).
+
+- Explicit permissions (#140).
+
+- Use styler from main branch (#138).
+
+- Need to install R on Ubuntu 24.04 (#136).
+
+- Use Ubuntu 24.04 and styler PR (#134).
+
+- Correctly detect branch protection (#130).
+
+## Uncategorized
+
+- PLACEHOLDER https://github.com/tidyverse/hms/pull/16 (#16).
+
+
+# hms 1.1.3.9010
+
+## Continuous integration
+
+  - Use stable pak (#129).
+
+
+# hms 1.1.3.9009
+
+## Continuous integration
+
+  - Trigger run (#126).
+    
+      - ci: Trigger run
+    
+      - ci: Latest changes
+
+
+# hms 1.1.3.9008
+
+## Continuous integration
+
+  - Trigger run (#124).
+
+  - Use pkgdown branch (#123).
+    
+      - ci: Use pkgdown branch
+    
+      - ci: Updates from duckdb
+
+
+# hms 1.1.3.9007
+
+## Continuous integration
+
+  - Install via R CMD INSTALL ., not pak (#122).
+    
+      - ci: Install via R CMD INSTALL ., not pak
+    
+      - ci: Bump version of upload-artifact action
+
+
+# hms 1.1.3.9006
+
+## Chore
+
+  - Auto-update from GitHub Actions.
+    
+    Run: https://github.com/tidyverse/hms/actions/runs/10425483161
+
+  - Auto-update from GitHub Actions.
+    
+    Run: https://github.com/tidyverse/hms/actions/runs/10200113283
+
+  - Auto-update from GitHub Actions.
+    
+    Run: https://github.com/tidyverse/hms/actions/runs/9728444063
+
+  - Auto-update from GitHub Actions.
+    
+    Run: https://github.com/tidyverse/hms/actions/runs/9691617778
+
+## Continuous integration
+
+  - Install local package for pkgdown builds.
+
+  - Improve support for protected branches with fledge.
+
+  - Improve support for protected branches, without fledge.
+
+  - Sync with latest developments.
+
+  - Use v2 instead of master.
+
+  - Inline action.
+
+  - Use dev roxygen2 and decor.
+
+  - Fix on Windows, tweak lock workflow.
+
+  - Avoid checking bashisms on Windows.
+
+  - Better commit message.
+
+  - Bump versions, better default, consume custom matrix.
+
+  - Recent updates.
+
+
+# hms 1.1.3.9005
+
+- Internal changes only.
+
+
+# hms 1.1.3.9004
+
+- Internal changes only.
+
+
 # hms 1.1.3.9003
 
 - Internal changes only.
