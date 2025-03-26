@@ -286,7 +286,7 @@ seq.hms <- function(
   
   pars <- list(...)
 
-  if (!is.hms(to)) {
+  if (!is_hms(to)) {
     abort(sprintf(
       "`to` isn't of class `hms` (current class: `%s`).",
       class(to)[1]
@@ -297,7 +297,7 @@ seq.hms <- function(
   to <- vec_cast(to, numeric())
 
   if (!is.null(pars[["by"]])) {
-    if (!is.hms(pars[["by"]])) {
+    if (!is_hms(pars[["by"]])) {
       abort(sprintf(
         "`by` isn't of class `hms` (current class: `%s`).",
         class(pars[["by"]])[1]
