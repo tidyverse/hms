@@ -305,15 +305,7 @@ seq.hms <- function(
       ))
     }
     pars[["by"]] <- vec_cast(pars[["by"]], numeric())
-    # We can't split using !!! as seq isn't a tidyverse function
-    return(
-      eval(
-        bquote(
-          hms(seq(.(from), .(to), ..(pars))),
-          splice = TRUE
-        )
-      )
-    )
+    return(inject(hms(seq(from, to, !!!pars))))
   }
 
   hms(seq(from, to, ...))
