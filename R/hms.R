@@ -274,3 +274,46 @@ print.hms <- function(x, ...) {
   cat(format(x), sep = "\n")
   invisible(x)
 }
+
+# Sequence generation -----------------
+
+#' @rdname hms
+#' @export
+seq.hms <- function(
+    from = hms(1),
+    to = hms(1),
+    ...) {
+  
+  pars <- list(...)
+
+  if (!is.hms(to)) {
+    abort(sprintf(
+      "`to` isn't of class `hms` (current class: `%s`).",
+      class(to)[1]
+    ))
+  }
+
+  from <- vec_cast(from, numeric())
+  to <- vec_cast(to, numeric())
+
+  if (!is.null(pars[["by"]])) {
+    if (!is.hms(pars[["by"]])) {
+      abort(sprintf(
+        "`by` isn't of class `hms` (current class: `%s`).",
+        class(pars[["by"]])[1]
+      ))
+    }
+    pars[["by"]] <- vec_cast(pars[["by"]], numeric())
+    # We can't split using !!! as seq isn't a tidyverse function
+    return(
+      eval(
+        bquote(
+          hms(seq(.(from), .(to), ..(pars))),
+          splice = TRUE
+        )
+      )
+    )
+  }
+
+  hms(seq(from, to, ...))
+}

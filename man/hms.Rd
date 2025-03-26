@@ -10,6 +10,7 @@
 \alias{as.character.hms}
 \alias{format.hms}
 \alias{print.hms}
+\alias{seq.hms}
 \title{A simple class for storing time-of-day values}
 \usage{
 hms(seconds = NULL, minutes = NULL, hours = NULL, days = NULL)
@@ -29,6 +30,8 @@ as_hms(x, ...)
 \method{format}{hms}(x, ...)
 
 \method{print}{hms}(x, ...)
+
+\method{seq}{hms}(from = hms(1), to = hms(1), ...)
 }
 \arguments{
 \item{seconds, minutes, hours, days}{Time since midnight. No bounds checking is
@@ -53,14 +56,14 @@ as numeric vectors.
 \code{is_hms()} checks if an object is of class \code{hms}.
 
 \code{as_hms()} is a generic that supports conversions beyond casting.
-The default method forwards to \code{\link[vctrs:vec_cast]{vctrs::vec_cast()}}.
+The default method forwards to \code{\link[=vec_cast]{vec_cast()}}.
 }
 \details{
 For \code{hms()}, all arguments must have the same length or be
 \code{NULL}.  Odd combinations (e.g., passing only \code{seconds} and
 \code{hours} but not \code{minutes}) are rejected.
 
-For arguments of type \link[lubridate:posix_utils]{lubridate::POSIXct} and \link{POSIXlt}, \code{as_hms()} does not perform timezone
+For arguments of type \link{POSIXct} and \link{POSIXlt}, \code{as_hms()} does not perform timezone
 conversion.
 Use \code{\link[lubridate:with_tz]{lubridate::with_tz()}} and \code{\link[lubridate:force_tz]{lubridate::force_tz()}} as necessary.
 }
