@@ -40,6 +40,10 @@ performed.}
 \item{x}{An object.}
 
 \item{...}{additional arguments to be passed to or from methods.}
+
+\item{from, to}{the starting and (maximal) end values of the
+    sequence.  Of length \code{1} unless just \code{from} is supplied as
+    an unnamed argument.}
 }
 \description{
 The values are stored as a \link{difftime} vector with a custom class,

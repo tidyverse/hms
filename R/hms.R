@@ -278,6 +278,7 @@ print.hms <- function(x, ...) {
 # Sequence generation -----------------
 
 #' @rdname hms
+#' @inheritParams base::seq
 #' @export
 seq.hms <- function(
     from = hms(1),
