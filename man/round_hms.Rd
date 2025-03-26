@@ -5,7 +5,7 @@
 \alias{trunc_hms}
 \alias{ceiling_hms}
 \alias{floor_hms}
-\title{Round a hms object}
+\title{Round an hms object}
 \usage{
 round_hms(x, secs = NULL, digits = NULL)
 

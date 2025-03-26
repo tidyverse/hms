@@ -1,4 +1,4 @@
-#' Round a hms object
+#' Round an hms object
 #'
 #' Convenience functions to round to a multiple of seconds or digits.
 #' @param x A vector of class [hms]
