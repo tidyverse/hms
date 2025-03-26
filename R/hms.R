@@ -1,6 +1,6 @@
 #' @details
 #' `r lifecycle::badge("stable")`
-#' @importFrom lifecycle deprecate_soft expect_deprecated
+#' @importFrom lifecycle deprecate_warn expect_deprecated
 #' @import vctrs
 #' @import rlang
 #' @aliases hms-package NULL
@@ -98,7 +98,7 @@ NULL
 #' @export
 #' @keywords internal
 is.hms <- function(x) {
-  deprecate_soft("0.5.0", "hms::is.hms()", "hms::is_hms()")
+  deprecate_warn("1.2.0", "hms::is.hms()", "hms::is_hms()")
   is_hms(x)
 }
 
@@ -148,7 +148,7 @@ as_hms.default <- function(x, ...) {
 #' @export
 #' @keywords internal
 as.hms <- function(x, ...) {
-  deprecate_soft("0.5.0", "hms::as.hms()", "hms::as_hms()")
+  deprecate_warn("1.2.0", "hms::as.hms()", "hms::as_hms()")
   UseMethod("as.hms", x)
 }
 
