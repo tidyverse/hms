@@ -294,8 +294,8 @@ seq.hms <- function(
     ))
   }
   
-  from <- vec_cast(from, numeric())
-  to <- vec_cast(to, numeric())
+  from <- vec_cast(as_hms(from), numeric())
+  to <- vec_cast(as_hms(to), numeric())
 
   if (!is.null(by)) {
     if (!(is_hms(by) || inherits(by, "difftime"))) {
