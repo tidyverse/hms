@@ -283,9 +283,9 @@ print.hms <- function(x, ...) {
 seq.hms <- function(
     from = hms(1),
     to = hms(1),
-    ...) {
-  
-  pars <- list(...)
+    by = NULL,
+    ...
+) {
 
   if (!is_hms(to)) {
     abort(sprintf(
@@ -293,19 +293,21 @@ seq.hms <- function(
       class(to)[1]
     ))
   }
-
+  
   from <- vec_cast(from, numeric())
   to <- vec_cast(to, numeric())
 
-  if (!is.null(pars[["by"]])) {
-    if (!is_hms(pars[["by"]])) {
+  if (!is.null(by)) {
+    if (!(is_hms(by) || inherits(by, "difftime"))) {
       abort(sprintf(
-        "`by` isn't of class `hms` (current class: `%s`).",
-        class(pars[["by"]])[1]
+        "`by` isn't of class `hms` or `difftime` (current class: `%s`).",
+        class(by)[1]
       ))
     }
-    pars[["by"]] <- vec_cast(pars[["by"]], numeric())
-    return(inject(hms(seq(from, to, !!!pars))))
+    # if by is difftime, we can't use vec_cast on it directly
+    if (!is_hms(by)) by <- as_hms(by)
+    by <- vec_cast(by, numeric())
+    return(hms(seq(from, to, by, ...)))
   }
 
   hms(seq(from, to, ...))
