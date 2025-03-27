@@ -304,9 +304,7 @@ seq.hms <- function(
         class(by)[1]
       ))
     }
-    # if by is difftime, we can't use vec_cast on it directly
-    if (!is_hms(by)) by <- as_hms(by)
-    by <- vec_cast(by, numeric())
+    by <- vec_cast(as_hms(by), numeric())
     return(hms(seq(from, to, by, ...)))
   }
 
