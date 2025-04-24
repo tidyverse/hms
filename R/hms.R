@@ -281,10 +281,10 @@ print.hms <- function(x, ...) {
 #' @inheritParams base::seq
 #' @export
 seq.hms <- function(
-    from = hms(1),
-    to = hms(1),
-    by = NULL,
-    ...
+  from = hms(1),
+  to = hms(1),
+  by = NULL,
+  ...
 ) {
 
   if (!is_hms(to)) {
@@ -293,7 +293,7 @@ seq.hms <- function(
       class(to)[1]
     ))
   }
-  
+
   from <- vec_cast(as_hms(from), numeric())
   to <- vec_cast(as_hms(to), numeric())
 
