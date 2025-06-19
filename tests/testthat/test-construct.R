@@ -46,7 +46,7 @@ test_that("bad input", {
     hms(seconds = 1:5, minutes = 6:10, hours = 11:17),
     "same length or be NULL"
   )
-  expect_error(hms("05:00"), "must be numeric")
+  expect_error(hms("05:00"), cli_text("must be {.cls numeric}"))
 })
 
 test_that("is.hms()", {

@@ -265,9 +265,9 @@ c.hms <- function(x, ...) {
 # Updating ----------------------------------------------------------------
 
 #' @export
-`units<-.hms` <- function(x, value) {
+`units<-.hms` <- function(x, value, call = caller_env()) {
   if (!identical(value, "secs")) {
-    warning("hms always uses seconds as unit.", call. = FALSE)
+    cli_warn("{.pkg hms} always uses seconds as unit.", call = call)
   }
   x
 }
