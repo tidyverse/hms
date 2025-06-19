@@ -1,12 +1,8 @@
 #' @details
 #' `r lifecycle::badge("stable")`
-#' @importFrom lifecycle deprecate_soft expect_deprecated
-#' @import vctrs
-#' @import rlang
 #' @aliases hms-package NULL
 "_PACKAGE"
 
-#' @importFrom methods setOldClass
 setOldClass(c("hms", "difftime"))
 
 #' A simple class for storing time-of-day values
@@ -167,7 +163,6 @@ as.hms.default <- function(x, ...) {
 #'   `pkgconfig::set_config("hms::default_tz", "UTC")`, see
 #'   [pkgconfig::set_config()].
 #' @export
-#' @importFrom pkgconfig get_config
 as.hms.POSIXt <- function(
   x,
   tz = pkgconfig::get_config("hms::default_tz", ""),
