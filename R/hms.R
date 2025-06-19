@@ -55,7 +55,9 @@ hms <- function(seconds = NULL, minutes = NULL, hours = NULL, days = NULL) {
   check_args(args)
   arg_secs <- map2(args, c(1, 60, 3600, 86400), `*`)
   secs <- reduce(arg_secs[!map_lgl(args, is.null)], `+`)
-  if (is.null(secs)) secs <- numeric()
+  if (is.null(secs)) {
+    secs <- numeric()
+  }
 
   new_hms(as.numeric(secs))
 }
@@ -166,14 +168,22 @@ as.hms.default <- function(x, ...) {
 #'   [pkgconfig::set_config()].
 #' @export
 #' @importFrom pkgconfig get_config
-as.hms.POSIXt <- function(x, tz = pkgconfig::get_config("hms::default_tz", ""), ...) {
+as.hms.POSIXt <- function(
+  x,
+  tz = pkgconfig::get_config("hms::default_tz", ""),
+  ...
+) {
   time <- as.POSIXlt(x, tz = tz)
   vec_cast(time, new_hms())
 }
 
 #' @rdname Deprecated
 #' @export
-as.hms.POSIXlt <- function(x, tz = pkgconfig::get_config("hms::default_tz", ""), ...) {
+as.hms.POSIXlt <- function(
+  x,
+  tz = pkgconfig::get_config("hms::default_tz", ""),
+  ...
+) {
   # We need to roundtrip via as.POSIXct() to respect the time zone
   time <- as.POSIXlt(as.POSIXct(x), tz = tz)
   vec_cast(time, new_hms())
@@ -204,12 +214,19 @@ as.character.hms <- function(x, ...) {
 format_hms <- function(x) {
   xx <- decompose(x)
 
-  ifelse(is.na(x), NA_character_, paste0(
-    ifelse(xx$sign, "-", ""),
-    format_hours(xx$hours), ":",
-    format_two_digits(xx$minute_of_hour), ":",
-    format_two_digits(xx$second_of_minute),
-    format_tics(xx$tics)))
+  ifelse(
+    is.na(x),
+    NA_character_,
+    paste0(
+      ifelse(xx$sign, "-", ""),
+      format_hours(xx$hours),
+      ":",
+      format_two_digits(xx$minute_of_hour),
+      ":",
+      format_two_digits(xx$second_of_minute),
+      format_tics(xx$tics)
+    )
+  )
 }
 
 
@@ -286,7 +303,6 @@ seq.hms <- function(
   by = NULL,
   ...
 ) {
-
   if (!is_hms(to)) {
     abort(sprintf(
       "`to` isn't of class `hms` (current class: `%s`).",
