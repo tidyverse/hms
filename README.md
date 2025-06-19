@@ -1,4 +1,4 @@
-# hms <a href='https:/hms.tidyverse.org'><img src='man/figures/logo.png' align="right" height="139" /></a>
+# hms <a href='https:/hms.tidyverse.org'><img src='man/figures/logo.png' align="right" height="139" alt="Hexagonal logo for the R package ‘hms’, featuring a stylized green clock face showing the time 10:05, with the package name ‘hms’ in white text at the center and the rstudio.com URL at the bottom edge."/></a>
 
 <!-- badges: start -->
 
@@ -41,7 +41,7 @@ The following example showcases ways of using the `hms` class standalone or as a
 <span><span class='nf'><a href='https://hms.tidyverse.org/reference/hms.html'>hms</a></span><span class='o'>(</span><span class='m'>56</span>, <span class='m'>34</span>, <span class='m'>12</span><span class='o'>)</span></span>
 <span><span class='c'>#&gt; 12:34:56</span></span>
 <span><span class='nf'><a href='https://hms.tidyverse.org/reference/hms.html'>as_hms</a></span><span class='o'>(</span><span class='nf'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span><span class='o'>(</span><span class='o'>)</span><span class='o'>)</span></span>
-<span><span class='c'>#&gt; 11:22:53.847898</span></span>
+<span><span class='c'>#&gt; 11:55:23.495206</span></span>
 <span><span class='nf'><a href='https://hms.tidyverse.org/reference/parse_hms.html'>parse_hms</a></span><span class='o'>(</span><span class='s'>"12:34:56"</span><span class='o'>)</span></span>
 <span><span class='c'>#&gt; 12:34:56</span></span>
 <span><span class='nf'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></span><span class='o'>(</span><span class='nf'><a href='https://hms.tidyverse.org/reference/hms.html'>hms</a></span><span class='o'>(</span><span class='m'>1</span><span class='o'>)</span><span class='o'>)</span></span>

@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 pkgload::load_all()
 ```
 
-# hms <a href='https:/hms.tidyverse.org'><img src='man/figures/logo.png' align="right" height="139" /></a>
+# hms <a href='https:/hms.tidyverse.org'><img src='man/figures/logo.png' align="right" height="139" alt="Hexagonal logo for the R package ‘hms’, featuring a stylized green clock face showing the time 10:05, with the package name ‘hms’ in white text at the center and the rstudio.com URL at the bottom edge."/></a>
 
 <!-- badges: start -->
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
