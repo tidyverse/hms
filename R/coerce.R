@@ -7,7 +7,9 @@
 #' @method vec_ptype2 hms
 #' @export
 #' @export vec_ptype2.hms
-vec_ptype2.hms <- function(x, y, ..., x_arg = "", y_arg = "") UseMethod("vec_ptype2.hms", y)
+vec_ptype2.hms <- function(x, y, ..., x_arg = "", y_arg = "") {
+  UseMethod("vec_ptype2.hms", y)
+}
 
 #' @method vec_ptype2.hms default
 #' @export
