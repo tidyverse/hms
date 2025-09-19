@@ -10,6 +10,7 @@
 \alias{as.character.hms}
 \alias{format.hms}
 \alias{print.hms}
+\alias{seq.hms}
 \title{A simple class for storing time-of-day values}
 \usage{
 hms(seconds = NULL, minutes = NULL, hours = NULL, days = NULL)
@@ -29,6 +30,8 @@ as_hms(x, ...)
 \method{format}{hms}(x, ...)
 
 \method{print}{hms}(x, ...)
+
+\method{seq}{hms}(from = hms(1), to = hms(1), by = NULL, ...)
 }
 \arguments{
 \item{seconds, minutes, hours, days}{Time since midnight. No bounds checking is
@@ -37,6 +40,12 @@ performed.}
 \item{x}{An object.}
 
 \item{...}{additional arguments to be passed to or from methods.}
+
+\item{from, to}{the starting and (maximal) end values of the
+    sequence.  Of length \code{1} unless just \code{from} is supplied as
+    an unnamed argument.}
+
+\item{by}{number: increment of the sequence.}
 }
 \description{
 The values are stored as a \link{difftime} vector with a custom class,

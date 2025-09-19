@@ -274,3 +274,39 @@ print.hms <- function(x, ...) {
   cat(format(x), sep = "\n")
   invisible(x)
 }
+
+# Sequence generation -----------------
+
+#' @rdname hms
+#' @inheritParams base::seq
+#' @export
+seq.hms <- function(
+  from = hms(1),
+  to = hms(1),
+  by = NULL,
+  ...
+) {
+
+  if (!is_hms(to)) {
+    abort(sprintf(
+      "`to` isn't of class `hms` (current class: `%s`).",
+      class(to)[1]
+    ))
+  }
+
+  from <- vec_cast(as_hms(from), numeric())
+  to <- vec_cast(as_hms(to), numeric())
+
+  if (!is.null(by)) {
+    if (!(is_hms(by) || inherits(by, "difftime"))) {
+      abort(sprintf(
+        "`by` isn't of class `hms` or `difftime` (current class: `%s`).",
+        class(by)[1]
+      ))
+    }
+    by <- vec_cast(as_hms(by), numeric())
+    return(hms(seq(from, to, by, ...)))
+  }
+
+  hms(seq(from, to, ...))
+}
