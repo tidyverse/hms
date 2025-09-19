@@ -3,11 +3,17 @@
 \name{round_hms}
 \alias{round_hms}
 \alias{trunc_hms}
-\title{Round or truncate to a multiple of seconds}
+\alias{ceiling_hms}
+\alias{floor_hms}
+\title{Round an hms object}
 \usage{
 round_hms(x, secs = NULL, digits = NULL)
 
 trunc_hms(x, secs = NULL, digits = NULL)
+
+ceiling_hms(x, secs = NULL, digits = NULL)
+
+floor_hms(x, secs = NULL, digits = NULL)
 }
 \arguments{
 \item{x}{A vector of class \link{hms}}
@@ -23,7 +29,7 @@ The input, rounded or truncated to the nearest multiple of \code{secs}
 (or number of \code{digits})
 }
 \description{
-Convenience functions to round or truncate to a multiple of seconds.
+Convenience functions to round to a multiple of seconds or digits.
 }
 \examples{
 round_hms(as_hms("12:34:56"), 5)
@@ -32,4 +38,6 @@ round_hms(as_hms("12:34:56.78"), 0.25)
 round_hms(as_hms("12:34:56.78"), digits = 1)
 round_hms(as_hms("12:34:56.78"), digits = -2)
 trunc_hms(as_hms("12:34:56"), 60)
+ceiling_hms(as_hms("12:34:56"), 60)
+floor_hms(as_hms("12:34:56"), 60)
 }
