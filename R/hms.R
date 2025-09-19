@@ -1,8 +1,3 @@
-#' @details
-#' `r lifecycle::badge("stable")`
-#' @aliases hms-package NULL
-"_PACKAGE"
-
 setOldClass(c("hms", "difftime"))
 
 #' A simple class for storing time-of-day values

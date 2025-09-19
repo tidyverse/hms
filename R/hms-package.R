@@ -1,3 +1,5 @@
+#' @details
+#' `r lifecycle::badge("stable")`
 #' @keywords internal
 "_PACKAGE"
 
