@@ -8,12 +8,14 @@ on:
       - "cran-*"
     tags:
       - "v*"
+    paths:
+      - .github/workflows/R-CMD-check-dev.yaml
 
 name: rcc dev
 
 jobs:
   matrix:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
 
