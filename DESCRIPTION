@@ -35,4 +35,3 @@ Config/testthat/edition: 3
 Config/autostyle/scope: line_breaks
 Config/autostyle/strict: false
 Config/Needs/website: tidyverse/tidytemplate
-Config/testthat/edition: 3
