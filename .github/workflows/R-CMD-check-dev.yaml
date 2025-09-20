@@ -8,8 +8,7 @@ on:
       - "cran-*"
     tags:
       - "v*"
-    paths:
-      - .github/workflows/R-CMD-check-dev.yaml
+    workflow_dispatch:
 
 name: rcc dev
 
