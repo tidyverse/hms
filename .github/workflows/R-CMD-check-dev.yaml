@@ -8,7 +8,7 @@ on:
       - "cran-*"
     tags:
       - "v*"
-    workflow_dispatch:
+  workflow_dispatch:
 
 name: rcc dev
 
