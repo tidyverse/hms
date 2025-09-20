@@ -1,5 +1,48 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.3.9014
+
+## Features
+
+- `is.hms()` and `as.hms()` now warn even when called indirectly (@moodymudskipper, #121, #163).
+
+- Implement `ceiling_hms()` and `floor_hms()` (@moodymudskipper, #118, #160).
+
+## Chore
+
+- Auto-update from GitHub Actions (#178).
+
+- IDE.
+
+## Continuous integration
+
+- Add Copilot instructions.
+
+- Bump Ubuntu version for dev workflow, run if changed.
+
+- Use reviewdog for external PRs (#179).
+
+- Cleanup and fix macOS (#177).
+
+- Format with air, check detritus, better handling of `extra-packages` (#176).
+
+- Enhance permissions for workflow (#172).
+
+- Permissions, better tests for missing suggests, lints (#171).
+
+- Only fail covr builds if token is given (#170).
+
+- Always use `_R_CHECK_FORCE_SUGGESTS_=false` (#169).
+
+- Correct installation of xml2 (#168).
+
+- Explain (#167).
+
+- Add xml2 for covr, print testthat results (#166).
+
+- Sync (#165).
+
+
 # hms 1.1.3.9013
 
 ## Continuous integration
