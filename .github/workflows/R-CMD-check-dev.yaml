@@ -126,7 +126,7 @@ jobs:
           GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
         run: |
           version <- paste(unclass(getRversion())[[1]][1:2], collapse = ".")
-          repo <- paste0("https://krlmlr.r-universe.org/bin/linux/noble-", R$arch, "/", version)
+          repo <- paste0("https://krlmlr.r-universe.org/bin/linux/noble-", R.version$arch, "/", version)
           install.packages("{{ matrix.package }}", repos = repo, dependencies = c("Depends", "Imports"))
         shell: Rscript {0}
 
