@@ -28,11 +28,21 @@ pillar_shaft.hms <- function(x, ...) {
       if (need_sign) ifelse(xx$sign, "-", " ") else "",
       pillar::style_num(format_hours(xx$hours), xx$sign, highlight_hours),
       pillar::style_subtle(":"),
-      pillar::style_num(format_two_digits(xx$minute_of_hour), xx$sign, highlight_minutes),
-      if (need_seconds) paste0(
-        pillar::style_subtle(":"),
-        pillar::style_num(format_two_digits(xx$second_of_minute), xx$sign, highlight_seconds)
-      )
+      pillar::style_num(
+        format_two_digits(xx$minute_of_hour),
+        xx$sign,
+        highlight_minutes
+      ),
+      if (need_seconds) {
+        paste0(
+          pillar::style_subtle(":"),
+          pillar::style_num(
+            format_two_digits(xx$second_of_minute),
+            xx$sign,
+            highlight_seconds
+          )
+        )
+      }
     )
     data <- paste0(
       data_seconds,
@@ -43,9 +53,17 @@ pillar_shaft.hms <- function(x, ...) {
   } else {
     data_seconds <- paste0(
       if (need_sign) ifelse(xx$sign, "-", " ") else "",
-      pillar::style_num(format_two_digits(xx$minute_of_hour), xx$sign, highlight_minutes),
+      pillar::style_num(
+        format_two_digits(xx$minute_of_hour),
+        xx$sign,
+        highlight_minutes
+      ),
       pillar::style_subtle("'"),
-      pillar::style_num(format_two_digits(xx$second_of_minute), xx$sign, highlight_seconds)
+      pillar::style_num(
+        format_two_digits(xx$second_of_minute),
+        xx$sign,
+        highlight_seconds
+      )
     )
     data <- paste0(
       data_seconds,

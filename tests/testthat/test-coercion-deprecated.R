@@ -16,13 +16,19 @@ test_that("coercion in", {
   )
   expect_deprecated(
     expect_hms_equal(
-      as.hms(strptime("12:34:56", format = "%H:%M:%S", tz = "Europe/Zurich"), tz = "Europe/Zurich"),
+      as.hms(
+        strptime("12:34:56", format = "%H:%M:%S", tz = "Europe/Zurich"),
+        tz = "Europe/Zurich"
+      ),
       hms(56, 34, 12)
     )
   )
   expect_deprecated(
     expect_hms_equal(
-      as.hms(strptime("12:34:56", format = "%H:%M:%S", tz = "PST8PDT"), tz = "PST8PDT"),
+      as.hms(
+        strptime("12:34:56", format = "%H:%M:%S", tz = "PST8PDT"),
+        tz = "PST8PDT"
+      ),
       hms(56, 34, 12)
     )
   )
@@ -42,12 +48,15 @@ test_that("coercion in", {
 test_that("coercion out", {
   expect_identical(as.character(hms(56, 34, 12)), "12:34:56")
   expect_identical(as.character(hms(NA)), NA_character_)
-  expect_identical(as.POSIXlt(hms(hours = 6)),
-    strptime("1970-01-01 06:00:00",
-      format = "%Y-%m-%d %H:%M:%S", tz = "UTC"))
-  expect_identical(as.POSIXct(hms(hours = -6)),
-    strptime("1970-01-01 18:00:00",
-      format = "%Y-%m-%d %H:%M:%S", tz = "UTC") - 86400)
+  expect_identical(
+    as.POSIXlt(hms(hours = 6)),
+    strptime("1970-01-01 06:00:00", format = "%Y-%m-%d %H:%M:%S", tz = "UTC")
+  )
+  expect_identical(
+    as.POSIXct(hms(hours = -6)),
+    strptime("1970-01-01 18:00:00", format = "%Y-%m-%d %H:%M:%S", tz = "UTC") -
+      86400
+  )
 
   df <- data.frame(a = 1:3)
   df$b <- hms(hours = df$a)

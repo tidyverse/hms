@@ -99,10 +99,15 @@ vec_default_cast_old <- function(x, to, ...) {
 
 abort_lossy_cast <- function(x, to, ..., lossy) {
   problems <- which(lossy)
-  if (is_empty(problems)) return()
+  if (is_empty(problems)) {
+    return()
+  }
 
   abort(
-    paste0("Lossy cast from <character> to <hms> at position(s) ", commas(problems))
+    paste0(
+      "Lossy cast from <character> to <hms> at position(s) ",
+      commas(problems)
+    )
   )
 }
 

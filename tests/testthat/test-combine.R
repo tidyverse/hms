@@ -8,7 +8,9 @@ test_that("combination errs if not supported", {
 
 test_that("combination coerces to hms", {
   expect_identical(c(hms(1), hms(2)), hms(1:2))
-  if (getRversion() < "3.3") skip("Only for R >= 3.3")
+  if (getRversion() < "3.3") {
+    skip("Only for R >= 3.3")
+  }
 
   expect_identical(c(hms(1), new_duration(2)), hms(1:2))
   expect_identical(vec_c(new_duration(1), hms(2)), hms(1:2))
