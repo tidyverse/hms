@@ -8,8 +8,7 @@ on:
       - "cran-*"
     tags:
       - "v*"
-    paths:
-      - .github/workflows/R-CMD-check-dev.yaml
+  workflow_dispatch:
 
 name: rcc dev
 
@@ -34,7 +33,7 @@ jobs:
         uses: ./.github/workflows/dep-matrix
 
   check-matrix:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: matrix
 
     name: Check deps
@@ -52,7 +51,7 @@ jobs:
           echo $matrix | json2yaml
 
   R-CMD-check-base:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     name: base
 
@@ -98,7 +97,7 @@ jobs:
       - matrix
       - R-CMD-check-base
 
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     name: 'rcc-dev: ${{ matrix.package }}'
 
@@ -126,7 +125,9 @@ jobs:
         env:
           GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          remotes::install_dev("${{ matrix.package }}", "https://cloud.r-project.org", upgrade = "always")
+          version <- paste(unclass(getRversion())[[1]][1:2], collapse = ".")
+          repo <- paste0("https://krlmlr.r-universe.org/bin/linux/noble-", R.version$arch, "/", version)
+          install.packages("{{ matrix.package }}", repos = repo, dependencies = c("Depends", "Imports"))
         shell: Rscript {0}
 
       - name: Session info
