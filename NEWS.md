@@ -1,5 +1,18 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.3.9015
+
+## Continuous integration
+
+- Fix \[ci skip\].
+
+- Allow dispatch.
+
+- Allow dispatch.
+
+- Use r-universe for installation of dev dependencies.
+
+
 # hms 1.1.3.9014
 
 ## Features
