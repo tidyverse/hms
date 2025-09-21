@@ -1,49 +1,7 @@
----
-output:
-  github_document:
-    html_preview: false
----
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, echo = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "README-"
-)
 
-clean_output <- function(x, options) {
-  x <- gsub("0x[0-9a-f]+", "0xdeadbeef", x)
-  x <- gsub("dataframe_[0-9]*_[0-9]*", "      dataframe_42_42      ", x)
-  x <- gsub("[0-9]*\\.___row_number ASC", "42.___row_number ASC", x)
-
-  index <- x
-  index <- gsub("─", "-", index)
-  index <- strsplit(paste(index, collapse = "\n"), "\n---\n")[[1]][[2]]
-  writeLines(index, "index.md")
-
-  x <- gsub('(`vignette[(]"([^"]+)"[)]`)', "[\\1](https://tibble.tidyverse.org/articles/\\2.html)", x)
-  x <- fansi::strip_sgr(x)
-  x
-}
-
-options(
-  cli.num_colors = 256,
-  cli.width = 71,
-  width = 71,
-  pillar.bold = TRUE,
-  pillar.max_title_chars = 5,
-  pillar.min_title_chars = 5,
-  pillar.max_footer_lines = 12,
-  conflicts.policy = list(warn = FALSE)
-)
-
-local({
-  hook_source <- knitr::knit_hooks$get("document")
-  knitr::knit_hooks$set(document = clean_output)
-})
-```
 
 # hms <a href='https:/hms.tidyverse.org'><img src='man/figures/logo.png' align="right" height="139" alt="Hexagonal logo for the R package ‘hms’, featuring a stylized green clock face showing the time 10:05, with the package name ‘hms’ in white text at the center and the rstudio.com URL at the bottom edge."/></a>
 
@@ -85,15 +43,24 @@ pak::pak("tidyverse/hms")
 
 The following example showcases ways of using the `hms` class standalone or as a data frame column.
 
-```{r}
+
+``` r
 library(hms)
 
 hms(56, 34, 12)
+#> 12:34:56
 as_hms(Sys.time())
+#> 05:57:08.20206
 parse_hms("12:34:56")
+#> 12:34:56
 as.POSIXct(hms(1))
+#> [1] "1970-01-01 00:00:01 UTC"
 
 data.frame(hours = 1:3, hms = hms(hours = 1:3))
+#>   hours      hms
+#> 1     1 01:00:00
+#> 2     2 02:00:00
+#> 3     3 03:00:00
 ```
 
 ## Internal representation
@@ -101,16 +68,21 @@ data.frame(hours = 1:3, hms = hms(hours = 1:3))
 Objects of the `hms` and its underlying `difftime` classes are stored as number of seconds since `00:00:00`.
 Use `as.numeric()` and `as_hms()` to convert to and from numbers.
 
-```{r}
+
+``` r
 times <- parse_hms(c("00:00:00.25", "00:00:01", "00:01:30", "01:00:00"))
 times
+#> 00:00:00.25
+#> 00:00:01.00
+#> 00:01:30.00
+#> 01:00:00.00
 times_num <- as.numeric(times)
 times_num
+#> [1]    0.25    1.00   90.00 3600.00
 as_hms(times_num)
+#> 00:00:00.25
+#> 00:00:01.00
+#> 00:01:30.00
+#> 01:00:00.00
 ```
 
----
-
-Please note that the 'hms' project is released with a
-[Contributor Code of Conduct](https://github.com/tidyverse/hms/blob/master/CODE_OF_CONDUCT.md).
-By contributing to this project, you agree to abide by its terms.
