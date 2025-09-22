@@ -1,5 +1,14 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.3.9016
+
+## Chore
+
+- Auto-update from GitHub Actions (#182).
+
+- Cynkra spring cleaning (@schochastics, #174, #175).
+
+
 # hms 1.1.3.9015
 
 ## Continuous integration
