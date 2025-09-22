@@ -6,4 +6,4 @@ CRAN-RELEASE
 docs
 
 /.quarto/
-/.vscode/
+/.vscode/*.log
