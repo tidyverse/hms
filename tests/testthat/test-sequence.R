@@ -8,7 +8,8 @@ test_that("seq.hms works", {
       seq(hms(1), hms(4), by = "test")
       seq(hms(1), hms(4), by = hms())
       seq(hms(1), hms(4), by = hms(0))
-  })
+    }
+  )
 
   expect_snapshot({
     seq(hms(1), hms(4), along.with = 1:2)

@@ -3,13 +3,19 @@ Title: Pretty Time of Day
 Date: 2025-09-21
 Version: 1.1.3.9015
 Authors@R: c(
-    person("Kirill", "Müller", role = c("aut", "cre"), email = "kirill@cynkra.com", comment = c(ORCID = "0000-0002-1416-3412")),
+    person("Kirill", "Müller", , "kirill@cynkra.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-1416-3412")),
     person("R Consortium", role = "fnd"),
-    person("RStudio", role = "fnd")
-    )
+    person("Posit Software, PBC", role = "fnd",
+           comment = c(ROR = "03wc8by49"))
+  )
 Description: Implements an S3 class for storing and formatting time-of-day
     values, based on the 'difftime' class.
+License: MIT + file LICENSE
+URL: https://hms.tidyverse.org/, https://github.com/tidyverse/hms
+BugReports: https://github.com/tidyverse/hms/issues
 Imports:
+    cli,
     lifecycle,
     methods,
     pkgconfig,
@@ -20,13 +26,8 @@ Suggests:
     lubridate,
     pillar (>= 1.1.0),
     testthat (>= 3.0.0)
-License: MIT + file LICENSE
-Encoding: UTF-8
-URL: https://hms.tidyverse.org/, https://github.com/tidyverse/hms
-BugReports: https://github.com/tidyverse/hms/issues
-RoxygenNote: 7.3.3.9000
-Roxygen: list(markdown = TRUE)
-Config/testthat/edition: 3
-Config/autostyle/scope: line_breaks
-Config/autostyle/strict: false
 Config/Needs/website: tidyverse/tidytemplate
+Config/testthat/edition: 3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3.9000

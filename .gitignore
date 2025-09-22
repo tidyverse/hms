@@ -4,4 +4,6 @@
 /revdep/.cache.rds
 CRAN-RELEASE
 docs
-.vscode
+
+/.quarto/
+/.vscode/*.log
