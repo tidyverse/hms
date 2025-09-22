@@ -6,7 +6,10 @@ check_args <- function(args, call = caller_env()) {
 
   valid <- map_lgl(args[!is_null], is_numeric_or_na)
   if (!all(valid)) {
-    cli_abort("All arguments must be {.cls numeric} or {.val {NA}}", call = call)
+    cli_abort(
+      "All arguments must be {.cls numeric} or {.val {NA}}",
+      call = call
+    )
   }
 
   if (!all(diff(which(!is_null)) == 1L)) {
