@@ -11,6 +11,8 @@ test_that("constructor", {
   expect_s3_class(hms(1), "difftime")
   expect_identical(as.numeric(hms(1)), 1)
   expect_identical(as.difftime(hms(1)), hms(1))
+
+  expect_identical(hms(minutes = 1, hours = 2:3), parse_hm(c("02:01", "03:01")))
 })
 
 
@@ -41,10 +43,9 @@ test_that("zero length (#35)", {
 test_that("bad input", {
   expect_error(hms(hours = 1, seconds = 3), "only")
   expect_error(hms(minutes = 1, days = 3), "only")
-  expect_error(hms(minutes = 1, hours = 2:3), "same length or be NULL")
   expect_error(
     hms(seconds = 1:5, minutes = 6:10, hours = 11:17),
-    "same length or be NULL"
+    "recycle"
   )
   expect_error(hms("05:00"), cli_text("must be {.cls numeric}"))
 })

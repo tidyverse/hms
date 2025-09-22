@@ -12,8 +12,7 @@
 #' @importFrom lifecycle expect_deprecated
 #' @importFrom methods setOldClass
 #' @importFrom pkgconfig get_config
-#' @importFrom rlang caller_env
-#' @import vctrs
 #' @import rlang
+#' @import vctrs
 ## usethis namespace: end
 NULL

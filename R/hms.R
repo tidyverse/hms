@@ -42,8 +42,19 @@ NULL
 #'   performed.
 #' @export
 hms <- function(seconds = NULL, minutes = NULL, hours = NULL, days = NULL) {
-  args <- list(seconds = seconds, minutes = minutes, hours = hours, days = days)
-  check_args(args)
+  error_call <- caller_env()
+  args <- list(
+    seconds = seconds,
+    minutes = minutes,
+    hours = hours,
+    days = days
+  )
+
+  args_df <- data_frame(!!!args, .error_call = error_call)
+  args[names(args_df)] <- as.list(args_df)
+
+  check_args(args, error_call)
+
   arg_secs <- map2(args, c(1, 60, 3600, 86400), `*`)
   secs <- reduce(arg_secs[!map_lgl(args, is.null)], `+`)
   if (is.null(secs)) {
