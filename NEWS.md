@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.3.9017
+
+## Continuous integration
+
+- Fix package installation code.
+
+
 # hms 1.1.3.9016
 
 ## Chore
