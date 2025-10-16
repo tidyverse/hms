@@ -35,8 +35,7 @@
 <h2 class="pkg-version" data-toc-text="1.1.4" id="hms-114">hms 1.1.4<a class="anchor" aria-label="anchor" href="#hms-114"></a></h2>
 <div class="section level3">
 <h3 id="bug-fixes-1-1-4">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-1-1-4"></a></h3>
-<ul><li><p>Sub-second value parsing accurately (<a href="https://github.com/eitsupi" class="external-link">@eitsupi</a>, <a href="https://github.com/tidyverse/hms/issues/127" class="external-link">#127</a>, <a href="https://github.com/tidyverse/hms/issues/128" class="external-link">#128</a>).</p></li>
-<li><p>Fix method consistency, checked by R-devel.</p></li>
+<ul><li>Sub-second value parsing accurately (<a href="https://github.com/eitsupi" class="external-link">@eitsupi</a>, <a href="https://github.com/tidyverse/hms/issues/127" class="external-link">#127</a>, <a href="https://github.com/tidyverse/hms/issues/128" class="external-link">#128</a>).</li>
 </ul></div>
 <div class="section level3">
 <h3 id="features-1-1-4">Features<a class="anchor" aria-label="anchor" href="#features-1-1-4"></a></h3>
@@ -45,82 +44,8 @@
 </ul></div>
 <div class="section level3">
 <h3 id="chore-1-1-4">Chore<a class="anchor" aria-label="anchor" href="#chore-1-1-4"></a></h3>
-<ul><li><p>Auto-update from GitHub Actions (<a href="https://github.com/tidyverse/hms/issues/182" class="external-link">#182</a>).</p></li>
-<li><p>Cynkra spring cleaning (<a href="https://github.com/schochastics" class="external-link">@schochastics</a>, <a href="https://github.com/tidyverse/hms/issues/174" class="external-link">#174</a>, <a href="https://github.com/tidyverse/hms/issues/175" class="external-link">#175</a>).</p></li>
-<li><p>Auto-update from GitHub Actions (<a href="https://github.com/tidyverse/hms/issues/178" class="external-link">#178</a>).</p></li>
-<li><p>IDE.</p></li>
-<li>
-<p>Auto-update from GitHub Actions.</p>
-<p>Run: <a href="https://github.com/tidyverse/hms/actions/runs/10425483161" class="external-link uri">https://github.com/tidyverse/hms/actions/runs/10425483161</a></p>
-<p>Run: <a href="https://github.com/tidyverse/hms/actions/runs/10200113283" class="external-link uri">https://github.com/tidyverse/hms/actions/runs/10200113283</a></p>
-<p>Run: <a href="https://github.com/tidyverse/hms/actions/runs/9728444063" class="external-link uri">https://github.com/tidyverse/hms/actions/runs/9728444063</a></p>
-<p>Run: <a href="https://github.com/tidyverse/hms/actions/runs/9691617778" class="external-link uri">https://github.com/tidyverse/hms/actions/runs/9691617778</a></p>
-</li>
+<ul><li><p>Spring cleaning (<a href="https://github.com/schochastics" class="external-link">@schochastics</a>, <a href="https://github.com/tidyverse/hms/issues/174" class="external-link">#174</a>, <a href="https://github.com/tidyverse/hms/issues/175" class="external-link">#175</a>).</p></li>
 <li><p>Use rlang instead of ellipsis (<a href="https://github.com/tidyverse/hms/issues/106" class="external-link">#106</a>).</p></li>
-</ul></div>
-<div class="section level3">
-<h3 id="continuous-integration-1-1-4">Continuous integration<a class="anchor" aria-label="anchor" href="#continuous-integration-1-1-4"></a></h3>
-<ul><li><p>Fix package installation code.</p></li>
-<li><p>Fix [ci skip].</p></li>
-<li><p>Allow dispatch.</p></li>
-<li><p>Use r-universe for installation of dev dependencies.</p></li>
-<li><p>Add Copilot instructions.</p></li>
-<li><p>Bump Ubuntu version for dev workflow, run if changed.</p></li>
-<li><p>Use reviewdog for external PRs (<a href="https://github.com/tidyverse/hms/issues/179" class="external-link">#179</a>).</p></li>
-<li><p>Cleanup and fix macOS (<a href="https://github.com/tidyverse/hms/issues/177" class="external-link">#177</a>).</p></li>
-<li><p>Format with air, check detritus, better handling of <code>extra-packages</code> (<a href="https://github.com/tidyverse/hms/issues/176" class="external-link">#176</a>).</p></li>
-<li><p>Enhance permissions for workflow (<a href="https://github.com/tidyverse/hms/issues/172" class="external-link">#172</a>).</p></li>
-<li><p>Permissions, better tests for missing suggests, lints (<a href="https://github.com/tidyverse/hms/issues/171" class="external-link">#171</a>).</p></li>
-<li><p>Only fail covr builds if token is given (<a href="https://github.com/tidyverse/hms/issues/170" class="external-link">#170</a>).</p></li>
-<li><p>Always use <code>_R_CHECK_FORCE_SUGGESTS_=false</code> (<a href="https://github.com/tidyverse/hms/issues/169" class="external-link">#169</a>).</p></li>
-<li><p>Correct installation of xml2 (<a href="https://github.com/tidyverse/hms/issues/168" class="external-link">#168</a>).</p></li>
-<li><p>Explain (<a href="https://github.com/tidyverse/hms/issues/167" class="external-link">#167</a>).</p></li>
-<li><p>Add xml2 for covr, print testthat results (<a href="https://github.com/tidyverse/hms/issues/166" class="external-link">#166</a>).</p></li>
-<li><p>Sync (<a href="https://github.com/tidyverse/hms/issues/165" class="external-link">#165</a>).</p></li>
-<li><p>Avoid failure in fledge workflow if no changes (<a href="https://github.com/tidyverse/hms/issues/156" class="external-link">#156</a>).</p></li>
-<li><p>Fetch tags for fledge workflow to avoid unnecessary NEWS entries (<a href="https://github.com/tidyverse/hms/issues/154" class="external-link">#154</a>).</p></li>
-<li><p>Use larger retry count for lock-threads workflow (<a href="https://github.com/tidyverse/hms/issues/152" class="external-link">#152</a>).</p></li>
-<li><p>Ignore errors when removing pkg-config on macOS (<a href="https://github.com/tidyverse/hms/issues/142" class="external-link">#142</a>).</p></li>
-<li><p>Explicit permissions (<a href="https://github.com/tidyverse/hms/issues/140" class="external-link">#140</a>).</p></li>
-<li><p>Use styler from main branch (<a href="https://github.com/tidyverse/hms/issues/138" class="external-link">#138</a>).</p></li>
-<li><p>Need to install R on Ubuntu 24.04 (<a href="https://github.com/tidyverse/hms/issues/136" class="external-link">#136</a>).</p></li>
-<li><p>Use Ubuntu 24.04 and styler PR (<a href="https://github.com/tidyverse/hms/issues/134" class="external-link">#134</a>).</p></li>
-<li><p>Correctly detect branch protection (<a href="https://github.com/tidyverse/hms/issues/130" class="external-link">#130</a>).</p></li>
-<li><p>Use stable pak (<a href="https://github.com/tidyverse/hms/issues/129" class="external-link">#129</a>).</p></li>
-<li>
-<p>Trigger run (<a href="https://github.com/tidyverse/hms/issues/126" class="external-link">#126</a>).</p>
-<ul><li><p>ci: Trigger run</p></li>
-<li><p>ci: Latest changes</p></li>
-</ul></li>
-<li><p>Trigger run (<a href="https://github.com/tidyverse/hms/issues/124" class="external-link">#124</a>).</p></li>
-<li>
-<p>Use pkgdown branch (<a href="https://github.com/tidyverse/hms/issues/123" class="external-link">#123</a>).</p>
-<ul><li><p>ci: Use pkgdown branch</p></li>
-<li><p>ci: Updates from duckdb</p></li>
-</ul></li>
-<li>
-<p>Install via R CMD INSTALL ., not pak (<a href="https://github.com/tidyverse/hms/issues/122" class="external-link">#122</a>).</p>
-<ul><li><p>ci: Install via R CMD INSTALL ., not pak</p></li>
-<li><p>ci: Bump version of upload-artifact action</p></li>
-</ul></li>
-<li><p>Install local package for pkgdown builds.</p></li>
-<li><p>Improve support for protected branches with fledge.</p></li>
-<li><p>Improve support for protected branches, without fledge.</p></li>
-<li><p>Sync with latest developments.</p></li>
-<li><p>Use v2 instead of master.</p></li>
-<li><p>Inline action.</p></li>
-<li><p>Use dev roxygen2 and decor.</p></li>
-<li><p>Fix on Windows, tweak lock workflow.</p></li>
-<li><p>Avoid checking bashisms on Windows.</p></li>
-<li><p>Better commit message.</p></li>
-<li><p>Bump versions, better default, consume custom matrix.</p></li>
-<li><p>Recent updates.</p></li>
-</ul></div>
-<div class="section level3">
-<h3 id="uncategorized-1-1-4">Uncategorized<a class="anchor" aria-label="anchor" href="#uncategorized-1-1-4"></a></h3>
-<ul><li><p>PLACEHOLDER <a href="https://github.com/tidyverse/hms/pull/16" class="external-link uri">https://github.com/tidyverse/hms/pull/16</a> (<a href="https://github.com/tidyverse/hms/issues/16" class="external-link">#16</a>).</p></li>
-<li><p>Internal changes only.</p></li>
-<li><p>Merged cran-1.1.3 into main.</p></li>
 </ul></div>
 </div>
     <div class="section level2">
