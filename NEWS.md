@@ -1,35 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
-# hms 1.1.3.9017
+# hms 1.1.4
 
-## Continuous integration
+## Bug fixes
 
-- Fix package installation code.
+- Sub-second value parsing accurately (@eitsupi, #127, #128).
 
-
-# hms 1.1.3.9016
-
-## Chore
-
-- Auto-update from GitHub Actions (#182).
-
-- Cynkra spring cleaning (@schochastics, #174, #175).
-
-
-# hms 1.1.3.9015
-
-## Continuous integration
-
-- Fix \[ci skip\].
-
-- Allow dispatch.
-
-- Allow dispatch.
-
-- Use r-universe for installation of dev dependencies.
-
-
-# hms 1.1.3.9014
+- Fix method consistency, checked by R-devel.
 
 ## Features
 
@@ -39,11 +16,35 @@
 
 ## Chore
 
+- Auto-update from GitHub Actions (#182).
+
+- Cynkra spring cleaning (@schochastics, #174, #175).
+
 - Auto-update from GitHub Actions (#178).
 
 - IDE.
 
+- Auto-update from GitHub Actions.
+
+  Run: https://github.com/tidyverse/hms/actions/runs/10425483161
+
+  Run: https://github.com/tidyverse/hms/actions/runs/10200113283
+
+  Run: https://github.com/tidyverse/hms/actions/runs/9728444063
+
+  Run: https://github.com/tidyverse/hms/actions/runs/9691617778
+
+- Use rlang instead of ellipsis (#106).
+
 ## Continuous integration
+
+- Fix package installation code.
+
+- Fix \[ci skip\].
+
+- Allow dispatch.
+
+- Use r-universe for installation of dev dependencies.
 
 - Add Copilot instructions.
 
@@ -71,28 +72,9 @@
 
 - Sync (#165).
 
-
-# hms 1.1.3.9013
-
-## Continuous integration
-
 - Avoid failure in fledge workflow if no changes (#156).
 
-
-# hms 1.1.3.9012
-
-## Continuous integration
-
 - Fetch tags for fledge workflow to avoid unnecessary NEWS entries (#154).
-
-
-# hms 1.1.3.9011
-
-## Bug fixes
-
-- Sub-second value parsing accurately (@eitsupi, #127, #128).
-
-## Continuous integration
 
 - Use larger retry count for lock-threads workflow (#152).
 
@@ -108,134 +90,59 @@
 
 - Correctly detect branch protection (#130).
 
+- Use stable pak (#129).
+
+- Trigger run (#126).
+
+  - ci: Trigger run
+
+  - ci: Latest changes
+
+- Trigger run (#124).
+
+- Use pkgdown branch (#123).
+
+  - ci: Use pkgdown branch
+
+  - ci: Updates from duckdb
+
+- Install via R CMD INSTALL ., not pak (#122).
+
+  - ci: Install via R CMD INSTALL ., not pak
+
+  - ci: Bump version of upload-artifact action
+
+- Install local package for pkgdown builds.
+
+- Improve support for protected branches with fledge.
+
+- Improve support for protected branches, without fledge.
+
+- Sync with latest developments.
+
+- Use v2 instead of master.
+
+- Inline action.
+
+- Use dev roxygen2 and decor.
+
+- Fix on Windows, tweak lock workflow.
+
+- Avoid checking bashisms on Windows.
+
+- Better commit message.
+
+- Bump versions, better default, consume custom matrix.
+
+- Recent updates.
+
 ## Uncategorized
 
 - PLACEHOLDER https://github.com/tidyverse/hms/pull/16 (#16).
 
-
-# hms 1.1.3.9010
-
-## Continuous integration
-
-  - Use stable pak (#129).
-
-
-# hms 1.1.3.9009
-
-## Continuous integration
-
-  - Trigger run (#126).
-    
-      - ci: Trigger run
-    
-      - ci: Latest changes
-
-
-# hms 1.1.3.9008
-
-## Continuous integration
-
-  - Trigger run (#124).
-
-  - Use pkgdown branch (#123).
-    
-      - ci: Use pkgdown branch
-    
-      - ci: Updates from duckdb
-
-
-# hms 1.1.3.9007
-
-## Continuous integration
-
-  - Install via R CMD INSTALL ., not pak (#122).
-    
-      - ci: Install via R CMD INSTALL ., not pak
-    
-      - ci: Bump version of upload-artifact action
-
-
-# hms 1.1.3.9006
-
-## Chore
-
-  - Auto-update from GitHub Actions.
-    
-    Run: https://github.com/tidyverse/hms/actions/runs/10425483161
-
-  - Auto-update from GitHub Actions.
-    
-    Run: https://github.com/tidyverse/hms/actions/runs/10200113283
-
-  - Auto-update from GitHub Actions.
-    
-    Run: https://github.com/tidyverse/hms/actions/runs/9728444063
-
-  - Auto-update from GitHub Actions.
-    
-    Run: https://github.com/tidyverse/hms/actions/runs/9691617778
-
-## Continuous integration
-
-  - Install local package for pkgdown builds.
-
-  - Improve support for protected branches with fledge.
-
-  - Improve support for protected branches, without fledge.
-
-  - Sync with latest developments.
-
-  - Use v2 instead of master.
-
-  - Inline action.
-
-  - Use dev roxygen2 and decor.
-
-  - Fix on Windows, tweak lock workflow.
-
-  - Avoid checking bashisms on Windows.
-
-  - Better commit message.
-
-  - Bump versions, better default, consume custom matrix.
-
-  - Recent updates.
-
-
-# hms 1.1.3.9005
-
 - Internal changes only.
-
-
-# hms 1.1.3.9004
-
-- Internal changes only.
-
-
-# hms 1.1.3.9003
-
-- Internal changes only.
-
-
-# hms 1.1.3.9002
 
 - Merged cran-1.1.3 into main.
-
-
-# hms 1.1.3.9001
-
-- Internal changes only.
-
-
-# hms 1.1.3.9000
-
-## Bug fixes
-
-- Fix method consistency, checked by R-devel.
-
-## Chore
-
-- Use rlang instead of ellipsis (#106).
 
 
 # hms 1.1.3
