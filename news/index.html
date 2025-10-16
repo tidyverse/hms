@@ -28,19 +28,20 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>Changelog</h1>
-      <small>Source: <a href="https://github.com/tidyverse/hms/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
+      <small>Source: <a href="https://github.com/tidyverse/hms/blob/cran-1.1.4/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="1.1.4" id="hms-114">hms 1.1.4<a class="anchor" aria-label="anchor" href="#hms-114"></a></h2>
 <div class="section level3">
-<h3 id="bug-fixes-1-1-4">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-1-1-4"></a></h3>
-<ul><li>Sub-second value parsing accurately (<a href="https://github.com/eitsupi" class="external-link">@eitsupi</a>, <a href="https://github.com/tidyverse/hms/issues/127" class="external-link">#127</a>, <a href="https://github.com/tidyverse/hms/issues/128" class="external-link">#128</a>).</li>
+<h3 id="features-1-1-4">Features<a class="anchor" aria-label="anchor" href="#features-1-1-4"></a></h3>
+<ul><li><p>Sub-second value parsing accurately (<a href="https://github.com/eitsupi" class="external-link">@eitsupi</a>, <a href="https://github.com/tidyverse/hms/issues/127" class="external-link">#127</a>, <a href="https://github.com/tidyverse/hms/issues/128" class="external-link">#128</a>).</p></li>
+<li><p><code><a href="../reference/Deprecated.html">is.hms()</a></code> and <code><a href="../reference/Deprecated.html">as.hms()</a></code> now warn even when called indirectly (<a href="https://github.com/moodymudskipper" class="external-link">@moodymudskipper</a>, <a href="https://github.com/tidyverse/hms/issues/121" class="external-link">#121</a>, <a href="https://github.com/tidyverse/hms/issues/163" class="external-link">#163</a>).</p></li>
+<li><p>Implement <code><a href="../reference/round_hms.html">ceiling_hms()</a></code> and <code><a href="../reference/round_hms.html">floor_hms()</a></code> (<a href="https://github.com/moodymudskipper" class="external-link">@moodymudskipper</a>, <a href="https://github.com/tidyverse/hms/issues/118" class="external-link">#118</a>, <a href="https://github.com/tidyverse/hms/issues/160" class="external-link">#160</a>).</p></li>
 </ul></div>
 <div class="section level3">
-<h3 id="features-1-1-4">Features<a class="anchor" aria-label="anchor" href="#features-1-1-4"></a></h3>
-<ul><li><p><code><a href="../reference/Deprecated.html">is.hms()</a></code> and <code><a href="../reference/Deprecated.html">as.hms()</a></code> now warn even when called indirectly (<a href="https://github.com/moodymudskipper" class="external-link">@moodymudskipper</a>, <a href="https://github.com/tidyverse/hms/issues/121" class="external-link">#121</a>, <a href="https://github.com/tidyverse/hms/issues/163" class="external-link">#163</a>).</p></li>
-<li><p>Implement <code><a href="../reference/round_hms.html">ceiling_hms()</a></code> and <code><a href="../reference/round_hms.html">floor_hms()</a></code> (<a href="https://github.com/moodymudskipper" class="external-link">@moodymudskipper</a>, <a href="https://github.com/tidyverse/hms/issues/118" class="external-link">#118</a>, <a href="https://github.com/tidyverse/hms/issues/160" class="external-link">#160</a>).</p></li>
+<h3 id="bug-fixes-1-1-4">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-1-1-4"></a></h3>
+<ul><li>Parsing now holds the date part fixed, removing unlikely errors during clock wraparound.</li>
 </ul></div>
 <div class="section level3">
 <h3 id="chore-1-1-4">Chore<a class="anchor" aria-label="anchor" href="#chore-1-1-4"></a></h3>
