@@ -28,6 +28,10 @@ parse_hm <- function(x) {
 }
 
 parse_time <- function(x, format) {
+  if (length(x) == 0) {
+    return(hms())
+  }
+
   parsed <- strptime(
     paste0("1970-01-01 ", as.character(x)),
     format = paste0("%Y-%m-%d ", format),
