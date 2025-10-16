@@ -3,7 +3,7 @@
 
 
 
-# hms <a href='https:/hms.tidyverse.org'><img src='man/figures/logo.png' align="right" height="139" alt="Hexagonal logo for the R package ‘hms’, featuring a stylized green clock face showing the time 10:05, with the package name ‘hms’ in white text at the center and the rstudio.com URL at the bottom edge."/></a>
+# hms <a href='https://hms.tidyverse.org'><img src='man/figures/logo.png' align="right" height="139" alt="Hexagonal logo for the R package ‘hms’, featuring a stylized green clock face showing the time 10:05, with the package name ‘hms’ in white text at the center and the rstudio.com URL at the bottom edge."/></a>
 
 <!-- badges: start -->
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
@@ -50,7 +50,7 @@ library(hms)
 hms(56, 34, 12)
 #> 12:34:56
 as_hms(Sys.time())
-#> 05:57:08.20206
+#> 10:27:38.905625
 parse_hms("12:34:56")
 #> 12:34:56
 as.POSIXct(hms(1))
