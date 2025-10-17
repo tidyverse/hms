@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.4.9000
+
+## fledge
+
+- CRAN release v1.1.4 (#185).
+
+
 # hms 1.1.4
 
 ## Bug fixes
