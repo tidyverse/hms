@@ -1,5 +1,22 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.4.9001
+
+- Merge tag 'v1.1.4'.
+
+- Sub-second value parsing accurately (@eitsupi, #127, #128).
+
+- `is.hms()` and `as.hms()` now warn even when called indirectly (@moodymudskipper, #121, #163).
+
+- Implement `ceiling_hms()` and `floor_hms()` (@moodymudskipper, #118, #160).
+
+- Parsing now holds the date part fixed, removing unlikely errors during clock wraparound.
+
+- Spring cleaning (@schochastics, #174, #175).
+
+- Use rlang instead of ellipsis (#106).
+
+
 # hms 1.1.4.9000
 
 ## fledge
