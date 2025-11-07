@@ -1,5 +1,40 @@
 # Changelog
 
+## hms 1.1.4.9001
+
+- Merge tag ‘v1.1.4’.
+
+- Sub-second value parsing accurately
+  ([@eitsupi](https://github.com/eitsupi),
+  [\#127](https://github.com/tidyverse/hms/issues/127),
+  [\#128](https://github.com/tidyverse/hms/issues/128)).
+
+- [`is.hms()`](https://hms.tidyverse.org/dev/reference/Deprecated.md)
+  and
+  [`as.hms()`](https://hms.tidyverse.org/dev/reference/Deprecated.md)
+  now warn even when called indirectly
+  ([@moodymudskipper](https://github.com/moodymudskipper),
+  [\#121](https://github.com/tidyverse/hms/issues/121),
+  [\#163](https://github.com/tidyverse/hms/issues/163)).
+
+- Implement
+  [`ceiling_hms()`](https://hms.tidyverse.org/dev/reference/round_hms.md)
+  and
+  [`floor_hms()`](https://hms.tidyverse.org/dev/reference/round_hms.md)
+  ([@moodymudskipper](https://github.com/moodymudskipper),
+  [\#118](https://github.com/tidyverse/hms/issues/118),
+  [\#160](https://github.com/tidyverse/hms/issues/160)).
+
+- Parsing now holds the date part fixed, removing unlikely errors during
+  clock wraparound.
+
+- Spring cleaning ([@schochastics](https://github.com/schochastics),
+  [\#174](https://github.com/tidyverse/hms/issues/174),
+  [\#175](https://github.com/tidyverse/hms/issues/175)).
+
+- Use rlang instead of ellipsis
+  ([\#106](https://github.com/tidyverse/hms/issues/106)).
+
 ## hms 1.1.4.9000
 
 ### fledge
