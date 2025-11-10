@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.4.9003
+
+## Continuous integration
+
+- Sync (#192).
+
+
 # hms 1.1.4.9002
 
 ## Continuous integration
