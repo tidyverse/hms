@@ -1,5 +1,11 @@
 # Changelog
 
+## hms 1.1.4.9003
+
+### Continuous integration
+
+- Sync ([\#192](https://github.com/tidyverse/hms/issues/192)).
+
 ## hms 1.1.4.9002
 
 ### Continuous integration

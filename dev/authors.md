@@ -17,12 +17,12 @@ Source:
 [`DESCRIPTION`](https://github.com/tidyverse/hms/blob/main/DESCRIPTION)
 
 Müller K (2025). *hms: Pretty Time of Day*. R package version
-1.1.4.9002, <https://hms.tidyverse.org/>.
+1.1.4.9003, <https://hms.tidyverse.org/>.
 
     @Manual{,
       title = {hms: Pretty Time of Day},
       author = {Kirill Müller},
       year = {2025},
-      note = {R package version 1.1.4.9002},
+      note = {R package version 1.1.4.9003},
       url = {https://hms.tidyverse.org/},
     }
