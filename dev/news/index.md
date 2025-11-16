@@ -1,5 +1,12 @@
 # Changelog
 
+## hms 1.1.4.9004
+
+### Continuous integration
+
+- Fix reviewdog and add commenting workflow
+  ([\#194](https://github.com/tidyverse/hms/issues/194)).
+
 ## hms 1.1.4.9003
 
 ### Continuous integration
