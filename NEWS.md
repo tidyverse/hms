@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.4.9005
+
+## Continuous integration
+
+- Install binaries from r-universe for dev workflow (#196).
+
+
 # hms 1.1.4.9004
 
 ## Continuous integration
