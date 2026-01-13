@@ -1,5 +1,12 @@
 # Changelog
 
+## hms 1.1.4.9005
+
+### Continuous integration
+
+- Install binaries from r-universe for dev workflow
+  ([\#196](https://github.com/tidyverse/hms/issues/196)).
+
 ## hms 1.1.4.9004
 
 ### Continuous integration
