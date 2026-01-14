@@ -1,5 +1,16 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.4.9006
+
+## Continuous integration
+
+- Fix comment (#200).
+
+- Tweaks (#199).
+
+- Test all R versions on branches that start with cran- (#198).
+
+
 # hms 1.1.4.9005
 
 ## Continuous integration
