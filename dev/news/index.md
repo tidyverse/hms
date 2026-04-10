@@ -1,5 +1,23 @@
 # Changelog
 
+## hms 1.1.4.9007
+
+### Chore
+
+- Auto-update from GitHub Actions
+  ([\#202](https://github.com/tidyverse/hms/issues/202)).
+
+## hms 1.1.4.9006
+
+### Continuous integration
+
+- Fix comment ([\#200](https://github.com/tidyverse/hms/issues/200)).
+
+- Tweaks ([\#199](https://github.com/tidyverse/hms/issues/199)).
+
+- Test all R versions on branches that start with cran-
+  ([\#198](https://github.com/tidyverse/hms/issues/198)).
+
 ## hms 1.1.4.9005
 
 ### Continuous integration

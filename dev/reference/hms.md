@@ -18,7 +18,7 @@ has the correct base type,
 
 `as_hms()` is a generic that supports conversions beyond casting. The
 default method forwards to
-[`vctrs::vec_cast()`](https://vctrs.r-lib.org/reference/vec_cast.html).
+[`vec_cast()`](https://vctrs.r-lib.org/reference/vec_cast.html).
 
 ## Usage
 
@@ -79,7 +79,8 @@ For `hms()`, all arguments must have the same length or be `NULL`. Odd
 combinations (e.g., passing only `seconds` and `hours` but not
 `minutes`) are rejected.
 
-For arguments of type lubridate::POSIXct and
+For arguments of type
+[POSIXct](https://rdrr.io/r/base/DateTimeClasses.html) and
 [POSIXlt](https://rdrr.io/r/base/DateTimeClasses.html), `as_hms()` does
 not perform timezone conversion. Use
 [`lubridate::with_tz()`](https://lubridate.tidyverse.org/reference/with_tz.html)
@@ -109,7 +110,7 @@ as_hms(1)
 as_hms("12:34:56")
 #> 12:34:56
 as_hms(Sys.time())
-#> 07:01:34.295761
+#> 07:30:14.970885
 as.POSIXct(hms(1))
 #> [1] "1970-01-01 00:00:01 UTC"
 data.frame(a = hms(1))
