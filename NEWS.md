@@ -1,5 +1,14 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.4.9008
+
+## Documentation
+
+- Update Plausible analytics snippet (@jeroenjanssens, #204).
+
+- Add "Supported By Posit" badge to website (@jeroenjanssens, #187).
+
+
 # hms 1.1.4.9007
 
 ## Chore
