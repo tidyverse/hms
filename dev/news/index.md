@@ -1,5 +1,24 @@
 # Changelog
 
+## hms 1.1.4.9009
+
+### Chore
+
+- Auto-update from GitHub Actions
+  ([\#206](https://github.com/tidyverse/hms/issues/206)).
+
+## hms 1.1.4.9008
+
+### Documentation
+
+- Update Plausible analytics snippet
+  ([@jeroenjanssens](https://github.com/jeroenjanssens),
+  [\#204](https://github.com/tidyverse/hms/issues/204)).
+
+- Add “Supported By Posit” badge to website
+  ([@jeroenjanssens](https://github.com/jeroenjanssens),
+  [\#187](https://github.com/tidyverse/hms/issues/187)).
+
 ## hms 1.1.4.9007
 
 ### Chore

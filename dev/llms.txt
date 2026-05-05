@@ -20,6 +20,7 @@ spreadsheets, and other data sources:
 ## Installation
 
 ``` r
+
 # The easiest way to get hms is to install the whole tidyverse:
 install.packages("tidyverse")
 
@@ -37,6 +38,7 @@ The following example showcases ways of using the `hms` class standalone
 or as a data frame column.
 
 ``` r
+
 library(hms)
 
 hms(56, 34, 12)
@@ -64,6 +66,7 @@ number of seconds since `00:00:00`. Use
 to and from numbers.
 
 ``` r
+
 times <- parse_hms(c("00:00:00.25", "00:00:01", "00:01:30", "01:00:00"))
 times
 #> 00:00:00.25
