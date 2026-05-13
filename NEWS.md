@@ -1,5 +1,24 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.4.9011
+
+## Chore
+
+- Add ccache to `.gitignore` and `.Rbuildignore`.
+
+## Continuous integration
+
+- Create snapshot update PR against correct branch.
+
+- Add reference to `/apply-patch` workflow in commit message.
+
+- Clarify rationale for not deploying on schedule.
+
+- Only run fledge on pushes to main.
+
+- Tweak fledge workflow and ccache action.
+
+
 # hms 1.1.4.9010
 
 ## Continuous integration
