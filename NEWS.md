@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.4.9012
+
+- Ci: Unify fledge.yaml across cynkratemplate and fledge (#86).
+
+
 # hms 1.1.4.9011
 
 ## Chore
