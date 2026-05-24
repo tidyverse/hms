@@ -1,5 +1,14 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.4.9013
+
+## Continuous integration
+
+- Update ccache-action reference.
+
+- Bump action version.
+
+
 # hms 1.1.4.9012
 
 - Ci: Unify fledge.yaml across cynkratemplate and fledge (#86).
