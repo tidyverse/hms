@@ -1,5 +1,20 @@
 # Changelog
 
+## hms 1.1.4.9014
+
+### Chore
+
+- Auto-update from GitHub Actions
+  ([\#216](https://github.com/tidyverse/hms/issues/216)).
+
+## hms 1.1.4.9013
+
+### Continuous integration
+
+- Update ccache-action reference.
+
+- Bump action version.
+
 ## hms 1.1.4.9012
 
 - Ci: Unify fledge.yaml across cynkratemplate and fledge
