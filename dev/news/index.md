@@ -1,5 +1,13 @@
 # Changelog
 
+## hms 1.1.4.9015
+
+### Continuous integration
+
+- Run on Ubuntu 26.04.
+
+- Align workflows with template.
+
 ## hms 1.1.4.9014
 
 ### Chore
