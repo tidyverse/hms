@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.4.9017
+
+## Continuous integration
+
+- Lock down `format-suggest` egress (audit → block).
+
+
 # hms 1.1.4.9016
 
 ## Bug fixes
