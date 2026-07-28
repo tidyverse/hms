@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.4.9018
+
+- Ci: Run all smoke-test checks even when one fails (#97).
+
+
 # hms 1.1.4.9017
 
 ## Continuous integration
