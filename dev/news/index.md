@@ -1,5 +1,10 @@
 # Changelog
 
+## hms 1.1.4.9018
+
+- Ci: Run all smoke-test checks even when one fails
+  ([\#97](https://github.com/tidyverse/hms/issues/97)).
+
 ## hms 1.1.4.9017
 
 ### Continuous integration
