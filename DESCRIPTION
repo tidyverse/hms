@@ -1,7 +1,7 @@
 Package: hms
 Title: Pretty Time of Day
-Date: 2026-07-28
-Version: 1.1.4.9018
+Date: 2026-08-05
+Version: 1.1.4.9019
 Authors@R: c(
     person("Kirill", "Müller", , "kirill@cynkra.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-1416-3412")),
