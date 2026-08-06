@@ -1,5 +1,16 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.4.9020
+
+## Chore
+
+- Use rlang instead of ellipsis (#106).
+
+## Continuous integration
+
+- Add sharded `revdep2` workflow.
+
+
 # hms 1.1.4.9019
 
 ## Chore
