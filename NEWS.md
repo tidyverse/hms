@@ -1,5 +1,14 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# hms 1.1.4.9022
+
+## Bug fixes
+
+### ci
+
+- Backport kit fixes from `rigraph`, `duckdb-r` and `dm`.
+
+
 # hms 1.1.4.9021
 
 ## Continuous integration
