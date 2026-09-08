@@ -213,6 +213,10 @@ as.character.hms <- function(x, ...) {
 }
 
 format_hms <- function(x) {
+  if (length(x) == 0L) {
+    return(character())
+  }
+
   xx <- decompose(x)
 
   ifelse(
