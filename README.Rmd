@@ -90,7 +90,7 @@ as_hms(Sys.time())
 parse_hms("12:34:56")
 as.POSIXct(hms(1))
 
-data.frame(hours = 1:3, hms = hms(hours = 1:3))
+tibble::tibble(hours = 1:3, hms = hms(hours = 1:3))
 ```
 
 ## Internal representation

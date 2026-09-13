@@ -58,11 +58,13 @@ parse_hms("12:34:56")
 as.POSIXct(hms(1))
 #> [1] "1970-01-01 00:00:01 UTC"
 
-data.frame(hours = 1:3, hms = hms(hours = 1:3))
-#>   hours      hms
-#> 1     1 01:00:00
-#> 2     2 02:00:00
-#> 3     3 03:00:00
+tibble::tibble(hours = 1:3, hms = hms(hours = 1:3))
+#> [38;5;246m# A tibble: 3 × 2[39m
+#>   [1mhours[22m [1mhms[22m   
+#>   [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<time>[39m[23m
+#> [38;5;250m1[39m     1 01[38;5;246m:[39m00 
+#> [38;5;250m2[39m     2 02[38;5;246m:[39m00 
+#> [38;5;250m3[39m     3 03[38;5;246m:[39m00
 ```
 
 ## Internal representation
