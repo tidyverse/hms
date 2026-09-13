@@ -1,5 +1,25 @@
 # Changelog
 
+## hms 1.1.4.9023
+
+### Features
+
+#### ci
+
+- Align the `revdep2`, `revdep4` and `revdepx` subsystems with
+  `rigraph`.
+
+### Continuous integration
+
+- Survive an archived CRAN package, cache revdep compiles
+  ([@krlmlr](https://github.com/krlmlr),
+  [\#227](https://github.com/tidyverse/hms/issues/227)).
+
+### Uncategorized
+
+- Ci: Fail the roxygenize step on roxygen2 warnings
+  ([\#111](https://github.com/tidyverse/hms/issues/111)).
+
 ## hms 1.1.4.9022
 
 ### Bug fixes
