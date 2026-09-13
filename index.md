@@ -27,6 +27,34 @@ This class is intended to simplify data exchange with databases, spreadsheets, a
 - Values can exceed the 24-hour boundary or be negative
 - By default, fractional seconds up to a microsecond are displayed, regardless of the value of the `"digits.secs"` option
 
+## Goals and non-goals
+
+hms aims to:
+
+- Store a time of day or a duration as the number of seconds since `00:00:00`,
+  on top of `difftime` and always with seconds as the unit, so that coercion to numeric is unambiguous.
+- Display those values as `hh:mm:ss`,
+  with fractional seconds up to a microsecond, regardless of the `"digits.secs"` option.
+- Work as a data frame column, and as a coloured `<time>` column in a tibble.
+- Convert to and from the neighbouring types — numeric, character, `difftime`, `POSIXct` and `POSIXlt` —
+  through `as_hms()` and the `vec_cast()` methods.
+- Cover the operations that belong to the class itself:
+  construction from day, hour, minute and second components, `parse_hms()` and `parse_hm()`,
+  and rounding with `round_hms()`, `trunc_hms()`, `ceiling_hms()` and `floor_hms()`.
+
+It is explicitly not trying to:
+
+- Deal with time zones:
+  `as_hms()` performs no conversion, and `lubridate::with_tz()` or `lubridate::force_tz()` is the documented way to shift a value first.
+- Support a unit other than seconds:
+  assigning to `units()` warns and leaves the value unchanged.
+- Check that a value is a plausible time of day:
+  `hms()` performs no bounds checking, and values may exceed the 24-hour boundary or be negative.
+- Coerce silently:
+  `hms` has no common type with `character` or `numeric`, so combining them is an error rather than a guess.
+- Parse arbitrary time formats:
+  `parse_hms()` reads `"HH:MM:SS"` with optional fractional seconds, and `parse_hm()` reads `"HH:MM"`.
+
 ## Installation
 
 ``` r
