@@ -4,9 +4,8 @@ setOldClass(c("hms", "difftime"))
 #'
 #' The values are stored as a [difftime] vector with a custom class,
 #' and always with "seconds" as unit for robust coercion to numeric.
-#' Supports construction from time values, coercion to and from
-#' various data types, and formatting.  Can be used as a regular column in a
-#' data frame.
+#' Supports construction from time values, coercion to and from various data types,
+#' and formatting.  Can be used as a regular column in a data frame.
 #'
 #' @name hms
 #' @examples
@@ -31,15 +30,13 @@ NULL
 
 #' hms()
 #'
-#' `hms()` is a high-level constructor that accepts second, minute, hour and day components
-#' as numeric vectors.
+#' `hms()` is a high-level constructor that accepts second, minute, hour and day components as numeric vectors.
 #'
 #' @rdname hms
-#' @details For `hms()`, all arguments must have the same length or be
-#'   `NULL`.  Odd combinations (e.g., passing only `seconds` and
-#'   `hours` but not `minutes`) are rejected.
-#' @param seconds,minutes,hours,days Time since midnight. No bounds checking is
-#'   performed.
+#' @details For `hms()`, all arguments must have the same length or be `NULL`.  Odd combinations
+#'   (e.g., passing only `seconds` and `hours` but not `minutes`) are rejected.
+#' @param seconds,minutes,hours,days Time since midnight.
+#'   No bounds checking is performed.
 #' @export
 hms <- function(seconds = NULL, minutes = NULL, hours = NULL, days = NULL) {
   error_call <- caller_env()
@@ -123,8 +120,7 @@ vec_ptype_full.hms <- function(x, ...) {
 #' `as_hms()` is a generic that supports conversions beyond casting.
 #' The default method forwards to [vec_cast()].
 #'
-#' For arguments of type [POSIXct] and [POSIXlt], `as_hms()` does not perform timezone
-#' conversion.
+#' For arguments of type [POSIXct] and [POSIXlt], `as_hms()` does not perform timezone conversion.
 #' Use [lubridate::with_tz()] and [lubridate::force_tz()] as necessary.
 #'
 #' @rdname hms
