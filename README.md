@@ -10,7 +10,7 @@
 
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![rcc](https://github.com/tidyverse/hms/workflows/rcc/badge.svg)](https://github.com/tidyverse/hms/actions)
-[![Codecov test coverage](https://codecov.io/gh/tidyverse/hms/branch/main/graph/badge.svg)](https://app.codecov.io/gh/tidyverse/hms?branch=main)
+[![Codecov test coverage](https://codecov.io/gh/tidyverse/hms/graph/badge.svg)](https://app.codecov.io/gh/tidyverse/hms/tree/main)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
 <!-- badges: end -->
 
