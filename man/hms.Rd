@@ -34,8 +34,8 @@ as_hms(x, ...)
 \method{seq}{hms}(from = hms(1), to = hms(1), by = NULL, ...)
 }
 \arguments{
-\item{seconds, minutes, hours, days}{Time since midnight. No bounds checking is
-performed.}
+\item{seconds, minutes, hours, days}{Time since midnight.
+No bounds checking is performed.}
 
 \item{x}{An object.}
 
@@ -50,12 +50,10 @@ performed.}
 \description{
 The values are stored as a \link{difftime} vector with a custom class,
 and always with "seconds" as unit for robust coercion to numeric.
-Supports construction from time values, coercion to and from
-various data types, and formatting.  Can be used as a regular column in a
-data frame.
+Supports construction from time values, coercion to and from various data types,
+and formatting.  Can be used as a regular column in a data frame.
 
-\code{hms()} is a high-level constructor that accepts second, minute, hour and day components
-as numeric vectors.
+\code{hms()} is a high-level constructor that accepts second, minute, hour and day components as numeric vectors.
 
 \code{new_hms()} is a low-level constructor that only checks that its input has the correct base type, \link{numeric}.
 
@@ -65,12 +63,10 @@ as numeric vectors.
 The default method forwards to \code{\link[vctrs:vec_cast]{vec_cast()}}.
 }
 \details{
-For \code{hms()}, all arguments must have the same length or be
-\code{NULL}.  Odd combinations (e.g., passing only \code{seconds} and
-\code{hours} but not \code{minutes}) are rejected.
+For \code{hms()}, all arguments must have the same length or be \code{NULL}.  Odd combinations
+(e.g., passing only \code{seconds} and \code{hours} but not \code{minutes}) are rejected.
 
-For arguments of type \link{POSIXct} and \link{POSIXlt}, \code{as_hms()} does not perform timezone
-conversion.
+For arguments of type \link{POSIXct} and \link{POSIXlt}, \code{as_hms()} does not perform timezone conversion.
 Use \code{\link[lubridate:with_tz]{lubridate::with_tz()}} and \code{\link[lubridate:force_tz]{lubridate::force_tz()}} as necessary.
 }
 \examples{
