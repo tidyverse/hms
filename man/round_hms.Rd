@@ -18,15 +18,14 @@ floor_hms(x, secs = NULL, digits = NULL)
 \arguments{
 \item{x}{A vector of class \link{hms}}
 
-\item{secs}{Multiple of seconds, a positive numeric. Values less than one
-are supported}
+\item{secs}{Multiple of seconds, a positive numeric.
+Values less than one are supported}
 
 \item{digits}{Number of digits, a whole number.
 Negative numbers are supported.}
 }
 \value{
-The input, rounded or truncated to the nearest multiple of \code{secs}
-(or number of \code{digits})
+The input, rounded or truncated to the nearest multiple of \code{secs} (or number of \code{digits})
 }
 \description{
 Convenience functions to round to a multiple of seconds or digits.

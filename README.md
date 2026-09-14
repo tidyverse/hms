@@ -1,34 +1,58 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- README.md and index.md are generated from README.Rmd.
+     Edit that file and render it the usual way: rmarkdown::render(), devtools::build_readme(), or the Knit button.
+     The cynkratemplate package must be installed; it supplies the output format. -->
 
 # hms <a href='https://hms.tidyverse.org'><img src='man/figures/logo.png' align="right" height="139" alt="Hexagonal logo for the R package ‘hms’, featuring a stylized green clock face showing the time 10:05, with the package name ‘hms’ in white text at the center and the rstudio.com URL at the bottom edge."/></a>
 
 <!-- badges: start -->
 
-[![Lifecycle:
-stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![rcc](https://github.com/tidyverse/hms/workflows/rcc/badge.svg)](https://github.com/tidyverse/hms/actions)
-[![Codecov test
-coverage](https://codecov.io/gh/tidyverse/hms/branch/main/graph/badge.svg)](https://app.codecov.io/gh/tidyverse/hms?branch=main)
+[![Codecov test coverage](https://codecov.io/gh/tidyverse/hms/graph/badge.svg)](https://app.codecov.io/gh/tidyverse/hms/tree/main)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/hms)](https://cran.r-project.org/package=hms)
 <!-- badges: end -->
 
 ## Overview
 
-The hms package provides a simple class for storing durations or
-time-of-day values and displaying them in the hh:mm:ss format. This
-class is intended to simplify data exchange with databases,
-spreadsheets, and other data sources:
+The hms package provides a simple class for storing durations or time-of-day values and displaying them in the hh:mm:ss format.
+This class is intended to simplify data exchange with databases, spreadsheets, and other data sources:
 
-- Stores values as a numeric vector that contains the number of seconds
-  since midnight
+- Stores values as a numeric vector that contains the number of seconds since midnight
 - Supports construction from explicit hour, minute, or second values
 - Supports coercion to and from various data types, including `POSIXt`
 - Can be used as column in a data frame
 - Based on the `difftime` class
 - Values can exceed the 24-hour boundary or be negative
-- By default, fractional seconds up to a microsecond are displayed,
-  regardless of the value of the `"digits.secs"` option
+- By default, fractional seconds up to a microsecond are displayed, regardless of the value of the `"digits.secs"` option
+
+## Goals and non-goals
+
+hms aims to:
+
+- Store a time of day or a duration as the number of seconds since `00:00:00`,
+  on top of `difftime` and always with seconds as the unit, so that coercion to numeric is unambiguous.
+- Display those values as `hh:mm:ss`,
+  with fractional seconds up to a microsecond, regardless of the `"digits.secs"` option.
+- Work as a data frame column, and as a coloured `<time>` column in a tibble.
+- Convert to and from the neighbouring types — numeric, character, `difftime`, `POSIXct` and `POSIXlt` —
+  through `as_hms()` and the `vec_cast()` methods.
+- Cover the operations that belong to the class itself:
+  construction from day, hour, minute and second components, `parse_hms()` and `parse_hm()`,
+  and rounding with `round_hms()`, `trunc_hms()`, `ceiling_hms()` and `floor_hms()`.
+
+It is explicitly not trying to:
+
+- Deal with time zones:
+  `as_hms()` performs no conversion, and `lubridate::with_tz()` or `lubridate::force_tz()` is the documented way to shift a value first.
+- Support a unit other than seconds:
+  assigning to `units()` warns and leaves the value unchanged.
+- Check that a value is a plausible time of day:
+  `hms()` performs no bounds checking, and values may exceed the 24-hour boundary or be negative.
+- Coerce silently:
+  `hms` has no common type with `character` or `numeric`, so combining them is an error rather than a guess.
+- Parse arbitrary time formats:
+  `parse_hms()` reads `"HH:MM:SS"` with optional fractional seconds, and `parse_hm()` reads `"HH:MM"`.
 
 ## Installation
 
@@ -46,8 +70,7 @@ pak::pak("tidyverse/hms")
 
 ## Usage
 
-The following example showcases ways of using the `hms` class standalone
-or as a data frame column.
+The following example showcases ways of using the `hms` class standalone or as a data frame column.
 
 ``` r
 library(hms)
@@ -55,24 +78,25 @@ library(hms)
 hms(56, 34, 12)
 #> 12:34:56
 as_hms(Sys.time())
-#> 10:27:38.905625
+#> 09:30:00
 parse_hms("12:34:56")
 #> 12:34:56
 as.POSIXct(hms(1))
 #> [1] "1970-01-01 00:00:01 UTC"
 
-data.frame(hours = 1:3, hms = hms(hours = 1:3))
-#>   hours      hms
-#> 1     1 01:00:00
-#> 2     2 02:00:00
-#> 3     3 03:00:00
+tibble::tibble(hours = 1:3, hms = hms(hours = 1:3))
+#> # A tibble: 3 × 2
+#>   hours hms   
+#>   <int> <time>
+#> 1     1 01:00 
+#> 2     2 02:00 
+#> 3     3 03:00
 ```
 
 ## Internal representation
 
-Objects of the `hms` and its underlying `difftime` classes are stored as
-number of seconds since `00:00:00`. Use `as.numeric()` and `as_hms()` to
-convert to and from numbers.
+Objects of the `hms` and its underlying `difftime` classes are stored as number of seconds since `00:00:00`.
+Use `as.numeric()` and `as_hms()` to convert to and from numbers.
 
 ``` r
 times <- parse_hms(c("00:00:00.25", "00:00:01", "00:01:30", "01:00:00"))
@@ -93,7 +117,5 @@ as_hms(times_num)
 
 ------------------------------------------------------------------------
 
-Please note that the ‘hms’ project is released with a [Contributor Code
-of
-Conduct](https://github.com/tidyverse/hms/blob/master/CODE_OF_CONDUCT.md).
+Please note that the 'hms' project is released with a [Contributor Code of Conduct](https://github.com/tidyverse/hms/blob/master/CODE_OF_CONDUCT.md).
 By contributing to this project, you agree to abide by its terms.

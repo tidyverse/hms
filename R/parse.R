@@ -4,8 +4,7 @@
 #' These functions convert character vectors to objects of the [hms] class.
 #' `NA` values are supported.
 #'
-#' `parse_hms()` accepts values of the form `"HH:MM:SS"`, with optional
-#' fractional seconds.
+#' `parse_hms()` accepts values of the form `"HH:MM:SS"`, with optional fractional seconds.
 #' @param x A character vector
 #' @return An object of class [hms].
 #'
