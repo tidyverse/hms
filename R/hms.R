@@ -213,6 +213,10 @@ as.character.hms <- function(x, ...) {
 }
 
 format_hms <- function(x) {
+  if (length(x) == 0L) {
+    return(character())
+  }
+
   xx <- decompose(x)
 
   ifelse(
@@ -312,7 +316,6 @@ seq.hms <- function(
   }
 
   from <- vec_cast(as_hms(from), numeric())
-  to <- vec_cast(as_hms(to), numeric())
 
   if (!is.null(by)) {
     if (!(is_hms(by) || inherits(by, "difftime"))) {
@@ -322,8 +325,16 @@ seq.hms <- function(
       ))
     }
     by <- vec_cast(as_hms(by), numeric())
+    if (missing(to)) {
+      return(hms(seq(from, by = by, ...)))
+    }
+    to <- vec_cast(as_hms(to), numeric())
     return(hms(seq(from, to, by, ...)))
   }
 
+  if (missing(to)) {
+    return(hms(seq(from, ...)))
+  }
+  to <- vec_cast(as_hms(to), numeric())
   hms(seq(from, to, ...))
 }
