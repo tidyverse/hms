@@ -2,12 +2,11 @@
 #'
 #' Convenience functions to round to a multiple of seconds or digits.
 #' @param x A vector of class [hms]
-#' @param secs Multiple of seconds, a positive numeric. Values less than one
-#'   are supported
+#' @param secs Multiple of seconds, a positive numeric.
+#'   Values less than one are supported
 #' @param digits Number of digits, a whole number.
 #'   Negative numbers are supported.
-#' @return The input, rounded or truncated to the nearest multiple of `secs`
-#'   (or number of `digits`)
+#' @return The input, rounded or truncated to the nearest multiple of `secs` (or number of `digits`)
 #' @export
 #' @examples
 #' round_hms(as_hms("12:34:56"), 5)

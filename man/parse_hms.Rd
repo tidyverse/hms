@@ -19,8 +19,7 @@ An object of class \link{hms}.
 These functions convert character vectors to objects of the \link{hms} class.
 \code{NA} values are supported.
 
-\code{parse_hms()} accepts values of the form \code{"HH:MM:SS"}, with optional
-fractional seconds.
+\code{parse_hms()} accepts values of the form \code{"HH:MM:SS"}, with optional fractional seconds.
 
 \code{parse_hm()} accepts values of the form \code{"HH:MM"}.
 }
