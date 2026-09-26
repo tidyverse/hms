@@ -17,6 +17,57 @@ spreadsheets, and other data sources:
 - By default, fractional seconds up to a microsecond are displayed,
   regardless of the value of the `"digits.secs"` option
 
+## Goals and non-goals
+
+hms aims to:
+
+- Store a time of day or a duration as the number of seconds since
+  `00:00:00`, on top of `difftime` and always with seconds as the unit,
+  so that coercion to numeric is unambiguous.
+- Display those values as `hh:mm:ss`, with fractional seconds up to a
+  microsecond, regardless of the `"digits.secs"` option.
+- Work as a data frame column, and as a coloured `<time>` column in a
+  tibble.
+- Convert to and from the neighbouring types — numeric, character,
+  `difftime`, `POSIXct` and `POSIXlt` — through
+  [`as_hms()`](https://hms.tidyverse.org/dev/reference/hms.md) and the
+  `vec_cast()` methods.
+- Cover the operations that belong to the class itself: construction
+  from day, hour, minute and second components,
+  [`parse_hms()`](https://hms.tidyverse.org/dev/reference/parse_hms.md)
+  and
+  [`parse_hm()`](https://hms.tidyverse.org/dev/reference/parse_hms.md),
+  and rounding with
+  [`round_hms()`](https://hms.tidyverse.org/dev/reference/round_hms.md),
+  [`trunc_hms()`](https://hms.tidyverse.org/dev/reference/round_hms.md),
+  [`ceiling_hms()`](https://hms.tidyverse.org/dev/reference/round_hms.md)
+  and
+  [`floor_hms()`](https://hms.tidyverse.org/dev/reference/round_hms.md).
+
+It is explicitly not trying to:
+
+- Deal with time zones:
+  [`as_hms()`](https://hms.tidyverse.org/dev/reference/hms.md) performs
+  no conversion, and
+  [`lubridate::with_tz()`](https://lubridate.tidyverse.org/reference/with_tz.html)
+  or
+  [`lubridate::force_tz()`](https://lubridate.tidyverse.org/reference/force_tz.html)
+  is the documented way to shift a value first.
+- Support a unit other than seconds: assigning to
+  [`units()`](https://rdrr.io/r/base/units.html) warns and leaves the
+  value unchanged.
+- Check that a value is a plausible time of day:
+  [`hms()`](https://hms.tidyverse.org/dev/reference/hms.md) performs no
+  bounds checking, and values may exceed the 24-hour boundary or be
+  negative.
+- Coerce silently: `hms` has no common type with `character` or
+  `numeric`, so combining them is an error rather than a guess.
+- Parse arbitrary time formats:
+  [`parse_hms()`](https://hms.tidyverse.org/dev/reference/parse_hms.md)
+  reads `"HH:MM:SS"` with optional fractional seconds, and
+  [`parse_hm()`](https://hms.tidyverse.org/dev/reference/parse_hms.md)
+  reads `"HH:MM"`.
+
 ## Installation
 
 ``` r
@@ -44,17 +95,19 @@ library(hms)
 hms(56, 34, 12)
 #> 12:34:56
 as_hms(Sys.time())
-#> 10:27:38.905625
+#> 09:30:00
 parse_hms("12:34:56")
 #> 12:34:56
 as.POSIXct(hms(1))
 #> [1] "1970-01-01 00:00:01 UTC"
 
-data.frame(hours = 1:3, hms = hms(hours = 1:3))
-#>   hours      hms
-#> 1     1 01:00:00
-#> 2     2 02:00:00
-#> 3     3 03:00:00
+tibble::tibble(hours = 1:3, hms = hms(hours = 1:3))
+#> # A tibble: 3 × 2
+#>   hours hms   
+#>   <int> <time>
+#> 1     1 01:00 
+#> 2     2 02:00 
+#> 3     3 03:00
 ```
 
 ## Internal representation

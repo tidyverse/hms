@@ -34,7 +34,7 @@
 
     <a class="navbar-brand me-2" href="index.html">hms</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.1.4.9023</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.1.4.9024</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,6 +82,26 @@
 </ul>
 </div>
 <div class="section level2">
+<h2 id="goals-and-non-goals">Goals and non-goals<a class="anchor" aria-label="anchor" href="#goals-and-non-goals"></a>
+</h2>
+<p>hms aims to:</p>
+<ul>
+<li>Store a time of day or a duration as the number of seconds since <code>00:00:00</code>, on top of <code>difftime</code> and always with seconds as the unit, so that coercion to numeric is unambiguous.</li>
+<li>Display those values as <code>hh:mm:ss</code>, with fractional seconds up to a microsecond, regardless of the <code>"digits.secs"</code> option.</li>
+<li>Work as a data frame column, and as a coloured <code>&lt;time&gt;</code> column in a tibble.</li>
+<li>Convert to and from the neighbouring types — numeric, character, <code>difftime</code>, <code>POSIXct</code> and <code>POSIXlt</code> — through <code><a href="reference/hms.html">as_hms()</a></code> and the <code>vec_cast()</code> methods.</li>
+<li>Cover the operations that belong to the class itself: construction from day, hour, minute and second components, <code><a href="reference/parse_hms.html">parse_hms()</a></code> and <code><a href="reference/parse_hms.html">parse_hm()</a></code>, and rounding with <code><a href="reference/round_hms.html">round_hms()</a></code>, <code><a href="reference/round_hms.html">trunc_hms()</a></code>, <code><a href="reference/round_hms.html">ceiling_hms()</a></code> and <code><a href="reference/round_hms.html">floor_hms()</a></code>.</li>
+</ul>
+<p>It is explicitly not trying to:</p>
+<ul>
+<li>Deal with time zones: <code><a href="reference/hms.html">as_hms()</a></code> performs no conversion, and <code><a href="https://lubridate.tidyverse.org/reference/with_tz.html" class="external-link">lubridate::with_tz()</a></code> or <code><a href="https://lubridate.tidyverse.org/reference/force_tz.html" class="external-link">lubridate::force_tz()</a></code> is the documented way to shift a value first.</li>
+<li>Support a unit other than seconds: assigning to <code><a href="https://rdrr.io/r/base/units.html" class="external-link">units()</a></code> warns and leaves the value unchanged.</li>
+<li>Check that a value is a plausible time of day: <code><a href="reference/hms.html">hms()</a></code> performs no bounds checking, and values may exceed the 24-hour boundary or be negative.</li>
+<li>Coerce silently: <code>hms</code> has no common type with <code>character</code> or <code>numeric</code>, so combining them is an error rather than a guess.</li>
+<li>Parse arbitrary time formats: <code><a href="reference/parse_hms.html">parse_hms()</a></code> reads <code>"HH:MM:SS"</code> with optional fractional seconds, and <code><a href="reference/parse_hms.html">parse_hm()</a></code> reads <code>"HH:MM"</code>.</li>
+</ul>
+</div>
+<div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
@@ -105,17 +125,19 @@
 <span><span class="fu"><a href="reference/hms.html">hms</a></span><span class="op">(</span><span class="fl">56</span>, <span class="fl">34</span>, <span class="fl">12</span><span class="op">)</span></span>
 <span><span class="co">#&gt; 12:34:56</span></span>
 <span><span class="fu"><a href="reference/hms.html">as_hms</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.time</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; 10:27:38.905625</span></span>
+<span><span class="co">#&gt; 09:30:00</span></span>
 <span><span class="fu"><a href="reference/parse_hms.html">parse_hms</a></span><span class="op">(</span><span class="st">"12:34:56"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; 12:34:56</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html" class="external-link">as.POSIXct</a></span><span class="op">(</span><span class="fu"><a href="reference/hms.html">hms</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "1970-01-01 00:00:01 UTC"</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>hours <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, hms <span class="op">=</span> <span class="fu"><a href="reference/hms.html">hms</a></span><span class="op">(</span>hours <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt;   hours      hms</span></span>
-<span><span class="co">#&gt; 1     1 01:00:00</span></span>
-<span><span class="co">#&gt; 2     2 02:00:00</span></span>
-<span><span class="co">#&gt; 3     3 03:00:00</span></span></code></pre></div>
+<span><span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span>hours <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, hms <span class="op">=</span> <span class="fu"><a href="reference/hms.html">hms</a></span><span class="op">(</span>hours <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 3 × 2</span></span></span>
+<span><span class="co">#&gt;   <span style="font-weight: bold;">hours</span> <span style="font-weight: bold;">hms</span>   </span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;time&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>     1 01<span style="color: #949494;">:</span>00 </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>     2 02<span style="color: #949494;">:</span>00 </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>     3 03<span style="color: #949494;">:</span>00</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="internal-representation">Internal representation<a class="anchor" aria-label="anchor" href="#internal-representation"></a>
@@ -188,7 +210,7 @@
 <ul class="list-unstyled">
 <li><a href="https://lifecycle.r-lib.org/articles/stages.html" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
 <li><a href="https://github.com/tidyverse/hms/actions" class="external-link"><img src="https://github.com/tidyverse/hms/workflows/rcc/badge.svg" alt="rcc"></a></li>
-<li><a href="https://app.codecov.io/gh/tidyverse/hms?branch=main" class="external-link"><img src="https://codecov.io/gh/tidyverse/hms/branch/main/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://app.codecov.io/gh/tidyverse/hms/tree/main" class="external-link"><img src="https://codecov.io/gh/tidyverse/hms/graph/badge.svg" alt="Codecov test coverage"></a></li>
 <li><a href="https://cran.r-project.org/package=hms" class="external-link"><img src="https://www.r-pkg.org/badges/version/hms" alt="CRAN_Status_Badge"></a></li>
 </ul>
 </div>
