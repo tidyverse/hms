@@ -1,5 +1,36 @@
 # Changelog
 
+## hms 1.1.4.9025
+
+### Documentation
+
+- Adopt the shared README rendering configuration
+  ([@krlmlr](https://github.com/krlmlr),
+  [\#230](https://github.com/tidyverse/hms/issues/230)).
+
+### fledge
+
+- Bump version to 1.1.3.9011
+  ([\#149](https://github.com/tidyverse/hms/issues/149)).
+
+- Bump version to 1.1.3.9011
+  ([\#145](https://github.com/tidyverse/hms/issues/145)).
+
+- Bump version to 1.1.3.9011
+  ([\#146](https://github.com/tidyverse/hms/issues/146)).
+
+- Bump version to 1.1.3.9011
+  ([\#144](https://github.com/tidyverse/hms/issues/144)).
+
+- Bump version to 1.1.3.9011
+  ([\#150](https://github.com/tidyverse/hms/issues/150)).
+
+- Bump version to 1.1.3.9011
+  ([\#141](https://github.com/tidyverse/hms/issues/141)).
+
+- Bump version to 1.1.3.9011
+  ([\#139](https://github.com/tidyverse/hms/issues/139)).
+
 ## hms 1.1.4.9024
 
 ### Chore
