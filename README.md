@@ -36,23 +36,23 @@ hms aims to:
   with fractional seconds up to a microsecond, regardless of the `"digits.secs"` option.
 - Work as a data frame column, and as a coloured `<time>` column in a tibble.
 - Convert to and from the neighbouring types — numeric, character, `difftime`, `POSIXct` and `POSIXlt` —
-  through `as_hms()` and the `vec_cast()` methods.
+  through [`as_hms()`](https://hms.tidyverse.org/reference/hms.html) and the `vec_cast()` methods.
 - Cover the operations that belong to the class itself:
-  construction from day, hour, minute and second components, `parse_hms()` and `parse_hm()`,
-  and rounding with `round_hms()`, `trunc_hms()`, `ceiling_hms()` and `floor_hms()`.
+  construction from day, hour, minute and second components, [`parse_hms()`](https://hms.tidyverse.org/reference/parse_hms.html) and [`parse_hm()`](https://hms.tidyverse.org/reference/parse_hms.html),
+  and rounding with [`round_hms()`](https://hms.tidyverse.org/reference/round_hms.html), [`trunc_hms()`](https://hms.tidyverse.org/reference/round_hms.html), [`ceiling_hms()`](https://hms.tidyverse.org/reference/round_hms.html) and [`floor_hms()`](https://hms.tidyverse.org/reference/round_hms.html).
 
 It is explicitly not trying to:
 
 - Deal with time zones:
-  `as_hms()` performs no conversion, and `lubridate::with_tz()` or `lubridate::force_tz()` is the documented way to shift a value first.
+  [`as_hms()`](https://hms.tidyverse.org/reference/hms.html) performs no conversion, and [`lubridate::with_tz()`](https://lubridate.tidyverse.org/reference/with_tz.html) or [`lubridate::force_tz()`](https://lubridate.tidyverse.org/reference/force_tz.html) is the documented way to shift a value first.
 - Support a unit other than seconds:
-  assigning to `units()` warns and leaves the value unchanged.
+  assigning to [`units()`](https://rdrr.io/r/base/units.html) warns and leaves the value unchanged.
 - Check that a value is a plausible time of day:
-  `hms()` performs no bounds checking, and values may exceed the 24-hour boundary or be negative.
+  [`hms()`](https://hms.tidyverse.org/reference/hms.html) performs no bounds checking, and values may exceed the 24-hour boundary or be negative.
 - Coerce silently:
   `hms` has no common type with `character` or `numeric`, so combining them is an error rather than a guess.
 - Parse arbitrary time formats:
-  `parse_hms()` reads `"HH:MM:SS"` with optional fractional seconds, and `parse_hm()` reads `"HH:MM"`.
+  [`parse_hms()`](https://hms.tidyverse.org/reference/parse_hms.html) reads `"HH:MM:SS"` with optional fractional seconds, and [`parse_hm()`](https://hms.tidyverse.org/reference/parse_hms.html) reads `"HH:MM"`.
 
 ## Installation
 
@@ -96,7 +96,7 @@ tibble::tibble(hours = 1:3, hms = hms(hours = 1:3))
 ## Internal representation
 
 Objects of the `hms` and its underlying `difftime` classes are stored as number of seconds since `00:00:00`.
-Use `as.numeric()` and `as_hms()` to convert to and from numbers.
+Use [`as.numeric()`](https://rdrr.io/r/base/numeric.html) and [`as_hms()`](https://hms.tidyverse.org/reference/hms.html) to convert to and from numbers.
 
 ``` r
 times <- parse_hms(c("00:00:00.25", "00:00:01", "00:01:30", "01:00:00"))
