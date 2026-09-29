@@ -23,5 +23,5 @@ check_args <- function(args, call = caller_env()) {
 }
 
 is_numeric_or_na <- function(x) {
-  is.numeric(x) || all(is.na(x))
+  is.numeric(x) || (length(x) > 0L && all(is.na(x)))
 }

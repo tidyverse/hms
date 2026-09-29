@@ -22,3 +22,8 @@ test_that("seq.hms works", {
     seq(hms(4), hms(1), by = hms(-1))
   })
 })
+
+test_that("seq.hms works without `to`", {
+  expect_identical(seq(hms(1), by = hms(2), length.out = 3), hms(c(1, 3, 5)))
+  expect_identical(seq(hms(1), length.out = 3), hms(1:3))
+})

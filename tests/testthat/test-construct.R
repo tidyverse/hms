@@ -48,6 +48,8 @@ test_that("bad input", {
     "recycle"
   )
   expect_error(hms("05:00"), cli_text("must be {.cls numeric}"))
+  expect_error(hms(seconds = character()), cli_text("must be {.cls numeric}"))
+  expect_error(hms(days = raw(0)), cli_text("must be {.cls numeric}"))
 })
 
 test_that("is.hms()", {
