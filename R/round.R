@@ -5,8 +5,10 @@
 #' @param secs Multiple of seconds, a positive numeric.
 #'   Values less than one are supported
 #' @param digits Number of digits, a whole number.
-#'   Negative numbers are supported.
+#'   Negative numbers are supported,
+#'   see [digits_to_secs()] for how digits map to seconds.
 #' @return The input, rounded or truncated to the nearest multiple of `secs` (or number of `digits`)
+#' @seealso [digits_to_secs()]
 #' @export
 #' @examples
 #' round_hms(as_hms("12:34:56"), 5)
@@ -15,7 +17,7 @@
 #' round_hms(as_hms("12:34:56.78"), digits = 1)
 #' round_hms(as_hms("12:34:56.78"), digits = -2)
 round_hms <- function(x, secs = NULL, digits = NULL) {
-  secs <- digits_to_secs(secs, digits)
+  secs <- secs_or_digits(secs, digits)
 
   vec_restore(round(as.numeric(x) / secs) * secs, x)
 }
@@ -25,7 +27,7 @@ round_hms <- function(x, secs = NULL, digits = NULL) {
 #' @examples
 #' trunc_hms(as_hms("12:34:56"), 60)
 trunc_hms <- function(x, secs = NULL, digits = NULL) {
-  secs <- digits_to_secs(secs, digits)
+  secs <- secs_or_digits(secs, digits)
 
   vec_restore(trunc(as.numeric(x) / secs) * secs, x)
 }
@@ -35,7 +37,7 @@ trunc_hms <- function(x, secs = NULL, digits = NULL) {
 #' @examples
 #' ceiling_hms(as_hms("12:34:56"), 60)
 ceiling_hms <- function(x, secs = NULL, digits = NULL) {
-  secs <- digits_to_secs(secs, digits)
+  secs <- secs_or_digits(secs, digits)
 
   vec_restore(ceiling(as.numeric(x) / secs) * secs, x)
 }
@@ -45,12 +47,12 @@ ceiling_hms <- function(x, secs = NULL, digits = NULL) {
 #' @examples
 #' floor_hms(as_hms("12:34:56"), 60)
 floor_hms <- function(x, secs = NULL, digits = NULL) {
-  secs <- digits_to_secs(secs, digits)
+  secs <- secs_or_digits(secs, digits)
 
   vec_restore(floor(as.numeric(x) / secs) * secs, x)
 }
 
-digits_to_secs <- function(secs, digits) {
+secs_or_digits <- function(secs, digits) {
   if (is.null(digits)) {
     if (is.null(secs)) {
       abort("Exactly one of `secs` or `digits` is required.")
@@ -63,6 +65,52 @@ digits_to_secs <- function(secs, digits) {
     abort("Exactly one of `secs` or `digits` is required.")
   }
 
+  digits_to_secs(digits)
+}
+
+#' Convert digits to seconds
+#'
+#' Converts a number of digits to the corresponding multiple of seconds,
+#' as used by the `digits` argument of [round_hms()], [trunc_hms()],
+#' [ceiling_hms()] and [floor_hms()].
+#'
+#' Digits count positions in the `hh:mm:ss` display, starting from the
+#' decimal point.
+#' Positive values address fractions of a second, as in [round()].
+#' Zero and negative values move left through seconds, minutes and hours.
+#' Because a minute has 60 seconds and an hour has 60 minutes,
+#' the step from tens of seconds to minutes
+#' and from tens of minutes to hours is a factor of 6 rather than 10:
+#'
+#' | `digits` | Seconds | Rounds to nearest |
+#' |---:|---:|:---|
+#' | `2` | `0.01` | hundredth of a second |
+#' | `1` | `0.1` | tenth of a second |
+#' | `0` | `1` | second |
+#' | `-1` | `10` | 10 seconds |
+#' | `-2` | `60` | minute |
+#' | `-3` | `600` | 10 minutes |
+#' | `-4` | `3600` | hour |
+#' | `-5` | `36000` | 10 hours |
+#'
+#' Below `-4`, each further step is a factor of 10.
+#'
+#' @param digits Number of digits, a whole number.
+#'   Negative numbers are supported.
+#' @return A positive number of seconds.
+#' @seealso [round_hms()]
+#' @export
+#' @examples
+#' digits_to_secs(1)
+#' digits_to_secs(0)
+#' digits_to_secs(-2)
+#' digits_to_secs(-3)
+#' digits_to_secs(-4)
+#'
+#' # These are equivalent:
+#' round_hms(as_hms("12:34:56"), digits = -3)
+#' round_hms(as_hms("12:34:56"), secs = digits_to_secs(-3))
+digits_to_secs <- function(digits) {
   if (!is_integerish(digits)) {
     abort("`digits` must be a whole number")
   }

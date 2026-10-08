@@ -22,7 +22,8 @@ floor_hms(x, secs = NULL, digits = NULL)
 Values less than one are supported}
 
 \item{digits}{Number of digits, a whole number.
-Negative numbers are supported.}
+Negative numbers are supported,
+see \code{\link[=digits_to_secs]{digits_to_secs()}} for how digits map to seconds.}
 }
 \value{
 The input, rounded or truncated to the nearest multiple of \code{secs} (or number of \code{digits})
@@ -39,4 +40,7 @@ round_hms(as_hms("12:34:56.78"), digits = -2)
 trunc_hms(as_hms("12:34:56"), 60)
 ceiling_hms(as_hms("12:34:56"), 60)
 floor_hms(as_hms("12:34:56"), 60)
+}
+\seealso{
+\code{\link[=digits_to_secs]{digits_to_secs()}}
 }

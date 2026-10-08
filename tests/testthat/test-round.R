@@ -100,3 +100,26 @@ test_that("floor_hms()", {
     as_hms(c(hms(55, 34, 12), hms(NA)))
   )
 })
+
+test_that("digits_to_secs()", {
+  expect_equal(digits_to_secs(2), 0.01)
+  expect_equal(digits_to_secs(1), 0.1)
+  expect_equal(digits_to_secs(0), 1)
+  expect_equal(digits_to_secs(-1), 10)
+  expect_equal(digits_to_secs(-2), 60)
+  expect_equal(digits_to_secs(-3), 600)
+  expect_equal(digits_to_secs(-4), 3600)
+  expect_equal(digits_to_secs(-5), 36000)
+  expect_equal(digits_to_secs(-6), 360000)
+
+  expect_error(digits_to_secs(0.5), "whole number")
+  expect_error(digits_to_secs("1"), "whole number")
+  expect_error(digits_to_secs(NULL), "whole number")
+})
+
+test_that("rounding functions require exactly one of `secs` or `digits`", {
+  x <- parse_hms("12:34:56")
+
+  expect_error(round_hms(x), "Exactly one")
+  expect_error(round_hms(x, secs = 60, digits = -2), "Exactly one")
+})
