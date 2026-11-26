@@ -32,7 +32,7 @@ Authors:
 Other contributors:
 \itemize{
   \item R Consortium [funder]
-  \item Posit Software, PBC (\href{https://ror.org/03wc8by49}{ROR}) [funder]
+  \item Posit Software, PBC (ROR: 03wc8by49, \verb{https://ror.org/03wc8by49}) [funder]
 }
 
 }
