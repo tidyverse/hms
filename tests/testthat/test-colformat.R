@@ -7,3 +7,10 @@ test_that("pillar", {
     hms(c(-60, -1, -0.001, 0, 0.001, 1, 60, NA))
   })
 })
+
+test_that("pillar_shaft handles empty hms()", {
+  shaft <- pillar::pillar_shaft(hms())
+  expect_identical(shaft[[1]], character())
+  expect_identical(attr(shaft, "na_indent"), 0L)
+  expect_identical(as.character(format(shaft, width = 10L)), character())
+})

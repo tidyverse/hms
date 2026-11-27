@@ -1,5 +1,9 @@
 # Dynamically exported, see zzz.R
 pillar_shaft.hms <- function(x, ...) {
+  if (length(x) == 0L) {
+    return(pillar::new_pillar_shaft_simple(character()))
+  }
+
   data <- rep(NA_character_, length(x))
 
   xx <- decompose(x)
