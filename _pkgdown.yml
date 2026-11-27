@@ -34,6 +34,7 @@ reference:
 - title: Utilities
   contents:
   - round_hms
+  - digits_to_secs
 - title: Package documentation
   contents:
   - hms-package
